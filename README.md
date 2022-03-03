@@ -124,5 +124,5 @@ api.authorization.generate_authorize_request(...)
 
 ...
 
-api.organization.get("test-asso")
+api.organization.get_by_slug("test-asso")
 ```
