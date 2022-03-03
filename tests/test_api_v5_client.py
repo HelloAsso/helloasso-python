@@ -4,8 +4,8 @@ import pytest
 import requests
 from requests import Response, Timeout
 
-from helloasso_apiv5.apiv5client import ApiV5Client
-from helloasso_apiv5.exceptions import (
+from helloasso_api.apiv5client import ApiV5Client
+from helloasso_api.exceptions import (
     ApiV5BadRequest,
     ApiV5Conflict,
     ApiV5ConnectionError,
@@ -49,7 +49,7 @@ def test_api_client_should_raise_error_on_missing_param(param):
         ApiV5Client(**parameters)
 
 
-@patch("helloasso_apiv5.apiv5client.OAuth2Api")
+@patch("helloasso_api.apiv5client.OAuth2Api")
 def test_api_client_should_initialize_with_base_parameters(fake_oauth: Mock):
     fake_oauth.return_value = fake_oauth
     fake_oauth.access_token = False
@@ -74,7 +74,7 @@ def test_api_client_should_initialize_with_base_parameters(fake_oauth: Mock):
     assert client.oauth.get_token.call_count == 1
 
 
-@patch("helloasso_apiv5.apiv5client.OAuth2Api")
+@patch("helloasso_api.apiv5client.OAuth2Api")
 def test_api_client_should_initialize_with_tokens_and_token_getters(fake_oauth: Mock):
     fake_oauth.return_value = fake_oauth
     fake_oauth.access_token = True
@@ -111,7 +111,7 @@ def test_get_header():
     assert ApiV5Client.header() == {"Content-Type": "application/json"}
 
 
-@patch("helloasso_apiv5.apiv5client.OAuth2Api")
+@patch("helloasso_api.apiv5client.OAuth2Api")
 def test_prepare_request(fake_oauth, api_v5_client: ApiV5Client):
     fake_oauth.return_value = fake_oauth
     fake_oauth.access_token = "my_token"
@@ -183,7 +183,7 @@ def test_prepare_request(fake_oauth, api_v5_client: ApiV5Client):
         ),
     ],
 )
-@patch("helloasso_apiv5.apiv5client.OAuth2Api", Mock())
+@patch("helloasso_api.apiv5client.OAuth2Api", Mock())
 def test_execute_request_should_work(
     method, expected_call: call, api_v5_client: ApiV5Client
 ):
@@ -193,7 +193,7 @@ def test_execute_request_should_work(
     params = {"cc": 789}
     headers = {"dd": "321"}
 
-    with patch("helloasso_apiv5.apiv5client.requests") as fake_requests:
+    with patch("helloasso_api.apiv5client.requests") as fake_requests:
         http_method = getattr(fake_requests, method.lower())
         http_method.return_value = FakeResponse({"success": "true"})
 
@@ -219,7 +219,7 @@ def test_execute_request_should_work(
         ([500, 502, 666], ApiV5ServerError),
     ],
 )
-@patch("helloasso_apiv5.apiv5client.OAuth2Api", Mock())
+@patch("helloasso_api.apiv5client.OAuth2Api", Mock())
 def test_execute_request_should_handle_http_error(
     status_codes, expected_exception, api_v5_client: ApiV5Client
 ):
@@ -228,14 +228,14 @@ def test_execute_request_should_handle_http_error(
     json = {"bb": 456}
     params = {"cc": 789}
     headers = {"dd": "321"}
-    with patch("helloasso_apiv5.apiv5client.requests") as fake_requests:
+    with patch("helloasso_api.apiv5client.requests") as fake_requests:
         for status_code in status_codes:
             fake_requests.post.return_value = FakeErrorResponse(status_code)
             with pytest.raises(expected_exception):
                 api_v5_client.execute_request(url, "POST", headers, data, json, params)
 
 
-@patch("helloasso_apiv5.apiv5client.OAuth2Api", Mock())
+@patch("helloasso_api.apiv5client.OAuth2Api", Mock())
 def test_execute_request_should_raise_error_on_incorrect_http_method(
     api_v5_client: ApiV5Client,
 ):
@@ -243,30 +243,30 @@ def test_execute_request_should_raise_error_on_incorrect_http_method(
         api_v5_client.execute_request(None, "TOTO", None, None, None, None)
 
 
-@patch("helloasso_apiv5.apiv5client.OAuth2Api", Mock())
+@patch("helloasso_api.apiv5client.OAuth2Api", Mock())
 def test_execute_request_should_handle_timeout(api_v5_client: ApiV5Client):
-    with patch("helloasso_apiv5.apiv5client.requests.post") as fake_post:
+    with patch("helloasso_api.apiv5client.requests.post") as fake_post:
         fake_post.side_effect = Timeout()
         with pytest.raises(ApiV5Timeout):
             api_v5_client.execute_request(None, "POST", None, None, None, None)
 
 
-@patch("helloasso_apiv5.apiv5client.OAuth2Api", Mock())
+@patch("helloasso_api.apiv5client.OAuth2Api", Mock())
 def test_execute_request_should_handle_connection_error(api_v5_client: ApiV5Client):
-    with patch("helloasso_apiv5.apiv5client.requests.post") as fake_post:
+    with patch("helloasso_api.apiv5client.requests.post") as fake_post:
         fake_post.side_effect = requests.exceptions.ConnectionError()
 
         with pytest.raises(ApiV5ConnectionError):
             api_v5_client.execute_request(None, "POST", None, None, None, None)
 
 
-@patch("helloasso_apiv5.apiv5client.OAuth2Api", Mock())
+@patch("helloasso_api.apiv5client.OAuth2Api", Mock())
 @patch(
-    "helloasso_apiv5.apiv5client.ApiV5Client.execute_request",
+    "helloasso_api.apiv5client.ApiV5Client.execute_request",
     Mock(return_value=FakeResponse({"success": "true"})),
 )
 @patch(
-    "helloasso_apiv5.apiv5client.ApiV5Client.execute_request",
+    "helloasso_api.apiv5client.ApiV5Client.execute_request",
     Mock(return_value=FakeResponse({"success": "true"})),
 )
 def test_call_should_work(api_v5_client: ApiV5Client):
@@ -304,7 +304,7 @@ def test_call_should_work(api_v5_client: ApiV5Client):
 
 def test_call_should_handle_401_with_refresh_token(api_v5_client: ApiV5Client):
     api_v5_client.oauth = Mock()
-    with patch("helloasso_apiv5.apiv5client.requests.get") as fake_get:
+    with patch("helloasso_api.apiv5client.requests.get") as fake_get:
         # raise one 401 then 200
         iter_error = IterErrorRaiser(401, max_retry=1)
         fake_get.side_effect = iter_error.get
@@ -319,7 +319,7 @@ def test_call_should_handle_401_with_refresh_token(api_v5_client: ApiV5Client):
 
 def test_call_should_handle_401_without_refresh_token(api_v5_client: ApiV5Client):
     api_v5_client.oauth = Mock()
-    with patch("helloasso_apiv5.apiv5client.requests.get") as fake_get:
+    with patch("helloasso_api.apiv5client.requests.get") as fake_get:
         # raise one 401 then 200
         iter_error = IterErrorRaiser(401, max_retry=1)
         fake_get.side_effect = iter_error.get
@@ -333,10 +333,10 @@ def test_call_should_handle_401_without_refresh_token(api_v5_client: ApiV5Client
         assert fake_get.call_count == 2
 
 
-@patch("helloasso_apiv5.apiv5client.OAuth2Api", Mock())
+@patch("helloasso_api.apiv5client.OAuth2Api", Mock())
 def test_call_should_let_error_raise(api_v5_client: ApiV5Client):
     with patch(
-        "helloasso_apiv5.apiv5client.requests.get",
+        "helloasso_api.apiv5client.requests.get",
         Mock(return_value=FakeErrorResponse(status_code=444)),
     ):
         with pytest.raises(ApiV5BadRequest):

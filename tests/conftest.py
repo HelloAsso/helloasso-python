@@ -1,6 +1,6 @@
 import pytest
 
-from helloasso_apiv5 import ApiV5Client, HaApiV5
+from helloasso_api import ApiV5Client, HaApiV5
 
 
 @pytest.fixture

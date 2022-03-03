@@ -3,7 +3,7 @@ from hashlib import sha256
 from random import choices, randint
 from urllib.parse import urlencode
 
-from helloasso_apiv5.exceptions import Apiv5ValueError
+from helloasso_api.exceptions import Apiv5ValueError
 
 
 class AuthorizationApi(object):

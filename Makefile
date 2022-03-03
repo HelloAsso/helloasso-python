@@ -21,5 +21,5 @@ validity:
 	python -m flake8 --count --select=E9,F63,F7,F82 --show-source --statistics --extend-exclude=tests/,venv/,env/,build/ .
 
 test:
-	python -m pytest --cov-branch tests --cov=helloasso_apiv5 --cov-report=html:htmlcov
+	python -m pytest --cov-branch tests --cov=helloasso_api --cov-report=html:htmlcov
 	@echo report available at http://localhost:63342/public_api/htmlcov/index.html?_ijt=d27hu38tr1qe74rnp8b76lc4cd
