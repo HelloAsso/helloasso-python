@@ -1,4 +1,6 @@
 # DESCRIPTION
+Bibliothèque python facilitant l'usage de l'api Helloasso.
+
 
 # USAGE
 ```python
@@ -16,8 +18,9 @@ api = HaApiV5(
 |	client_secret										|	client_secret pour l’authentification			|	str	|
 |	timeout(OPTIONAL)									|	Combien de temps faut-il attendre pour que le serveur envoie les données avant d'abandonner	|	float or int	|
 |	access_token (OPTIONAL)								|	Le jeton d'accès OAuth s'il existe	|	str	|
-|	oauth2_token_getter (à partir de la version 1.2.0)	|	Vous pouvez utiliser les kwargs oauth2_token_getter et oauth2_token_setter sur le client pour utiliser un stockage personnalisé (partage entre instance / switch de tokens).	|	function	|
-|	oauth2_token_setter (à partir de la version 1.2.0)	|	Vous pouvez utiliser les kwargs oauth2_token_getter et oauth2_token_setter sur le client pour utiliser un stockage personnalisé (partage entre instance / switch de tokens).	|	function	|
+|	oauth2_token_getter (OPTIONAL)	                    |	Vous pouvez utiliser les kwargs oauth2_token_getter et oauth2_token_setter sur le client pour utiliser un stockage personnalisé (partage entre instance / switch de tokens).	|	function	|
+|	oauth2_token_setter (OPTIONAL)	                    |	Vous pouvez utiliser les kwargs oauth2_token_getter et oauth2_token_setter sur le client pour utiliser un stockage personnalisé (partage entre instance / switch de tokens).	|	function	|
+
 
 
 # AUTHENTIFICATION
@@ -70,9 +73,9 @@ response = api.call("/v5/users/me/organizations")
 Pour plus de détails sur la procédure d'autorisation : https://drive.google.com/file/d/1SmzEDQsiPX6h97otai2L7JmeYvD_F0-r/view
 
 
-# USAGE
+# USAGE EXEMPLE
 
-Une fois authentifiés il est possible d'utiliser l'api de facon simple :
+Une fois authentifié il est possible d'utiliser l'api de facon simple :
 
 ```python
 api = ApiV5(
@@ -85,12 +88,10 @@ api = ApiV5(
 api.call("url", method="POST", data={...})
 ```
 
-Il est également possible détendre la classe HaApiV5 pour ajouter vos propres méthodes, 
+Il est également possible d'étendre la classe HaApiV5 pour ajouter vos propres méthodes, 
 La classe AuthorizationApi peut servir d'exemple. (`src/client/authorization`)
 
-1 -
-
-Créez une classe contant vos appels :
+Créez une classe contenant vos appels :
 
 ```python
 
