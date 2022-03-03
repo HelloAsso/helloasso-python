@@ -1,4 +1,4 @@
-![develop](https://github.com/HelloAsso/HaApiV5/actions/workflows/test_pipeline.yml/badge.svg/badge.svg?branch=develop)
+![develop](https://github.com/HelloAsso/HaApiV5/actions/workflows/test_pipeline.yml/badge.svg?branch=develop)
 
 # DESCRIPTION
 Bibliothèque python facilitant l'usage de l'api Helloasso.
