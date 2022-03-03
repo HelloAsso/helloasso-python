@@ -1,3 +1,5 @@
+![example branch parameter](https://github.com/HelloAsso/HaApiV5/blob/develop/.github/workflows/test_pipeline.yml/badge.svg?branch=develop)
+
 # DESCRIPTION
 Bibliothèque python facilitant l'usage de l'api Helloasso.
 
