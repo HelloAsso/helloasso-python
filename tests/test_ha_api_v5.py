@@ -1,4 +1,4 @@
-from src import HaApiV5
+from helloasso_apiv5 import HaApiV5
 
 
 def test_ha_api_v5_should_instantiate():

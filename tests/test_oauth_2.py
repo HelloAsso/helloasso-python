@@ -10,13 +10,13 @@ from oauthlib.oauth2 import (
 )
 from requests.auth import HTTPBasicAuth
 
-from src.exceptions import (
+from helloasso_apiv5.exceptions import (
     ApiV5AuthenticationError,
     ApiV5ConnectionError,
     Apiv5ExceptionError,
     ApiV5Timeout,
 )
-from src.oauth2 import OAuth2Api
+from helloasso_apiv5.oauth2 import OAuth2Api
 
 
 def get_oauth():
@@ -127,8 +127,8 @@ def test_credentials_should_work():
     }
 
 
-@patch("src.oauth2.OAuth2Api.token_saver")
-@patch("src.oauth2.OAuth2Session")
+@patch("helloasso_apiv5.oauth2.OAuth2Api.token_saver")
+@patch("helloasso_apiv5.oauth2.OAuth2Session")
 def test_get_token_should_work(OAuth2Session, fake_token_saver):
     OAuth2Session.return_value = OAuth2Session
     oauth = get_oauth()
@@ -162,7 +162,7 @@ def test_get_token_should_work(OAuth2Session, fake_token_saver):
     ],
 )
 def test_get_token_should_map_exception(initial_exception, expected_exception):
-    with patch("src.oauth2.OAuth2Session") as OAuth2Session:
+    with patch("helloasso_apiv5.oauth2.OAuth2Session") as OAuth2Session:
         OAuth2Session.fetch_token.side_effect = initial_exception()
         OAuth2Session.return_value = OAuth2Session
         oauth = get_oauth()
@@ -182,10 +182,10 @@ def test_token_saver_should_work():
     assert oauth._refresh_token == 456
 
 
-@patch("src.oauth2.OAuth2Api.token_saver")
-@patch("src.oauth2.OAuth2Session")
-@patch("src.oauth2.OAuth2Api.credentials", {"a": 1})
-@patch("src.oauth2.OAuth2Api.get_token", Mock())
+@patch("helloasso_apiv5.oauth2.OAuth2Api.token_saver")
+@patch("helloasso_apiv5.oauth2.OAuth2Session")
+@patch("helloasso_apiv5.oauth2.OAuth2Api.credentials", {"a": 1})
+@patch("helloasso_apiv5.oauth2.OAuth2Api.get_token", Mock())
 def test_refresh_tokens_should_work_when_auth_token_is_set(
     OAuth2Session, fake_token_saver
 ):
@@ -201,8 +201,8 @@ def test_refresh_tokens_should_work_when_auth_token_is_set(
     assert oauth.get_token.call_count == 1
 
 
-@patch("src.oauth2.OAuth2Api.get_token")
-@patch("src.oauth2.OAuth2Session")
+@patch("helloasso_apiv5.oauth2.OAuth2Api.get_token")
+@patch("helloasso_apiv5.oauth2.OAuth2Session")
 def test_refresh_tokens_should_work_when_auth_token_is_not_set(
     OAuth2Session, fake_get_token
 ):
@@ -226,7 +226,7 @@ def test_refresh_tokens_should_work_when_auth_token_is_not_set(
     ],
 )
 def test_refresh_tokens_should_map_exception(initial_exception, expected_exception):
-    with patch("src.oauth2.OAuth2Session") as OAuth2Session:
+    with patch("helloasso_apiv5.oauth2.OAuth2Session") as OAuth2Session:
         OAuth2Session.refresh_token.side_effect = initial_exception()
         OAuth2Session.return_value = OAuth2Session
         oauth = get_oauth()
@@ -235,9 +235,9 @@ def test_refresh_tokens_should_map_exception(initial_exception, expected_excepti
             oauth.refresh_tokens()
 
 
-@patch("src.oauth2.OAuth2Api.get_token")
+@patch("helloasso_apiv5.oauth2.OAuth2Api.get_token")
 def test_refresh_tokens_should_handle_access_denied_error(fake_get_token):
-    with patch("src.oauth2.OAuth2Session") as OAuth2Session:
+    with patch("helloasso_apiv5.oauth2.OAuth2Session") as OAuth2Session:
         OAuth2Session.refresh_token.side_effect = AccessDeniedError()
         OAuth2Session.return_value = OAuth2Session
         oauth = get_oauth()

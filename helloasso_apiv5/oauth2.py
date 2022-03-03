@@ -7,13 +7,13 @@ from oauthlib.oauth2 import (
 from requests.auth import HTTPBasicAuth
 from requests_oauthlib import OAuth2Session
 
-from src.exceptions import (
+from helloasso_apiv5.exceptions import (
     ApiV5AuthenticationError,
     ApiV5ConnectionError,
     Apiv5ExceptionError,
     ApiV5Timeout,
 )
-from src.utils import get_log
+from helloasso_apiv5.utils import get_log
 
 
 class OAuth2Api(object):

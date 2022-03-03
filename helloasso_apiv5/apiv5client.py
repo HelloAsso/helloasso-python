@@ -4,7 +4,7 @@ import requests
 from requests import Response
 from typing_extensions import Literal
 
-from src.exceptions import (
+from helloasso_apiv5.exceptions import (
     ApiV5BadRequest,
     ApiV5Conflict,
     ApiV5ConnectionError,
@@ -17,8 +17,8 @@ from src.exceptions import (
     ApiV5Timeout,
     ApiV5Unauthorized,
 )
-from src.oauth2 import OAuth2Api
-from src.utils import get_log
+from helloasso_apiv5.oauth2 import OAuth2Api
+from helloasso_apiv5.utils import get_log
 
 
 class ApiV5Client(object):

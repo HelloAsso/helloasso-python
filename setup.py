@@ -4,7 +4,7 @@ with open("README.md") as f:
     readme = f.read()
 
 setup(
-    name="helloasso.apiv5",
+    name="helloasso_apiv5",
     version="1.0.0",
     description="Python wrapper for Helloasso APIV5",
     long_description=readme,

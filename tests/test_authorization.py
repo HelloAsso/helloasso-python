@@ -3,8 +3,8 @@ from urllib.parse import urlparse
 
 import pytest
 
-from src import HaApiV5
-from src.exceptions import Apiv5ValueError
+from helloasso_apiv5 import HaApiV5
+from helloasso_apiv5.exceptions import Apiv5ValueError
 from tests.fake_resources.fake_response import FakeResponse
 
 
@@ -38,7 +38,7 @@ def test_authorization_generate_authorize_request_should_raise_exception_on_inco
         ha_api_v5_client.authorization.generate_authorize_request("redirect", state)
 
 
-@patch("src.apiv5client.ApiV5Client.call")
+@patch("helloasso_apiv5.apiv5client.ApiV5Client.call")
 def test_authorization_exchange_authorization_token(
     fake_call: Mock, ha_api_v5_client: HaApiV5
 ):

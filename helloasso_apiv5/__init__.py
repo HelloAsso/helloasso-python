@@ -1,5 +1,5 @@
-from src.apiv5client import ApiV5Client
-from src.client.authorization import AuthorizationApi
+from helloasso_apiv5.apiv5client import ApiV5Client
+from helloasso_apiv5.client.authorization import AuthorizationApi
 
 """
 Manage all calls to Helloasso api (including authentication calls).
