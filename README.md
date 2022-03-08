@@ -7,7 +7,7 @@ Bibliothèque python facilitant l'usage de l'api Helloasso.
 # USAGE
 ```python
 api = HaApiV5(
-        api_base='api.helloasso-rc.com',
+        api_base='api.helloasso.com',
         client_id=XXXXXX,
         client_secret=XXXXXX,
         timeout=60
@@ -15,7 +15,7 @@ api = HaApiV5(
 ```
 |paramètres  											|  info | type |
 | ----------------------------------------------------- |:-------------:| -----:|
-|	api_base											|	url de l’api , exemple: api.helloasso-rc.com	|	str	|
+|	api_base											|	url de l’api , exemple: api.helloasso.com	|	str	|
 |	client_id											|	client_id pour l’authentification				|	str	|
 |	client_secret										|	client_secret pour l’authentification			|	str	|
 |	timeout(OPTIONAL)									|	Combien de temps faut-il attendre pour que le serveur envoie les données avant d'abandonner	|	float or int	|
@@ -27,7 +27,7 @@ api = HaApiV5(
 
 # AUTHENTIFICATION
 
-La documentation complète est disponible ici : https://api.helloasso-rc.com/v5/swagger/ui/index
+La documentation complète est disponible ici : https://api.helloasso.com/v5/swagger/ui/index
 
 L'authentification est gérée par le SDK, Il suffit de fournir client_id et client_secret lors de 
 l'instanciation de la classe HaApiV5. Le SDK se charge de gérer les appels pour obtenir des 
@@ -43,7 +43,7 @@ La methode generate_authorize_request génère l'url permettant de récupérer l
 from apiv5 import ApiV5
 
 api = ApiV5(
-        api_base='api.helloasso-rc.com',
+        api_base='api.helloasso.com',
         client_id=XXXXXX,
         client_secret=XXXXXX,
         timeout=60
@@ -81,7 +81,7 @@ Une fois authentifié il est possible d'utiliser l'api de facon simple :
 
 ```python
 api = ApiV5(
-        api_base='api.helloasso-rc.com',
+        api_base='api.helloasso.com',
         client_id=XXXXXX,
         client_secret=XXXXXX,
         timeout=60
@@ -114,7 +114,7 @@ class MyApi(HaApiV5):
         self.organization = OrganizationApi(self)
 
 api = MyApi(
-        api_base='api.helloasso-rc.com',
+        api_base='api.helloasso.com',
         client_id=XXXXXX,
         client_secret=XXXXXX,
         timeout=60
