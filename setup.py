@@ -18,5 +18,5 @@ setup(
         "requests-oauthlib~=1.3.0",
         "typing_extensions>=3.7.4.2",
     ],
-    python_requires=">=3.7",
+    python_requires=">=3.6",
 )

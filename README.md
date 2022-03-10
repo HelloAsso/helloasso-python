@@ -1,7 +1,7 @@
 develop : ![develop](https://github.com/HelloAsso/HaApiV5/actions/workflows/test_pipeline.yml/badge.svg?branch=develop)  |  main : ![develop](https://github.com/HelloAsso/HaApiV5/actions/workflows/test_pipeline.yml/badge.svg?branch=main)
 
 # DESCRIPTION
-Bibliothèque python facilitant l'usage de l'api Helloasso.
+Bibliothèque python facilitant l'usage de l'api Helloasso. Compatible de python3.6 jusqu'à python 3.10
 
 
 # USAGE
