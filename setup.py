@@ -1,16 +1,25 @@
 from setuptools import setup, find_packages
 
-with open("README.md") as f:
-    readme = f.read()
+long_description = '''
+Bibliothèque python visant à faciliter l'usage de l'api Helloasso. Compatible de python3.6 jusqu'à python 3.10
+
+La bibliothèque permet de gérér l'authentification et l'authorization auprès de l'api Helloasso
+
+Documentation: https://github.com/HelloAsso/HaApiV5
+
+'''
 
 setup(
     name="helloasso_apiv5",
-    version="1.0.0",
+    version="1.0.2",
     description="Python wrapper for Helloasso APIV5",
-    long_description=readme,
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url='https://github.com/HelloAsso/HaApiV5',
     author="Helloasso",
     author_email="devops@helloasso.org",
-    license="unlicensed",
+    maintainer='Helloasso',
+    license='MIT License',
     packages=find_packages(exclude=("tests", "docs")),
     install_requires=[
         "requests>=2.23.0",
