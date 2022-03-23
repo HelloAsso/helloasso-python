@@ -2,8 +2,14 @@ develop : ![develop](https://github.com/HelloAsso/HaApiV5/actions/workflows/test
 
 Bibliothèque python facilitant l'usage de l'api Helloasso. Compatible de python3.6 jusqu'à python 3.10
 
+## INSTALLATION
 
-# USAGE
+
+pip install helloasso-apiv5
+
+
+## USAGE
+
 ```python
 api = HaApiV5(
         api_base='api.helloasso.com',
@@ -24,7 +30,8 @@ api = HaApiV5(
 
 
 
-# AUTHENTIFICATION
+## AUTHENTIFICATION
+
 
 La documentation complète est disponible ici : https://api.helloasso.com/v5/swagger/ui/index
 
@@ -32,7 +39,9 @@ L'authentification est gérée par le SDK, Il suffit de fournir client_id et cli
 l'instanciation de la classe HaApiV5. Le SDK se charge de gérer les appels pour obtenir des 
 access et refresh tokens ainsi que les éventuels rafraichissements.
 
-# AUTHORIZATION
+
+## AUTHORIZATION
+
 
 Pour obtenir des droits sur des ressources protégées il est nécessaire de passer par la mire d'authorisation.
 
@@ -74,7 +83,8 @@ response = api.call("/v5/users/me/organizations")
 Pour plus de détails sur la procédure d'autorisation : https://drive.google.com/file/d/1SmzEDQsiPX6h97otai2L7JmeYvD_F0-r/view
 
 
-# USAGE EXEMPLE
+## USAGE EXEMPLE
+
 
 Une fois authentifié il est possible d'utiliser l'api de facon simple :
 
