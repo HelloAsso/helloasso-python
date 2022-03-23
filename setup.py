@@ -17,7 +17,7 @@ setup(
     long_description_content_type="text/markdown",
     url='https://github.com/HelloAsso/HaApiV5',
     author="Helloasso",
-    author_email="devops@helloasso.org",
+    author_email="api.support@helloasso.org",
     maintainer='Helloasso',
     license='MIT License',
     packages=find_packages(exclude=("tests", "docs")),

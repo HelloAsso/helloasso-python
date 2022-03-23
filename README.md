@@ -30,7 +30,7 @@ La documentation complète est disponible ici : https://api.helloasso.com/v5/swa
 
 L'authentification est gérée par le SDK, Il suffit de fournir client_id et client_secret lors de 
 l'instanciation de la classe HaApiV5. Le SDK se charge de gérer les appels pour obtenir des 
-access et refresh tokens ainsi que les éventuels rafraichissements (Il apportera le café dans la version 2).
+access et refresh tokens ainsi que les éventuels rafraichissements.
 
 # AUTHORIZATION
 
