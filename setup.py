@@ -11,7 +11,7 @@ Documentation: https://github.com/HelloAsso/HaApiV5
 
 setup(
     name="helloasso_apiv5",
-    version="1.0.0",
+    version="1.0.1",
     description="Python wrapper for Helloasso APIV5",
     long_description=long_description,
     long_description_content_type="text/markdown",
