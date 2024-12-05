@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.hello_asso_api_v5_models_directory_list_forms_request import HelloAssoApiV5ModelsDirectoryListFormsRequest
+from helloasso_python.models.hello_asso_api_v5_models_directory_list_forms_request import HelloAssoApiV5ModelsDirectoryListFormsRequest
 
 # TODO update the JSON string below
 json = "{}"

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.hello_asso_api_v5_models_directory_list_organizations_request import HelloAssoApiV5ModelsDirectoryListOrganizationsRequest
+from helloasso_python.models.hello_asso_api_v5_models_directory_list_organizations_request import HelloAssoApiV5ModelsDirectoryListOrganizationsRequest
 
 # TODO update the JSON string below
 json = "{}"

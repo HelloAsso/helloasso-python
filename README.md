@@ -18,7 +18,7 @@ pip install helloasso-python
 
 Then import the package:
 ```python
-import openapi_client
+import helloasso_python
 ```
 
 ### Setuptools
@@ -32,7 +32,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import openapi_client
+import helloasso_python
 ```
 
 ### Tests
@@ -45,13 +45,13 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 ```python
 
-import openapi_client
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -64,12 +64,12 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.AnnuaireApi(api_client)
+    api_instance = helloasso_python.AnnuaireApi(api_client)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    hello_asso_api_v5_models_directory_list_forms_request = openapi_client.HelloAssoApiV5ModelsDirectoryListFormsRequest() # HelloAssoApiV5ModelsDirectoryListFormsRequest | Body which contains the filters to apply (optional)
+    hello_asso_api_v5_models_directory_list_forms_request = helloasso_python.HelloAssoApiV5ModelsDirectoryListFormsRequest() # HelloAssoApiV5ModelsDirectoryListFormsRequest | Body which contains the filters to apply (optional)
 
     try:
         # Récupérer les formulaires

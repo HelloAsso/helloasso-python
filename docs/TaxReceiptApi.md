@@ -1,4 +1,4 @@
-# openapi_client.TaxReceiptApi
+# helloasso_python.TaxReceiptApi
 
 All URIs are relative to *https://api.helloasso.com/v5*
 
@@ -20,22 +20,22 @@ Method | HTTP request | Description
 
 
 ```python
-import openapi_client
-from openapi_client.models.hello_asso_models_accounts_organization_legal_informations_organization_fiscal_receipt_options_configuration import HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalReceiptOptionsConfiguration
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_models_accounts_organization_legal_informations_organization_fiscal_receipt_options_configuration import HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalReceiptOptionsConfiguration
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.TaxReceiptApi(api_client)
+    api_instance = helloasso_python.TaxReceiptApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
 
     try:
@@ -90,21 +90,21 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.TaxReceiptApi(api_client)
+    api_instance = helloasso_python.TaxReceiptApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
     file = None # bytearray | Upload File
     config = 'config_example' # str | config (optional)
@@ -163,21 +163,21 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.TaxReceiptApi(api_client)
+    api_instance = helloasso_python.TaxReceiptApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
     file = None # bytearray | Upload File
     config = 'config_example' # str | config (optional)

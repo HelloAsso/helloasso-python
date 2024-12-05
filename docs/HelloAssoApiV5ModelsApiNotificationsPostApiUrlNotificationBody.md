@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.hello_asso_api_v5_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
+from helloasso_python.models.hello_asso_api_v5_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
 
 # TODO update the JSON string below
 json = "{}"

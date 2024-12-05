@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.hello_asso_api_v5_models_organization_organization_model import HelloAssoApiV5ModelsOrganizationOrganizationModel
+from helloasso_python.models.hello_asso_api_v5_models_organization_organization_model import HelloAssoApiV5ModelsOrganizationOrganizationModel
 
 # TODO update the JSON string below
 json = "{}"

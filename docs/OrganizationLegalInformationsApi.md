@@ -1,4 +1,4 @@
-# openapi_client.OrganizationLegalInformationsApi
+# helloasso_python.OrganizationLegalInformationsApi
 
 All URIs are relative to *https://api.helloasso.com/v5*
 
@@ -18,24 +18,24 @@ Method | HTTP request | Description
 
 
 ```python
-import openapi_client
-from openapi_client.models.hello_asso_api_v5_models_organization_legal_informations_update_organization_legal_information_configuration_body import HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_organization_legal_informations_update_organization_legal_information_configuration_body import HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.OrganizationLegalInformationsApi(api_client)
+    api_instance = helloasso_python.OrganizationLegalInformationsApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
-    hello_asso_api_v5_models_organization_legal_informations_update_organization_legal_information_configuration_body = openapi_client.HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody() # HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody |  (optional)
+    hello_asso_api_v5_models_organization_legal_informations_update_organization_legal_information_configuration_body = helloasso_python.HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody() # HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody |  (optional)
 
     try:
         api_instance.organizations_legal_informations_organization_slug_configuration_put(organization_slug, hello_asso_api_v5_models_organization_legal_informations_update_organization_legal_information_configuration_body=hello_asso_api_v5_models_organization_legal_informations_update_organization_legal_information_configuration_body)

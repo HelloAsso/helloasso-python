@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.results_with_pagination_model_synchronizable_form_model import ResultsWithPaginationModelSynchronizableFormModel
+from helloasso_python.models.results_with_pagination_model_synchronizable_form_model import ResultsWithPaginationModelSynchronizableFormModel
 
 # TODO update the JSON string below
 json = "{}"

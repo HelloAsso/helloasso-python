@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
+from helloasso_python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
 
 # TODO update the JSON string below
 json = "{}"

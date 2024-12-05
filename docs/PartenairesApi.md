@@ -1,4 +1,4 @@
-# openapi_client.PartenairesApi
+# helloasso_python.PartenairesApi
 
 All URIs are relative to *https://api.helloasso.com/v5*
 
@@ -25,14 +25,14 @@ Mise à jour du domaine
 * OAuth Authentication (OAuth2):
 
 ```python
-import openapi_client
-from openapi_client.models.hello_asso_api_v5_models_accounts_clients_public_put_api_client_request import HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_accounts_clients_public_put_api_client_request import HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -44,10 +44,10 @@ configuration = openapi_client.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.PartenairesApi(api_client)
-    hello_asso_api_v5_models_accounts_clients_public_put_api_client_request = openapi_client.HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest() # HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest |  (optional)
+    api_instance = helloasso_python.PartenairesApi(api_client)
+    hello_asso_api_v5_models_accounts_clients_public_put_api_client_request = helloasso_python.HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest() # HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest |  (optional)
 
     try:
         # Mise à jour du domaine
@@ -100,14 +100,14 @@ Suppression de l'URL de notification principale
 * OAuth Authentication (OAuth2):
 
 ```python
-import openapi_client
-from openapi_client.models.hello_asso_api_v5_models_api_notifications_api_notification_type import HelloAssoApiV5ModelsApiNotificationsApiNotificationType
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_api_notifications_api_notification_type import HelloAssoApiV5ModelsApiNotificationsApiNotificationType
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -119,10 +119,10 @@ configuration = openapi_client.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.PartenairesApi(api_client)
-    notification_type = openapi_client.HelloAssoApiV5ModelsApiNotificationsApiNotificationType() # HelloAssoApiV5ModelsApiNotificationsApiNotificationType | Do not specify a notification type to remove the main notification Url (optional)
+    api_instance = helloasso_python.PartenairesApi(api_client)
+    notification_type = helloasso_python.HelloAssoApiV5ModelsApiNotificationsApiNotificationType() # HelloAssoApiV5ModelsApiNotificationsApiNotificationType | Do not specify a notification type to remove the main notification Url (optional)
 
     try:
         # Suppression de l'URL de notification principale
@@ -175,14 +175,14 @@ Suppression d'une URL de notification liée à une organisation
 * OAuth Authentication (OAuth2):
 
 ```python
-import openapi_client
-from openapi_client.models.hello_asso_api_v5_models_api_notifications_api_notification_type import HelloAssoApiV5ModelsApiNotificationsApiNotificationType
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_api_notifications_api_notification_type import HelloAssoApiV5ModelsApiNotificationsApiNotificationType
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -194,11 +194,11 @@ configuration = openapi_client.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.PartenairesApi(api_client)
+    api_instance = helloasso_python.PartenairesApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
-    notification_type = openapi_client.HelloAssoApiV5ModelsApiNotificationsApiNotificationType() # HelloAssoApiV5ModelsApiNotificationsApiNotificationType | Do not specify a notification type to remove the main notification Url (optional)
+    notification_type = helloasso_python.HelloAssoApiV5ModelsApiNotificationsApiNotificationType() # HelloAssoApiV5ModelsApiNotificationsApiNotificationType | Do not specify a notification type to remove the main notification Url (optional)
 
     try:
         # Suppression d'une URL de notification liée à une organisation
@@ -252,15 +252,15 @@ Mise à jour d'une URL de notification liée à une organisation
 * OAuth Authentication (OAuth2):
 
 ```python
-import openapi_client
-from openapi_client.models.hello_asso_api_v5_models_api_notifications_api_url_notification_model import HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel
-from openapi_client.models.hello_asso_api_v5_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_api_notifications_api_url_notification_model import HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel
+from helloasso_python.models.hello_asso_api_v5_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -272,11 +272,11 @@ configuration = openapi_client.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.PartenairesApi(api_client)
+    api_instance = helloasso_python.PartenairesApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
-    hello_asso_api_v5_models_api_notifications_post_api_url_notification_body = openapi_client.HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody() # HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody | The body of the request, do not specify a notification type to update the main notification Url (optional)
+    hello_asso_api_v5_models_api_notifications_post_api_url_notification_body = helloasso_python.HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody() # HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody | The body of the request, do not specify a notification type to update the main notification Url (optional)
 
     try:
         # Mise à jour d'une URL de notification liée à une organisation
@@ -332,15 +332,15 @@ Mise à jour de l'URL de notification principale
 * OAuth Authentication (OAuth2):
 
 ```python
-import openapi_client
-from openapi_client.models.hello_asso_api_v5_models_api_notifications_api_url_notification_model import HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel
-from openapi_client.models.hello_asso_api_v5_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_api_notifications_api_url_notification_model import HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel
+from helloasso_python.models.hello_asso_api_v5_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -352,10 +352,10 @@ configuration = openapi_client.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.PartenairesApi(api_client)
-    hello_asso_api_v5_models_api_notifications_post_api_url_notification_body = openapi_client.HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody() # HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody | The body of the request, do not specify a notification type to update the main notification Url (optional)
+    api_instance = helloasso_python.PartenairesApi(api_client)
+    hello_asso_api_v5_models_api_notifications_post_api_url_notification_body = helloasso_python.HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody() # HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody | The body of the request, do not specify a notification type to update the main notification Url (optional)
 
     try:
         # Mise à jour de l'URL de notification principale
@@ -410,14 +410,14 @@ Récupération des informations
 * OAuth Authentication (OAuth2):
 
 ```python
-import openapi_client
-from openapi_client.models.hello_asso_api_v5_models_partners_partner_public_model import HelloAssoApiV5ModelsPartnersPartnerPublicModel
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_partners_partner_public_model import HelloAssoApiV5ModelsPartnersPartnerPublicModel
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -429,9 +429,9 @@ configuration = openapi_client.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.PartenairesApi(api_client)
+    api_instance = helloasso_python.PartenairesApi(api_client)
 
     try:
         # Récupération des informations
@@ -483,14 +483,14 @@ Liste toutes les organisations liées au partenaire. Les résultats sont classé
 * OAuth Authentication (OAuth2):
 
 ```python
-import openapi_client
-from openapi_client.models.results_with_pagination_model_partner_organization_model import ResultsWithPaginationModelPartnerOrganizationModel
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.results_with_pagination_model_partner_organization_model import ResultsWithPaginationModelPartnerOrganizationModel
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -502,9 +502,9 @@ configuration = openapi_client.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.PartenairesApi(api_client)
+    api_instance = helloasso_python.PartenairesApi(api_client)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
 

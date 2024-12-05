@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.hello_asso_models_shared_geo_location import HelloAssoModelsSharedGeoLocation
+from helloasso_python.models.hello_asso_models_shared_geo_location import HelloAssoModelsSharedGeoLocation
 
 # TODO update the JSON string below
 json = "{}"

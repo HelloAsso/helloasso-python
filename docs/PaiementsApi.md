@@ -1,4 +1,4 @@
-# openapi_client.PaiementsApi
+# helloasso_python.PaiementsApi
 
 All URIs are relative to *https://api.helloasso.com/v5*
 
@@ -23,18 +23,18 @@ Obtenir les informations des paiements effectués sur un formulaire
 * OAuth Authentication (OAuth2):
 
 ```python
-import openapi_client
-from openapi_client.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from openapi_client.models.hello_asso_api_v5_models_enums_payment_state import HelloAssoApiV5ModelsEnumsPaymentState
-from openapi_client.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
-from openapi_client.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
-from openapi_client.models.results_with_pagination_model_payment import ResultsWithPaginationModelPayment
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
+from helloasso_python.models.hello_asso_api_v5_models_enums_payment_state import HelloAssoApiV5ModelsEnumsPaymentState
+from helloasso_python.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
+from helloasso_python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
+from helloasso_python.models.results_with_pagination_model_payment import ResultsWithPaginationModelPayment
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -46,21 +46,21 @@ configuration = openapi_client.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.PaiementsApi(api_client)
+    api_instance = helloasso_python.PaiementsApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization slug
     form_slug = 'form_slug_example' # str | The form slug
-    form_type = openapi_client.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
+    form_type = helloasso_python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
     to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (optional)
     user_search_key = 'user_search_key_example' # str | Filter results on user or payer first name, last name or email (optional)
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    states = [openapi_client.HelloAssoApiV5ModelsEnumsPaymentState()] # List[HelloAssoApiV5ModelsEnumsPaymentState] | Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor (optional)
-    sort_order = openapi_client.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort payments by ascending or descending order. Default is descending (optional)
-    sort_field = openapi_client.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort payments by a specific field (Date or UpdateDate). Default is date (optional)
+    states = [helloasso_python.HelloAssoApiV5ModelsEnumsPaymentState()] # List[HelloAssoApiV5ModelsEnumsPaymentState] | Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor (optional)
+    sort_order = helloasso_python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort payments by ascending or descending order. Default is descending (optional)
+    sort_field = helloasso_python.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort payments by a specific field (Date or UpdateDate). Default is date (optional)
     with_count = True # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to True)
 
     try:
@@ -128,16 +128,16 @@ Retourne la liste des paiements selon les paramètres<br/><br/><b>Votre token do
 * OAuth Authentication (OAuth2):
 
 ```python
-import openapi_client
-from openapi_client.models.hello_asso_api_v5_models_enums_payment_state import HelloAssoApiV5ModelsEnumsPaymentState
-from openapi_client.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
-from openapi_client.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_enums_payment_state import HelloAssoApiV5ModelsEnumsPaymentState
+from helloasso_python.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
+from helloasso_python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -149,9 +149,9 @@ configuration = openapi_client.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.PaiementsApi(api_client)
+    api_instance = helloasso_python.PaiementsApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization Slug
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
     to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (optional)
@@ -159,9 +159,9 @@ with openapi_client.ApiClient(configuration) as api_client:
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    states = [openapi_client.HelloAssoApiV5ModelsEnumsPaymentState()] # List[HelloAssoApiV5ModelsEnumsPaymentState] | The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor (optional)
-    sort_order = openapi_client.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort payments by ascending or descending order. Default is descending (optional)
-    sort_field = openapi_client.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort payments by a specific field (Date or UpdateDate). Default is date (optional)
+    states = [helloasso_python.HelloAssoApiV5ModelsEnumsPaymentState()] # List[HelloAssoApiV5ModelsEnumsPaymentState] | The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor (optional)
+    sort_order = helloasso_python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort payments by ascending or descending order. Default is descending (optional)
+    sort_field = helloasso_python.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort payments by a specific field (Date or UpdateDate). Default is date (optional)
     with_count = True # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to True)
 
     try:
@@ -225,18 +225,18 @@ Attention : Le compte total est désactivé, nous retournons la liste des paieme
 * OAuth Authentication (OAuth2):
 
 ```python
-import openapi_client
-from openapi_client.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from openapi_client.models.hello_asso_api_v5_models_enums_payment_state import HelloAssoApiV5ModelsEnumsPaymentState
-from openapi_client.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
-from openapi_client.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
-from openapi_client.models.results_with_pagination_model_public_payment_model import ResultsWithPaginationModelPublicPaymentModel
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
+from helloasso_python.models.hello_asso_api_v5_models_enums_payment_state import HelloAssoApiV5ModelsEnumsPaymentState
+from helloasso_python.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
+from helloasso_python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
+from helloasso_python.models.results_with_pagination_model_public_payment_model import ResultsWithPaginationModelPublicPaymentModel
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -248,22 +248,22 @@ configuration = openapi_client.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.PaiementsApi(api_client)
+    api_instance = helloasso_python.PaiementsApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization slug
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
     to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (optional)
     page_size = 20 # int | The number of items to retrieve (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    form_types = [openapi_client.HelloAssoApiV5ModelsEnumsFormType()] # List[HelloAssoApiV5ModelsEnumsFormType] | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (optional)
-    form_type = openapi_client.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop. This parameter must be used with the parameter formId. (optional)
-    states = [openapi_client.HelloAssoApiV5ModelsEnumsPaymentState()] # List[HelloAssoApiV5ModelsEnumsPaymentState] | Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor (optional)
+    form_types = [helloasso_python.HelloAssoApiV5ModelsEnumsFormType()] # List[HelloAssoApiV5ModelsEnumsFormType] | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (optional)
+    form_type = helloasso_python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop. This parameter must be used with the parameter formId. (optional)
+    states = [helloasso_python.HelloAssoApiV5ModelsEnumsPaymentState()] # List[HelloAssoApiV5ModelsEnumsPaymentState] | Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor (optional)
     user_id = 56 # int | The User identifier (optional)
     search_key = 'search_key_example' # str | Filter results on user or payer first name, last name or email. (optional)
     amount = 56 # int | Amount of the payment in cents. Filter payments with exact amount with or without the contribution. (optional)
-    sort_order = openapi_client.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort payments by ascending or descending order. Default is descending (optional)
-    sort_field = openapi_client.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort payments by a specific field (Date or UpdateDate). Default is date (optional)
+    sort_order = helloasso_python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort payments by ascending or descending order. Default is descending (optional)
+    sort_field = helloasso_python.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort payments by a specific field (Date or UpdateDate). Default is date (optional)
 
     try:
         # Rechercher des paiements.
@@ -330,14 +330,14 @@ Obtenir les informations détaillées d'un paiement.
 * OAuth Authentication (OAuth2):
 
 ```python
-import openapi_client
-from openapi_client.models.hello_asso_api_v5_models_statistics_payment_detail import HelloAssoApiV5ModelsStatisticsPaymentDetail
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_statistics_payment_detail import HelloAssoApiV5ModelsStatisticsPaymentDetail
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -349,9 +349,9 @@ configuration = openapi_client.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.PaiementsApi(api_client)
+    api_instance = helloasso_python.PaiementsApi(api_client)
     payment_id = 56 # int | The payment identifier.
     with_failed_refund_operation = False # bool | True to retrieve the refund operation in the states 'ABORTED', 'CANCELED', 'ERROR', 'REFUSED'. (optional) (default to False)
 
@@ -409,14 +409,14 @@ Rembourser un paiement.
 * OAuth Authentication (OAuth2):
 
 ```python
-import openapi_client
-from openapi_client.models.hello_asso_api_v5_models_payment_refund_operation_model import HelloAssoApiV5ModelsPaymentRefundOperationModel
-from openapi_client.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_payment_refund_operation_model import HelloAssoApiV5ModelsPaymentRefundOperationModel
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -428,9 +428,9 @@ configuration = openapi_client.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.PaiementsApi(api_client)
+    api_instance = helloasso_python.PaiementsApi(api_client)
     payment_id = 56 # int | The payment identifier.
     comment = 'comment_example' # str | The comment about this refund. (optional)
     cancel_order = False # bool | Whether the future payments and linked items of this order must be canceled (possible only if the payment is fully refunded) (optional) (default to False)
