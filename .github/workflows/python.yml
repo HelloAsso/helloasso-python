@@ -29,3 +29,12 @@ jobs:
       - name: Test with pytest
         run: |
           pytest --cov={{packageName}}
+      - name: build
+        run: |
+          pip install build
+          python -m build
+      - name: publish
+        run: |
+          pip install twine
+          twine upload -u __token__ -p ${{ secrets.PYPI_TOKEN }} dist/*
+
