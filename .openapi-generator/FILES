@@ -99,7 +99,6 @@ docs/HelloAssoModelsPaymentsCashInFiscalReceiptFiscalReceiptFormatOption.md
 docs/HelloAssoModelsSharedGeoLocation.md
 docs/ListeDeValeursApi.md
 docs/OrganisationApi.md
-docs/OrganizationApi.md
 docs/PaiementsApi.md
 docs/PartenairesApi.md
 docs/ResultsWithPaginationModelFormLightModel.md
@@ -122,7 +121,6 @@ helloasso-python/api/commandes_api.py
 helloasso-python/api/formulaires_api.py
 helloasso-python/api/liste_de_valeurs_api.py
 helloasso-python/api/organisation_api.py
-helloasso-python/api/organization_api.py
 helloasso-python/api/paiements_api.py
 helloasso-python/api/partenaires_api.py
 helloasso-python/api/reus_fiscaux_api.py
@@ -239,6 +237,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_organization_api.py
-test/test_reus_fiscaux_api.py
 tox.ini
