@@ -4,11 +4,13 @@ All URIs are relative to *https://api.helloasso.com/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**organizations_legal_informations_organization_slug_configuration_put**](OrganizationLegalInformationsApi.md#organizations_legal_informations_organization_slug_configuration_put) | **PUT** /organizations/legal-informations/{organizationSlug}/configuration | 
+[**organizations_legal_informations_organization_slug_configuration_put**](OrganizationLegalInformationsApi.md#organizations_legal_informations_organization_slug_configuration_put) | **PUT** /organizations/legal-informations/{organizationSlug}/configuration | Update the organization legal information configuration
 
 
 # **organizations_legal_informations_organization_slug_configuration_put**
 > organizations_legal_informations_organization_slug_configuration_put(organization_slug, hello_asso_api_v5_models_organization_legal_informations_update_organization_legal_information_configuration_body=hello_asso_api_v5_models_organization_legal_informations_update_organization_legal_information_configuration_body)
+
+Update the organization legal information configuration
 
 <br/><br/><b>Your token must have one of these roles : </b><br/>OrganizationAdmin<br/><br/>If you are an <b>association</b>, you can obtain these roles with your client.<br/>If you are a <b>partner</b>, you can obtain these roles by the authorize flow.<br/><br/><b>Your clientId must be allowed all of those privileges : </b> <br/> OrganizationAdministration<br/><br/>
 
@@ -36,6 +38,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     hello_asso_api_v5_models_organization_legal_informations_update_organization_legal_information_configuration_body = helloasso-python.HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody() # HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody |  (optional)
 
     try:
+        # Update the organization legal information configuration
         api_instance.organizations_legal_informations_organization_slug_configuration_put(organization_slug, hello_asso_api_v5_models_organization_legal_informations_update_organization_legal_information_configuration_body=hello_asso_api_v5_models_organization_legal_informations_update_organization_legal_information_configuration_body)
     except Exception as e:
         print("Exception when calling OrganizationLegalInformationsApi->organizations_legal_informations_organization_slug_configuration_put: %s\n" % e)

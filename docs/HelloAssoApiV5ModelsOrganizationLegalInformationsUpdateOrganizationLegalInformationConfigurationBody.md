@@ -5,10 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**legal_structure_id** | **int** |  | [optional] 
-**is_coluche** | **bool** |  | [optional] 
-**allow_ifi_tax_reductions** | **bool** |  | [optional] 
-**is_helloasso_transmitter** | **bool** |  | [optional] 
+**legal_structure_id** | **int** |  | 
+**is_coluche** | **bool** |  | 
+**allow_ifi_tax_reductions** | **bool** |  | 
 
 ## Example
 

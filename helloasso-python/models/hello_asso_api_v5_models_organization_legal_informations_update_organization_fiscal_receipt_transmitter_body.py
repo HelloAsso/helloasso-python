@@ -17,19 +17,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, Field, StrictBool
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody(BaseModel):
+class HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationFiscalReceiptTransmitterBody(BaseModel):
     """
-    HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody
+    HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationFiscalReceiptTransmitterBody
     """ # noqa: E501
-    legal_structure_id: StrictInt = Field(alias="legalStructureId")
-    is_coluche: StrictBool = Field(alias="isColuche")
-    allow_ifi_tax_reductions: StrictBool = Field(alias="allowIfiTaxReductions")
-    __properties: ClassVar[List[str]] = ["legalStructureId", "isColuche", "allowIfiTaxReductions"]
+    is_hello_asso_fiscal_receipt_transmitter: Optional[StrictBool] = Field(default=None, alias="isHelloAssoFiscalReceiptTransmitter")
+    __properties: ClassVar[List[str]] = ["isHelloAssoFiscalReceiptTransmitter"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +47,7 @@ class HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalIn
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody from a JSON string"""
+        """Create an instance of HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationFiscalReceiptTransmitterBody from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,7 +72,7 @@ class HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalIn
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody from a dict"""
+        """Create an instance of HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationFiscalReceiptTransmitterBody from a dict"""
         if obj is None:
             return None
 
@@ -82,9 +80,7 @@ class HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalIn
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "legalStructureId": obj.get("legalStructureId"),
-            "isColuche": obj.get("isColuche"),
-            "allowIfiTaxReductions": obj.get("allowIfiTaxReductions")
+            "isHelloAssoFiscalReceiptTransmitter": obj.get("isHelloAssoFiscalReceiptTransmitter")
         })
         return _obj
 

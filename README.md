@@ -115,7 +115,7 @@ Class | Method | HTTP request | Description
 *OrganisationApi* | [**organizations_legal_informations_organization_slug_configuration_get**](docs/OrganisationApi.md#organizations_legal_informations_organization_slug_configuration_get) | **GET** /organizations/legal-informations/{organizationSlug}/configuration | 
 *OrganisationApi* | [**organizations_legal_informations_tax_information_texts_get**](docs/OrganisationApi.md#organizations_legal_informations_tax_information_texts_get) | **GET** /organizations/legal-informations/tax-information-texts | 
 *OrganisationApi* | [**organizations_organization_slug_get**](docs/OrganisationApi.md#organizations_organization_slug_get) | **GET** /organizations/{organizationSlug} | Obtenir le détail d&#39;une organisation
-*OrganizationLegalInformationsApi* | [**organizations_legal_informations_organization_slug_configuration_put**](docs/OrganizationLegalInformationsApi.md#organizations_legal_informations_organization_slug_configuration_put) | **PUT** /organizations/legal-informations/{organizationSlug}/configuration | 
+*OrganizationLegalInformationsApi* | [**organizations_legal_informations_organization_slug_configuration_put**](docs/OrganizationLegalInformationsApi.md#organizations_legal_informations_organization_slug_configuration_put) | **PUT** /organizations/legal-informations/{organizationSlug}/configuration | Update the organization legal information configuration
 *PaiementsApi* | [**organizations_organization_slug_forms_form_type_form_slug_payments_get**](docs/PaiementsApi.md#organizations_organization_slug_forms_form_type_form_slug_payments_get) | **GET** /organizations/{organizationSlug}/forms/{formType}/{formSlug}/payments | Obtenir les informations des paiements effectués sur un formulaire
 *PaiementsApi* | [**organizations_organization_slug_payments_get**](docs/PaiementsApi.md#organizations_organization_slug_payments_get) | **GET** /organizations/{organizationSlug}/payments | Obtenir les informations des paiements effectués sur une organisation
 *PaiementsApi* | [**organizations_organization_slug_payments_search_get**](docs/PaiementsApi.md#organizations_organization_slug_payments_search_get) | **GET** /organizations/{organizationSlug}/payments/search | Rechercher des paiements.
@@ -131,12 +131,14 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**tags_tag_name_get**](docs/TagsApi.md#tags_tag_name_get) | **GET** /tags/{tagName} | Obtenir le détail d&#39;un tag interne
 *TaxReceiptApi* | [**organizations_organization_slug_tax_receipt_configuration_get**](docs/TaxReceiptApi.md#organizations_organization_slug_tax_receipt_configuration_get) | **GET** /organizations/{organizationSlug}/tax-receipt/configuration | 
 *TaxReceiptApi* | [**organizations_organization_slug_tax_receipt_configuration_put**](docs/TaxReceiptApi.md#organizations_organization_slug_tax_receipt_configuration_put) | **PUT** /organizations/{organizationSlug}/tax-receipt/configuration | 
+*TaxReceiptApi* | [**organizations_organization_slug_tax_receipt_fiscal_receipt_transmitter_put**](docs/TaxReceiptApi.md#organizations_organization_slug_tax_receipt_fiscal_receipt_transmitter_put) | **PUT** /organizations/{organizationSlug}/tax-receipt/fiscal-receipt-transmitter | 
 *TaxReceiptApi* | [**organizations_organization_slug_tax_receipt_preview_post**](docs/TaxReceiptApi.md#organizations_organization_slug_tax_receipt_preview_post) | **POST** /organizations/{organizationSlug}/tax-receipt/preview | 
 *UtilisateursApi* | [**users_me_organizations_get**](docs/UtilisateursApi.md#users_me_organizations_get) | **GET** /users/me/organizations | Obtenir mes organisations
 
 
 ## Documentation For Models
 
+ - [HaTrustContractLegalInformationAddressAddressDto](docs/HaTrustContractLegalInformationAddressAddressDto.md)
  - [HelloAssoApiV5ModelsAccountCompanyLegalStatusModel](docs/HelloAssoApiV5ModelsAccountCompanyLegalStatusModel.md)
  - [HelloAssoApiV5ModelsAccountOrganismCategoryModel](docs/HelloAssoApiV5ModelsAccountOrganismCategoryModel.md)
  - [HelloAssoApiV5ModelsAccountsClientsApiClientModel](docs/HelloAssoApiV5ModelsAccountsClientsApiClientModel.md)
@@ -188,6 +190,7 @@ Class | Method | HTTP request | Description
  - [HelloAssoApiV5ModelsFormsTierLightModel](docs/HelloAssoApiV5ModelsFormsTierLightModel.md)
  - [HelloAssoApiV5ModelsFormsTierPublicModel](docs/HelloAssoApiV5ModelsFormsTierPublicModel.md)
  - [HelloAssoApiV5ModelsOrganizationLegalInformationsOrganizationLegalStructuresModel](docs/HelloAssoApiV5ModelsOrganizationLegalInformationsOrganizationLegalStructuresModel.md)
+ - [HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationFiscalReceiptTransmitterBody](docs/HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationFiscalReceiptTransmitterBody.md)
  - [HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody](docs/HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody.md)
  - [HelloAssoApiV5ModelsOrganizationOrganizationBasicModel](docs/HelloAssoApiV5ModelsOrganizationOrganizationBasicModel.md)
  - [HelloAssoApiV5ModelsOrganizationOrganizationLightModel](docs/HelloAssoApiV5ModelsOrganizationOrganizationLightModel.md)
@@ -218,13 +221,12 @@ Class | Method | HTTP request | Description
  - [HelloAssoApiV5ModelsStatisticsUser](docs/HelloAssoApiV5ModelsStatisticsUser.md)
  - [HelloAssoApiV5ModelsTagsInternalTagModel](docs/HelloAssoApiV5ModelsTagsInternalTagModel.md)
  - [HelloAssoApiV5ModelsTagsPublicTagModel](docs/HelloAssoApiV5ModelsTagsPublicTagModel.md)
- - [HelloAssoModelsAccountsOrganizationLegalInformationsFiscalReceiptFormatOptionModel](docs/HelloAssoModelsAccountsOrganizationLegalInformationsFiscalReceiptFormatOptionModel.md)
+ - [HelloAssoCoreAccountsTaxReceiptsOrganizationFiscalReceiptOptionsConfiguration](docs/HelloAssoCoreAccountsTaxReceiptsOrganizationFiscalReceiptOptionsConfiguration.md)
  - [HelloAssoModelsAccountsOrganizationLegalInformationsFiscalReceiptSignatoryModel](docs/HelloAssoModelsAccountsOrganizationLegalInformationsFiscalReceiptSignatoryModel.md)
- - [HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalReceiptOptionsConfiguration](docs/HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalReceiptOptionsConfiguration.md)
  - [HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationLegalInformationConfiguration](docs/HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationLegalInformationConfiguration.md)
  - [HelloAssoModelsAccountsOrganizationLegalInformationsTaxInformationText](docs/HelloAssoModelsAccountsOrganizationLegalInformationsTaxInformationText.md)
- - [HelloAssoModelsComplianceV2CommonAddressAddressModelSnapshot](docs/HelloAssoModelsComplianceV2CommonAddressAddressModelSnapshot.md)
  - [HelloAssoModelsEnumsGlobalRole](docs/HelloAssoModelsEnumsGlobalRole.md)
+ - [HelloAssoModelsPaymentsCashInFiscalReceiptFiscalReceiptFormatOption](docs/HelloAssoModelsPaymentsCashInFiscalReceiptFiscalReceiptFormatOption.md)
  - [HelloAssoModelsSharedGeoLocation](docs/HelloAssoModelsSharedGeoLocation.md)
  - [ResultsWithPaginationModelFormLightModel](docs/ResultsWithPaginationModelFormLightModel.md)
  - [ResultsWithPaginationModelItem](docs/ResultsWithPaginationModelItem.md)

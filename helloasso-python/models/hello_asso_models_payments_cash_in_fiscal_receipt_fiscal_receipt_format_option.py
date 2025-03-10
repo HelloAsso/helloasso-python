@@ -17,19 +17,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody(BaseModel):
+class HelloAssoModelsPaymentsCashInFiscalReceiptFiscalReceiptFormatOption(BaseModel):
     """
-    HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody
+    HelloAssoModelsPaymentsCashInFiscalReceiptFiscalReceiptFormatOption
     """ # noqa: E501
-    legal_structure_id: StrictInt = Field(alias="legalStructureId")
-    is_coluche: StrictBool = Field(alias="isColuche")
-    allow_ifi_tax_reductions: StrictBool = Field(alias="allowIfiTaxReductions")
-    __properties: ClassVar[List[str]] = ["legalStructureId", "isColuche", "allowIfiTaxReductions"]
+    var_date: Optional[StrictStr] = Field(default=None, alias="date")
+    order: Optional[StrictStr] = None
+    root: Optional[StrictStr] = None
+    separator: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["date", "order", "root", "separator"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +50,7 @@ class HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalIn
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody from a JSON string"""
+        """Create an instance of HelloAssoModelsPaymentsCashInFiscalReceiptFiscalReceiptFormatOption from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,11 +71,31 @@ class HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalIn
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if var_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.var_date is None and "var_date" in self.model_fields_set:
+            _dict['date'] = None
+
+        # set to None if order (nullable) is None
+        # and model_fields_set contains the field
+        if self.order is None and "order" in self.model_fields_set:
+            _dict['order'] = None
+
+        # set to None if root (nullable) is None
+        # and model_fields_set contains the field
+        if self.root is None and "root" in self.model_fields_set:
+            _dict['root'] = None
+
+        # set to None if separator (nullable) is None
+        # and model_fields_set contains the field
+        if self.separator is None and "separator" in self.model_fields_set:
+            _dict['separator'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody from a dict"""
+        """Create an instance of HelloAssoModelsPaymentsCashInFiscalReceiptFiscalReceiptFormatOption from a dict"""
         if obj is None:
             return None
 
@@ -82,9 +103,10 @@ class HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalIn
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "legalStructureId": obj.get("legalStructureId"),
-            "isColuche": obj.get("isColuche"),
-            "allowIfiTaxReductions": obj.get("allowIfiTaxReductions")
+            "date": obj.get("date"),
+            "order": obj.get("order"),
+            "root": obj.get("root"),
+            "separator": obj.get("separator")
         })
         return _obj
 

@@ -174,11 +174,6 @@ class HelloAssoApiV5ModelsFormsFormQuickCreateRequest(BaseModel):
         if self.sale_start_date is None and "sale_start_date" in self.model_fields_set:
             _dict['saleStartDate'] = None
 
-        # set to None if accept_open_monthly_donation (nullable) is None
-        # and model_fields_set contains the field
-        if self.accept_open_monthly_donation is None and "accept_open_monthly_donation" in self.model_fields_set:
-            _dict['acceptOpenMonthlyDonation'] = None
-
         # set to None if color (nullable) is None
         # and model_fields_set contains the field
         if self.color is None and "color" in self.model_fields_set:

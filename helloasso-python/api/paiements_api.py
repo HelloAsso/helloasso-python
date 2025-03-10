@@ -1778,8 +1778,8 @@ class PaiementsApi:
         payment_id: Annotated[StrictInt, Field(description="The payment identifier.")],
         comment: Annotated[Optional[StrictStr], Field(description="The comment about this refund.")] = None,
         cancel_order: Annotated[Optional[StrictBool], Field(description="Whether the future payments and linked items of this order must be canceled (possible only if the payment is fully refunded)")] = None,
-        send_refund_mail: Annotated[Optional[StrictBool], Field(description="Whether a refund mail must be send or not.")] = None,
-        amount: Annotated[Optional[StrictInt], Field(description="The amount in euros to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded")] = None,
+        send_refund_mail: Annotated[Optional[StrictBool], Field(description="Whether a refund mail must be sent or not.")] = None,
+        amount: Annotated[Optional[StrictInt], Field(description="The amount in cents to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1803,9 +1803,9 @@ class PaiementsApi:
         :type comment: str
         :param cancel_order: Whether the future payments and linked items of this order must be canceled (possible only if the payment is fully refunded)
         :type cancel_order: bool
-        :param send_refund_mail: Whether a refund mail must be send or not.
+        :param send_refund_mail: Whether a refund mail must be sent or not.
         :type send_refund_mail: bool
-        :param amount: The amount in euros to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded
+        :param amount: The amount in cents to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded
         :type amount: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1863,8 +1863,8 @@ class PaiementsApi:
         payment_id: Annotated[StrictInt, Field(description="The payment identifier.")],
         comment: Annotated[Optional[StrictStr], Field(description="The comment about this refund.")] = None,
         cancel_order: Annotated[Optional[StrictBool], Field(description="Whether the future payments and linked items of this order must be canceled (possible only if the payment is fully refunded)")] = None,
-        send_refund_mail: Annotated[Optional[StrictBool], Field(description="Whether a refund mail must be send or not.")] = None,
-        amount: Annotated[Optional[StrictInt], Field(description="The amount in euros to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded")] = None,
+        send_refund_mail: Annotated[Optional[StrictBool], Field(description="Whether a refund mail must be sent or not.")] = None,
+        amount: Annotated[Optional[StrictInt], Field(description="The amount in cents to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1888,9 +1888,9 @@ class PaiementsApi:
         :type comment: str
         :param cancel_order: Whether the future payments and linked items of this order must be canceled (possible only if the payment is fully refunded)
         :type cancel_order: bool
-        :param send_refund_mail: Whether a refund mail must be send or not.
+        :param send_refund_mail: Whether a refund mail must be sent or not.
         :type send_refund_mail: bool
-        :param amount: The amount in euros to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded
+        :param amount: The amount in cents to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded
         :type amount: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1948,8 +1948,8 @@ class PaiementsApi:
         payment_id: Annotated[StrictInt, Field(description="The payment identifier.")],
         comment: Annotated[Optional[StrictStr], Field(description="The comment about this refund.")] = None,
         cancel_order: Annotated[Optional[StrictBool], Field(description="Whether the future payments and linked items of this order must be canceled (possible only if the payment is fully refunded)")] = None,
-        send_refund_mail: Annotated[Optional[StrictBool], Field(description="Whether a refund mail must be send or not.")] = None,
-        amount: Annotated[Optional[StrictInt], Field(description="The amount in euros to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded")] = None,
+        send_refund_mail: Annotated[Optional[StrictBool], Field(description="Whether a refund mail must be sent or not.")] = None,
+        amount: Annotated[Optional[StrictInt], Field(description="The amount in cents to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1973,9 +1973,9 @@ class PaiementsApi:
         :type comment: str
         :param cancel_order: Whether the future payments and linked items of this order must be canceled (possible only if the payment is fully refunded)
         :type cancel_order: bool
-        :param send_refund_mail: Whether a refund mail must be send or not.
+        :param send_refund_mail: Whether a refund mail must be sent or not.
         :type send_refund_mail: bool
-        :param amount: The amount in euros to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded
+        :param amount: The amount in cents to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded
         :type amount: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
