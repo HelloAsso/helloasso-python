@@ -1,4 +1,4 @@
-# helloasso_python.ListeDeValeursApi
+# helloasso-python.ListeDeValeursApi
 
 All URIs are relative to *https://api.helloasso.com/v5*
 
@@ -21,14 +21,14 @@ Obtenir la liste des statuts juridiques
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_account_company_legal_status_model import HelloAssoApiV5ModelsAccountCompanyLegalStatusModel
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_account_company_legal_status_model import HelloAssoApiV5ModelsAccountCompanyLegalStatusModel
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -40,9 +40,9 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.ListeDeValeursApi(api_client)
+    api_instance = helloasso-python.ListeDeValeursApi(api_client)
 
     try:
         # Obtenir la liste des statuts juridiques
@@ -94,14 +94,14 @@ Utilisez ceci afin de construire votre liste de catégories d'organisation<br/><
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_account_organism_category_model import HelloAssoApiV5ModelsAccountOrganismCategoryModel
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_account_organism_category_model import HelloAssoApiV5ModelsAccountOrganismCategoryModel
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -113,9 +113,9 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.ListeDeValeursApi(api_client)
+    api_instance = helloasso-python.ListeDeValeursApi(api_client)
 
     try:
         # Obtenir la liste des catégories du JO
@@ -167,14 +167,14 @@ Utilisez ceci afin de récupérer la liste des étiquettes utilisées<br/><br/><
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_tags_public_tag_model import HelloAssoApiV5ModelsTagsPublicTagModel
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_tags_public_tag_model import HelloAssoApiV5ModelsTagsPublicTagModel
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -186,9 +186,9 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.ListeDeValeursApi(api_client)
+    api_instance = helloasso-python.ListeDeValeursApi(api_client)
 
     try:
         # Obtenir la liste des tags publiques

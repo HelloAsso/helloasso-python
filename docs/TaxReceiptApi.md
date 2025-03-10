@@ -1,4 +1,4 @@
-# helloasso_python.TaxReceiptApi
+# helloasso-python.TaxReceiptApi
 
 All URIs are relative to *https://api.helloasso.com/v5*
 
@@ -12,30 +12,28 @@ Method | HTTP request | Description
 # **organizations_organization_slug_tax_receipt_configuration_get**
 > HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalReceiptOptionsConfiguration organizations_organization_slug_tax_receipt_configuration_get(organization_slug)
 
-
-
 <br/><br/><b>Your token must have one of these roles : </b><br/>OrganizationAdmin<br/><br/>If you are an <b>association</b>, you can obtain these roles with your client.<br/>If you are a <b>partner</b>, you can obtain these roles by the authorize flow.<br/><br/><b>Your clientId must be allowed all of those privileges : </b> <br/> OrganizationAdministration<br/><br/>
 
 ### Example
 
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_models_accounts_organization_legal_informations_organization_fiscal_receipt_options_configuration import HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalReceiptOptionsConfiguration
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_models_accounts_organization_legal_informations_organization_fiscal_receipt_options_configuration import HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalReceiptOptionsConfiguration
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.TaxReceiptApi(api_client)
+    api_instance = helloasso-python.TaxReceiptApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
 
     try:
@@ -82,29 +80,27 @@ No authorization required
 # **organizations_organization_slug_tax_receipt_configuration_put**
 > organizations_organization_slug_tax_receipt_configuration_put(organization_slug, file, config=config)
 
-
-
 <br/><br/><b>Your token must have one of these roles : </b><br/>OrganizationAdmin<br/><br/>If you are an <b>association</b>, you can obtain these roles with your client.<br/>If you are a <b>partner</b>, you can obtain these roles by the authorize flow.<br/><br/><b>Your clientId must be allowed all of those privileges : </b> <br/> OrganizationAdministration<br/><br/>
 
 ### Example
 
 
 ```python
-import helloasso_python
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.TaxReceiptApi(api_client)
+    api_instance = helloasso-python.TaxReceiptApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
     file = None # bytearray | Upload File
     config = 'config_example' # str | config (optional)
@@ -155,29 +151,27 @@ No authorization required
 # **organizations_organization_slug_tax_receipt_preview_post**
 > organizations_organization_slug_tax_receipt_preview_post(organization_slug, file, config=config)
 
-
-
 <br/><br/><b>Your token must have one of these roles : </b><br/>OrganizationAdmin<br/><br/>If you are an <b>association</b>, you can obtain these roles with your client.<br/>If you are a <b>partner</b>, you can obtain these roles by the authorize flow.<br/><br/><b>Your clientId must be allowed all of those privileges : </b> <br/> OrganizationAdministration<br/><br/>
 
 ### Example
 
 
 ```python
-import helloasso_python
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.TaxReceiptApi(api_client)
+    api_instance = helloasso-python.TaxReceiptApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
     file = None # bytearray | Upload File
     config = 'config_example' # str | config (optional)

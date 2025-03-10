@@ -3,7 +3,7 @@
 #
 # ref: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: helloasso_python Python package
+name: helloasso-python Python package
 
 on: [push, pull_request]
 
@@ -26,12 +26,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install -r test-requirements.txt
-      - name: build
+      - name: Test with pytest
         run: |
-          pip install build
-          python -m build
-      - name: publish
-        run: |
-          pip install twine
-          twine upload -u __token__ -p ${{ secrets.PYPI_TOKEN }} dist/*
-
+          pytest --cov=helloasso-python

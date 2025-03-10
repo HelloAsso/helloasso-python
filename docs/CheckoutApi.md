@@ -1,4 +1,4 @@
-# helloasso_python.CheckoutApi
+# helloasso-python.CheckoutApi
 
 All URIs are relative to *https://api.helloasso.com/v5*
 
@@ -20,14 +20,14 @@ Retourne aussi la commande associée. Uniquement dans le cas ou le paiement est 
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_carts_checkout_intent_response import HelloAssoApiV5ModelsCartsCheckoutIntentResponse
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_carts_checkout_intent_response import HelloAssoApiV5ModelsCartsCheckoutIntentResponse
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -39,9 +39,9 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.CheckoutApi(api_client)
+    api_instance = helloasso-python.CheckoutApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
     checkout_intent_id = 56 # int | 
     with_failed_refund_operation = False # bool |  (optional) (default to False)
@@ -94,22 +94,22 @@ Name | Type | Description  | Notes
 
 Initialisation d'un Checkout
 
-Pour tout savoir sur Checkout consultez d'abord notre <a href=\"https://dev.helloasso.com/docs/description\">documentation</a><br/><br/><b>Votre clientId doit avoir ces autorisations : </b> <br/> Checkout<br/><br/>
+Pour tout savoir sur Checkout consultez d'abord notre <a href="https://dev.helloasso.com/docs/description">documentation</a><br/><br/><b>Votre clientId doit avoir ces autorisations : </b> <br/> Checkout<br/><br/>
 
 ### Example
 
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_carts_init_checkout_body import HelloAssoApiV5ModelsCartsInitCheckoutBody
-from helloasso_python.models.hello_asso_api_v5_models_carts_init_checkout_response import HelloAssoApiV5ModelsCartsInitCheckoutResponse
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_carts_init_checkout_body import HelloAssoApiV5ModelsCartsInitCheckoutBody
+from helloasso-python.models.hello_asso_api_v5_models_carts_init_checkout_response import HelloAssoApiV5ModelsCartsInitCheckoutResponse
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -121,11 +121,11 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.CheckoutApi(api_client)
+    api_instance = helloasso-python.CheckoutApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
-    hello_asso_api_v5_models_carts_init_checkout_body = helloasso_python.HelloAssoApiV5ModelsCartsInitCheckoutBody() # HelloAssoApiV5ModelsCartsInitCheckoutBody |  (optional)
+    hello_asso_api_v5_models_carts_init_checkout_body = helloasso-python.HelloAssoApiV5ModelsCartsInitCheckoutBody() # HelloAssoApiV5ModelsCartsInitCheckoutBody |  (optional)
 
     try:
         # Initialisation d'un Checkout

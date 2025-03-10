@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "helloasso_python"
+name = "helloasso-python"
 version = "1.0.0"
 description = "HelloAsso API"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
@@ -7,12 +7,12 @@ license = "NoLicense"
 readme = "README.md"
 repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
 keywords = ["OpenAPI", "OpenAPI-Generator", "HelloAsso API"]
-include = ["helloasso_python/py.typed"]
+include = ["helloasso-python/py.typed"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 
-urllib3 = ">= 1.25.3 < 3.0.0"
+urllib3 = ">= 1.25.3, < 3.0.0"
 python-dateutil = ">= 2.8.2"
 pydantic = ">= 2"
 typing-extensions = ">= 4.7.1"
@@ -35,7 +35,7 @@ extension-pkg-whitelist = "pydantic"
 
 [tool.mypy]
 files = [
-  "helloasso_python",
+  "helloasso-python",
   #"test",  # auto-generated tests
   "tests", # hand-written tests
 ]
@@ -73,7 +73,7 @@ disallow_any_generics = true
 
 [[tool.mypy.overrides]]
 module = [
-  "helloasso_python.configuration",
+  "helloasso-python.configuration",
 ]
 warn_unused_ignores = true
 strict_equality = true

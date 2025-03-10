@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from helloasso_python.models.results_with_pagination_model_item import ResultsWithPaginationModelItem
+from helloasso-python.models.results_with_pagination_model_item import ResultsWithPaginationModelItem
 
 # TODO update the JSON string below
 json = "{}"

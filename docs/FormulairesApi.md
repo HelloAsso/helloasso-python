@@ -1,4 +1,4 @@
-# helloasso_python.FormulairesApi
+# helloasso-python.FormulairesApi
 
 All URIs are relative to *https://api.helloasso.com/v5*
 
@@ -22,15 +22,15 @@ Liste tous les types de formulaires où l'organisation possède au moins un form
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_enums_form_state import HelloAssoApiV5ModelsEnumsFormState
-from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_enums_form_state import HelloAssoApiV5ModelsEnumsFormState
+from helloasso-python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -42,11 +42,11 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.FormulairesApi(api_client)
+    api_instance = helloasso-python.FormulairesApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization Slug
-    states = [helloasso_python.HelloAssoApiV5ModelsEnumsFormState()] # List[HelloAssoApiV5ModelsEnumsFormState] | List of Form States to filter with. If none specified, it won't filter results.  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private (optional)
+    states = [helloasso-python.HelloAssoApiV5ModelsEnumsFormState()] # List[HelloAssoApiV5ModelsEnumsFormState] | List of Form States to filter with. If none specified, it won't filter results.  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private (optional)
 
     try:
         # Obtenir une liste des types de formulaires pour une organisation
@@ -102,16 +102,16 @@ Permet la création d'un événement avec seulement des informations limitées e
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from helloasso_python.models.hello_asso_api_v5_models_forms_form_quick_create_model import HelloAssoApiV5ModelsFormsFormQuickCreateModel
-from helloasso_python.models.hello_asso_api_v5_models_forms_form_quick_create_request import HelloAssoApiV5ModelsFormsFormQuickCreateRequest
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
+from helloasso-python.models.hello_asso_api_v5_models_forms_form_quick_create_model import HelloAssoApiV5ModelsFormsFormQuickCreateModel
+from helloasso-python.models.hello_asso_api_v5_models_forms_form_quick_create_request import HelloAssoApiV5ModelsFormsFormQuickCreateRequest
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -123,12 +123,12 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.FormulairesApi(api_client)
+    api_instance = helloasso-python.FormulairesApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization Slug
-    form_type = helloasso_python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type to create - only Event type is supported
-    hello_asso_api_v5_models_forms_form_quick_create_request = helloasso_python.HelloAssoApiV5ModelsFormsFormQuickCreateRequest() # HelloAssoApiV5ModelsFormsFormQuickCreateRequest | The body of the request. (optional)
+    form_type = helloasso-python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type to create - only Event type is supported
+    hello_asso_api_v5_models_forms_form_quick_create_request = helloasso-python.HelloAssoApiV5ModelsFormsFormQuickCreateRequest() # HelloAssoApiV5ModelsFormsFormQuickCreateRequest | The body of the request. (optional)
 
     try:
         # Créer un événement simplifié pour un organisme
@@ -185,15 +185,15 @@ Permet de récupérer toutes les informations publiques d'un formulaire, qu'il s
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from helloasso_python.models.hello_asso_api_v5_models_forms_form_public_model import HelloAssoApiV5ModelsFormsFormPublicModel
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
+from helloasso-python.models.hello_asso_api_v5_models_forms_form_public_model import HelloAssoApiV5ModelsFormsFormPublicModel
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -205,11 +205,11 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.FormulairesApi(api_client)
+    api_instance = helloasso-python.FormulairesApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
-    form_type = helloasso_python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | 
+    form_type = helloasso-python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | 
     form_slug = 'form_slug_example' # str | 
 
     try:
@@ -267,16 +267,16 @@ Liste tous les formulaires correspondant aux états et types. Si aucun filtre n'
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_enums_form_state import HelloAssoApiV5ModelsEnumsFormState
-from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from helloasso_python.models.results_with_pagination_model_form_light_model import ResultsWithPaginationModelFormLightModel
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_enums_form_state import HelloAssoApiV5ModelsEnumsFormState
+from helloasso-python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
+from helloasso-python.models.results_with_pagination_model_form_light_model import ResultsWithPaginationModelFormLightModel
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -288,12 +288,12 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.FormulairesApi(api_client)
+    api_instance = helloasso-python.FormulairesApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization Slug
-    states = [helloasso_python.HelloAssoApiV5ModelsEnumsFormState()] # List[HelloAssoApiV5ModelsEnumsFormState] | States to filter  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private (optional)
-    form_types = [helloasso_python.HelloAssoApiV5ModelsEnumsFormType()] # List[HelloAssoApiV5ModelsEnumsFormType] | Types to filter (optional)
+    states = [helloasso-python.HelloAssoApiV5ModelsEnumsFormState()] # List[HelloAssoApiV5ModelsEnumsFormState] | States to filter  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private (optional)
+    form_types = [helloasso-python.HelloAssoApiV5ModelsEnumsFormType()] # List[HelloAssoApiV5ModelsEnumsFormType] | Types to filter (optional)
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)

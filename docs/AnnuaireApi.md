@@ -1,4 +1,4 @@
-# helloasso_python.AnnuaireApi
+# helloasso-python.AnnuaireApi
 
 All URIs are relative to *https://api.helloasso.com/v5*
 
@@ -20,15 +20,15 @@ Permet de récupérer une liste de tous les formulaires visibles correspondant �
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_directory_list_forms_request import HelloAssoApiV5ModelsDirectoryListFormsRequest
-from helloasso_python.models.results_with_pagination_model_synchronizable_form_model import ResultsWithPaginationModelSynchronizableFormModel
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_directory_list_forms_request import HelloAssoApiV5ModelsDirectoryListFormsRequest
+from helloasso-python.models.results_with_pagination_model_synchronizable_form_model import ResultsWithPaginationModelSynchronizableFormModel
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -40,12 +40,12 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.AnnuaireApi(api_client)
+    api_instance = helloasso-python.AnnuaireApi(api_client)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    hello_asso_api_v5_models_directory_list_forms_request = helloasso_python.HelloAssoApiV5ModelsDirectoryListFormsRequest() # HelloAssoApiV5ModelsDirectoryListFormsRequest | Body which contains the filters to apply (optional)
+    hello_asso_api_v5_models_directory_list_forms_request = helloasso-python.HelloAssoApiV5ModelsDirectoryListFormsRequest() # HelloAssoApiV5ModelsDirectoryListFormsRequest | Body which contains the filters to apply (optional)
 
     try:
         # Récupérer les formulaires
@@ -102,15 +102,15 @@ Permet de récupérer une liste de toutes les organisations visibles corresponda
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_directory_list_organizations_request import HelloAssoApiV5ModelsDirectoryListOrganizationsRequest
-from helloasso_python.models.results_with_pagination_model_synchronizable_organization_model import ResultsWithPaginationModelSynchronizableOrganizationModel
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_directory_list_organizations_request import HelloAssoApiV5ModelsDirectoryListOrganizationsRequest
+from helloasso-python.models.results_with_pagination_model_synchronizable_organization_model import ResultsWithPaginationModelSynchronizableOrganizationModel
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -122,12 +122,12 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.AnnuaireApi(api_client)
+    api_instance = helloasso-python.AnnuaireApi(api_client)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    hello_asso_api_v5_models_directory_list_organizations_request = helloasso_python.HelloAssoApiV5ModelsDirectoryListOrganizationsRequest() # HelloAssoApiV5ModelsDirectoryListOrganizationsRequest | Body which contains the filters to apply (optional)
+    hello_asso_api_v5_models_directory_list_organizations_request = helloasso-python.HelloAssoApiV5ModelsDirectoryListOrganizationsRequest() # HelloAssoApiV5ModelsDirectoryListOrganizationsRequest | Body which contains the filters to apply (optional)
 
     try:
         # Récupérer les organisations

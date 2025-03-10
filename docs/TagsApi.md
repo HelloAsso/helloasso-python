@@ -1,4 +1,4 @@
-# helloasso_python.TagsApi
+# helloasso-python.TagsApi
 
 All URIs are relative to *https://api.helloasso.com/v5*
 
@@ -19,14 +19,14 @@ Obtenir le détail d'un tag interne
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_tags_internal_tag_model import HelloAssoApiV5ModelsTagsInternalTagModel
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_tags_internal_tag_model import HelloAssoApiV5ModelsTagsInternalTagModel
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -38,9 +38,9 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.TagsApi(api_client)
+    api_instance = helloasso-python.TagsApi(api_client)
     tag_name = 'tag_name_example' # str | 
     with_count = False # bool | If true : Count of times Tag is used (optional) (default to False)
     with_amount = False # bool | If true : Amount collected by all forms linked to this Tag (optional) (default to False)

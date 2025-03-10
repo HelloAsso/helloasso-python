@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from helloasso_python.models.hello_asso_models_compliance_v2_common_address_address_model_snapshot import HelloAssoModelsComplianceV2CommonAddressAddressModelSnapshot
+from helloasso-python.models.hello_asso_models_compliance_v2_common_address_address_model_snapshot import HelloAssoModelsComplianceV2CommonAddressAddressModelSnapshot
 
 # TODO update the JSON string below
 json = "{}"

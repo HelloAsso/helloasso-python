@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from helloasso_python.models.hello_asso_api_v5_models_statistics_order_amount_model import HelloAssoApiV5ModelsStatisticsOrderAmountModel
+from helloasso-python.models.hello_asso_api_v5_models_statistics_order_amount_model import HelloAssoApiV5ModelsStatisticsOrderAmountModel
 
 # TODO update the JSON string below
 json = "{}"

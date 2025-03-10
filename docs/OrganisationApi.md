@@ -1,4 +1,4 @@
-# helloasso_python.OrganisationApi
+# helloasso-python.OrganisationApi
 
 All URIs are relative to *https://api.helloasso.com/v5*
 
@@ -22,14 +22,14 @@ Obtenir la structure juridique d'une organisation visible.
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_organization_legal_informations_organization_legal_structures_model import HelloAssoApiV5ModelsOrganizationLegalInformationsOrganizationLegalStructuresModel
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_organization_legal_informations_organization_legal_structures_model import HelloAssoApiV5ModelsOrganizationLegalInformationsOrganizationLegalStructuresModel
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -41,9 +41,9 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.OrganisationApi(api_client)
+    api_instance = helloasso-python.OrganisationApi(api_client)
 
     try:
         # Obtenir la structure juridique d'une organisation visible.
@@ -96,14 +96,14 @@ This endpoint does not need any parameter.
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_models_accounts_organization_legal_informations_organization_legal_information_configuration import HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationLegalInformationConfiguration
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_models_accounts_organization_legal_informations_organization_legal_information_configuration import HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationLegalInformationConfiguration
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -115,9 +115,9 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.OrganisationApi(api_client)
+    api_instance = helloasso-python.OrganisationApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
 
     try:
@@ -174,14 +174,14 @@ Name | Type | Description  | Notes
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_models_accounts_organization_legal_informations_tax_information_text import HelloAssoModelsAccountsOrganizationLegalInformationsTaxInformationText
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_models_accounts_organization_legal_informations_tax_information_text import HelloAssoModelsAccountsOrganizationLegalInformationsTaxInformationText
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -193,9 +193,9 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.OrganisationApi(api_client)
+    api_instance = helloasso-python.OrganisationApi(api_client)
     organization_slug = 'organization_slug_example' # str |  (optional)
 
     try:
@@ -252,14 +252,14 @@ Obtenir les informations publiques de l'organisation spécifiée.<br/><br/><b>Vo
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_organization_organization_model import HelloAssoApiV5ModelsOrganizationOrganizationModel
-from helloasso_python.rest import ApiException
+import helloasso-python
+from helloasso-python.models.hello_asso_api_v5_models_organization_organization_model import HelloAssoApiV5ModelsOrganizationOrganizationModel
+from helloasso-python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso_python.Configuration(
+configuration = helloasso-python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -271,9 +271,9 @@ configuration = helloasso_python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso_python.ApiClient(configuration) as api_client:
+with helloasso-python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso_python.OrganisationApi(api_client)
+    api_instance = helloasso-python.OrganisationApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization Slug
 
     try:

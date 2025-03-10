@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from helloasso_python.models.hello_asso_api_v5_models_payment_public_payment_model import HelloAssoApiV5ModelsPaymentPublicPaymentModel
+from helloasso-python.models.hello_asso_api_v5_models_payment_public_payment_model import HelloAssoApiV5ModelsPaymentPublicPaymentModel
 
 # TODO update the JSON string below
 json = "{}"
