@@ -99,7 +99,7 @@ docs/HelloAssoModelsPaymentsCashInFiscalReceiptFiscalReceiptFormatOption.md
 docs/HelloAssoModelsSharedGeoLocation.md
 docs/ListeDeValeursApi.md
 docs/OrganisationApi.md
-docs/OrganizationLegalInformationsApi.md
+docs/OrganizationApi.md
 docs/PaiementsApi.md
 docs/PartenairesApi.md
 docs/ResultsWithPaginationModelFormLightModel.md
@@ -110,8 +110,8 @@ docs/ResultsWithPaginationModelPayment.md
 docs/ResultsWithPaginationModelPublicPaymentModel.md
 docs/ResultsWithPaginationModelSynchronizableFormModel.md
 docs/ResultsWithPaginationModelSynchronizableOrganizationModel.md
+docs/ReusFiscauxApi.md
 docs/TagsApi.md
-docs/TaxReceiptApi.md
 docs/UtilisateursApi.md
 git_push.sh
 helloasso-python/__init__.py
@@ -122,11 +122,11 @@ helloasso-python/api/commandes_api.py
 helloasso-python/api/formulaires_api.py
 helloasso-python/api/liste_de_valeurs_api.py
 helloasso-python/api/organisation_api.py
-helloasso-python/api/organization_legal_informations_api.py
+helloasso-python/api/organization_api.py
 helloasso-python/api/paiements_api.py
 helloasso-python/api/partenaires_api.py
+helloasso-python/api/reus_fiscaux_api.py
 helloasso-python/api/tags_api.py
-helloasso-python/api/tax_receipt_api.py
 helloasso-python/api/utilisateurs_api.py
 helloasso-python/api_client.py
 helloasso-python/api_response.py
@@ -239,8 +239,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_ha_trust_contract_legal_information_address_address_dto.py
-test/test_hello_asso_api_v5_models_organization_legal_informations_update_organization_fiscal_receipt_transmitter_body.py
-test/test_hello_asso_core_accounts_tax_receipts_organization_fiscal_receipt_options_configuration.py
-test/test_hello_asso_models_payments_cash_in_fiscal_receipt_fiscal_receipt_format_option.py
+test/test_organization_api.py
+test/test_reus_fiscaux_api.py
 tox.ini

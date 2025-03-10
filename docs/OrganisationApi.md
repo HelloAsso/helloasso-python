@@ -5,8 +5,8 @@ All URIs are relative to *https://api.helloasso.com/v5*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**organizations_legal_informations_legal_structures_get**](OrganisationApi.md#organizations_legal_informations_legal_structures_get) | **GET** /organizations/legal-informations/legal-structures | Obtenir la structure juridique d&#39;une organisation visible.
-[**organizations_legal_informations_organization_slug_configuration_get**](OrganisationApi.md#organizations_legal_informations_organization_slug_configuration_get) | **GET** /organizations/legal-informations/{organizationSlug}/configuration | 
-[**organizations_legal_informations_tax_information_texts_get**](OrganisationApi.md#organizations_legal_informations_tax_information_texts_get) | **GET** /organizations/legal-informations/tax-information-texts | 
+[**organizations_legal_informations_organization_slug_configuration_get**](OrganisationApi.md#organizations_legal_informations_organization_slug_configuration_get) | **GET** /organizations/legal-informations/{organizationSlug}/configuration | Obtenir la configuration des informations juridiques de l&#39;organisation.
+[**organizations_legal_informations_tax_information_texts_get**](OrganisationApi.md#organizations_legal_informations_tax_information_texts_get) | **GET** /organizations/legal-informations/tax-information-texts | Obtenir les textes d&#39;information fiscale de l&#39;organisation.
 [**organizations_organization_slug_get**](OrganisationApi.md#organizations_organization_slug_get) | **GET** /organizations/{organizationSlug} | Obtenir le détail d&#39;une organisation
 
 
@@ -87,7 +87,7 @@ This endpoint does not need any parameter.
 # **organizations_legal_informations_organization_slug_configuration_get**
 > HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationLegalInformationConfiguration organizations_legal_informations_organization_slug_configuration_get(organization_slug)
 
-
+Obtenir la configuration des informations juridiques de l'organisation.
 
 <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> OrganizationAdministration<br/><br/>
 
@@ -121,7 +121,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     organization_slug = 'organization_slug_example' # str | 
 
     try:
-        # 
+        # Obtenir la configuration des informations juridiques de l'organisation.
         api_response = api_instance.organizations_legal_informations_organization_slug_configuration_get(organization_slug)
         print("The response of OrganisationApi->organizations_legal_informations_organization_slug_configuration_get:\n")
         pprint(api_response)
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 # **organizations_legal_informations_tax_information_texts_get**
 > List[HelloAssoModelsAccountsOrganizationLegalInformationsTaxInformationText] organizations_legal_informations_tax_information_texts_get(organization_slug=organization_slug)
 
-
+Obtenir les textes d'information fiscale de l'organisation.
 
 <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> OrganizationAdministration<br/><br/>
 
@@ -199,7 +199,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     organization_slug = 'organization_slug_example' # str |  (optional)
 
     try:
-        # 
+        # Obtenir les textes d'information fiscale de l'organisation.
         api_response = api_instance.organizations_legal_informations_tax_information_texts_get(organization_slug=organization_slug)
         print("The response of OrganisationApi->organizations_legal_informations_tax_information_texts_get:\n")
         pprint(api_response)
