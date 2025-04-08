@@ -285,7 +285,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     form_slug = 'form_slug_example' # str | The form slug
     form_type = helloasso-python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
-    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (optional)
+    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (exclusive) (optional)
     user_search_key = 'user_search_key_example' # str | Filter results on user or payer first name, last name or email (optional)
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
@@ -296,7 +296,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     with_details = False # bool | Set to true to return CustomFields and Options (optional) (default to False)
     sort_order = helloasso-python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort forms items by ascending or descending order. Default is descending (optional)
     sort_field = helloasso-python.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort forms items by a specific field (Date or UpdateDate). Default is date (optional)
-    with_count = True # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to True)
+    with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
         # Obtenir une liste d'articles vendus dans un formulaire
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
  **form_slug** | **str**| The form slug | 
  **form_type** | [**HelloAssoApiV5ModelsEnumsFormType**](.md)| The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop | 
  **var_from** | **datetime**| First Date Filter | [optional] 
- **to** | **datetime**| End Date Filter | [optional] 
+ **to** | **datetime**| End Date Filter (exclusive) | [optional] 
  **user_search_key** | **str**| Filter results on user or payer first name, last name or email | [optional] 
  **page_index** | **int**| The page of results to retrieve | [optional] [default to 1]
  **page_size** | **int**| The number of items per page | [optional] [default to 20]
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
  **with_details** | **bool**| Set to true to return CustomFields and Options | [optional] [default to False]
  **sort_order** | [**HelloAssoApiV5ModelsEnumsSortOrder**](.md)| Sort forms items by ascending or descending order. Default is descending | [optional] 
  **sort_field** | [**HelloAssoApiV5ModelsEnumsSortField**](.md)| Sort forms items by a specific field (Date or UpdateDate). Default is date | [optional] 
- **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to True]
+ **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type
 
@@ -392,14 +392,14 @@ with helloasso-python.ApiClient(configuration) as api_client:
     form_slug = 'form_slug_example' # str | The form slug
     form_type = helloasso-python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
-    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (optional)
+    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (exclusive) (optional)
     user_search_key = 'user_search_key_example' # str | Filter results on user or payer first name, last name or email (optional)
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
     with_details = False # bool | Set to true to return CustomFields (optional) (default to False)
     sort_order = helloasso-python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort forms orders by ascending or descending order. Default is descending (optional)
-    with_count = True # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to True)
+    with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
         # Obtenir les commandes d'un formulaire
@@ -421,14 +421,14 @@ Name | Type | Description  | Notes
  **form_slug** | **str**| The form slug | 
  **form_type** | [**HelloAssoApiV5ModelsEnumsFormType**](.md)| The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop | 
  **var_from** | **datetime**| First Date Filter | [optional] 
- **to** | **datetime**| End Date Filter | [optional] 
+ **to** | **datetime**| End Date Filter (exclusive) | [optional] 
  **user_search_key** | **str**| Filter results on user or payer first name, last name or email | [optional] 
  **page_index** | **int**| The page of results to retrieve | [optional] [default to 1]
  **page_size** | **int**| The number of items per page | [optional] [default to 20]
  **continuation_token** | **str**| Continuation Token from which we wish to retrieve results | [optional] 
  **with_details** | **bool**| Set to true to return CustomFields | [optional] [default to False]
  **sort_order** | [**HelloAssoApiV5ModelsEnumsSortOrder**](.md)| Sort forms orders by ascending or descending order. Default is descending | [optional] 
- **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to True]
+ **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type
 
@@ -492,7 +492,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     api_instance = helloasso-python.CommandesApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization slug
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
-    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (optional)
+    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (exclusive) (optional)
     user_search_key = 'user_search_key_example' # str | Filter results on user or payer first name, last name or email (optional)
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
@@ -503,7 +503,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     with_details = False # bool | Set to true to return CustomFields and Options (optional) (default to False)
     sort_order = helloasso-python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort organizations items by ascending or descending order. Default is descending (optional)
     sort_field = helloasso-python.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort organizations items by a specific field (Date or UpdateDate). Default is date (optional)
-    with_count = True # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to True)
+    with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
         # Obtenir une liste d'articles vendus par une organisation
@@ -521,7 +521,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_slug** | **str**| The organization slug | 
  **var_from** | **datetime**| First Date Filter | [optional] 
- **to** | **datetime**| End Date Filter | [optional] 
+ **to** | **datetime**| End Date Filter (exclusive) | [optional] 
  **user_search_key** | **str**| Filter results on user or payer first name, last name or email | [optional] 
  **page_index** | **int**| The page of results to retrieve | [optional] [default to 1]
  **page_size** | **int**| The number of items per page | [optional] [default to 20]
@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
  **with_details** | **bool**| Set to true to return CustomFields and Options | [optional] [default to False]
  **sort_order** | [**HelloAssoApiV5ModelsEnumsSortOrder**](.md)| Sort organizations items by ascending or descending order. Default is descending | [optional] 
  **sort_field** | [**HelloAssoApiV5ModelsEnumsSortField**](.md)| Sort organizations items by a specific field (Date or UpdateDate). Default is date | [optional] 
- **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to True]
+ **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type
 
@@ -595,7 +595,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     api_instance = helloasso-python.CommandesApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization slug
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
-    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (optional)
+    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (exclusive) (optional)
     user_search_key = 'user_search_key_example' # str | Filter results on user or payer first name, last name or email (optional)
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
@@ -603,7 +603,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     form_types = [helloasso-python.HelloAssoApiV5ModelsEnumsFormType()] # List[HelloAssoApiV5ModelsEnumsFormType] | The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (optional)
     with_details = False # bool | Set to true to return CustomFields (optional) (default to False)
     sort_order = helloasso-python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort organizations orders by ascending or descending order. Default is descending (optional)
-    with_count = True # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to True)
+    with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
         # Obtenir les commandes d'une organisation
@@ -623,7 +623,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_slug** | **str**| The organization slug | 
  **var_from** | **datetime**| First Date Filter | [optional] 
- **to** | **datetime**| End Date Filter | [optional] 
+ **to** | **datetime**| End Date Filter (exclusive) | [optional] 
  **user_search_key** | **str**| Filter results on user or payer first name, last name or email | [optional] 
  **page_index** | **int**| The page of results to retrieve | [optional] [default to 1]
  **page_size** | **int**| The number of items per page | [optional] [default to 20]
@@ -631,7 +631,7 @@ Name | Type | Description  | Notes
  **form_types** | [**List[HelloAssoApiV5ModelsEnumsFormType]**](HelloAssoApiV5ModelsEnumsFormType.md)| The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop | [optional] 
  **with_details** | **bool**| Set to true to return CustomFields | [optional] [default to False]
  **sort_order** | [**HelloAssoApiV5ModelsEnumsSortOrder**](.md)| Sort organizations orders by ascending or descending order. Default is descending | [optional] 
- **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to True]
+ **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type
 

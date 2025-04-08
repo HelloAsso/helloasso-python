@@ -53,7 +53,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     form_slug = 'form_slug_example' # str | The form slug
     form_type = helloasso-python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
-    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (optional)
+    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (exclusive) (optional)
     user_search_key = 'user_search_key_example' # str | Filter results on user or payer first name, last name or email (optional)
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
@@ -61,7 +61,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     states = [helloasso-python.HelloAssoApiV5ModelsEnumsPaymentState()] # List[HelloAssoApiV5ModelsEnumsPaymentState] | Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor (optional)
     sort_order = helloasso-python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort payments by ascending or descending order. Default is descending (optional)
     sort_field = helloasso-python.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort payments by a specific field (Date or UpdateDate). Default is date (optional)
-    with_count = True # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to True)
+    with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
         # Obtenir les informations des paiements effectués sur un formulaire
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
  **form_slug** | **str**| The form slug | 
  **form_type** | [**HelloAssoApiV5ModelsEnumsFormType**](.md)| The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop | 
  **var_from** | **datetime**| First Date Filter | [optional] 
- **to** | **datetime**| End Date Filter | [optional] 
+ **to** | **datetime**| End Date Filter (exclusive) | [optional] 
  **user_search_key** | **str**| Filter results on user or payer first name, last name or email | [optional] 
  **page_index** | **int**| The page of results to retrieve | [optional] [default to 1]
  **page_size** | **int**| The number of items per page | [optional] [default to 20]
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
  **states** | [**List[HelloAssoApiV5ModelsEnumsPaymentState]**](HelloAssoApiV5ModelsEnumsPaymentState.md)| Filter results by states of payments  Available values: * &#x60;Pending&#x60; - A payment scheduled at a later date, not yet processed. * &#x60;Authorized&#x60; - The payment has been authorized, validated, processed. * &#x60;Refused&#x60; - The payment has been refused by the bank. * &#x60;Unknown&#x60; * &#x60;Registered&#x60; - Represents a payment made offline.              Probably for an item of type * &#x60;Refunded&#x60; - The payment has been refunded. * &#x60;Refunding&#x60; - The payment is being refunded. * &#x60;Contested&#x60; - Payment has been contested by the contributor | [optional] 
  **sort_order** | [**HelloAssoApiV5ModelsEnumsSortOrder**](.md)| Sort payments by ascending or descending order. Default is descending | [optional] 
  **sort_field** | [**HelloAssoApiV5ModelsEnumsSortField**](.md)| Sort payments by a specific field (Date or UpdateDate). Default is date | [optional] 
- **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to True]
+ **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type
 
@@ -154,7 +154,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     api_instance = helloasso-python.PaiementsApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization Slug
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
-    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (optional)
+    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (exclusive) (optional)
     user_search_key = 'user_search_key_example' # str | Filter results on user or payer first name, last name or email (optional)
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
@@ -162,7 +162,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     states = [helloasso-python.HelloAssoApiV5ModelsEnumsPaymentState()] # List[HelloAssoApiV5ModelsEnumsPaymentState] | The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor (optional)
     sort_order = helloasso-python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort payments by ascending or descending order. Default is descending (optional)
     sort_field = helloasso-python.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort payments by a specific field (Date or UpdateDate). Default is date (optional)
-    with_count = True # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to True)
+    with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
         # Obtenir les informations des paiements effectués sur une organisation
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_slug** | **str**| The organization Slug | 
  **var_from** | **datetime**| First Date Filter | [optional] 
- **to** | **datetime**| End Date Filter | [optional] 
+ **to** | **datetime**| End Date Filter (exclusive) | [optional] 
  **user_search_key** | **str**| Filter results on user or payer first name, last name or email | [optional] 
  **page_index** | **int**| The page of results to retrieve | [optional] [default to 1]
  **page_size** | **int**| The number of items per page | [optional] [default to 20]
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
  **states** | [**List[HelloAssoApiV5ModelsEnumsPaymentState]**](HelloAssoApiV5ModelsEnumsPaymentState.md)| The payment states  Available values: * &#x60;Pending&#x60; - A payment scheduled at a later date, not yet processed. * &#x60;Authorized&#x60; - The payment has been authorized, validated, processed. * &#x60;Refused&#x60; - The payment has been refused by the bank. * &#x60;Unknown&#x60; * &#x60;Registered&#x60; - Represents a payment made offline.              Probably for an item of type * &#x60;Refunded&#x60; - The payment has been refunded. * &#x60;Refunding&#x60; - The payment is being refunded. * &#x60;Contested&#x60; - Payment has been contested by the contributor | [optional] 
  **sort_order** | [**HelloAssoApiV5ModelsEnumsSortOrder**](.md)| Sort payments by ascending or descending order. Default is descending | [optional] 
  **sort_field** | [**HelloAssoApiV5ModelsEnumsSortField**](.md)| Sort payments by a specific field (Date or UpdateDate). Default is date | [optional] 
- **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to True]
+ **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type
 
@@ -253,7 +253,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     api_instance = helloasso-python.PaiementsApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization slug
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
-    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (optional)
+    to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (exclusive) (optional)
     page_size = 20 # int | The number of items to retrieve (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
     form_types = [helloasso-python.HelloAssoApiV5ModelsEnumsFormType()] # List[HelloAssoApiV5ModelsEnumsFormType] | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (optional)
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_slug** | **str**| The organization slug | 
  **var_from** | **datetime**| First Date Filter | [optional] 
- **to** | **datetime**| End Date Filter | [optional] 
+ **to** | **datetime**| End Date Filter (exclusive) | [optional] 
  **page_size** | **int**| The number of items to retrieve | [optional] [default to 20]
  **continuation_token** | **str**| Continuation Token from which we wish to retrieve results | [optional] 
  **form_types** | [**List[HelloAssoApiV5ModelsEnumsFormType]**](HelloAssoApiV5ModelsEnumsFormType.md)| The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop | [optional] 
