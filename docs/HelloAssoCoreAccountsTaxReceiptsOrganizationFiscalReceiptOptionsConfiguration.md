@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from helloasso-python.models.hello_asso_core_accounts_tax_receipts_organization_fiscal_receipt_options_configuration import HelloAssoCoreAccountsTaxReceiptsOrganizationFiscalReceiptOptionsConfiguration
+from helloasso_python.models.hello_asso_core_accounts_tax_receipts_organization_fiscal_receipt_options_configuration import HelloAssoCoreAccountsTaxReceiptsOrganizationFiscalReceiptOptionsConfiguration
 
 # TODO update the JSON string below
 json = "{}"

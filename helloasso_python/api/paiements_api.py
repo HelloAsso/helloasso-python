@@ -54,7 +54,7 @@ class PaiementsApi:
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
         form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -88,7 +88,7 @@ class PaiementsApi:
         :type form_type: HelloAssoApiV5ModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -171,7 +171,7 @@ class PaiementsApi:
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
         form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -205,7 +205,7 @@ class PaiementsApi:
         :type form_type: HelloAssoApiV5ModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -288,7 +288,7 @@ class PaiementsApi:
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
         form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -322,7 +322,7 @@ class PaiementsApi:
         :type form_type: HelloAssoApiV5ModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -540,7 +540,7 @@ class PaiementsApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization Slug")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -570,7 +570,7 @@ class PaiementsApi:
         :type organization_slug: str
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -649,7 +649,7 @@ class PaiementsApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization Slug")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -679,7 +679,7 @@ class PaiementsApi:
         :type organization_slug: str
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -758,7 +758,7 @@ class PaiementsApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization Slug")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -788,7 +788,7 @@ class PaiementsApi:
         :type organization_slug: str
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -998,7 +998,7 @@ class PaiementsApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items to retrieve")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
         form_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormType]], Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
@@ -1024,13 +1024,13 @@ class PaiementsApi:
     ) -> ResultsWithPaginationModelPublicPaymentModel:
         """Rechercher des paiements.
 
-        Attention : Le compte total est désactivé, nous retournons la liste des paiements et le continuationToken. Recherchez des paiements basés sur de nombreux critères La recherche doit utiliser au moins l'un des suivants : - ID de l'organisation : paiements effectués pour cette organisation - Formulaire : Paiements effectués par ce formulaire en utilisant le couple ID du formulaire et type du formulaire - ID de l'utilisateur : Paiements effectués par cet utilisateur Et peut combiner autant de ces filtres. - États : Une liste d'états de paiement à filtrer. Aucun ou vide signifie que tous les paiements seront retournés - Plage de dates : En utilisant du et/ou au, la date est inclusive - Requête de recherche : Une liste de mots qui doivent être contenus soit sur les noms des payeurs ou des utilisateurs ou l'email - Montant du paiement : En centimes, qui doit exactement correspondre au montant des paiements (avec ou sans la contribution) L'ordre des résultats est également personnalisable : - Le champ de tri peut être la date, la date de mise à jour ou la date de création - L'ordre peut être ascendant ou descendant<br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
+        <p>Attention : Le compte total est désactivé, nous retournons la liste des paiements et le continuationToken. </p><p>Recherchez des paiements basés sur de nombreux critères La recherche doit utiliser au moins l'un des paramètres suivants : </p><ul><li>ID de l'organisation : paiements effectués pour cette organisation </li><li>Formulaire : Paiements effectués par ce formulaire en utilisant le couple ID du formulaire et type du formulaire </li><li>ID de l'utilisateur : Paiements effectués par cet utilisateur </li><li>États : Une liste d'états de paiement à filtrer. (si vide, tous les paiements seront retournés)</li><li>Plage de dates : En utilisant du et/ou au </li><li>Requête de recherche : Une liste de mots qui doivent être contenus soit sur les noms des payeurs ou des utilisateurs ou l'email </li><li>Montant du paiement : En centimes, qui doit exactement correspondre au montant des paiements (avec ou sans la contribution) </li></ul><p>L'ordre des résultats est également personnalisable : </p><ul><li>Le champ de tri peut être la date, la date de mise à jour ou la date de création </li><li>L'ordre peut être ascendant ou descendant<br><br><b>Votre token doit avoir l'un de ces rôles : </b><br>OrganizationAdmin<br><br>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br><br><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br> AccessTransactions<br><br></li></ul>
 
         :param organization_slug: The organization slug (required)
         :type organization_slug: str
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param page_size: The number of items to retrieve
         :type page_size: int
@@ -1115,7 +1115,7 @@ class PaiementsApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items to retrieve")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
         form_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormType]], Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
@@ -1141,13 +1141,13 @@ class PaiementsApi:
     ) -> ApiResponse[ResultsWithPaginationModelPublicPaymentModel]:
         """Rechercher des paiements.
 
-        Attention : Le compte total est désactivé, nous retournons la liste des paiements et le continuationToken. Recherchez des paiements basés sur de nombreux critères La recherche doit utiliser au moins l'un des suivants : - ID de l'organisation : paiements effectués pour cette organisation - Formulaire : Paiements effectués par ce formulaire en utilisant le couple ID du formulaire et type du formulaire - ID de l'utilisateur : Paiements effectués par cet utilisateur Et peut combiner autant de ces filtres. - États : Une liste d'états de paiement à filtrer. Aucun ou vide signifie que tous les paiements seront retournés - Plage de dates : En utilisant du et/ou au, la date est inclusive - Requête de recherche : Une liste de mots qui doivent être contenus soit sur les noms des payeurs ou des utilisateurs ou l'email - Montant du paiement : En centimes, qui doit exactement correspondre au montant des paiements (avec ou sans la contribution) L'ordre des résultats est également personnalisable : - Le champ de tri peut être la date, la date de mise à jour ou la date de création - L'ordre peut être ascendant ou descendant<br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
+        <p>Attention : Le compte total est désactivé, nous retournons la liste des paiements et le continuationToken. </p><p>Recherchez des paiements basés sur de nombreux critères La recherche doit utiliser au moins l'un des paramètres suivants : </p><ul><li>ID de l'organisation : paiements effectués pour cette organisation </li><li>Formulaire : Paiements effectués par ce formulaire en utilisant le couple ID du formulaire et type du formulaire </li><li>ID de l'utilisateur : Paiements effectués par cet utilisateur </li><li>États : Une liste d'états de paiement à filtrer. (si vide, tous les paiements seront retournés)</li><li>Plage de dates : En utilisant du et/ou au </li><li>Requête de recherche : Une liste de mots qui doivent être contenus soit sur les noms des payeurs ou des utilisateurs ou l'email </li><li>Montant du paiement : En centimes, qui doit exactement correspondre au montant des paiements (avec ou sans la contribution) </li></ul><p>L'ordre des résultats est également personnalisable : </p><ul><li>Le champ de tri peut être la date, la date de mise à jour ou la date de création </li><li>L'ordre peut être ascendant ou descendant<br><br><b>Votre token doit avoir l'un de ces rôles : </b><br>OrganizationAdmin<br><br>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br><br><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br> AccessTransactions<br><br></li></ul>
 
         :param organization_slug: The organization slug (required)
         :type organization_slug: str
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param page_size: The number of items to retrieve
         :type page_size: int
@@ -1232,7 +1232,7 @@ class PaiementsApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items to retrieve")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
         form_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormType]], Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
@@ -1258,13 +1258,13 @@ class PaiementsApi:
     ) -> RESTResponseType:
         """Rechercher des paiements.
 
-        Attention : Le compte total est désactivé, nous retournons la liste des paiements et le continuationToken. Recherchez des paiements basés sur de nombreux critères La recherche doit utiliser au moins l'un des suivants : - ID de l'organisation : paiements effectués pour cette organisation - Formulaire : Paiements effectués par ce formulaire en utilisant le couple ID du formulaire et type du formulaire - ID de l'utilisateur : Paiements effectués par cet utilisateur Et peut combiner autant de ces filtres. - États : Une liste d'états de paiement à filtrer. Aucun ou vide signifie que tous les paiements seront retournés - Plage de dates : En utilisant du et/ou au, la date est inclusive - Requête de recherche : Une liste de mots qui doivent être contenus soit sur les noms des payeurs ou des utilisateurs ou l'email - Montant du paiement : En centimes, qui doit exactement correspondre au montant des paiements (avec ou sans la contribution) L'ordre des résultats est également personnalisable : - Le champ de tri peut être la date, la date de mise à jour ou la date de création - L'ordre peut être ascendant ou descendant<br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
+        <p>Attention : Le compte total est désactivé, nous retournons la liste des paiements et le continuationToken. </p><p>Recherchez des paiements basés sur de nombreux critères La recherche doit utiliser au moins l'un des paramètres suivants : </p><ul><li>ID de l'organisation : paiements effectués pour cette organisation </li><li>Formulaire : Paiements effectués par ce formulaire en utilisant le couple ID du formulaire et type du formulaire </li><li>ID de l'utilisateur : Paiements effectués par cet utilisateur </li><li>États : Une liste d'états de paiement à filtrer. (si vide, tous les paiements seront retournés)</li><li>Plage de dates : En utilisant du et/ou au </li><li>Requête de recherche : Une liste de mots qui doivent être contenus soit sur les noms des payeurs ou des utilisateurs ou l'email </li><li>Montant du paiement : En centimes, qui doit exactement correspondre au montant des paiements (avec ou sans la contribution) </li></ul><p>L'ordre des résultats est également personnalisable : </p><ul><li>Le champ de tri peut être la date, la date de mise à jour ou la date de création </li><li>L'ordre peut être ascendant ou descendant<br><br><b>Votre token doit avoir l'un de ces rôles : </b><br>OrganizationAdmin<br><br>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br><br><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br> AccessTransactions<br><br></li></ul>
 
         :param organization_slug: The organization slug (required)
         :type organization_slug: str
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param page_size: The number of items to retrieve
         :type page_size: int
@@ -1778,8 +1778,8 @@ class PaiementsApi:
         payment_id: Annotated[StrictInt, Field(description="The payment identifier.")],
         comment: Annotated[Optional[StrictStr], Field(description="The comment about this refund.")] = None,
         cancel_order: Annotated[Optional[StrictBool], Field(description="Whether the future payments and linked items of this order must be canceled (possible only if the payment is fully refunded)")] = None,
-        send_refund_mail: Annotated[Optional[StrictBool], Field(description="Whether a refund mail must be send or not.")] = None,
-        amount: Annotated[Optional[StrictInt], Field(description="The amount in euros to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded")] = None,
+        send_refund_mail: Annotated[Optional[StrictBool], Field(description="Whether a refund mail must be sent or not.")] = None,
+        amount: Annotated[Optional[StrictInt], Field(description="The amount in cents to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1803,9 +1803,9 @@ class PaiementsApi:
         :type comment: str
         :param cancel_order: Whether the future payments and linked items of this order must be canceled (possible only if the payment is fully refunded)
         :type cancel_order: bool
-        :param send_refund_mail: Whether a refund mail must be send or not.
+        :param send_refund_mail: Whether a refund mail must be sent or not.
         :type send_refund_mail: bool
-        :param amount: The amount in euros to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded
+        :param amount: The amount in cents to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded
         :type amount: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1863,8 +1863,8 @@ class PaiementsApi:
         payment_id: Annotated[StrictInt, Field(description="The payment identifier.")],
         comment: Annotated[Optional[StrictStr], Field(description="The comment about this refund.")] = None,
         cancel_order: Annotated[Optional[StrictBool], Field(description="Whether the future payments and linked items of this order must be canceled (possible only if the payment is fully refunded)")] = None,
-        send_refund_mail: Annotated[Optional[StrictBool], Field(description="Whether a refund mail must be send or not.")] = None,
-        amount: Annotated[Optional[StrictInt], Field(description="The amount in euros to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded")] = None,
+        send_refund_mail: Annotated[Optional[StrictBool], Field(description="Whether a refund mail must be sent or not.")] = None,
+        amount: Annotated[Optional[StrictInt], Field(description="The amount in cents to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1888,9 +1888,9 @@ class PaiementsApi:
         :type comment: str
         :param cancel_order: Whether the future payments and linked items of this order must be canceled (possible only if the payment is fully refunded)
         :type cancel_order: bool
-        :param send_refund_mail: Whether a refund mail must be send or not.
+        :param send_refund_mail: Whether a refund mail must be sent or not.
         :type send_refund_mail: bool
-        :param amount: The amount in euros to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded
+        :param amount: The amount in cents to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded
         :type amount: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1948,8 +1948,8 @@ class PaiementsApi:
         payment_id: Annotated[StrictInt, Field(description="The payment identifier.")],
         comment: Annotated[Optional[StrictStr], Field(description="The comment about this refund.")] = None,
         cancel_order: Annotated[Optional[StrictBool], Field(description="Whether the future payments and linked items of this order must be canceled (possible only if the payment is fully refunded)")] = None,
-        send_refund_mail: Annotated[Optional[StrictBool], Field(description="Whether a refund mail must be send or not.")] = None,
-        amount: Annotated[Optional[StrictInt], Field(description="The amount in euros to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded")] = None,
+        send_refund_mail: Annotated[Optional[StrictBool], Field(description="Whether a refund mail must be sent or not.")] = None,
+        amount: Annotated[Optional[StrictInt], Field(description="The amount in cents to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1973,9 +1973,9 @@ class PaiementsApi:
         :type comment: str
         :param cancel_order: Whether the future payments and linked items of this order must be canceled (possible only if the payment is fully refunded)
         :type cancel_order: bool
-        :param send_refund_mail: Whether a refund mail must be send or not.
+        :param send_refund_mail: Whether a refund mail must be sent or not.
         :type send_refund_mail: bool
-        :param amount: The amount in euros to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded
+        :param amount: The amount in cents to refund. Enter this amount only for a partial refund for stripe. If not filled in then the entire payment is refunded
         :type amount: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

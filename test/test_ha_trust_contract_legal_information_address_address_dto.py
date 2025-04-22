@@ -14,7 +14,7 @@
 
 import unittest
 
-from helloasso-python.models.ha_trust_contract_legal_information_address_address_dto import HaTrustContractLegalInformationAddressAddressDto
+from helloasso_python.models.ha_trust_contract_legal_information_address_address_dto import HaTrustContractLegalInformationAddressAddressDto
 
 class TestHaTrustContractLegalInformationAddressAddressDto(unittest.TestCase):
     """HaTrustContractLegalInformationAddressAddressDto unit test stubs"""

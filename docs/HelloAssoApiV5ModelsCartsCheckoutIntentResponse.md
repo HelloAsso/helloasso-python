@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from helloasso-python.models.hello_asso_api_v5_models_carts_checkout_intent_response import HelloAssoApiV5ModelsCartsCheckoutIntentResponse
+from helloasso_python.models.hello_asso_api_v5_models_carts_checkout_intent_response import HelloAssoApiV5ModelsCartsCheckoutIntentResponse
 
 # TODO update the JSON string below
 json = "{}"

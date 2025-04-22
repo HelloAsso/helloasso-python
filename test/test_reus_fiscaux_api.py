@@ -14,7 +14,7 @@
 
 import unittest
 
-from helloasso-python.api.reus_fiscaux_api import ReusFiscauxApi
+from helloasso_python.api.reus_fiscaux_api import ReusFiscauxApi
 
 
 class TestReusFiscauxApi(unittest.TestCase):

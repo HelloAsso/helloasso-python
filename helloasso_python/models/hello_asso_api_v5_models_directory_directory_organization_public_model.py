@@ -33,6 +33,7 @@ class HelloAssoApiV5ModelsDirectoryDirectoryOrganizationPublicModel(BaseModel):
     tags: Optional[List[StrictStr]] = Field(default=None, description="The public tags of the organization")
     linked_partners: Optional[List[StrictStr]] = Field(default=None, description="Partners linked to this organization", alias="linkedPartners")
     is_authenticated: Optional[StrictBool] = Field(default=None, description="The organization is authenticated. Property returned only when asked by an organization admin.", alias="isAuthenticated")
+    is_cash_in_compliant: Optional[StrictBool] = Field(default=None, description="If transaction can be init on the organization or not.", alias="isCashInCompliant")
     banner: Optional[StrictStr] = Field(default=None, description="The organization banner")
     fiscal_receipt_eligibility: Optional[StrictBool] = Field(default=None, description="The organism can issue fiscal receipts (type ok and has not deactivated it)  Must configure it and be authenticated to become enabled", alias="fiscalReceiptEligibility")
     fiscal_receipt_issuance_enabled: Optional[StrictBool] = Field(default=None, description="The organism is eligible, has set up his options, and is authenticated.", alias="fiscalReceiptIssuanceEnabled")
@@ -51,7 +52,7 @@ class HelloAssoApiV5ModelsDirectoryDirectoryOrganizationPublicModel(BaseModel):
     category_jo_id: Optional[StrictInt] = Field(default=None, alias="categoryJoId")
     url: Optional[StrictStr] = Field(default=None, description="The organization url")
     organization_slug: Optional[StrictStr] = Field(default=None, description="The organization slug", alias="organizationSlug")
-    __properties: ClassVar[List[str]] = ["tags", "linkedPartners", "isAuthenticated", "banner", "fiscalReceiptEligibility", "fiscalReceiptIssuanceEnabled", "type", "category", "address", "geolocation", "rnaNumber", "logo", "name", "role", "city", "zipCode", "description", "updateDate", "categoryJoId", "url", "organizationSlug"]
+    __properties: ClassVar[List[str]] = ["tags", "linkedPartners", "isAuthenticated", "isCashInCompliant", "banner", "fiscalReceiptEligibility", "fiscalReceiptIssuanceEnabled", "type", "category", "address", "geolocation", "rnaNumber", "logo", "name", "role", "city", "zipCode", "description", "updateDate", "categoryJoId", "url", "organizationSlug"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -109,6 +110,11 @@ class HelloAssoApiV5ModelsDirectoryDirectoryOrganizationPublicModel(BaseModel):
         # and model_fields_set contains the field
         if self.is_authenticated is None and "is_authenticated" in self.model_fields_set:
             _dict['isAuthenticated'] = None
+
+        # set to None if is_cash_in_compliant (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_cash_in_compliant is None and "is_cash_in_compliant" in self.model_fields_set:
+            _dict['isCashInCompliant'] = None
 
         # set to None if banner (nullable) is None
         # and model_fields_set contains the field
@@ -185,6 +191,7 @@ class HelloAssoApiV5ModelsDirectoryDirectoryOrganizationPublicModel(BaseModel):
             "tags": obj.get("tags"),
             "linkedPartners": obj.get("linkedPartners"),
             "isAuthenticated": obj.get("isAuthenticated"),
+            "isCashInCompliant": obj.get("isCashInCompliant"),
             "banner": obj.get("banner"),
             "fiscalReceiptEligibility": obj.get("fiscalReceiptEligibility"),
             "fiscalReceiptIssuanceEnabled": obj.get("fiscalReceiptIssuanceEnabled"),

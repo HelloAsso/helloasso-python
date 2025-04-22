@@ -19,22 +19,22 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from helloasso-python.models.hello_asso_models_accounts_organization_legal_informations_fiscal_receipt_format_option_model import HelloAssoModelsAccountsOrganizationLegalInformationsFiscalReceiptFormatOptionModel
-from helloasso-python.models.hello_asso_models_accounts_organization_legal_informations_fiscal_receipt_signatory_model import HelloAssoModelsAccountsOrganizationLegalInformationsFiscalReceiptSignatoryModel
-from helloasso-python.models.hello_asso_models_compliance_v2_common_address_address_model_snapshot import HelloAssoModelsComplianceV2CommonAddressAddressModelSnapshot
+from helloasso_python.models.ha_trust_contract_legal_information_address_address_dto import HaTrustContractLegalInformationAddressAddressDto
+from helloasso_python.models.hello_asso_models_accounts_organization_legal_informations_fiscal_receipt_signatory_model import HelloAssoModelsAccountsOrganizationLegalInformationsFiscalReceiptSignatoryModel
+from helloasso_python.models.hello_asso_models_payments_cash_in_fiscal_receipt_fiscal_receipt_format_option import HelloAssoModelsPaymentsCashInFiscalReceiptFiscalReceiptFormatOption
 from typing import Optional, Set
 from typing_extensions import Self
 
-class HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalReceiptOptionsConfiguration(BaseModel):
+class HelloAssoCoreAccountsTaxReceiptsOrganizationFiscalReceiptOptionsConfiguration(BaseModel):
     """
-    HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalReceiptOptionsConfiguration
+    HelloAssoCoreAccountsTaxReceiptsOrganizationFiscalReceiptOptionsConfiguration
     """ # noqa: E501
     purpose: Optional[StrictStr] = None
     cerfa_type_id: Optional[StrictInt] = Field(default=None, alias="cerfaTypeId")
     jo_category_id: Optional[StrictInt] = Field(default=None, alias="joCategoryId")
-    format_option_model: Optional[HelloAssoModelsAccountsOrganizationLegalInformationsFiscalReceiptFormatOptionModel] = Field(default=None, alias="formatOptionModel")
+    format_option_model: Optional[HelloAssoModelsPaymentsCashInFiscalReceiptFiscalReceiptFormatOption] = Field(default=None, alias="formatOptionModel")
     signatory_model: Optional[HelloAssoModelsAccountsOrganizationLegalInformationsFiscalReceiptSignatoryModel] = Field(default=None, alias="signatoryModel")
-    address_model: Optional[HelloAssoModelsComplianceV2CommonAddressAddressModelSnapshot] = Field(default=None, alias="addressModel")
+    address_model: Optional[HaTrustContractLegalInformationAddressAddressDto] = Field(default=None, alias="addressModel")
     __properties: ClassVar[List[str]] = ["purpose", "cerfaTypeId", "joCategoryId", "formatOptionModel", "signatoryModel", "addressModel"]
 
     model_config = ConfigDict(
@@ -55,7 +55,7 @@ class HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalRece
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalReceiptOptionsConfiguration from a JSON string"""
+        """Create an instance of HelloAssoCoreAccountsTaxReceiptsOrganizationFiscalReceiptOptionsConfiguration from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -104,7 +104,7 @@ class HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalRece
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalReceiptOptionsConfiguration from a dict"""
+        """Create an instance of HelloAssoCoreAccountsTaxReceiptsOrganizationFiscalReceiptOptionsConfiguration from a dict"""
         if obj is None:
             return None
 
@@ -115,9 +115,9 @@ class HelloAssoModelsAccountsOrganizationLegalInformationsOrganizationFiscalRece
             "purpose": obj.get("purpose"),
             "cerfaTypeId": obj.get("cerfaTypeId"),
             "joCategoryId": obj.get("joCategoryId"),
-            "formatOptionModel": HelloAssoModelsAccountsOrganizationLegalInformationsFiscalReceiptFormatOptionModel.from_dict(obj["formatOptionModel"]) if obj.get("formatOptionModel") is not None else None,
+            "formatOptionModel": HelloAssoModelsPaymentsCashInFiscalReceiptFiscalReceiptFormatOption.from_dict(obj["formatOptionModel"]) if obj.get("formatOptionModel") is not None else None,
             "signatoryModel": HelloAssoModelsAccountsOrganizationLegalInformationsFiscalReceiptSignatoryModel.from_dict(obj["signatoryModel"]) if obj.get("signatoryModel") is not None else None,
-            "addressModel": HelloAssoModelsComplianceV2CommonAddressAddressModelSnapshot.from_dict(obj["addressModel"]) if obj.get("addressModel") is not None else None
+            "addressModel": HaTrustContractLegalInformationAddressAddressDto.from_dict(obj["addressModel"]) if obj.get("addressModel") is not None else None
         })
         return _obj
 

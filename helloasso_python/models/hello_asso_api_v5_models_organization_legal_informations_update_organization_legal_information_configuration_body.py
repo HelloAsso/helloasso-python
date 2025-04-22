@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,11 +26,10 @@ class HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalIn
     """
     HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalInformationConfigurationBody
     """ # noqa: E501
-    legal_structure_id: Optional[StrictInt] = Field(default=None, alias="legalStructureId")
-    is_coluche: Optional[StrictBool] = Field(default=None, alias="isColuche")
-    allow_ifi_tax_reductions: Optional[StrictBool] = Field(default=None, alias="allowIfiTaxReductions")
-    is_helloasso_transmitter: Optional[StrictBool] = Field(default=None, alias="isHelloassoTransmitter")
-    __properties: ClassVar[List[str]] = ["legalStructureId", "isColuche", "allowIfiTaxReductions", "isHelloassoTransmitter"]
+    legal_structure_id: StrictInt = Field(alias="legalStructureId")
+    is_coluche: StrictBool = Field(alias="isColuche")
+    allow_ifi_tax_reductions: StrictBool = Field(alias="allowIfiTaxReductions")
+    __properties: ClassVar[List[str]] = ["legalStructureId", "isColuche", "allowIfiTaxReductions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,11 +70,6 @@ class HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalIn
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if is_helloasso_transmitter (nullable) is None
-        # and model_fields_set contains the field
-        if self.is_helloasso_transmitter is None and "is_helloasso_transmitter" in self.model_fields_set:
-            _dict['isHelloassoTransmitter'] = None
-
         return _dict
 
     @classmethod
@@ -90,8 +84,7 @@ class HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationLegalIn
         _obj = cls.model_validate({
             "legalStructureId": obj.get("legalStructureId"),
             "isColuche": obj.get("isColuche"),
-            "allowIfiTaxReductions": obj.get("allowIfiTaxReductions"),
-            "isHelloassoTransmitter": obj.get("isHelloassoTransmitter")
+            "allowIfiTaxReductions": obj.get("allowIfiTaxReductions")
         })
         return _obj
 

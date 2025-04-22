@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from helloasso-python.models.hello_asso_models_payments_cash_in_fiscal_receipt_fiscal_receipt_format_option import HelloAssoModelsPaymentsCashInFiscalReceiptFiscalReceiptFormatOption
+from helloasso_python.models.hello_asso_models_payments_cash_in_fiscal_receipt_fiscal_receipt_format_option import HelloAssoModelsPaymentsCashInFiscalReceiptFiscalReceiptFormatOption
 
 # TODO update the JSON string below
 json = "{}"

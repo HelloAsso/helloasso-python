@@ -45,5 +45,5 @@ setup(
     long_description="""\
     HelloAsso auto-generated SDK
     """,  # noqa: E501
-    package_data={"helloasso-python": ["py.typed"]},
+    package_data={"helloasso_python": ["py.typed"]},
 )

@@ -14,7 +14,7 @@
 
 import unittest
 
-from helloasso-python.models.hello_asso_core_accounts_tax_receipts_organization_fiscal_receipt_options_configuration import HelloAssoCoreAccountsTaxReceiptsOrganizationFiscalReceiptOptionsConfiguration
+from helloasso_python.models.hello_asso_core_accounts_tax_receipts_organization_fiscal_receipt_options_configuration import HelloAssoCoreAccountsTaxReceiptsOrganizationFiscalReceiptOptionsConfiguration
 
 class TestHelloAssoCoreAccountsTaxReceiptsOrganizationFiscalReceiptOptionsConfiguration(unittest.TestCase):
     """HelloAssoCoreAccountsTaxReceiptsOrganizationFiscalReceiptOptionsConfiguration unit test stubs"""
@@ -38,17 +38,17 @@ class TestHelloAssoCoreAccountsTaxReceiptsOrganizationFiscalReceiptOptionsConfig
                 purpose = '',
                 cerfa_type_id = 56,
                 jo_category_id = 56,
-                format_option_model = helloasso-python.models.hello_asso/models/payments/cash_in/fiscal_receipt/fiscal_receipt_format_option.HelloAsso.Models.Payments.CashIn.FiscalReceipt.FiscalReceiptFormatOption(
+                format_option_model = helloasso_python.models.hello_asso/models/payments/cash_in/fiscal_receipt/fiscal_receipt_format_option.HelloAsso.Models.Payments.CashIn.FiscalReceipt.FiscalReceiptFormatOption(
                     date = '', 
                     order = '', 
                     root = '', 
                     separator = '', ),
-                signatory_model = helloasso-python.models.hello_asso/models/accounts/organization_legal_informations/fiscal_receipt_signatory_model.HelloAsso.Models.Accounts.OrganizationLegalInformations.FiscalReceiptSignatoryModel(
+                signatory_model = helloasso_python.models.hello_asso/models/accounts/organization_legal_informations/fiscal_receipt_signatory_model.HelloAsso.Models.Accounts.OrganizationLegalInformations.FiscalReceiptSignatoryModel(
                     first_name = '', 
                     last_name = '', 
                     function = '', 
                     file_url = '', ),
-                address_model = helloasso-python.models.ha_trust/contract/legal_information/address/address_dto.HaTrust.Contract.LegalInformation.Address.AddressDto(
+                address_model = helloasso_python.models.ha_trust/contract/legal_information/address/address_dto.HaTrust.Contract.LegalInformation.Address.AddressDto(
                     line = '', 
                     city = '', 
                     zip_code = '', 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from helloasso-python.models.hello_asso_api_v5_models_organization_legal_informations_update_organization_fiscal_receipt_transmitter_body import HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationFiscalReceiptTransmitterBody
+from helloasso_python.models.hello_asso_api_v5_models_organization_legal_informations_update_organization_fiscal_receipt_transmitter_body import HelloAssoApiV5ModelsOrganizationLegalInformationsUpdateOrganizationFiscalReceiptTransmitterBody
 
 # TODO update the JSON string below
 json = "{}"

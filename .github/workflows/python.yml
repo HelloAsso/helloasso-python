@@ -3,7 +3,7 @@
 #
 # ref: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: helloasso-python Python package
+name: helloasso_python Python package
 
 on: [push, pull_request]
 
@@ -28,4 +28,4 @@ jobs:
           pip install -r test-requirements.txt
       - name: Test with pytest
         run: |
-          pytest --cov=helloasso-python
+          pytest --cov=helloasso_python

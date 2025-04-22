@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from helloasso-python.models.hello_asso_api_v5_models_statistics_item_option import HelloAssoApiV5ModelsStatisticsItemOption
+from helloasso_python.models.hello_asso_api_v5_models_statistics_item_option import HelloAssoApiV5ModelsStatisticsItemOption
 
 # TODO update the JSON string below
 json = "{}"

@@ -47,7 +47,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from helloasso-python.models.hello_asso_api_v5_models_forms_form_quick_create_request import HelloAssoApiV5ModelsFormsFormQuickCreateRequest
+from helloasso_python.models.hello_asso_api_v5_models_forms_form_quick_create_request import HelloAssoApiV5ModelsFormsFormQuickCreateRequest
 
 # TODO update the JSON string below
 json = "{}"

@@ -1,4 +1,4 @@
-# helloasso-python.CommandesApi
+# helloasso_python.CommandesApi
 
 All URIs are relative to *https://api.helloasso.com/v5*
 
@@ -25,14 +25,14 @@ Obtenir le détail d'un article contenu dans une commande
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso-python
-from helloasso-python.models.hello_asso_api_v5_models_statistics_item_detail import HelloAssoApiV5ModelsStatisticsItemDetail
-from helloasso-python.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_statistics_item_detail import HelloAssoApiV5ModelsStatisticsItemDetail
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso-python.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -44,9 +44,9 @@ configuration = helloasso-python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso-python.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso-python.CommandesApi(api_client)
+    api_instance = helloasso_python.CommandesApi(api_client)
     item_id = 56 # int | The item ID
     with_details = False # bool | Set to true to return CustomFields and Options (optional) (default to False)
 
@@ -104,13 +104,13 @@ Annuler les paiements futurs pour une commande (pas de remboursement).
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso-python
-from helloasso-python.rest import ApiException
+import helloasso_python
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso-python.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -122,9 +122,9 @@ configuration = helloasso-python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso-python.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso-python.CommandesApi(api_client)
+    api_instance = helloasso_python.CommandesApi(api_client)
     order_id = 56 # int | The order identifier.
 
     try:
@@ -178,14 +178,14 @@ Obtenir des informations détaillées sur une commande
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso-python
-from helloasso-python.models.hello_asso_api_v5_models_statistics_order_detail import HelloAssoApiV5ModelsStatisticsOrderDetail
-from helloasso-python.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_statistics_order_detail import HelloAssoApiV5ModelsStatisticsOrderDetail
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso-python.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -197,9 +197,9 @@ configuration = helloasso-python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso-python.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso-python.CommandesApi(api_client)
+    api_instance = helloasso_python.CommandesApi(api_client)
     order_id = 56 # int | 
 
     try:
@@ -255,18 +255,18 @@ Obtenir une liste d'articles vendus dans un formulaire
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso-python
-from helloasso-python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from helloasso-python.models.hello_asso_api_v5_models_enums_item_state import HelloAssoApiV5ModelsEnumsItemState
-from helloasso-python.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
-from helloasso-python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
-from helloasso-python.models.hello_asso_api_v5_models_enums_tier_type import HelloAssoApiV5ModelsEnumsTierType
-from helloasso-python.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
+from helloasso_python.models.hello_asso_api_v5_models_enums_item_state import HelloAssoApiV5ModelsEnumsItemState
+from helloasso_python.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
+from helloasso_python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
+from helloasso_python.models.hello_asso_api_v5_models_enums_tier_type import HelloAssoApiV5ModelsEnumsTierType
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso-python.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -278,24 +278,24 @@ configuration = helloasso-python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso-python.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso-python.CommandesApi(api_client)
+    api_instance = helloasso_python.CommandesApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization slug
     form_slug = 'form_slug_example' # str | The form slug
-    form_type = helloasso-python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
+    form_type = helloasso_python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
     to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (exclusive) (optional)
     user_search_key = 'user_search_key_example' # str | Filter results on user or payer first name, last name or email (optional)
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    tier_types = [helloasso-python.HelloAssoApiV5ModelsEnumsTierType()] # List[HelloAssoApiV5ModelsEnumsTierType] | The type of tiers (optional)
-    item_states = [helloasso-python.HelloAssoApiV5ModelsEnumsItemState()] # List[HelloAssoApiV5ModelsEnumsItemState] | The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid (optional)
+    tier_types = [helloasso_python.HelloAssoApiV5ModelsEnumsTierType()] # List[HelloAssoApiV5ModelsEnumsTierType] | The type of tiers (optional)
+    item_states = [helloasso_python.HelloAssoApiV5ModelsEnumsItemState()] # List[HelloAssoApiV5ModelsEnumsItemState] | The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid (optional)
     tier_name = 'tier_name_example' # str | The name of a tier (optional)
     with_details = False # bool | Set to true to return CustomFields and Options (optional) (default to False)
-    sort_order = helloasso-python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort forms items by ascending or descending order. Default is descending (optional)
-    sort_field = helloasso-python.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort forms items by a specific field (Date or UpdateDate). Default is date (optional)
+    sort_order = helloasso_python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort forms items by ascending or descending order. Default is descending (optional)
+    sort_field = helloasso_python.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort forms items by a specific field (Date or UpdateDate). Default is date (optional)
     with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
@@ -364,16 +364,16 @@ Obtenir les commandes d'un formulaire
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso-python
-from helloasso-python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from helloasso-python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
-from helloasso-python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
-from helloasso-python.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
+from helloasso_python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
+from helloasso_python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso-python.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -385,12 +385,12 @@ configuration = helloasso-python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso-python.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso-python.CommandesApi(api_client)
+    api_instance = helloasso_python.CommandesApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization slug
     form_slug = 'form_slug_example' # str | The form slug
-    form_type = helloasso-python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
+    form_type = helloasso_python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
     to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (exclusive) (optional)
     user_search_key = 'user_search_key_example' # str | Filter results on user or payer first name, last name or email (optional)
@@ -398,7 +398,7 @@ with helloasso-python.ApiClient(configuration) as api_client:
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
     with_details = False # bool | Set to true to return CustomFields (optional) (default to False)
-    sort_order = helloasso-python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort forms orders by ascending or descending order. Default is descending (optional)
+    sort_order = helloasso_python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort forms orders by ascending or descending order. Default is descending (optional)
     with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
@@ -465,17 +465,17 @@ Obtenir une liste d'articles vendus par une organisation
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso-python
-from helloasso-python.models.hello_asso_api_v5_models_enums_item_state import HelloAssoApiV5ModelsEnumsItemState
-from helloasso-python.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
-from helloasso-python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
-from helloasso-python.models.hello_asso_api_v5_models_enums_tier_type import HelloAssoApiV5ModelsEnumsTierType
-from helloasso-python.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_enums_item_state import HelloAssoApiV5ModelsEnumsItemState
+from helloasso_python.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
+from helloasso_python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
+from helloasso_python.models.hello_asso_api_v5_models_enums_tier_type import HelloAssoApiV5ModelsEnumsTierType
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso-python.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -487,9 +487,9 @@ configuration = helloasso-python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso-python.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso-python.CommandesApi(api_client)
+    api_instance = helloasso_python.CommandesApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization slug
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
     to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (exclusive) (optional)
@@ -497,12 +497,12 @@ with helloasso-python.ApiClient(configuration) as api_client:
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    tier_types = [helloasso-python.HelloAssoApiV5ModelsEnumsTierType()] # List[HelloAssoApiV5ModelsEnumsTierType] | The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus (optional)
-    item_states = [helloasso-python.HelloAssoApiV5ModelsEnumsItemState()] # List[HelloAssoApiV5ModelsEnumsItemState] | The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid (optional)
+    tier_types = [helloasso_python.HelloAssoApiV5ModelsEnumsTierType()] # List[HelloAssoApiV5ModelsEnumsTierType] | The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus (optional)
+    item_states = [helloasso_python.HelloAssoApiV5ModelsEnumsItemState()] # List[HelloAssoApiV5ModelsEnumsItemState] | The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid (optional)
     tier_name = 'tier_name_example' # str | The name of a tier (optional)
     with_details = False # bool | Set to true to return CustomFields and Options (optional) (default to False)
-    sort_order = helloasso-python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort organizations items by ascending or descending order. Default is descending (optional)
-    sort_field = helloasso-python.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort organizations items by a specific field (Date or UpdateDate). Default is date (optional)
+    sort_order = helloasso_python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort organizations items by ascending or descending order. Default is descending (optional)
+    sort_field = helloasso_python.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort organizations items by a specific field (Date or UpdateDate). Default is date (optional)
     with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
@@ -569,16 +569,16 @@ Obtenir les commandes d'une organisation
 * OAuth Authentication (OAuth2):
 
 ```python
-import helloasso-python
-from helloasso-python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from helloasso-python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
-from helloasso-python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
-from helloasso-python.rest import ApiException
+import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
+from helloasso_python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
+from helloasso_python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
+from helloasso_python.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.helloasso.com/v5
 # See configuration.py for a list of all supported configuration parameters.
-configuration = helloasso-python.Configuration(
+configuration = helloasso_python.Configuration(
     host = "https://api.helloasso.com/v5"
 )
 
@@ -590,9 +590,9 @@ configuration = helloasso-python.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with helloasso-python.ApiClient(configuration) as api_client:
+with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = helloasso-python.CommandesApi(api_client)
+    api_instance = helloasso_python.CommandesApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization slug
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
     to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (exclusive) (optional)
@@ -600,9 +600,9 @@ with helloasso-python.ApiClient(configuration) as api_client:
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    form_types = [helloasso-python.HelloAssoApiV5ModelsEnumsFormType()] # List[HelloAssoApiV5ModelsEnumsFormType] | The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (optional)
+    form_types = [helloasso_python.HelloAssoApiV5ModelsEnumsFormType()] # List[HelloAssoApiV5ModelsEnumsFormType] | The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (optional)
     with_details = False # bool | Set to true to return CustomFields (optional) (default to False)
-    sort_order = helloasso-python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort organizations orders by ascending or descending order. Default is descending (optional)
+    sort_order = helloasso_python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort organizations orders by ascending or descending order. Default is descending (optional)
     with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:

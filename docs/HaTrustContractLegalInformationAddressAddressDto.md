@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from helloasso-python.models.ha_trust_contract_legal_information_address_address_dto import HaTrustContractLegalInformationAddressAddressDto
+from helloasso_python.models.ha_trust_contract_legal_information_address_address_dto import HaTrustContractLegalInformationAddressAddressDto
 
 # TODO update the JSON string below
 json = "{}"

@@ -869,7 +869,7 @@ class CommandesApi:
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
         form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -906,7 +906,7 @@ class CommandesApi:
         :type form_type: HelloAssoApiV5ModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -998,7 +998,7 @@ class CommandesApi:
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
         form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -1035,7 +1035,7 @@ class CommandesApi:
         :type form_type: HelloAssoApiV5ModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -1127,7 +1127,7 @@ class CommandesApi:
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
         form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -1164,7 +1164,7 @@ class CommandesApi:
         :type form_type: HelloAssoApiV5ModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -1409,7 +1409,7 @@ class CommandesApi:
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
         form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -1442,7 +1442,7 @@ class CommandesApi:
         :type form_type: HelloAssoApiV5ModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -1522,7 +1522,7 @@ class CommandesApi:
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
         form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -1555,7 +1555,7 @@ class CommandesApi:
         :type form_type: HelloAssoApiV5ModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -1635,7 +1635,7 @@ class CommandesApi:
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
         form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -1668,7 +1668,7 @@ class CommandesApi:
         :type form_type: HelloAssoApiV5ModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -1877,7 +1877,7 @@ class CommandesApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -1910,7 +1910,7 @@ class CommandesApi:
         :type organization_slug: str
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -1998,7 +1998,7 @@ class CommandesApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -2031,7 +2031,7 @@ class CommandesApi:
         :type organization_slug: str
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -2119,7 +2119,7 @@ class CommandesApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -2152,7 +2152,7 @@ class CommandesApi:
         :type organization_slug: str
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -2387,7 +2387,7 @@ class CommandesApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -2417,7 +2417,7 @@ class CommandesApi:
         :type organization_slug: str
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -2496,7 +2496,7 @@ class CommandesApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -2526,7 +2526,7 @@ class CommandesApi:
         :type organization_slug: str
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
@@ -2605,7 +2605,7 @@ class CommandesApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter")] = None,
+        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
@@ -2635,7 +2635,7 @@ class CommandesApi:
         :type organization_slug: str
         :param var_from: First Date Filter
         :type var_from: datetime
-        :param to: End Date Filter
+        :param to: End Date Filter (exclusive)
         :type to: datetime
         :param user_search_key: Filter results on user or payer first name, last name or email
         :type user_search_key: str
