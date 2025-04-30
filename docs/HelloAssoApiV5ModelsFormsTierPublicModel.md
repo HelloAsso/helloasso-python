@@ -6,6 +6,8 @@ TierPublicModel class
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**custom_fields** | [**List[HelloAssoApiV5ModelsFormsCustomFieldPublicModel]**](HelloAssoApiV5ModelsFormsCustomFieldPublicModel.md) | List of custom fields to be filled by the user | [optional] 
+**extra_options** | [**List[HelloAssoApiV5ModelsFormsExtraOptionPublicModel]**](HelloAssoApiV5ModelsFormsExtraOptionPublicModel.md) | List of available extra options to buy along the tier | [optional] 
 **id** | **int** | id | [optional] 
 **label** | **str** | label | [optional] 
 **description** | **str** | description | [optional] 

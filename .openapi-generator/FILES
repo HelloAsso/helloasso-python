@@ -48,6 +48,8 @@ docs/HelloAssoApiV5ModelsEnumsSortField.md
 docs/HelloAssoApiV5ModelsEnumsSortOrder.md
 docs/HelloAssoApiV5ModelsEnumsTagType.md
 docs/HelloAssoApiV5ModelsEnumsTierType.md
+docs/HelloAssoApiV5ModelsFormsCustomFieldPublicModel.md
+docs/HelloAssoApiV5ModelsFormsExtraOptionPublicModel.md
 docs/HelloAssoApiV5ModelsFormsFormBasicModel.md
 docs/HelloAssoApiV5ModelsFormsFormLightModel.md
 docs/HelloAssoApiV5ModelsFormsFormPublicModel.md
@@ -172,6 +174,8 @@ helloasso_python/models/hello_asso_api_v5_models_enums_sort_field.py
 helloasso_python/models/hello_asso_api_v5_models_enums_sort_order.py
 helloasso_python/models/hello_asso_api_v5_models_enums_tag_type.py
 helloasso_python/models/hello_asso_api_v5_models_enums_tier_type.py
+helloasso_python/models/hello_asso_api_v5_models_forms_custom_field_public_model.py
+helloasso_python/models/hello_asso_api_v5_models_forms_extra_option_public_model.py
 helloasso_python/models/hello_asso_api_v5_models_forms_form_basic_model.py
 helloasso_python/models/hello_asso_api_v5_models_forms_form_light_model.py
 helloasso_python/models/hello_asso_api_v5_models_forms_form_public_model.py
@@ -235,4 +239,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_hello_asso_api_v5_models_forms_custom_field_public_model.py
+test/test_hello_asso_api_v5_models_forms_extra_option_public_model.py
 tox.ini

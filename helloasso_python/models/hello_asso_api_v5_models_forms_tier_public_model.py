@@ -24,6 +24,8 @@ from helloasso_python.models.hello_asso_api_v5_models_common_document_model impo
 from helloasso_python.models.hello_asso_api_v5_models_common_meta_model import HelloAssoApiV5ModelsCommonMetaModel
 from helloasso_python.models.hello_asso_api_v5_models_enums_payment_frequency_type import HelloAssoApiV5ModelsEnumsPaymentFrequencyType
 from helloasso_python.models.hello_asso_api_v5_models_enums_tier_type import HelloAssoApiV5ModelsEnumsTierType
+from helloasso_python.models.hello_asso_api_v5_models_forms_custom_field_public_model import HelloAssoApiV5ModelsFormsCustomFieldPublicModel
+from helloasso_python.models.hello_asso_api_v5_models_forms_extra_option_public_model import HelloAssoApiV5ModelsFormsExtraOptionPublicModel
 from helloasso_python.models.hello_asso_api_v5_models_forms_term_model import HelloAssoApiV5ModelsFormsTermModel
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,6 +34,8 @@ class HelloAssoApiV5ModelsFormsTierPublicModel(BaseModel):
     """
     TierPublicModel class
     """ # noqa: E501
+    custom_fields: Optional[List[HelloAssoApiV5ModelsFormsCustomFieldPublicModel]] = Field(default=None, description="List of custom fields to be filled by the user", alias="customFields")
+    extra_options: Optional[List[HelloAssoApiV5ModelsFormsExtraOptionPublicModel]] = Field(default=None, description="List of available extra options to buy along the tier", alias="extraOptions")
     id: Optional[StrictInt] = Field(default=None, description="id")
     label: Optional[StrictStr] = Field(default=None, description="label")
     description: Optional[StrictStr] = Field(default=None, description="description")
@@ -48,7 +52,7 @@ class HelloAssoApiV5ModelsFormsTierPublicModel(BaseModel):
     terms: Optional[List[HelloAssoApiV5ModelsFormsTermModel]] = Field(default=None, description="Terms of tier")
     picture: Optional[HelloAssoApiV5ModelsCommonDocumentModel] = None
     is_excluded_from_form_payment_terms: Optional[StrictBool] = Field(default=None, description="True means this tier must be paid in the initial payment, false means it can be paid in payment with installments  Null when the form payment terms are disabled or not compatible with the related form", alias="isExcludedFromFormPaymentTerms")
-    __properties: ClassVar[List[str]] = ["id", "label", "description", "tierType", "price", "vatRate", "minAmount", "paymentFrequency", "maxPerUser", "meta", "saleStartDate", "saleEndDate", "isEligibleTaxReceipt", "terms", "picture", "isExcludedFromFormPaymentTerms"]
+    __properties: ClassVar[List[str]] = ["customFields", "extraOptions", "id", "label", "description", "tierType", "price", "vatRate", "minAmount", "paymentFrequency", "maxPerUser", "meta", "saleStartDate", "saleEndDate", "isEligibleTaxReceipt", "terms", "picture", "isExcludedFromFormPaymentTerms"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +93,20 @@ class HelloAssoApiV5ModelsFormsTierPublicModel(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in custom_fields (list)
+        _items = []
+        if self.custom_fields:
+            for _item_custom_fields in self.custom_fields:
+                if _item_custom_fields:
+                    _items.append(_item_custom_fields.to_dict())
+            _dict['customFields'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in extra_options (list)
+        _items = []
+        if self.extra_options:
+            for _item_extra_options in self.extra_options:
+                if _item_extra_options:
+                    _items.append(_item_extra_options.to_dict())
+            _dict['extraOptions'] = _items
         # override the default output from pydantic by calling `to_dict()` of meta
         if self.meta:
             _dict['meta'] = self.meta.to_dict()
@@ -102,6 +120,16 @@ class HelloAssoApiV5ModelsFormsTierPublicModel(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of picture
         if self.picture:
             _dict['picture'] = self.picture.to_dict()
+        # set to None if custom_fields (nullable) is None
+        # and model_fields_set contains the field
+        if self.custom_fields is None and "custom_fields" in self.model_fields_set:
+            _dict['customFields'] = None
+
+        # set to None if extra_options (nullable) is None
+        # and model_fields_set contains the field
+        if self.extra_options is None and "extra_options" in self.model_fields_set:
+            _dict['extraOptions'] = None
+
         # set to None if label (nullable) is None
         # and model_fields_set contains the field
         if self.label is None and "label" in self.model_fields_set:
@@ -159,6 +187,8 @@ class HelloAssoApiV5ModelsFormsTierPublicModel(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "customFields": [HelloAssoApiV5ModelsFormsCustomFieldPublicModel.from_dict(_item) for _item in obj["customFields"]] if obj.get("customFields") is not None else None,
+            "extraOptions": [HelloAssoApiV5ModelsFormsExtraOptionPublicModel.from_dict(_item) for _item in obj["extraOptions"]] if obj.get("extraOptions") is not None else None,
             "id": obj.get("id"),
             "label": obj.get("label"),
             "description": obj.get("description"),
