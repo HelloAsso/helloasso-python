@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **organization_is_under_coluche_law** | **bool** | Whether or not the organization is subject to the coluche law | [optional] 
 **checkout_intent_id** | **int** | Checkout intent Id if available | [optional] 
 **meta** | [**HelloAssoApiV5ModelsCommonMetaModel**](HelloAssoApiV5ModelsCommonMetaModel.md) |  | [optional] 
+**place** | [**HelloAssoApiV5ModelsCommonPlaceModel**](HelloAssoApiV5ModelsCommonPlaceModel.md) |  | [optional] 
 
 ## Example
 

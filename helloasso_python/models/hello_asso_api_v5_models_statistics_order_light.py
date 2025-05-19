@@ -21,6 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from helloasso_python.models.hello_asso_api_v5_models_common_meta_model import HelloAssoApiV5ModelsCommonMetaModel
+from helloasso_python.models.hello_asso_api_v5_models_common_place_model import HelloAssoApiV5ModelsCommonPlaceModel
 from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
 from helloasso_python.models.hello_asso_api_v5_models_enums_organization_type import HelloAssoApiV5ModelsEnumsOrganizationType
 from typing import Optional, Set
@@ -40,7 +41,8 @@ class HelloAssoApiV5ModelsStatisticsOrderLight(BaseModel):
     organization_is_under_coluche_law: Optional[StrictBool] = Field(default=None, description="Whether or not the organization is subject to the coluche law", alias="organizationIsUnderColucheLaw")
     checkout_intent_id: Optional[StrictInt] = Field(default=None, description="Checkout intent Id if available", alias="checkoutIntentId")
     meta: Optional[HelloAssoApiV5ModelsCommonMetaModel] = None
-    __properties: ClassVar[List[str]] = ["id", "date", "formSlug", "formType", "organizationName", "organizationSlug", "organizationType", "organizationIsUnderColucheLaw", "checkoutIntentId", "meta"]
+    place: Optional[HelloAssoApiV5ModelsCommonPlaceModel] = None
+    __properties: ClassVar[List[str]] = ["id", "date", "formSlug", "formType", "organizationName", "organizationSlug", "organizationType", "organizationIsUnderColucheLaw", "checkoutIntentId", "meta", "place"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,6 +86,9 @@ class HelloAssoApiV5ModelsStatisticsOrderLight(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of meta
         if self.meta:
             _dict['meta'] = self.meta.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of place
+        if self.place:
+            _dict['place'] = self.place.to_dict()
         # set to None if form_slug (nullable) is None
         # and model_fields_set contains the field
         if self.form_slug is None and "form_slug" in self.model_fields_set:
@@ -125,7 +130,8 @@ class HelloAssoApiV5ModelsStatisticsOrderLight(BaseModel):
             "organizationType": obj.get("organizationType"),
             "organizationIsUnderColucheLaw": obj.get("organizationIsUnderColucheLaw"),
             "checkoutIntentId": obj.get("checkoutIntentId"),
-            "meta": HelloAssoApiV5ModelsCommonMetaModel.from_dict(obj["meta"]) if obj.get("meta") is not None else None
+            "meta": HelloAssoApiV5ModelsCommonMetaModel.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
+            "place": HelloAssoApiV5ModelsCommonPlaceModel.from_dict(obj["place"]) if obj.get("place") is not None else None
         })
         return _obj
 
