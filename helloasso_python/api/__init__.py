@@ -7,7 +7,6 @@ from helloasso_python.api.commandes_api import CommandesApi
 from helloasso_python.api.formulaires_api import FormulairesApi
 from helloasso_python.api.liste_de_valeurs_api import ListeDeValeursApi
 from helloasso_python.api.organisation_api import OrganisationApi
-from helloasso_python.api.organization_public_configurations_api import OrganizationPublicConfigurationsApi
 from helloasso_python.api.paiements_api import PaiementsApi
 from helloasso_python.api.partenaires_api import PartenairesApi
 from helloasso_python.api.reus_fiscaux_api import ReusFiscauxApi
