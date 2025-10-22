@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **partners_me_api_clients_put**
-> partners_me_api_clients_put(hello_asso_api_v5_models_accounts_clients_public_put_api_client_request=hello_asso_api_v5_models_accounts_clients_public_put_api_client_request)
+> partners_me_api_clients_put(hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request=hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request)
 
 Mise à jour du domaine
 
@@ -26,7 +26,7 @@ Mise à jour du domaine
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_accounts_clients_public_put_api_client_request import HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest
+from helloasso_python.models.hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request import HelloAssoApiV5CommonModelsAccountsClientsPublicPutApiClientRequest
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -47,11 +47,11 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = helloasso_python.PartenairesApi(api_client)
-    hello_asso_api_v5_models_accounts_clients_public_put_api_client_request = helloasso_python.HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest() # HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest |  (optional)
+    hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request = helloasso_python.HelloAssoApiV5CommonModelsAccountsClientsPublicPutApiClientRequest() # HelloAssoApiV5CommonModelsAccountsClientsPublicPutApiClientRequest |  (optional)
 
     try:
         # Mise à jour du domaine
-        api_instance.partners_me_api_clients_put(hello_asso_api_v5_models_accounts_clients_public_put_api_client_request=hello_asso_api_v5_models_accounts_clients_public_put_api_client_request)
+        api_instance.partners_me_api_clients_put(hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request=hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request)
     except Exception as e:
         print("Exception when calling PartenairesApi->partners_me_api_clients_put: %s\n" % e)
 ```
@@ -63,7 +63,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **hello_asso_api_v5_models_accounts_clients_public_put_api_client_request** | [**HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest**](HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest.md)|  | [optional] 
+ **hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request** | [**HelloAssoApiV5CommonModelsAccountsClientsPublicPutApiClientRequest**](HelloAssoApiV5CommonModelsAccountsClientsPublicPutApiClientRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -101,7 +101,7 @@ Suppression de l'URL de notification principale
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_api_notifications_api_notification_type import HelloAssoApiV5ModelsApiNotificationsApiNotificationType
+from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_api_notification_type import HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -122,7 +122,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = helloasso_python.PartenairesApi(api_client)
-    notification_type = helloasso_python.HelloAssoApiV5ModelsApiNotificationsApiNotificationType() # HelloAssoApiV5ModelsApiNotificationsApiNotificationType | Do not specify a notification type to remove the main notification Url (optional)
+    notification_type = helloasso_python.HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType() # HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType | Do not specify a notification type to remove the main notification Url (optional)
 
     try:
         # Suppression de l'URL de notification principale
@@ -138,7 +138,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_type** | [**HelloAssoApiV5ModelsApiNotificationsApiNotificationType**](.md)| Do not specify a notification type to remove the main notification Url | [optional] 
+ **notification_type** | [**HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType**](.md)| Do not specify a notification type to remove the main notification Url | [optional] 
 
 ### Return type
 
@@ -176,7 +176,7 @@ Suppression d'une URL de notification liée à une organisation
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_api_notifications_api_notification_type import HelloAssoApiV5ModelsApiNotificationsApiNotificationType
+from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_api_notification_type import HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -198,7 +198,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = helloasso_python.PartenairesApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
-    notification_type = helloasso_python.HelloAssoApiV5ModelsApiNotificationsApiNotificationType() # HelloAssoApiV5ModelsApiNotificationsApiNotificationType | Do not specify a notification type to remove the main notification Url (optional)
+    notification_type = helloasso_python.HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType() # HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType | Do not specify a notification type to remove the main notification Url (optional)
 
     try:
         # Suppression d'une URL de notification liée à une organisation
@@ -215,7 +215,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_slug** | **str**|  | 
- **notification_type** | [**HelloAssoApiV5ModelsApiNotificationsApiNotificationType**](.md)| Do not specify a notification type to remove the main notification Url | [optional] 
+ **notification_type** | [**HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType**](.md)| Do not specify a notification type to remove the main notification Url | [optional] 
 
 ### Return type
 
@@ -241,7 +241,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **partners_me_api_notifications_organizations_organization_slug_put**
-> HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel partners_me_api_notifications_organizations_organization_slug_put(organization_slug, hello_asso_api_v5_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_models_api_notifications_post_api_url_notification_body)
+> HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel partners_me_api_notifications_organizations_organization_slug_put(organization_slug, hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body)
 
 Mise à jour d'une URL de notification liée à une organisation
 
@@ -253,8 +253,8 @@ Mise à jour d'une URL de notification liée à une organisation
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_api_notifications_api_url_notification_model import HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel
-from helloasso_python.models.hello_asso_api_v5_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
+from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_api_url_notification_model import HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel
+from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -276,11 +276,11 @@ with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = helloasso_python.PartenairesApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
-    hello_asso_api_v5_models_api_notifications_post_api_url_notification_body = helloasso_python.HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody() # HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody | The body of the request, do not specify a notification type to update the main notification Url (optional)
+    hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body = helloasso_python.HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody() # HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody | The body of the request, do not specify a notification type to update the main notification Url (optional)
 
     try:
         # Mise à jour d'une URL de notification liée à une organisation
-        api_response = api_instance.partners_me_api_notifications_organizations_organization_slug_put(organization_slug, hello_asso_api_v5_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_models_api_notifications_post_api_url_notification_body)
+        api_response = api_instance.partners_me_api_notifications_organizations_organization_slug_put(organization_slug, hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body)
         print("The response of PartenairesApi->partners_me_api_notifications_organizations_organization_slug_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -295,11 +295,11 @@ with helloasso_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_slug** | **str**|  | 
- **hello_asso_api_v5_models_api_notifications_post_api_url_notification_body** | [**HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody**](HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody.md)| The body of the request, do not specify a notification type to update the main notification Url | [optional] 
+ **hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body** | [**HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody**](HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody.md)| The body of the request, do not specify a notification type to update the main notification Url | [optional] 
 
 ### Return type
 
-[**HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel**](HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel.md)
+[**HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel**](HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel.md)
 
 ### Authorization
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **partners_me_api_notifications_put**
-> HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel partners_me_api_notifications_put(hello_asso_api_v5_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_models_api_notifications_post_api_url_notification_body)
+> HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel partners_me_api_notifications_put(hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body)
 
 Mise à jour de l'URL de notification principale
 
@@ -333,8 +333,8 @@ Mise à jour de l'URL de notification principale
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_api_notifications_api_url_notification_model import HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel
-from helloasso_python.models.hello_asso_api_v5_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
+from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_api_url_notification_model import HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel
+from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -355,11 +355,11 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = helloasso_python.PartenairesApi(api_client)
-    hello_asso_api_v5_models_api_notifications_post_api_url_notification_body = helloasso_python.HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody() # HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody | The body of the request, do not specify a notification type to update the main notification Url (optional)
+    hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body = helloasso_python.HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody() # HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody | The body of the request, do not specify a notification type to update the main notification Url (optional)
 
     try:
         # Mise à jour de l'URL de notification principale
-        api_response = api_instance.partners_me_api_notifications_put(hello_asso_api_v5_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_models_api_notifications_post_api_url_notification_body)
+        api_response = api_instance.partners_me_api_notifications_put(hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body)
         print("The response of PartenairesApi->partners_me_api_notifications_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -373,11 +373,11 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **hello_asso_api_v5_models_api_notifications_post_api_url_notification_body** | [**HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody**](HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody.md)| The body of the request, do not specify a notification type to update the main notification Url | [optional] 
+ **hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body** | [**HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody**](HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody.md)| The body of the request, do not specify a notification type to update the main notification Url | [optional] 
 
 ### Return type
 
-[**HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel**](HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel.md)
+[**HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel**](HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel.md)
 
 ### Authorization
 
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **partners_me_get**
-> HelloAssoApiV5ModelsPartnersPartnerPublicModel partners_me_get()
+> HelloAssoApiV5CommonModelsPartnersPartnerPublicModel partners_me_get()
 
 Récupération des informations
 
@@ -411,7 +411,7 @@ Récupération des informations
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_partners_partner_public_model import HelloAssoApiV5ModelsPartnersPartnerPublicModel
+from helloasso_python.models.hello_asso_api_v5_common_models_partners_partner_public_model import HelloAssoApiV5CommonModelsPartnersPartnerPublicModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -450,7 +450,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**HelloAssoApiV5ModelsPartnersPartnerPublicModel**](HelloAssoApiV5ModelsPartnersPartnerPublicModel.md)
+[**HelloAssoApiV5CommonModelsPartnersPartnerPublicModel**](HelloAssoApiV5CommonModelsPartnersPartnerPublicModel.md)
 
 ### Authorization
 

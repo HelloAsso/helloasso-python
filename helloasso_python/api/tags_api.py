@@ -19,7 +19,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
-from helloasso_python.models.hello_asso_api_v5_models_tags_internal_tag_model import HelloAssoApiV5ModelsTagsInternalTagModel
+from helloasso_python.models.hello_asso_api_v5_common_models_tags_internal_tag_model import HelloAssoApiV5CommonModelsTagsInternalTagModel
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -57,7 +57,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5ModelsTagsInternalTagModel:
+    ) -> HelloAssoApiV5CommonModelsTagsInternalTagModel:
         """Obtenir le détail d'un tag interne
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> FormOpenDirectory<br/><br/>
@@ -101,7 +101,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsTagsInternalTagModel",
+            '200': "HelloAssoApiV5CommonModelsTagsInternalTagModel",
             '401': None,
             '403': None,
         }
@@ -134,7 +134,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5ModelsTagsInternalTagModel]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsTagsInternalTagModel]:
         """Obtenir le détail d'un tag interne
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> FormOpenDirectory<br/><br/>
@@ -178,7 +178,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsTagsInternalTagModel",
+            '200': "HelloAssoApiV5CommonModelsTagsInternalTagModel",
             '401': None,
             '403': None,
         }
@@ -255,7 +255,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsTagsInternalTagModel",
+            '200': "HelloAssoApiV5CommonModelsTagsInternalTagModel",
             '401': None,
             '403': None,
         }

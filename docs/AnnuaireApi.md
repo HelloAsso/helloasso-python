@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **directory_forms_post**
-> ResultsWithPaginationModelSynchronizableFormModel directory_forms_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_models_directory_list_forms_request=hello_asso_api_v5_models_directory_list_forms_request)
+> ResultsWithPaginationModelSynchronizableFormModel directory_forms_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_forms_request=hello_asso_api_v5_common_models_directory_list_forms_request)
 
 Récupérer les formulaires
 
@@ -21,7 +21,7 @@ Permet de récupérer une liste de tous les formulaires visibles correspondant �
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_directory_list_forms_request import HelloAssoApiV5ModelsDirectoryListFormsRequest
+from helloasso_python.models.hello_asso_api_v5_common_models_directory_list_forms_request import HelloAssoApiV5CommonModelsDirectoryListFormsRequest
 from helloasso_python.models.results_with_pagination_model_synchronizable_form_model import ResultsWithPaginationModelSynchronizableFormModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
@@ -45,11 +45,11 @@ with helloasso_python.ApiClient(configuration) as api_client:
     api_instance = helloasso_python.AnnuaireApi(api_client)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    hello_asso_api_v5_models_directory_list_forms_request = helloasso_python.HelloAssoApiV5ModelsDirectoryListFormsRequest() # HelloAssoApiV5ModelsDirectoryListFormsRequest | Body which contains the filters to apply (optional)
+    hello_asso_api_v5_common_models_directory_list_forms_request = helloasso_python.HelloAssoApiV5CommonModelsDirectoryListFormsRequest() # HelloAssoApiV5CommonModelsDirectoryListFormsRequest | Body which contains the filters to apply (optional)
 
     try:
         # Récupérer les formulaires
-        api_response = api_instance.directory_forms_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_models_directory_list_forms_request=hello_asso_api_v5_models_directory_list_forms_request)
+        api_response = api_instance.directory_forms_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_forms_request=hello_asso_api_v5_common_models_directory_list_forms_request)
         print("The response of AnnuaireApi->directory_forms_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page_size** | **int**| The number of items per page | [optional] [default to 20]
  **continuation_token** | **str**| Continuation Token from which we wish to retrieve results | [optional] 
- **hello_asso_api_v5_models_directory_list_forms_request** | [**HelloAssoApiV5ModelsDirectoryListFormsRequest**](HelloAssoApiV5ModelsDirectoryListFormsRequest.md)| Body which contains the filters to apply | [optional] 
+ **hello_asso_api_v5_common_models_directory_list_forms_request** | [**HelloAssoApiV5CommonModelsDirectoryListFormsRequest**](HelloAssoApiV5CommonModelsDirectoryListFormsRequest.md)| Body which contains the filters to apply | [optional] 
 
 ### Return type
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **directory_organizations_post**
-> ResultsWithPaginationModelSynchronizableOrganizationModel directory_organizations_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_models_directory_list_organizations_request=hello_asso_api_v5_models_directory_list_organizations_request)
+> ResultsWithPaginationModelSynchronizableOrganizationModel directory_organizations_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_organizations_request=hello_asso_api_v5_common_models_directory_list_organizations_request)
 
 Récupérer les organisations
 
@@ -103,7 +103,7 @@ Permet de récupérer une liste de toutes les organisations visibles corresponda
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_directory_list_organizations_request import HelloAssoApiV5ModelsDirectoryListOrganizationsRequest
+from helloasso_python.models.hello_asso_api_v5_common_models_directory_list_organizations_request import HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest
 from helloasso_python.models.results_with_pagination_model_synchronizable_organization_model import ResultsWithPaginationModelSynchronizableOrganizationModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
@@ -127,11 +127,11 @@ with helloasso_python.ApiClient(configuration) as api_client:
     api_instance = helloasso_python.AnnuaireApi(api_client)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    hello_asso_api_v5_models_directory_list_organizations_request = helloasso_python.HelloAssoApiV5ModelsDirectoryListOrganizationsRequest() # HelloAssoApiV5ModelsDirectoryListOrganizationsRequest | Body which contains the filters to apply (optional)
+    hello_asso_api_v5_common_models_directory_list_organizations_request = helloasso_python.HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest() # HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest | Body which contains the filters to apply (optional)
 
     try:
         # Récupérer les organisations
-        api_response = api_instance.directory_organizations_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_models_directory_list_organizations_request=hello_asso_api_v5_models_directory_list_organizations_request)
+        api_response = api_instance.directory_organizations_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_organizations_request=hello_asso_api_v5_common_models_directory_list_organizations_request)
         print("The response of AnnuaireApi->directory_organizations_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page_size** | **int**| The number of items per page | [optional] [default to 20]
  **continuation_token** | **str**| Continuation Token from which we wish to retrieve results | [optional] 
- **hello_asso_api_v5_models_directory_list_organizations_request** | [**HelloAssoApiV5ModelsDirectoryListOrganizationsRequest**](HelloAssoApiV5ModelsDirectoryListOrganizationsRequest.md)| Body which contains the filters to apply | [optional] 
+ **hello_asso_api_v5_common_models_directory_list_organizations_request** | [**HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest**](HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest.md)| Body which contains the filters to apply | [optional] 
 
 ### Return type
 

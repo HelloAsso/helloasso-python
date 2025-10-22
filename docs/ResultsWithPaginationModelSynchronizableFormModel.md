@@ -6,8 +6,8 @@ ResultsWithPaginationModel class
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**List[HelloAssoApiV5ModelsDirectorySynchronizableFormModel]**](HelloAssoApiV5ModelsDirectorySynchronizableFormModel.md) | Data property | [optional] 
-**pagination** | [**HelloAssoApiV5ModelsCommonPaginationModel**](HelloAssoApiV5ModelsCommonPaginationModel.md) |  | [optional] 
+**data** | [**List[HelloAssoApiV5CommonModelsDirectorySynchronizableFormModel]**](HelloAssoApiV5CommonModelsDirectorySynchronizableFormModel.md) | Data property | [optional] 
+**pagination** | [**HelloAssoApiV5CommonModelsCommonPaginationModel**](HelloAssoApiV5CommonModelsCommonPaginationModel.md) |  | [optional] 
 
 ## Example
 

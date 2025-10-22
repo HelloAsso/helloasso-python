@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **items_item_id_get**
-> HelloAssoApiV5ModelsStatisticsItemDetail items_item_id_get(item_id, with_details=with_details)
+> HelloAssoApiV5CommonModelsStatisticsItemDetail items_item_id_get(item_id, with_details=with_details)
 
 Obtenir le détail d'un article contenu dans une commande
 
@@ -26,7 +26,7 @@ Obtenir le détail d'un article contenu dans une commande
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_statistics_item_detail import HelloAssoApiV5ModelsStatisticsItemDetail
+from helloasso_python.models.hello_asso_api_v5_common_models_statistics_item_detail import HelloAssoApiV5CommonModelsStatisticsItemDetail
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HelloAssoApiV5ModelsStatisticsItemDetail**](HelloAssoApiV5ModelsStatisticsItemDetail.md)
+[**HelloAssoApiV5CommonModelsStatisticsItemDetail**](HelloAssoApiV5CommonModelsStatisticsItemDetail.md)
 
 ### Authorization
 
@@ -167,7 +167,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **orders_order_id_get**
-> HelloAssoApiV5ModelsStatisticsOrderDetail orders_order_id_get(order_id)
+> HelloAssoApiV5CommonModelsStatisticsOrderDetail orders_order_id_get(order_id)
 
 Obtenir des informations détaillées sur une commande
 
@@ -179,7 +179,7 @@ Obtenir des informations détaillées sur une commande
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_statistics_order_detail import HelloAssoApiV5ModelsStatisticsOrderDetail
+from helloasso_python.models.hello_asso_api_v5_common_models_statistics_order_detail import HelloAssoApiV5CommonModelsStatisticsOrderDetail
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HelloAssoApiV5ModelsStatisticsOrderDetail**](HelloAssoApiV5ModelsStatisticsOrderDetail.md)
+[**HelloAssoApiV5CommonModelsStatisticsOrderDetail**](HelloAssoApiV5CommonModelsStatisticsOrderDetail.md)
 
 ### Authorization
 
@@ -256,11 +256,11 @@ Obtenir une liste d'articles vendus dans un formulaire
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from helloasso_python.models.hello_asso_api_v5_models_enums_item_state import HelloAssoApiV5ModelsEnumsItemState
-from helloasso_python.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
-from helloasso_python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
-from helloasso_python.models.hello_asso_api_v5_models_enums_tier_type import HelloAssoApiV5ModelsEnumsTierType
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_item_state import HelloAssoApiV5CommonModelsEnumsItemState
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_tier_type import HelloAssoApiV5CommonModelsEnumsTierType
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -283,19 +283,19 @@ with helloasso_python.ApiClient(configuration) as api_client:
     api_instance = helloasso_python.CommandesApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization slug
     form_slug = 'form_slug_example' # str | The form slug
-    form_type = helloasso_python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
+    form_type = helloasso_python.HelloAssoApiV5CommonModelsEnumsFormType() # HelloAssoApiV5CommonModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
     to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (exclusive) (optional)
     user_search_key = 'user_search_key_example' # str | Filter results on user or payer first name, last name or email (optional)
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    tier_types = [helloasso_python.HelloAssoApiV5ModelsEnumsTierType()] # List[HelloAssoApiV5ModelsEnumsTierType] | The type of tiers (optional)
-    item_states = [helloasso_python.HelloAssoApiV5ModelsEnumsItemState()] # List[HelloAssoApiV5ModelsEnumsItemState] | The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid (optional)
+    tier_types = [helloasso_python.HelloAssoApiV5CommonModelsEnumsTierType()] # List[HelloAssoApiV5CommonModelsEnumsTierType] | The type of tiers (optional)
+    item_states = [helloasso_python.HelloAssoApiV5CommonModelsEnumsItemState()] # List[HelloAssoApiV5CommonModelsEnumsItemState] | The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid (optional)
     tier_name = 'tier_name_example' # str | The name of a tier (optional)
     with_details = False # bool | Set to true to return CustomFields and Options (optional) (default to False)
-    sort_order = helloasso_python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort forms items by ascending or descending order. Default is descending (optional)
-    sort_field = helloasso_python.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort forms items by a specific field (Date or UpdateDate). Default is date (optional)
+    sort_order = helloasso_python.HelloAssoApiV5CommonModelsEnumsSortOrder() # HelloAssoApiV5CommonModelsEnumsSortOrder | Sort forms items by ascending or descending order. Default is descending (optional)
+    sort_field = helloasso_python.HelloAssoApiV5CommonModelsEnumsSortField() # HelloAssoApiV5CommonModelsEnumsSortField | Sort forms items by a specific field (Date or UpdateDate). Default is date (optional)
     with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
@@ -314,19 +314,19 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_slug** | **str**| The organization slug | 
  **form_slug** | **str**| The form slug | 
- **form_type** | [**HelloAssoApiV5ModelsEnumsFormType**](.md)| The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop | 
+ **form_type** | [**HelloAssoApiV5CommonModelsEnumsFormType**](.md)| The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop | 
  **var_from** | **datetime**| First Date Filter | [optional] 
  **to** | **datetime**| End Date Filter (exclusive) | [optional] 
  **user_search_key** | **str**| Filter results on user or payer first name, last name or email | [optional] 
  **page_index** | **int**| The page of results to retrieve | [optional] [default to 1]
  **page_size** | **int**| The number of items per page | [optional] [default to 20]
  **continuation_token** | **str**| Continuation Token from which we wish to retrieve results | [optional] 
- **tier_types** | [**List[HelloAssoApiV5ModelsEnumsTierType]**](HelloAssoApiV5ModelsEnumsTierType.md)| The type of tiers | [optional] 
- **item_states** | [**List[HelloAssoApiV5ModelsEnumsItemState]**](HelloAssoApiV5ModelsEnumsItemState.md)| The item states  Available values: * &#x60;Processed&#x60; - The item is paid and is valid * &#x60;Registered&#x60; - The item has been registered manually by the organization and is valid * &#x60;Unknown&#x60; * &#x60;Canceled&#x60; - The item has been canceled, and is no longer valid | [optional] 
+ **tier_types** | [**List[HelloAssoApiV5CommonModelsEnumsTierType]**](HelloAssoApiV5CommonModelsEnumsTierType.md)| The type of tiers | [optional] 
+ **item_states** | [**List[HelloAssoApiV5CommonModelsEnumsItemState]**](HelloAssoApiV5CommonModelsEnumsItemState.md)| The item states  Available values: * &#x60;Processed&#x60; - The item is paid and is valid * &#x60;Registered&#x60; - The item has been registered manually by the organization and is valid * &#x60;Unknown&#x60; * &#x60;Canceled&#x60; - The item has been canceled, and is no longer valid | [optional] 
  **tier_name** | **str**| The name of a tier | [optional] 
  **with_details** | **bool**| Set to true to return CustomFields and Options | [optional] [default to False]
- **sort_order** | [**HelloAssoApiV5ModelsEnumsSortOrder**](.md)| Sort forms items by ascending or descending order. Default is descending | [optional] 
- **sort_field** | [**HelloAssoApiV5ModelsEnumsSortField**](.md)| Sort forms items by a specific field (Date or UpdateDate). Default is date | [optional] 
+ **sort_order** | [**HelloAssoApiV5CommonModelsEnumsSortOrder**](.md)| Sort forms items by ascending or descending order. Default is descending | [optional] 
+ **sort_field** | [**HelloAssoApiV5CommonModelsEnumsSortField**](.md)| Sort forms items by a specific field (Date or UpdateDate). Default is date | [optional] 
  **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type
@@ -365,8 +365,8 @@ Obtenir les commandes d'un formulaire
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from helloasso_python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
 from helloasso_python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
 from helloasso_python.rest import ApiException
 from pprint import pprint
@@ -390,7 +390,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
     api_instance = helloasso_python.CommandesApi(api_client)
     organization_slug = 'organization_slug_example' # str | The organization slug
     form_slug = 'form_slug_example' # str | The form slug
-    form_type = helloasso_python.HelloAssoApiV5ModelsEnumsFormType() # HelloAssoApiV5ModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
+    form_type = helloasso_python.HelloAssoApiV5CommonModelsEnumsFormType() # HelloAssoApiV5CommonModelsEnumsFormType | The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
     var_from = '2013-10-20T19:20:30+01:00' # datetime | First Date Filter (optional)
     to = '2013-10-20T19:20:30+01:00' # datetime | End Date Filter (exclusive) (optional)
     user_search_key = 'user_search_key_example' # str | Filter results on user or payer first name, last name or email (optional)
@@ -398,7 +398,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
     with_details = False # bool | Set to true to return CustomFields (optional) (default to False)
-    sort_order = helloasso_python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort forms orders by ascending or descending order. Default is descending (optional)
+    sort_order = helloasso_python.HelloAssoApiV5CommonModelsEnumsSortOrder() # HelloAssoApiV5CommonModelsEnumsSortOrder | Sort forms orders by ascending or descending order. Default is descending (optional)
     with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_slug** | **str**| The organization slug | 
  **form_slug** | **str**| The form slug | 
- **form_type** | [**HelloAssoApiV5ModelsEnumsFormType**](.md)| The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop | 
+ **form_type** | [**HelloAssoApiV5CommonModelsEnumsFormType**](.md)| The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop | 
  **var_from** | **datetime**| First Date Filter | [optional] 
  **to** | **datetime**| End Date Filter (exclusive) | [optional] 
  **user_search_key** | **str**| Filter results on user or payer first name, last name or email | [optional] 
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
  **page_size** | **int**| The number of items per page | [optional] [default to 20]
  **continuation_token** | **str**| Continuation Token from which we wish to retrieve results | [optional] 
  **with_details** | **bool**| Set to true to return CustomFields | [optional] [default to False]
- **sort_order** | [**HelloAssoApiV5ModelsEnumsSortOrder**](.md)| Sort forms orders by ascending or descending order. Default is descending | [optional] 
+ **sort_order** | [**HelloAssoApiV5CommonModelsEnumsSortOrder**](.md)| Sort forms orders by ascending or descending order. Default is descending | [optional] 
  **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type
@@ -466,10 +466,10 @@ Obtenir une liste d'articles vendus par une organisation
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_enums_item_state import HelloAssoApiV5ModelsEnumsItemState
-from helloasso_python.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
-from helloasso_python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
-from helloasso_python.models.hello_asso_api_v5_models_enums_tier_type import HelloAssoApiV5ModelsEnumsTierType
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_item_state import HelloAssoApiV5CommonModelsEnumsItemState
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_tier_type import HelloAssoApiV5CommonModelsEnumsTierType
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -497,12 +497,12 @@ with helloasso_python.ApiClient(configuration) as api_client:
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    tier_types = [helloasso_python.HelloAssoApiV5ModelsEnumsTierType()] # List[HelloAssoApiV5ModelsEnumsTierType] | The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus (optional)
-    item_states = [helloasso_python.HelloAssoApiV5ModelsEnumsItemState()] # List[HelloAssoApiV5ModelsEnumsItemState] | The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid (optional)
+    tier_types = [helloasso_python.HelloAssoApiV5CommonModelsEnumsTierType()] # List[HelloAssoApiV5CommonModelsEnumsTierType] | The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus (optional)
+    item_states = [helloasso_python.HelloAssoApiV5CommonModelsEnumsItemState()] # List[HelloAssoApiV5CommonModelsEnumsItemState] | The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid (optional)
     tier_name = 'tier_name_example' # str | The name of a tier (optional)
     with_details = False # bool | Set to true to return CustomFields and Options (optional) (default to False)
-    sort_order = helloasso_python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort organizations items by ascending or descending order. Default is descending (optional)
-    sort_field = helloasso_python.HelloAssoApiV5ModelsEnumsSortField() # HelloAssoApiV5ModelsEnumsSortField | Sort organizations items by a specific field (Date or UpdateDate). Default is date (optional)
+    sort_order = helloasso_python.HelloAssoApiV5CommonModelsEnumsSortOrder() # HelloAssoApiV5CommonModelsEnumsSortOrder | Sort organizations items by ascending or descending order. Default is descending (optional)
+    sort_field = helloasso_python.HelloAssoApiV5CommonModelsEnumsSortField() # HelloAssoApiV5CommonModelsEnumsSortField | Sort organizations items by a specific field (Date or UpdateDate). Default is date (optional)
     with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
@@ -526,12 +526,12 @@ Name | Type | Description  | Notes
  **page_index** | **int**| The page of results to retrieve | [optional] [default to 1]
  **page_size** | **int**| The number of items per page | [optional] [default to 20]
  **continuation_token** | **str**| Continuation Token from which we wish to retrieve results | [optional] 
- **tier_types** | [**List[HelloAssoApiV5ModelsEnumsTierType]**](HelloAssoApiV5ModelsEnumsTierType.md)| The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus | [optional] 
- **item_states** | [**List[HelloAssoApiV5ModelsEnumsItemState]**](HelloAssoApiV5ModelsEnumsItemState.md)| The item states  Available values: * &#x60;Processed&#x60; - The item is paid and is valid * &#x60;Registered&#x60; - The item has been registered manually by the organization and is valid * &#x60;Unknown&#x60; * &#x60;Canceled&#x60; - The item has been canceled, and is no longer valid | [optional] 
+ **tier_types** | [**List[HelloAssoApiV5CommonModelsEnumsTierType]**](HelloAssoApiV5CommonModelsEnumsTierType.md)| The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus | [optional] 
+ **item_states** | [**List[HelloAssoApiV5CommonModelsEnumsItemState]**](HelloAssoApiV5CommonModelsEnumsItemState.md)| The item states  Available values: * &#x60;Processed&#x60; - The item is paid and is valid * &#x60;Registered&#x60; - The item has been registered manually by the organization and is valid * &#x60;Unknown&#x60; * &#x60;Canceled&#x60; - The item has been canceled, and is no longer valid | [optional] 
  **tier_name** | **str**| The name of a tier | [optional] 
  **with_details** | **bool**| Set to true to return CustomFields and Options | [optional] [default to False]
- **sort_order** | [**HelloAssoApiV5ModelsEnumsSortOrder**](.md)| Sort organizations items by ascending or descending order. Default is descending | [optional] 
- **sort_field** | [**HelloAssoApiV5ModelsEnumsSortField**](.md)| Sort organizations items by a specific field (Date or UpdateDate). Default is date | [optional] 
+ **sort_order** | [**HelloAssoApiV5CommonModelsEnumsSortOrder**](.md)| Sort organizations items by ascending or descending order. Default is descending | [optional] 
+ **sort_field** | [**HelloAssoApiV5CommonModelsEnumsSortField**](.md)| Sort organizations items by a specific field (Date or UpdateDate). Default is date | [optional] 
  **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type
@@ -570,8 +570,8 @@ Obtenir les commandes d'une organisation
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from helloasso_python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
 from helloasso_python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
 from helloasso_python.rest import ApiException
 from pprint import pprint
@@ -600,9 +600,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
     page_index = 1 # int | The page of results to retrieve (optional) (default to 1)
     page_size = 20 # int | The number of items per page (optional) (default to 20)
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
-    form_types = [helloasso_python.HelloAssoApiV5ModelsEnumsFormType()] # List[HelloAssoApiV5ModelsEnumsFormType] | The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (optional)
+    form_types = [helloasso_python.HelloAssoApiV5CommonModelsEnumsFormType()] # List[HelloAssoApiV5CommonModelsEnumsFormType] | The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (optional)
     with_details = False # bool | Set to true to return CustomFields (optional) (default to False)
-    sort_order = helloasso_python.HelloAssoApiV5ModelsEnumsSortOrder() # HelloAssoApiV5ModelsEnumsSortOrder | Sort organizations orders by ascending or descending order. Default is descending (optional)
+    sort_order = helloasso_python.HelloAssoApiV5CommonModelsEnumsSortOrder() # HelloAssoApiV5CommonModelsEnumsSortOrder | Sort organizations orders by ascending or descending order. Default is descending (optional)
     with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
@@ -628,9 +628,9 @@ Name | Type | Description  | Notes
  **page_index** | **int**| The page of results to retrieve | [optional] [default to 1]
  **page_size** | **int**| The number of items per page | [optional] [default to 20]
  **continuation_token** | **str**| Continuation Token from which we wish to retrieve results | [optional] 
- **form_types** | [**List[HelloAssoApiV5ModelsEnumsFormType]**](HelloAssoApiV5ModelsEnumsFormType.md)| The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop | [optional] 
+ **form_types** | [**List[HelloAssoApiV5CommonModelsEnumsFormType]**](HelloAssoApiV5CommonModelsEnumsFormType.md)| The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop | [optional] 
  **with_details** | **bool**| Set to true to return CustomFields | [optional] [default to False]
- **sort_order** | [**HelloAssoApiV5ModelsEnumsSortOrder**](.md)| Sort organizations orders by ascending or descending order. Default is descending | [optional] 
+ **sort_order** | [**HelloAssoApiV5CommonModelsEnumsSortOrder**](.md)| Sort organizations orders by ascending or descending order. Default is descending | [optional] 
  **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type

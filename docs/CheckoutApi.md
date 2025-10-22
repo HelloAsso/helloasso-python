@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **organizations_organization_slug_checkout_intents_checkout_intent_id_get**
-> HelloAssoApiV5ModelsCartsCheckoutIntentResponse organizations_organization_slug_checkout_intents_checkout_intent_id_get(organization_slug, checkout_intent_id, with_failed_refund_operation=with_failed_refund_operation)
+> HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse organizations_organization_slug_checkout_intents_checkout_intent_id_get(organization_slug, checkout_intent_id, with_failed_refund_operation=with_failed_refund_operation)
 
 Récupérer une intention de paiement
 
@@ -21,7 +21,7 @@ Retourne aussi la commande associée. Uniquement dans le cas ou le paiement est 
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_carts_checkout_intent_response import HelloAssoApiV5ModelsCartsCheckoutIntentResponse
+from helloasso_python.models.hello_asso_api_v5_common_models_carts_checkout_intent_response import HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HelloAssoApiV5ModelsCartsCheckoutIntentResponse**](HelloAssoApiV5ModelsCartsCheckoutIntentResponse.md)
+[**HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse**](HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse.md)
 
 ### Authorization
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_checkout_intents_post**
-> HelloAssoApiV5ModelsCartsInitCheckoutResponse organizations_organization_slug_checkout_intents_post(organization_slug, hello_asso_api_v5_models_carts_init_checkout_body=hello_asso_api_v5_models_carts_init_checkout_body)
+> HelloAssoApiV5CommonModelsCartsInitCheckoutResponse organizations_organization_slug_checkout_intents_post(organization_slug, hello_asso_api_v5_common_models_carts_init_checkout_body=hello_asso_api_v5_common_models_carts_init_checkout_body)
 
 Initialisation d'un Checkout
 
@@ -102,8 +102,8 @@ Pour tout savoir sur Checkout consultez d'abord notre <a href="https://dev.hello
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_carts_init_checkout_body import HelloAssoApiV5ModelsCartsInitCheckoutBody
-from helloasso_python.models.hello_asso_api_v5_models_carts_init_checkout_response import HelloAssoApiV5ModelsCartsInitCheckoutResponse
+from helloasso_python.models.hello_asso_api_v5_common_models_carts_init_checkout_body import HelloAssoApiV5CommonModelsCartsInitCheckoutBody
+from helloasso_python.models.hello_asso_api_v5_common_models_carts_init_checkout_response import HelloAssoApiV5CommonModelsCartsInitCheckoutResponse
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -125,11 +125,11 @@ with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = helloasso_python.CheckoutApi(api_client)
     organization_slug = 'organization_slug_example' # str | 
-    hello_asso_api_v5_models_carts_init_checkout_body = helloasso_python.HelloAssoApiV5ModelsCartsInitCheckoutBody() # HelloAssoApiV5ModelsCartsInitCheckoutBody |  (optional)
+    hello_asso_api_v5_common_models_carts_init_checkout_body = helloasso_python.HelloAssoApiV5CommonModelsCartsInitCheckoutBody() # HelloAssoApiV5CommonModelsCartsInitCheckoutBody |  (optional)
 
     try:
         # Initialisation d'un Checkout
-        api_response = api_instance.organizations_organization_slug_checkout_intents_post(organization_slug, hello_asso_api_v5_models_carts_init_checkout_body=hello_asso_api_v5_models_carts_init_checkout_body)
+        api_response = api_instance.organizations_organization_slug_checkout_intents_post(organization_slug, hello_asso_api_v5_common_models_carts_init_checkout_body=hello_asso_api_v5_common_models_carts_init_checkout_body)
         print("The response of CheckoutApi->organizations_organization_slug_checkout_intents_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -144,11 +144,11 @@ with helloasso_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_slug** | **str**|  | 
- **hello_asso_api_v5_models_carts_init_checkout_body** | [**HelloAssoApiV5ModelsCartsInitCheckoutBody**](HelloAssoApiV5ModelsCartsInitCheckoutBody.md)|  | [optional] 
+ **hello_asso_api_v5_common_models_carts_init_checkout_body** | [**HelloAssoApiV5CommonModelsCartsInitCheckoutBody**](HelloAssoApiV5CommonModelsCartsInitCheckoutBody.md)|  | [optional] 
 
 ### Return type
 
-[**HelloAssoApiV5ModelsCartsInitCheckoutResponse**](HelloAssoApiV5ModelsCartsInitCheckoutResponse.md)
+[**HelloAssoApiV5CommonModelsCartsInitCheckoutResponse**](HelloAssoApiV5CommonModelsCartsInitCheckoutResponse.md)
 
 ### Authorization
 

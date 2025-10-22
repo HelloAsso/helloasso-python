@@ -19,8 +19,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from helloasso_python.models.hello_asso_api_v5_models_common_pagination_model import HelloAssoApiV5ModelsCommonPaginationModel
-from helloasso_python.models.hello_asso_api_v5_models_statistics_payment import HelloAssoApiV5ModelsStatisticsPayment
+from helloasso_python.models.hello_asso_api_v5_common_models_common_pagination_model import HelloAssoApiV5CommonModelsCommonPaginationModel
+from helloasso_python.models.hello_asso_api_v5_common_models_statistics_payment import HelloAssoApiV5CommonModelsStatisticsPayment
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,8 +28,8 @@ class ResultsWithPaginationModelPayment(BaseModel):
     """
     ResultsWithPaginationModel class
     """ # noqa: E501
-    data: Optional[List[HelloAssoApiV5ModelsStatisticsPayment]] = Field(default=None, description="Data property")
-    pagination: Optional[HelloAssoApiV5ModelsCommonPaginationModel] = None
+    data: Optional[List[HelloAssoApiV5CommonModelsStatisticsPayment]] = Field(default=None, description="Data property")
+    pagination: Optional[HelloAssoApiV5CommonModelsCommonPaginationModel] = None
     __properties: ClassVar[List[str]] = ["data", "pagination"]
 
     model_config = ConfigDict(
@@ -98,8 +98,8 @@ class ResultsWithPaginationModelPayment(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "data": [HelloAssoApiV5ModelsStatisticsPayment.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
-            "pagination": HelloAssoApiV5ModelsCommonPaginationModel.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None
+            "data": [HelloAssoApiV5CommonModelsStatisticsPayment.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
+            "pagination": HelloAssoApiV5CommonModelsCommonPaginationModel.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None
         })
         return _obj
 

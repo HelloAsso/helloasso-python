@@ -20,14 +20,13 @@ from datetime import datetime
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from helloasso_python.models.hello_asso_api_v5_models_enums_payment_state import HelloAssoApiV5ModelsEnumsPaymentState
-from helloasso_python.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
-from helloasso_python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
-from helloasso_python.models.hello_asso_api_v5_models_payment_refund_operation_model import HelloAssoApiV5ModelsPaymentRefundOperationModel
-from helloasso_python.models.hello_asso_api_v5_models_statistics_payment_detail import HelloAssoApiV5ModelsStatisticsPaymentDetail
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_payment_state import HelloAssoApiV5CommonModelsEnumsPaymentState
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
+from helloasso_python.models.hello_asso_api_v5_common_models_payment_refund_operation_model import HelloAssoApiV5CommonModelsPaymentRefundOperationModel
+from helloasso_python.models.hello_asso_api_v5_common_models_statistics_payment_detail import HelloAssoApiV5CommonModelsStatisticsPaymentDetail
 from helloasso_python.models.results_with_pagination_model_payment import ResultsWithPaginationModelPayment
-from helloasso_python.models.results_with_pagination_model_public_payment_model import ResultsWithPaginationModelPublicPaymentModel
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -52,16 +51,16 @@ class PaiementsApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
-        form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
+        form_type: Annotated[HelloAssoApiV5CommonModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
         to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsPaymentState]], Field(description="Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
+        states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsPaymentState]], Field(description="Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.             Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
+        sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -85,7 +84,7 @@ class PaiementsApi:
         :param form_slug: The form slug (required)
         :type form_slug: str
         :param form_type: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
         :param to: End Date Filter (exclusive)
@@ -98,12 +97,12 @@ class PaiementsApi:
         :type page_size: int
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
-        :param states: Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
-        :type states: List[HelloAssoApiV5ModelsEnumsPaymentState]
+        :param states: Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.             Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
+        :type states: List[HelloAssoApiV5CommonModelsEnumsPaymentState]
         :param sort_order: Sort payments by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort payments by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
+        :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -169,16 +168,16 @@ class PaiementsApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
-        form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
+        form_type: Annotated[HelloAssoApiV5CommonModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
         to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsPaymentState]], Field(description="Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
+        states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsPaymentState]], Field(description="Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.             Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
+        sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -202,7 +201,7 @@ class PaiementsApi:
         :param form_slug: The form slug (required)
         :type form_slug: str
         :param form_type: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
         :param to: End Date Filter (exclusive)
@@ -215,12 +214,12 @@ class PaiementsApi:
         :type page_size: int
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
-        :param states: Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
-        :type states: List[HelloAssoApiV5ModelsEnumsPaymentState]
+        :param states: Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.             Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
+        :type states: List[HelloAssoApiV5CommonModelsEnumsPaymentState]
         :param sort_order: Sort payments by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort payments by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
+        :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -286,16 +285,16 @@ class PaiementsApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
-        form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
+        form_type: Annotated[HelloAssoApiV5CommonModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
         to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsPaymentState]], Field(description="Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
+        states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsPaymentState]], Field(description="Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.             Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
+        sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -319,7 +318,7 @@ class PaiementsApi:
         :param form_slug: The form slug (required)
         :type form_slug: str
         :param form_type: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
         :param to: End Date Filter (exclusive)
@@ -332,12 +331,12 @@ class PaiementsApi:
         :type page_size: int
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
-        :param states: Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
-        :type states: List[HelloAssoApiV5ModelsEnumsPaymentState]
+        :param states: Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.             Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
+        :type states: List[HelloAssoApiV5CommonModelsEnumsPaymentState]
         :param sort_order: Sort payments by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort payments by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
+        :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -545,9 +544,9 @@ class PaiementsApi:
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsPaymentState]], Field(description="The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
+        states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsPaymentState]], Field(description="The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.             Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
+        sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -580,12 +579,12 @@ class PaiementsApi:
         :type page_size: int
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
-        :param states: The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
-        :type states: List[HelloAssoApiV5ModelsEnumsPaymentState]
+        :param states: The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.             Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
+        :type states: List[HelloAssoApiV5CommonModelsEnumsPaymentState]
         :param sort_order: Sort payments by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort payments by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
+        :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -654,9 +653,9 @@ class PaiementsApi:
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsPaymentState]], Field(description="The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
+        states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsPaymentState]], Field(description="The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.             Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
+        sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -689,12 +688,12 @@ class PaiementsApi:
         :type page_size: int
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
-        :param states: The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
-        :type states: List[HelloAssoApiV5ModelsEnumsPaymentState]
+        :param states: The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.             Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
+        :type states: List[HelloAssoApiV5CommonModelsEnumsPaymentState]
         :param sort_order: Sort payments by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort payments by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
+        :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -763,9 +762,9 @@ class PaiementsApi:
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsPaymentState]], Field(description="The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
+        states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsPaymentState]], Field(description="The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.             Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
+        sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -798,12 +797,12 @@ class PaiementsApi:
         :type page_size: int
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
-        :param states: The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
-        :type states: List[HelloAssoApiV5ModelsEnumsPaymentState]
+        :param states: The payment states  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.             Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
+        :type states: List[HelloAssoApiV5CommonModelsEnumsPaymentState]
         :param sort_order: Sort payments by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort payments by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
+        :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -994,499 +993,6 @@ class PaiementsApi:
 
 
     @validate_call
-    def organizations_organization_slug_payments_search_get(
-        self,
-        organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
-        var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
-        page_size: Annotated[Optional[StrictInt], Field(description="The number of items to retrieve")] = None,
-        continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        form_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormType]], Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
-        form_type: Annotated[Optional[HelloAssoApiV5ModelsEnumsFormType], Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop. This parameter must be used with the parameter formId.")] = None,
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsPaymentState]], Field(description="Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
-        user_id: Annotated[Optional[StrictInt], Field(description="The User identifier")] = None,
-        search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email.")] = None,
-        amount: Annotated[Optional[StrictInt], Field(description="Amount of the payment in cents. Filter payments with exact amount with or without the contribution.")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResultsWithPaginationModelPublicPaymentModel:
-        """Rechercher des paiements.
-
-        <p>Attention : Le compte total est désactivé, nous retournons la liste des paiements et le continuationToken. </p><p>Recherchez des paiements basés sur de nombreux critères La recherche doit utiliser au moins l'un des paramètres suivants : </p><ul><li>ID de l'organisation : paiements effectués pour cette organisation </li><li>Formulaire : Paiements effectués par ce formulaire en utilisant le couple ID du formulaire et type du formulaire </li><li>ID de l'utilisateur : Paiements effectués par cet utilisateur </li><li>États : Une liste d'états de paiement à filtrer. (si vide, tous les paiements seront retournés)</li><li>Plage de dates : En utilisant du et/ou au </li><li>Requête de recherche : Une liste de mots qui doivent être contenus soit sur les noms des payeurs ou des utilisateurs ou l'email </li><li>Montant du paiement : En centimes, qui doit exactement correspondre au montant des paiements (avec ou sans la contribution) </li></ul><p>L'ordre des résultats est également personnalisable : </p><ul><li>Le champ de tri peut être la date, la date de mise à jour ou la date de création </li><li>L'ordre peut être ascendant ou descendant<br><br><b>Votre token doit avoir l'un de ces rôles : </b><br>OrganizationAdmin<br><br>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br><br><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br> AccessTransactions<br><br></li></ul>
-
-        :param organization_slug: The organization slug (required)
-        :type organization_slug: str
-        :param var_from: First Date Filter
-        :type var_from: datetime
-        :param to: End Date Filter (exclusive)
-        :type to: datetime
-        :param page_size: The number of items to retrieve
-        :type page_size: int
-        :param continuation_token: Continuation Token from which we wish to retrieve results
-        :type continuation_token: str
-        :param form_types: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
-        :type form_types: List[HelloAssoApiV5ModelsEnumsFormType]
-        :param form_type: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop. This parameter must be used with the parameter formId.
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
-        :param states: Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
-        :type states: List[HelloAssoApiV5ModelsEnumsPaymentState]
-        :param user_id: The User identifier
-        :type user_id: int
-        :param search_key: Filter results on user or payer first name, last name or email.
-        :type search_key: str
-        :param amount: Amount of the payment in cents. Filter payments with exact amount with or without the contribution.
-        :type amount: int
-        :param sort_order: Sort payments by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
-        :param sort_field: Sort payments by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._organizations_organization_slug_payments_search_get_serialize(
-            organization_slug=organization_slug,
-            var_from=var_from,
-            to=to,
-            page_size=page_size,
-            continuation_token=continuation_token,
-            form_types=form_types,
-            form_type=form_type,
-            states=states,
-            user_id=user_id,
-            search_key=search_key,
-            amount=amount,
-            sort_order=sort_order,
-            sort_field=sort_field,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelPublicPaymentModel",
-            '401': None,
-            '403': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def organizations_organization_slug_payments_search_get_with_http_info(
-        self,
-        organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
-        var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
-        page_size: Annotated[Optional[StrictInt], Field(description="The number of items to retrieve")] = None,
-        continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        form_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormType]], Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
-        form_type: Annotated[Optional[HelloAssoApiV5ModelsEnumsFormType], Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop. This parameter must be used with the parameter formId.")] = None,
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsPaymentState]], Field(description="Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
-        user_id: Annotated[Optional[StrictInt], Field(description="The User identifier")] = None,
-        search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email.")] = None,
-        amount: Annotated[Optional[StrictInt], Field(description="Amount of the payment in cents. Filter payments with exact amount with or without the contribution.")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResultsWithPaginationModelPublicPaymentModel]:
-        """Rechercher des paiements.
-
-        <p>Attention : Le compte total est désactivé, nous retournons la liste des paiements et le continuationToken. </p><p>Recherchez des paiements basés sur de nombreux critères La recherche doit utiliser au moins l'un des paramètres suivants : </p><ul><li>ID de l'organisation : paiements effectués pour cette organisation </li><li>Formulaire : Paiements effectués par ce formulaire en utilisant le couple ID du formulaire et type du formulaire </li><li>ID de l'utilisateur : Paiements effectués par cet utilisateur </li><li>États : Une liste d'états de paiement à filtrer. (si vide, tous les paiements seront retournés)</li><li>Plage de dates : En utilisant du et/ou au </li><li>Requête de recherche : Une liste de mots qui doivent être contenus soit sur les noms des payeurs ou des utilisateurs ou l'email </li><li>Montant du paiement : En centimes, qui doit exactement correspondre au montant des paiements (avec ou sans la contribution) </li></ul><p>L'ordre des résultats est également personnalisable : </p><ul><li>Le champ de tri peut être la date, la date de mise à jour ou la date de création </li><li>L'ordre peut être ascendant ou descendant<br><br><b>Votre token doit avoir l'un de ces rôles : </b><br>OrganizationAdmin<br><br>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br><br><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br> AccessTransactions<br><br></li></ul>
-
-        :param organization_slug: The organization slug (required)
-        :type organization_slug: str
-        :param var_from: First Date Filter
-        :type var_from: datetime
-        :param to: End Date Filter (exclusive)
-        :type to: datetime
-        :param page_size: The number of items to retrieve
-        :type page_size: int
-        :param continuation_token: Continuation Token from which we wish to retrieve results
-        :type continuation_token: str
-        :param form_types: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
-        :type form_types: List[HelloAssoApiV5ModelsEnumsFormType]
-        :param form_type: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop. This parameter must be used with the parameter formId.
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
-        :param states: Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
-        :type states: List[HelloAssoApiV5ModelsEnumsPaymentState]
-        :param user_id: The User identifier
-        :type user_id: int
-        :param search_key: Filter results on user or payer first name, last name or email.
-        :type search_key: str
-        :param amount: Amount of the payment in cents. Filter payments with exact amount with or without the contribution.
-        :type amount: int
-        :param sort_order: Sort payments by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
-        :param sort_field: Sort payments by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._organizations_organization_slug_payments_search_get_serialize(
-            organization_slug=organization_slug,
-            var_from=var_from,
-            to=to,
-            page_size=page_size,
-            continuation_token=continuation_token,
-            form_types=form_types,
-            form_type=form_type,
-            states=states,
-            user_id=user_id,
-            search_key=search_key,
-            amount=amount,
-            sort_order=sort_order,
-            sort_field=sort_field,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelPublicPaymentModel",
-            '401': None,
-            '403': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def organizations_organization_slug_payments_search_get_without_preload_content(
-        self,
-        organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
-        var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
-        to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
-        page_size: Annotated[Optional[StrictInt], Field(description="The number of items to retrieve")] = None,
-        continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        form_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormType]], Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
-        form_type: Annotated[Optional[HelloAssoApiV5ModelsEnumsFormType], Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop. This parameter must be used with the parameter formId.")] = None,
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsPaymentState]], Field(description="Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor")] = None,
-        user_id: Annotated[Optional[StrictInt], Field(description="The User identifier")] = None,
-        search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email.")] = None,
-        amount: Annotated[Optional[StrictInt], Field(description="Amount of the payment in cents. Filter payments with exact amount with or without the contribution.")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort payments by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort payments by a specific field (Date or UpdateDate). Default is date")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Rechercher des paiements.
-
-        <p>Attention : Le compte total est désactivé, nous retournons la liste des paiements et le continuationToken. </p><p>Recherchez des paiements basés sur de nombreux critères La recherche doit utiliser au moins l'un des paramètres suivants : </p><ul><li>ID de l'organisation : paiements effectués pour cette organisation </li><li>Formulaire : Paiements effectués par ce formulaire en utilisant le couple ID du formulaire et type du formulaire </li><li>ID de l'utilisateur : Paiements effectués par cet utilisateur </li><li>États : Une liste d'états de paiement à filtrer. (si vide, tous les paiements seront retournés)</li><li>Plage de dates : En utilisant du et/ou au </li><li>Requête de recherche : Une liste de mots qui doivent être contenus soit sur les noms des payeurs ou des utilisateurs ou l'email </li><li>Montant du paiement : En centimes, qui doit exactement correspondre au montant des paiements (avec ou sans la contribution) </li></ul><p>L'ordre des résultats est également personnalisable : </p><ul><li>Le champ de tri peut être la date, la date de mise à jour ou la date de création </li><li>L'ordre peut être ascendant ou descendant<br><br><b>Votre token doit avoir l'un de ces rôles : </b><br>OrganizationAdmin<br><br>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br><br><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br> AccessTransactions<br><br></li></ul>
-
-        :param organization_slug: The organization slug (required)
-        :type organization_slug: str
-        :param var_from: First Date Filter
-        :type var_from: datetime
-        :param to: End Date Filter (exclusive)
-        :type to: datetime
-        :param page_size: The number of items to retrieve
-        :type page_size: int
-        :param continuation_token: Continuation Token from which we wish to retrieve results
-        :type continuation_token: str
-        :param form_types: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
-        :type form_types: List[HelloAssoApiV5ModelsEnumsFormType]
-        :param form_type: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop. This parameter must be used with the parameter formId.
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
-        :param states: Filter results by states of payments  Available values: * `Pending` - A payment scheduled at a later date, not yet processed. * `Authorized` - The payment has been authorized, validated, processed. * `Refused` - The payment has been refused by the bank. * `Unknown` * `Registered` - Represents a payment made offline.              Probably for an item of type * `Refunded` - The payment has been refunded. * `Refunding` - The payment is being refunded. * `Contested` - Payment has been contested by the contributor
-        :type states: List[HelloAssoApiV5ModelsEnumsPaymentState]
-        :param user_id: The User identifier
-        :type user_id: int
-        :param search_key: Filter results on user or payer first name, last name or email.
-        :type search_key: str
-        :param amount: Amount of the payment in cents. Filter payments with exact amount with or without the contribution.
-        :type amount: int
-        :param sort_order: Sort payments by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
-        :param sort_field: Sort payments by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._organizations_organization_slug_payments_search_get_serialize(
-            organization_slug=organization_slug,
-            var_from=var_from,
-            to=to,
-            page_size=page_size,
-            continuation_token=continuation_token,
-            form_types=form_types,
-            form_type=form_type,
-            states=states,
-            user_id=user_id,
-            search_key=search_key,
-            amount=amount,
-            sort_order=sort_order,
-            sort_field=sort_field,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelPublicPaymentModel",
-            '401': None,
-            '403': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _organizations_organization_slug_payments_search_get_serialize(
-        self,
-        organization_slug,
-        var_from,
-        to,
-        page_size,
-        continuation_token,
-        form_types,
-        form_type,
-        states,
-        user_id,
-        search_key,
-        amount,
-        sort_order,
-        sort_field,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-            'formTypes': 'multi',
-            'states': 'multi',
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if organization_slug is not None:
-            _path_params['organizationSlug'] = organization_slug
-        # process the query parameters
-        if var_from is not None:
-            if isinstance(var_from, datetime):
-                _query_params.append(
-                    (
-                        'from',
-                        var_from.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('from', var_from))
-            
-        if to is not None:
-            if isinstance(to, datetime):
-                _query_params.append(
-                    (
-                        'to',
-                        to.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('to', to))
-            
-        if page_size is not None:
-            
-            _query_params.append(('pageSize', page_size))
-            
-        if continuation_token is not None:
-            
-            _query_params.append(('continuationToken', continuation_token))
-            
-        if form_types is not None:
-            
-            _query_params.append(('formTypes', form_types))
-            
-        if form_type is not None:
-            
-            _query_params.append(('formType', form_type.value))
-            
-        if states is not None:
-            
-            _query_params.append(('states', states))
-            
-        if user_id is not None:
-            
-            _query_params.append(('userId', user_id))
-            
-        if search_key is not None:
-            
-            _query_params.append(('searchKey', search_key))
-            
-        if amount is not None:
-            
-            _query_params.append(('amount', amount))
-            
-        if sort_order is not None:
-            
-            _query_params.append(('sortOrder', sort_order.value))
-            
-        if sort_field is not None:
-            
-            _query_params.append(('sortField', sort_field.value))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/organizations/{organizationSlug}/payments/search',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
     def payments_payment_id_get(
         self,
         payment_id: Annotated[StrictInt, Field(description="The payment identifier.")],
@@ -1503,7 +1009,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5ModelsStatisticsPaymentDetail:
+    ) -> HelloAssoApiV5CommonModelsStatisticsPaymentDetail:
         """Obtenir les informations détaillées d'un paiement.
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1544,7 +1050,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsStatisticsPaymentDetail",
+            '200': "HelloAssoApiV5CommonModelsStatisticsPaymentDetail",
             '401': None,
             '403': None,
         }
@@ -1576,7 +1082,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5ModelsStatisticsPaymentDetail]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsStatisticsPaymentDetail]:
         """Obtenir les informations détaillées d'un paiement.
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1617,7 +1123,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsStatisticsPaymentDetail",
+            '200': "HelloAssoApiV5CommonModelsStatisticsPaymentDetail",
             '401': None,
             '403': None,
         }
@@ -1690,7 +1196,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsStatisticsPaymentDetail",
+            '200': "HelloAssoApiV5CommonModelsStatisticsPaymentDetail",
             '401': None,
             '403': None,
         }
@@ -1792,7 +1298,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5ModelsPaymentRefundOperationModel:
+    ) -> HelloAssoApiV5CommonModelsPaymentRefundOperationModel:
         """Rembourser un paiement.
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/>FormAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> RefundManagement<br/><br/>
@@ -1842,7 +1348,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsPaymentRefundOperationModel",
+            '200': "HelloAssoApiV5CommonModelsPaymentRefundOperationModel",
             '401': None,
             '403': None,
         }
@@ -1877,7 +1383,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5ModelsPaymentRefundOperationModel]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsPaymentRefundOperationModel]:
         """Rembourser un paiement.
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/>FormAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> RefundManagement<br/><br/>
@@ -1927,7 +1433,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsPaymentRefundOperationModel",
+            '200': "HelloAssoApiV5CommonModelsPaymentRefundOperationModel",
             '401': None,
             '403': None,
         }
@@ -2012,7 +1518,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsPaymentRefundOperationModel",
+            '200': "HelloAssoApiV5CommonModelsPaymentRefundOperationModel",
             '401': None,
             '403': None,
         }

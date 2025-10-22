@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from typing import List
-from helloasso_python.models.hello_asso_api_v5_models_organization_organization_light_model import HelloAssoApiV5ModelsOrganizationOrganizationLightModel
+from helloasso_python.models.hello_asso_api_v5_common_models_organization_organization_light_model import HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -52,7 +52,7 @@ class UtilisateursApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[HelloAssoApiV5ModelsOrganizationOrganizationLightModel]:
+    ) -> List[HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel]:
         """Obtenir mes organisations
 
         Renvoie la liste des organisations où l'utilisateur connecté a des droits<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -87,7 +87,7 @@ class UtilisateursApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[HelloAssoApiV5ModelsOrganizationOrganizationLightModel]",
+            '200': "List[HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel]",
             '401': None,
             '403': None,
         }
@@ -117,7 +117,7 @@ class UtilisateursApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[HelloAssoApiV5ModelsOrganizationOrganizationLightModel]]:
+    ) -> ApiResponse[List[HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel]]:
         """Obtenir mes organisations
 
         Renvoie la liste des organisations où l'utilisateur connecté a des droits<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -152,7 +152,7 @@ class UtilisateursApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[HelloAssoApiV5ModelsOrganizationOrganizationLightModel]",
+            '200': "List[HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel]",
             '401': None,
             '403': None,
         }
@@ -217,7 +217,7 @@ class UtilisateursApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[HelloAssoApiV5ModelsOrganizationOrganizationLightModel]",
+            '200': "List[HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel]",
             '401': None,
             '403': None,
         }

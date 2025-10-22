@@ -19,11 +19,11 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
-from helloasso_python.models.hello_asso_api_v5_models_accounts_clients_public_put_api_client_request import HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest
-from helloasso_python.models.hello_asso_api_v5_models_api_notifications_api_notification_type import HelloAssoApiV5ModelsApiNotificationsApiNotificationType
-from helloasso_python.models.hello_asso_api_v5_models_api_notifications_api_url_notification_model import HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel
-from helloasso_python.models.hello_asso_api_v5_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
-from helloasso_python.models.hello_asso_api_v5_models_partners_partner_public_model import HelloAssoApiV5ModelsPartnersPartnerPublicModel
+from helloasso_python.models.hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request import HelloAssoApiV5CommonModelsAccountsClientsPublicPutApiClientRequest
+from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_api_notification_type import HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType
+from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_api_url_notification_model import HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel
+from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody
+from helloasso_python.models.hello_asso_api_v5_common_models_partners_partner_public_model import HelloAssoApiV5CommonModelsPartnersPartnerPublicModel
 from helloasso_python.models.results_with_pagination_model_partner_organization_model import ResultsWithPaginationModelPartnerOrganizationModel
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
@@ -47,7 +47,7 @@ class PartenairesApi:
     @validate_call
     def partners_me_api_clients_put(
         self,
-        hello_asso_api_v5_models_accounts_clients_public_put_api_client_request: Optional[HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest] = None,
+        hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request: Optional[HelloAssoApiV5CommonModelsAccountsClientsPublicPutApiClientRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -65,8 +65,8 @@ class PartenairesApi:
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
 
-        :param hello_asso_api_v5_models_accounts_clients_public_put_api_client_request:
-        :type hello_asso_api_v5_models_accounts_clients_public_put_api_client_request: HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest
+        :param hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request:
+        :type hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request: HelloAssoApiV5CommonModelsAccountsClientsPublicPutApiClientRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -90,7 +90,7 @@ class PartenairesApi:
         """ # noqa: E501
 
         _param = self._partners_me_api_clients_put_serialize(
-            hello_asso_api_v5_models_accounts_clients_public_put_api_client_request=hello_asso_api_v5_models_accounts_clients_public_put_api_client_request,
+            hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request=hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -116,7 +116,7 @@ class PartenairesApi:
     @validate_call
     def partners_me_api_clients_put_with_http_info(
         self,
-        hello_asso_api_v5_models_accounts_clients_public_put_api_client_request: Optional[HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest] = None,
+        hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request: Optional[HelloAssoApiV5CommonModelsAccountsClientsPublicPutApiClientRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -134,8 +134,8 @@ class PartenairesApi:
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
 
-        :param hello_asso_api_v5_models_accounts_clients_public_put_api_client_request:
-        :type hello_asso_api_v5_models_accounts_clients_public_put_api_client_request: HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest
+        :param hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request:
+        :type hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request: HelloAssoApiV5CommonModelsAccountsClientsPublicPutApiClientRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -159,7 +159,7 @@ class PartenairesApi:
         """ # noqa: E501
 
         _param = self._partners_me_api_clients_put_serialize(
-            hello_asso_api_v5_models_accounts_clients_public_put_api_client_request=hello_asso_api_v5_models_accounts_clients_public_put_api_client_request,
+            hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request=hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -185,7 +185,7 @@ class PartenairesApi:
     @validate_call
     def partners_me_api_clients_put_without_preload_content(
         self,
-        hello_asso_api_v5_models_accounts_clients_public_put_api_client_request: Optional[HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest] = None,
+        hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request: Optional[HelloAssoApiV5CommonModelsAccountsClientsPublicPutApiClientRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -203,8 +203,8 @@ class PartenairesApi:
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
 
-        :param hello_asso_api_v5_models_accounts_clients_public_put_api_client_request:
-        :type hello_asso_api_v5_models_accounts_clients_public_put_api_client_request: HelloAssoApiV5ModelsAccountsClientsPublicPutApiClientRequest
+        :param hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request:
+        :type hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request: HelloAssoApiV5CommonModelsAccountsClientsPublicPutApiClientRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -228,7 +228,7 @@ class PartenairesApi:
         """ # noqa: E501
 
         _param = self._partners_me_api_clients_put_serialize(
-            hello_asso_api_v5_models_accounts_clients_public_put_api_client_request=hello_asso_api_v5_models_accounts_clients_public_put_api_client_request,
+            hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request=hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -249,7 +249,7 @@ class PartenairesApi:
 
     def _partners_me_api_clients_put_serialize(
         self,
-        hello_asso_api_v5_models_accounts_clients_public_put_api_client_request,
+        hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request,
         _request_auth,
         _content_type,
         _headers,
@@ -275,8 +275,8 @@ class PartenairesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if hello_asso_api_v5_models_accounts_clients_public_put_api_client_request is not None:
-            _body_params = hello_asso_api_v5_models_accounts_clients_public_put_api_client_request
+        if hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request is not None:
+            _body_params = hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request
 
 
 
@@ -323,7 +323,7 @@ class PartenairesApi:
     @validate_call
     def partners_me_api_notifications_delete(
         self,
-        notification_type: Annotated[Optional[HelloAssoApiV5ModelsApiNotificationsApiNotificationType], Field(description="Do not specify a notification type to remove the main notification Url")] = None,
+        notification_type: Annotated[Optional[HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType], Field(description="Do not specify a notification type to remove the main notification Url")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -342,7 +342,7 @@ class PartenairesApi:
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
 
         :param notification_type: Do not specify a notification type to remove the main notification Url
-        :type notification_type: HelloAssoApiV5ModelsApiNotificationsApiNotificationType
+        :type notification_type: HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -392,7 +392,7 @@ class PartenairesApi:
     @validate_call
     def partners_me_api_notifications_delete_with_http_info(
         self,
-        notification_type: Annotated[Optional[HelloAssoApiV5ModelsApiNotificationsApiNotificationType], Field(description="Do not specify a notification type to remove the main notification Url")] = None,
+        notification_type: Annotated[Optional[HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType], Field(description="Do not specify a notification type to remove the main notification Url")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -411,7 +411,7 @@ class PartenairesApi:
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
 
         :param notification_type: Do not specify a notification type to remove the main notification Url
-        :type notification_type: HelloAssoApiV5ModelsApiNotificationsApiNotificationType
+        :type notification_type: HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -461,7 +461,7 @@ class PartenairesApi:
     @validate_call
     def partners_me_api_notifications_delete_without_preload_content(
         self,
-        notification_type: Annotated[Optional[HelloAssoApiV5ModelsApiNotificationsApiNotificationType], Field(description="Do not specify a notification type to remove the main notification Url")] = None,
+        notification_type: Annotated[Optional[HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType], Field(description="Do not specify a notification type to remove the main notification Url")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -480,7 +480,7 @@ class PartenairesApi:
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
 
         :param notification_type: Do not specify a notification type to remove the main notification Url
-        :type notification_type: HelloAssoApiV5ModelsApiNotificationsApiNotificationType
+        :type notification_type: HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -586,7 +586,7 @@ class PartenairesApi:
     def partners_me_api_notifications_organizations_organization_slug_delete(
         self,
         organization_slug: StrictStr,
-        notification_type: Annotated[Optional[HelloAssoApiV5ModelsApiNotificationsApiNotificationType], Field(description="Do not specify a notification type to remove the main notification Url")] = None,
+        notification_type: Annotated[Optional[HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType], Field(description="Do not specify a notification type to remove the main notification Url")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -607,7 +607,7 @@ class PartenairesApi:
         :param organization_slug:  (required)
         :type organization_slug: str
         :param notification_type: Do not specify a notification type to remove the main notification Url
-        :type notification_type: HelloAssoApiV5ModelsApiNotificationsApiNotificationType
+        :type notification_type: HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -659,7 +659,7 @@ class PartenairesApi:
     def partners_me_api_notifications_organizations_organization_slug_delete_with_http_info(
         self,
         organization_slug: StrictStr,
-        notification_type: Annotated[Optional[HelloAssoApiV5ModelsApiNotificationsApiNotificationType], Field(description="Do not specify a notification type to remove the main notification Url")] = None,
+        notification_type: Annotated[Optional[HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType], Field(description="Do not specify a notification type to remove the main notification Url")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -680,7 +680,7 @@ class PartenairesApi:
         :param organization_slug:  (required)
         :type organization_slug: str
         :param notification_type: Do not specify a notification type to remove the main notification Url
-        :type notification_type: HelloAssoApiV5ModelsApiNotificationsApiNotificationType
+        :type notification_type: HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -732,7 +732,7 @@ class PartenairesApi:
     def partners_me_api_notifications_organizations_organization_slug_delete_without_preload_content(
         self,
         organization_slug: StrictStr,
-        notification_type: Annotated[Optional[HelloAssoApiV5ModelsApiNotificationsApiNotificationType], Field(description="Do not specify a notification type to remove the main notification Url")] = None,
+        notification_type: Annotated[Optional[HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType], Field(description="Do not specify a notification type to remove the main notification Url")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -753,7 +753,7 @@ class PartenairesApi:
         :param organization_slug:  (required)
         :type organization_slug: str
         :param notification_type: Do not specify a notification type to remove the main notification Url
-        :type notification_type: HelloAssoApiV5ModelsApiNotificationsApiNotificationType
+        :type notification_type: HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -863,7 +863,7 @@ class PartenairesApi:
     def partners_me_api_notifications_organizations_organization_slug_put(
         self,
         organization_slug: StrictStr,
-        hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: Annotated[Optional[HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody], Field(description="The body of the request, do not specify a notification type to update the main notification Url")] = None,
+        hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: Annotated[Optional[HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody], Field(description="The body of the request, do not specify a notification type to update the main notification Url")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -876,15 +876,15 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel:
+    ) -> HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel:
         """Mise à jour d'une URL de notification liée à une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
 
         :param organization_slug:  (required)
         :type organization_slug: str
-        :param hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: The body of the request, do not specify a notification type to update the main notification Url
-        :type hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
+        :param hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: The body of the request, do not specify a notification type to update the main notification Url
+        :type hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -909,7 +909,7 @@ class PartenairesApi:
 
         _param = self._partners_me_api_notifications_organizations_organization_slug_put_serialize(
             organization_slug=organization_slug,
-            hello_asso_api_v5_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_models_api_notifications_post_api_url_notification_body,
+            hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -917,7 +917,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel",
+            '200': "HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel",
             '401': None,
             '403': None,
         }
@@ -936,7 +936,7 @@ class PartenairesApi:
     def partners_me_api_notifications_organizations_organization_slug_put_with_http_info(
         self,
         organization_slug: StrictStr,
-        hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: Annotated[Optional[HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody], Field(description="The body of the request, do not specify a notification type to update the main notification Url")] = None,
+        hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: Annotated[Optional[HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody], Field(description="The body of the request, do not specify a notification type to update the main notification Url")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -949,15 +949,15 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel]:
         """Mise à jour d'une URL de notification liée à une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
 
         :param organization_slug:  (required)
         :type organization_slug: str
-        :param hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: The body of the request, do not specify a notification type to update the main notification Url
-        :type hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
+        :param hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: The body of the request, do not specify a notification type to update the main notification Url
+        :type hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -982,7 +982,7 @@ class PartenairesApi:
 
         _param = self._partners_me_api_notifications_organizations_organization_slug_put_serialize(
             organization_slug=organization_slug,
-            hello_asso_api_v5_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_models_api_notifications_post_api_url_notification_body,
+            hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -990,7 +990,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel",
+            '200': "HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel",
             '401': None,
             '403': None,
         }
@@ -1009,7 +1009,7 @@ class PartenairesApi:
     def partners_me_api_notifications_organizations_organization_slug_put_without_preload_content(
         self,
         organization_slug: StrictStr,
-        hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: Annotated[Optional[HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody], Field(description="The body of the request, do not specify a notification type to update the main notification Url")] = None,
+        hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: Annotated[Optional[HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody], Field(description="The body of the request, do not specify a notification type to update the main notification Url")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1029,8 +1029,8 @@ class PartenairesApi:
 
         :param organization_slug:  (required)
         :type organization_slug: str
-        :param hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: The body of the request, do not specify a notification type to update the main notification Url
-        :type hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
+        :param hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: The body of the request, do not specify a notification type to update the main notification Url
+        :type hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1055,7 +1055,7 @@ class PartenairesApi:
 
         _param = self._partners_me_api_notifications_organizations_organization_slug_put_serialize(
             organization_slug=organization_slug,
-            hello_asso_api_v5_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_models_api_notifications_post_api_url_notification_body,
+            hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1063,7 +1063,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel",
+            '200': "HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel",
             '401': None,
             '403': None,
         }
@@ -1077,7 +1077,7 @@ class PartenairesApi:
     def _partners_me_api_notifications_organizations_organization_slug_put_serialize(
         self,
         organization_slug,
-        hello_asso_api_v5_models_api_notifications_post_api_url_notification_body,
+        hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body,
         _request_auth,
         _content_type,
         _headers,
@@ -1105,8 +1105,8 @@ class PartenairesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if hello_asso_api_v5_models_api_notifications_post_api_url_notification_body is not None:
-            _body_params = hello_asso_api_v5_models_api_notifications_post_api_url_notification_body
+        if hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body is not None:
+            _body_params = hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body
 
 
         # set the HTTP header `Accept`
@@ -1162,7 +1162,7 @@ class PartenairesApi:
     @validate_call
     def partners_me_api_notifications_put(
         self,
-        hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: Annotated[Optional[HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody], Field(description="The body of the request, do not specify a notification type to update the main notification Url")] = None,
+        hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: Annotated[Optional[HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody], Field(description="The body of the request, do not specify a notification type to update the main notification Url")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1175,13 +1175,13 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel:
+    ) -> HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel:
         """Mise à jour de l'URL de notification principale
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
 
-        :param hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: The body of the request, do not specify a notification type to update the main notification Url
-        :type hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
+        :param hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: The body of the request, do not specify a notification type to update the main notification Url
+        :type hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1205,7 +1205,7 @@ class PartenairesApi:
         """ # noqa: E501
 
         _param = self._partners_me_api_notifications_put_serialize(
-            hello_asso_api_v5_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_models_api_notifications_post_api_url_notification_body,
+            hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1213,7 +1213,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel",
+            '200': "HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel",
             '401': None,
             '403': None,
         }
@@ -1231,7 +1231,7 @@ class PartenairesApi:
     @validate_call
     def partners_me_api_notifications_put_with_http_info(
         self,
-        hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: Annotated[Optional[HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody], Field(description="The body of the request, do not specify a notification type to update the main notification Url")] = None,
+        hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: Annotated[Optional[HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody], Field(description="The body of the request, do not specify a notification type to update the main notification Url")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1244,13 +1244,13 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel]:
         """Mise à jour de l'URL de notification principale
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
 
-        :param hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: The body of the request, do not specify a notification type to update the main notification Url
-        :type hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
+        :param hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: The body of the request, do not specify a notification type to update the main notification Url
+        :type hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1274,7 +1274,7 @@ class PartenairesApi:
         """ # noqa: E501
 
         _param = self._partners_me_api_notifications_put_serialize(
-            hello_asso_api_v5_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_models_api_notifications_post_api_url_notification_body,
+            hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1282,7 +1282,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel",
+            '200': "HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel",
             '401': None,
             '403': None,
         }
@@ -1300,7 +1300,7 @@ class PartenairesApi:
     @validate_call
     def partners_me_api_notifications_put_without_preload_content(
         self,
-        hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: Annotated[Optional[HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody], Field(description="The body of the request, do not specify a notification type to update the main notification Url")] = None,
+        hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: Annotated[Optional[HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody], Field(description="The body of the request, do not specify a notification type to update the main notification Url")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1318,8 +1318,8 @@ class PartenairesApi:
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
 
-        :param hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: The body of the request, do not specify a notification type to update the main notification Url
-        :type hello_asso_api_v5_models_api_notifications_post_api_url_notification_body: HelloAssoApiV5ModelsApiNotificationsPostApiUrlNotificationBody
+        :param hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: The body of the request, do not specify a notification type to update the main notification Url
+        :type hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body: HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1343,7 +1343,7 @@ class PartenairesApi:
         """ # noqa: E501
 
         _param = self._partners_me_api_notifications_put_serialize(
-            hello_asso_api_v5_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_models_api_notifications_post_api_url_notification_body,
+            hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1351,7 +1351,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsApiNotificationsApiUrlNotificationModel",
+            '200': "HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel",
             '401': None,
             '403': None,
         }
@@ -1364,7 +1364,7 @@ class PartenairesApi:
 
     def _partners_me_api_notifications_put_serialize(
         self,
-        hello_asso_api_v5_models_api_notifications_post_api_url_notification_body,
+        hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body,
         _request_auth,
         _content_type,
         _headers,
@@ -1390,8 +1390,8 @@ class PartenairesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if hello_asso_api_v5_models_api_notifications_post_api_url_notification_body is not None:
-            _body_params = hello_asso_api_v5_models_api_notifications_post_api_url_notification_body
+        if hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body is not None:
+            _body_params = hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body
 
 
         # set the HTTP header `Accept`
@@ -1459,7 +1459,7 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5ModelsPartnersPartnerPublicModel:
+    ) -> HelloAssoApiV5CommonModelsPartnersPartnerPublicModel:
         """Récupération des informations
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -1494,7 +1494,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsPartnersPartnerPublicModel",
+            '200': "HelloAssoApiV5CommonModelsPartnersPartnerPublicModel",
             '401': None,
             '403': None,
         }
@@ -1524,7 +1524,7 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5ModelsPartnersPartnerPublicModel]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsPartnersPartnerPublicModel]:
         """Récupération des informations
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -1559,7 +1559,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsPartnersPartnerPublicModel",
+            '200': "HelloAssoApiV5CommonModelsPartnersPartnerPublicModel",
             '401': None,
             '403': None,
         }
@@ -1624,7 +1624,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsPartnersPartnerPublicModel",
+            '200': "HelloAssoApiV5CommonModelsPartnersPartnerPublicModel",
             '401': None,
             '403': None,
         }

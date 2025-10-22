@@ -18,9 +18,9 @@ from typing_extensions import Annotated
 
 from pydantic import StrictBool, StrictInt, StrictStr
 from typing import Optional
-from helloasso_python.models.hello_asso_api_v5_models_carts_checkout_intent_response import HelloAssoApiV5ModelsCartsCheckoutIntentResponse
-from helloasso_python.models.hello_asso_api_v5_models_carts_init_checkout_body import HelloAssoApiV5ModelsCartsInitCheckoutBody
-from helloasso_python.models.hello_asso_api_v5_models_carts_init_checkout_response import HelloAssoApiV5ModelsCartsInitCheckoutResponse
+from helloasso_python.models.hello_asso_api_v5_common_models_carts_checkout_intent_response import HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse
+from helloasso_python.models.hello_asso_api_v5_common_models_carts_init_checkout_body import HelloAssoApiV5CommonModelsCartsInitCheckoutBody
+from helloasso_python.models.hello_asso_api_v5_common_models_carts_init_checkout_response import HelloAssoApiV5CommonModelsCartsInitCheckoutResponse
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -58,7 +58,7 @@ class CheckoutApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5ModelsCartsCheckoutIntentResponse:
+    ) -> HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse:
         """Récupérer une intention de paiement
 
         Retourne aussi la commande associée. Uniquement dans le cas ou le paiement est autorisé.<br/><br/><b>Votre clientId doit avoir ces autorisations : </b> <br/> Checkout<br/><br/>
@@ -102,7 +102,7 @@ class CheckoutApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsCartsCheckoutIntentResponse",
+            '200': "HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse",
             '401': None,
             '403': None,
         }
@@ -135,7 +135,7 @@ class CheckoutApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5ModelsCartsCheckoutIntentResponse]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse]:
         """Récupérer une intention de paiement
 
         Retourne aussi la commande associée. Uniquement dans le cas ou le paiement est autorisé.<br/><br/><b>Votre clientId doit avoir ces autorisations : </b> <br/> Checkout<br/><br/>
@@ -179,7 +179,7 @@ class CheckoutApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsCartsCheckoutIntentResponse",
+            '200': "HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse",
             '401': None,
             '403': None,
         }
@@ -256,7 +256,7 @@ class CheckoutApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsCartsCheckoutIntentResponse",
+            '200': "HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse",
             '401': None,
             '403': None,
         }
@@ -345,7 +345,7 @@ class CheckoutApi:
     def organizations_organization_slug_checkout_intents_post(
         self,
         organization_slug: StrictStr,
-        hello_asso_api_v5_models_carts_init_checkout_body: Optional[HelloAssoApiV5ModelsCartsInitCheckoutBody] = None,
+        hello_asso_api_v5_common_models_carts_init_checkout_body: Optional[HelloAssoApiV5CommonModelsCartsInitCheckoutBody] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -358,15 +358,15 @@ class CheckoutApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5ModelsCartsInitCheckoutResponse:
+    ) -> HelloAssoApiV5CommonModelsCartsInitCheckoutResponse:
         """Initialisation d'un Checkout
 
         Pour tout savoir sur Checkout consultez d'abord notre <a href=\"https://dev.helloasso.com/docs/description\">documentation</a><br/><br/><b>Votre clientId doit avoir ces autorisations : </b> <br/> Checkout<br/><br/>
 
         :param organization_slug: (required)
         :type organization_slug: str
-        :param hello_asso_api_v5_models_carts_init_checkout_body:
-        :type hello_asso_api_v5_models_carts_init_checkout_body: HelloAssoApiV5ModelsCartsInitCheckoutBody
+        :param hello_asso_api_v5_common_models_carts_init_checkout_body:
+        :type hello_asso_api_v5_common_models_carts_init_checkout_body: HelloAssoApiV5CommonModelsCartsInitCheckoutBody
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -391,7 +391,7 @@ class CheckoutApi:
 
         _param = self._organizations_organization_slug_checkout_intents_post_serialize(
             organization_slug=organization_slug,
-            hello_asso_api_v5_models_carts_init_checkout_body=hello_asso_api_v5_models_carts_init_checkout_body,
+            hello_asso_api_v5_common_models_carts_init_checkout_body=hello_asso_api_v5_common_models_carts_init_checkout_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -399,7 +399,7 @@ class CheckoutApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsCartsInitCheckoutResponse",
+            '200': "HelloAssoApiV5CommonModelsCartsInitCheckoutResponse",
             '401': None,
             '403': None,
         }
@@ -418,7 +418,7 @@ class CheckoutApi:
     def organizations_organization_slug_checkout_intents_post_with_http_info(
         self,
         organization_slug: StrictStr,
-        hello_asso_api_v5_models_carts_init_checkout_body: Optional[HelloAssoApiV5ModelsCartsInitCheckoutBody] = None,
+        hello_asso_api_v5_common_models_carts_init_checkout_body: Optional[HelloAssoApiV5CommonModelsCartsInitCheckoutBody] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -431,15 +431,15 @@ class CheckoutApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5ModelsCartsInitCheckoutResponse]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsCartsInitCheckoutResponse]:
         """Initialisation d'un Checkout
 
         Pour tout savoir sur Checkout consultez d'abord notre <a href=\"https://dev.helloasso.com/docs/description\">documentation</a><br/><br/><b>Votre clientId doit avoir ces autorisations : </b> <br/> Checkout<br/><br/>
 
         :param organization_slug: (required)
         :type organization_slug: str
-        :param hello_asso_api_v5_models_carts_init_checkout_body:
-        :type hello_asso_api_v5_models_carts_init_checkout_body: HelloAssoApiV5ModelsCartsInitCheckoutBody
+        :param hello_asso_api_v5_common_models_carts_init_checkout_body:
+        :type hello_asso_api_v5_common_models_carts_init_checkout_body: HelloAssoApiV5CommonModelsCartsInitCheckoutBody
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -464,7 +464,7 @@ class CheckoutApi:
 
         _param = self._organizations_organization_slug_checkout_intents_post_serialize(
             organization_slug=organization_slug,
-            hello_asso_api_v5_models_carts_init_checkout_body=hello_asso_api_v5_models_carts_init_checkout_body,
+            hello_asso_api_v5_common_models_carts_init_checkout_body=hello_asso_api_v5_common_models_carts_init_checkout_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -472,7 +472,7 @@ class CheckoutApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsCartsInitCheckoutResponse",
+            '200': "HelloAssoApiV5CommonModelsCartsInitCheckoutResponse",
             '401': None,
             '403': None,
         }
@@ -491,7 +491,7 @@ class CheckoutApi:
     def organizations_organization_slug_checkout_intents_post_without_preload_content(
         self,
         organization_slug: StrictStr,
-        hello_asso_api_v5_models_carts_init_checkout_body: Optional[HelloAssoApiV5ModelsCartsInitCheckoutBody] = None,
+        hello_asso_api_v5_common_models_carts_init_checkout_body: Optional[HelloAssoApiV5CommonModelsCartsInitCheckoutBody] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -511,8 +511,8 @@ class CheckoutApi:
 
         :param organization_slug: (required)
         :type organization_slug: str
-        :param hello_asso_api_v5_models_carts_init_checkout_body:
-        :type hello_asso_api_v5_models_carts_init_checkout_body: HelloAssoApiV5ModelsCartsInitCheckoutBody
+        :param hello_asso_api_v5_common_models_carts_init_checkout_body:
+        :type hello_asso_api_v5_common_models_carts_init_checkout_body: HelloAssoApiV5CommonModelsCartsInitCheckoutBody
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -537,7 +537,7 @@ class CheckoutApi:
 
         _param = self._organizations_organization_slug_checkout_intents_post_serialize(
             organization_slug=organization_slug,
-            hello_asso_api_v5_models_carts_init_checkout_body=hello_asso_api_v5_models_carts_init_checkout_body,
+            hello_asso_api_v5_common_models_carts_init_checkout_body=hello_asso_api_v5_common_models_carts_init_checkout_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -545,7 +545,7 @@ class CheckoutApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsCartsInitCheckoutResponse",
+            '200': "HelloAssoApiV5CommonModelsCartsInitCheckoutResponse",
             '401': None,
             '403': None,
         }
@@ -559,7 +559,7 @@ class CheckoutApi:
     def _organizations_organization_slug_checkout_intents_post_serialize(
         self,
         organization_slug,
-        hello_asso_api_v5_models_carts_init_checkout_body,
+        hello_asso_api_v5_common_models_carts_init_checkout_body,
         _request_auth,
         _content_type,
         _headers,
@@ -587,8 +587,8 @@ class CheckoutApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if hello_asso_api_v5_models_carts_init_checkout_body is not None:
-            _body_params = hello_asso_api_v5_models_carts_init_checkout_body
+        if hello_asso_api_v5_common_models_carts_init_checkout_body is not None:
+            _body_params = hello_asso_api_v5_common_models_carts_init_checkout_body
 
 
         # set the HTTP header `Accept`

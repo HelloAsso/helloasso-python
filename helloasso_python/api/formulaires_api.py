@@ -19,11 +19,11 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from helloasso_python.models.hello_asso_api_v5_models_enums_form_state import HelloAssoApiV5ModelsEnumsFormState
-from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from helloasso_python.models.hello_asso_api_v5_models_forms_form_public_model import HelloAssoApiV5ModelsFormsFormPublicModel
-from helloasso_python.models.hello_asso_api_v5_models_forms_form_quick_create_model import HelloAssoApiV5ModelsFormsFormQuickCreateModel
-from helloasso_python.models.hello_asso_api_v5_models_forms_form_quick_create_request import HelloAssoApiV5ModelsFormsFormQuickCreateRequest
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_state import HelloAssoApiV5CommonModelsEnumsFormState
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
+from helloasso_python.models.hello_asso_api_v5_common_models_forms_form_public_model import HelloAssoApiV5CommonModelsFormsFormPublicModel
+from helloasso_python.models.hello_asso_api_v5_common_models_forms_form_quick_create_model import HelloAssoApiV5CommonModelsFormsFormQuickCreateModel
+from helloasso_python.models.hello_asso_api_v5_common_models_forms_form_quick_create_request import HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest
 from helloasso_python.models.results_with_pagination_model_form_light_model import ResultsWithPaginationModelFormLightModel
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
@@ -48,7 +48,7 @@ class FormulairesApi:
     def organizations_organization_slug_form_types_get(
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization Slug")],
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormState]], Field(description="List of Form States to filter with. If none specified, it won't filter results.  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private")] = None,
+        states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormState]], Field(description="List of Form States to filter with. If none specified, it won't filter results.  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -61,7 +61,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[HelloAssoApiV5ModelsEnumsFormType]:
+    ) -> List[HelloAssoApiV5CommonModelsEnumsFormType]:
         """Obtenir une liste des types de formulaires pour une organisation
 
         Liste tous les types de formulaires où l'organisation possède au moins un formulaire. Cela peut également être filtré par états.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -69,7 +69,7 @@ class FormulairesApi:
         :param organization_slug: The organization Slug (required)
         :type organization_slug: str
         :param states: List of Form States to filter with. If none specified, it won't filter results.  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private
-        :type states: List[HelloAssoApiV5ModelsEnumsFormState]
+        :type states: List[HelloAssoApiV5CommonModelsEnumsFormState]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -102,7 +102,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[HelloAssoApiV5ModelsEnumsFormType]",
+            '200': "List[HelloAssoApiV5CommonModelsEnumsFormType]",
             '401': None,
             '403': None,
         }
@@ -121,7 +121,7 @@ class FormulairesApi:
     def organizations_organization_slug_form_types_get_with_http_info(
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization Slug")],
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormState]], Field(description="List of Form States to filter with. If none specified, it won't filter results.  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private")] = None,
+        states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormState]], Field(description="List of Form States to filter with. If none specified, it won't filter results.  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -134,7 +134,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[HelloAssoApiV5ModelsEnumsFormType]]:
+    ) -> ApiResponse[List[HelloAssoApiV5CommonModelsEnumsFormType]]:
         """Obtenir une liste des types de formulaires pour une organisation
 
         Liste tous les types de formulaires où l'organisation possède au moins un formulaire. Cela peut également être filtré par états.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -142,7 +142,7 @@ class FormulairesApi:
         :param organization_slug: The organization Slug (required)
         :type organization_slug: str
         :param states: List of Form States to filter with. If none specified, it won't filter results.  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private
-        :type states: List[HelloAssoApiV5ModelsEnumsFormState]
+        :type states: List[HelloAssoApiV5CommonModelsEnumsFormState]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -175,7 +175,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[HelloAssoApiV5ModelsEnumsFormType]",
+            '200': "List[HelloAssoApiV5CommonModelsEnumsFormType]",
             '401': None,
             '403': None,
         }
@@ -194,7 +194,7 @@ class FormulairesApi:
     def organizations_organization_slug_form_types_get_without_preload_content(
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization Slug")],
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormState]], Field(description="List of Form States to filter with. If none specified, it won't filter results.  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private")] = None,
+        states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormState]], Field(description="List of Form States to filter with. If none specified, it won't filter results.  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -215,7 +215,7 @@ class FormulairesApi:
         :param organization_slug: The organization Slug (required)
         :type organization_slug: str
         :param states: List of Form States to filter with. If none specified, it won't filter results.  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private
-        :type states: List[HelloAssoApiV5ModelsEnumsFormState]
+        :type states: List[HelloAssoApiV5CommonModelsEnumsFormState]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -248,7 +248,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[HelloAssoApiV5ModelsEnumsFormType]",
+            '200': "List[HelloAssoApiV5CommonModelsEnumsFormType]",
             '401': None,
             '403': None,
         }
@@ -335,8 +335,8 @@ class FormulairesApi:
     def organizations_organization_slug_forms_form_type_action_quick_create_post(
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization Slug")],
-        form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type to create - only Event type is supported")],
-        hello_asso_api_v5_models_forms_form_quick_create_request: Annotated[Optional[HelloAssoApiV5ModelsFormsFormQuickCreateRequest], Field(description="The body of the request.")] = None,
+        form_type: Annotated[HelloAssoApiV5CommonModelsEnumsFormType, Field(description="The form type to create - only Event type is supported")],
+        hello_asso_api_v5_common_models_forms_form_quick_create_request: Annotated[Optional[HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest], Field(description="The body of the request.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -349,7 +349,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5ModelsFormsFormQuickCreateModel:
+    ) -> HelloAssoApiV5CommonModelsFormsFormQuickCreateModel:
         """Créer un événement simplifié pour un organisme
 
         Permet la création d'un événement avec seulement des informations limitées et quelques tarifications simples. L'événement créé de cette manière peut être modifié ultérieurement avec d'autres services<br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> FormAdministration<br/><br/>
@@ -357,9 +357,9 @@ class FormulairesApi:
         :param organization_slug: The organization Slug (required)
         :type organization_slug: str
         :param form_type: The form type to create - only Event type is supported (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
-        :param hello_asso_api_v5_models_forms_form_quick_create_request: The body of the request.
-        :type hello_asso_api_v5_models_forms_form_quick_create_request: HelloAssoApiV5ModelsFormsFormQuickCreateRequest
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
+        :param hello_asso_api_v5_common_models_forms_form_quick_create_request: The body of the request.
+        :type hello_asso_api_v5_common_models_forms_form_quick_create_request: HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -385,7 +385,7 @@ class FormulairesApi:
         _param = self._organizations_organization_slug_forms_form_type_action_quick_create_post_serialize(
             organization_slug=organization_slug,
             form_type=form_type,
-            hello_asso_api_v5_models_forms_form_quick_create_request=hello_asso_api_v5_models_forms_form_quick_create_request,
+            hello_asso_api_v5_common_models_forms_form_quick_create_request=hello_asso_api_v5_common_models_forms_form_quick_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -393,7 +393,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsFormsFormQuickCreateModel",
+            '200': "HelloAssoApiV5CommonModelsFormsFormQuickCreateModel",
             '401': None,
             '403': None,
         }
@@ -412,8 +412,8 @@ class FormulairesApi:
     def organizations_organization_slug_forms_form_type_action_quick_create_post_with_http_info(
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization Slug")],
-        form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type to create - only Event type is supported")],
-        hello_asso_api_v5_models_forms_form_quick_create_request: Annotated[Optional[HelloAssoApiV5ModelsFormsFormQuickCreateRequest], Field(description="The body of the request.")] = None,
+        form_type: Annotated[HelloAssoApiV5CommonModelsEnumsFormType, Field(description="The form type to create - only Event type is supported")],
+        hello_asso_api_v5_common_models_forms_form_quick_create_request: Annotated[Optional[HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest], Field(description="The body of the request.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -426,7 +426,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5ModelsFormsFormQuickCreateModel]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsFormsFormQuickCreateModel]:
         """Créer un événement simplifié pour un organisme
 
         Permet la création d'un événement avec seulement des informations limitées et quelques tarifications simples. L'événement créé de cette manière peut être modifié ultérieurement avec d'autres services<br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> FormAdministration<br/><br/>
@@ -434,9 +434,9 @@ class FormulairesApi:
         :param organization_slug: The organization Slug (required)
         :type organization_slug: str
         :param form_type: The form type to create - only Event type is supported (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
-        :param hello_asso_api_v5_models_forms_form_quick_create_request: The body of the request.
-        :type hello_asso_api_v5_models_forms_form_quick_create_request: HelloAssoApiV5ModelsFormsFormQuickCreateRequest
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
+        :param hello_asso_api_v5_common_models_forms_form_quick_create_request: The body of the request.
+        :type hello_asso_api_v5_common_models_forms_form_quick_create_request: HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -462,7 +462,7 @@ class FormulairesApi:
         _param = self._organizations_organization_slug_forms_form_type_action_quick_create_post_serialize(
             organization_slug=organization_slug,
             form_type=form_type,
-            hello_asso_api_v5_models_forms_form_quick_create_request=hello_asso_api_v5_models_forms_form_quick_create_request,
+            hello_asso_api_v5_common_models_forms_form_quick_create_request=hello_asso_api_v5_common_models_forms_form_quick_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -470,7 +470,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsFormsFormQuickCreateModel",
+            '200': "HelloAssoApiV5CommonModelsFormsFormQuickCreateModel",
             '401': None,
             '403': None,
         }
@@ -489,8 +489,8 @@ class FormulairesApi:
     def organizations_organization_slug_forms_form_type_action_quick_create_post_without_preload_content(
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization Slug")],
-        form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type to create - only Event type is supported")],
-        hello_asso_api_v5_models_forms_form_quick_create_request: Annotated[Optional[HelloAssoApiV5ModelsFormsFormQuickCreateRequest], Field(description="The body of the request.")] = None,
+        form_type: Annotated[HelloAssoApiV5CommonModelsEnumsFormType, Field(description="The form type to create - only Event type is supported")],
+        hello_asso_api_v5_common_models_forms_form_quick_create_request: Annotated[Optional[HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest], Field(description="The body of the request.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -511,9 +511,9 @@ class FormulairesApi:
         :param organization_slug: The organization Slug (required)
         :type organization_slug: str
         :param form_type: The form type to create - only Event type is supported (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
-        :param hello_asso_api_v5_models_forms_form_quick_create_request: The body of the request.
-        :type hello_asso_api_v5_models_forms_form_quick_create_request: HelloAssoApiV5ModelsFormsFormQuickCreateRequest
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
+        :param hello_asso_api_v5_common_models_forms_form_quick_create_request: The body of the request.
+        :type hello_asso_api_v5_common_models_forms_form_quick_create_request: HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -539,7 +539,7 @@ class FormulairesApi:
         _param = self._organizations_organization_slug_forms_form_type_action_quick_create_post_serialize(
             organization_slug=organization_slug,
             form_type=form_type,
-            hello_asso_api_v5_models_forms_form_quick_create_request=hello_asso_api_v5_models_forms_form_quick_create_request,
+            hello_asso_api_v5_common_models_forms_form_quick_create_request=hello_asso_api_v5_common_models_forms_form_quick_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -547,7 +547,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsFormsFormQuickCreateModel",
+            '200': "HelloAssoApiV5CommonModelsFormsFormQuickCreateModel",
             '401': None,
             '403': None,
         }
@@ -562,7 +562,7 @@ class FormulairesApi:
         self,
         organization_slug,
         form_type,
-        hello_asso_api_v5_models_forms_form_quick_create_request,
+        hello_asso_api_v5_common_models_forms_form_quick_create_request,
         _request_auth,
         _content_type,
         _headers,
@@ -592,8 +592,8 @@ class FormulairesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if hello_asso_api_v5_models_forms_form_quick_create_request is not None:
-            _body_params = hello_asso_api_v5_models_forms_form_quick_create_request
+        if hello_asso_api_v5_common_models_forms_form_quick_create_request is not None:
+            _body_params = hello_asso_api_v5_common_models_forms_form_quick_create_request
 
 
         # set the HTTP header `Accept`
@@ -650,7 +650,7 @@ class FormulairesApi:
     def organizations_organization_slug_forms_form_type_form_slug_public_get(
         self,
         organization_slug: StrictStr,
-        form_type: HelloAssoApiV5ModelsEnumsFormType,
+        form_type: HelloAssoApiV5CommonModelsEnumsFormType,
         form_slug: StrictStr,
         _request_timeout: Union[
             None,
@@ -664,7 +664,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5ModelsFormsFormPublicModel:
+    ) -> HelloAssoApiV5CommonModelsFormsFormPublicModel:
         """Obtenir des données publiques détaillées sur un formulaire
 
         Permet de récupérer toutes les informations publiques d'un formulaire, qu'il s'agisse de Crowdfunding, d'Adhésion, d'Événement, de Don...<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -672,7 +672,7 @@ class FormulairesApi:
         :param organization_slug: (required)
         :type organization_slug: str
         :param form_type: (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
         :param form_slug: (required)
         :type form_slug: str
         :param _request_timeout: timeout setting for this request. If one
@@ -708,7 +708,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsFormsFormPublicModel",
+            '200': "HelloAssoApiV5CommonModelsFormsFormPublicModel",
             '401': None,
             '403': None,
         }
@@ -727,7 +727,7 @@ class FormulairesApi:
     def organizations_organization_slug_forms_form_type_form_slug_public_get_with_http_info(
         self,
         organization_slug: StrictStr,
-        form_type: HelloAssoApiV5ModelsEnumsFormType,
+        form_type: HelloAssoApiV5CommonModelsEnumsFormType,
         form_slug: StrictStr,
         _request_timeout: Union[
             None,
@@ -741,7 +741,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5ModelsFormsFormPublicModel]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsFormsFormPublicModel]:
         """Obtenir des données publiques détaillées sur un formulaire
 
         Permet de récupérer toutes les informations publiques d'un formulaire, qu'il s'agisse de Crowdfunding, d'Adhésion, d'Événement, de Don...<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -749,7 +749,7 @@ class FormulairesApi:
         :param organization_slug: (required)
         :type organization_slug: str
         :param form_type: (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
         :param form_slug: (required)
         :type form_slug: str
         :param _request_timeout: timeout setting for this request. If one
@@ -785,7 +785,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsFormsFormPublicModel",
+            '200': "HelloAssoApiV5CommonModelsFormsFormPublicModel",
             '401': None,
             '403': None,
         }
@@ -804,7 +804,7 @@ class FormulairesApi:
     def organizations_organization_slug_forms_form_type_form_slug_public_get_without_preload_content(
         self,
         organization_slug: StrictStr,
-        form_type: HelloAssoApiV5ModelsEnumsFormType,
+        form_type: HelloAssoApiV5CommonModelsEnumsFormType,
         form_slug: StrictStr,
         _request_timeout: Union[
             None,
@@ -826,7 +826,7 @@ class FormulairesApi:
         :param organization_slug: (required)
         :type organization_slug: str
         :param form_type: (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
         :param form_slug: (required)
         :type form_slug: str
         :param _request_timeout: timeout setting for this request. If one
@@ -862,7 +862,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsFormsFormPublicModel",
+            '200': "HelloAssoApiV5CommonModelsFormsFormPublicModel",
             '401': None,
             '403': None,
         }
@@ -949,8 +949,8 @@ class FormulairesApi:
     def organizations_organization_slug_forms_get(
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization Slug")],
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormState]], Field(description="States to filter  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private")] = None,
-        form_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormType]], Field(description="Types to filter")] = None,
+        states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormState]], Field(description="States to filter  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private")] = None,
+        form_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormType]], Field(description="Types to filter")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
@@ -974,9 +974,9 @@ class FormulairesApi:
         :param organization_slug: The organization Slug (required)
         :type organization_slug: str
         :param states: States to filter  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private
-        :type states: List[HelloAssoApiV5ModelsEnumsFormState]
+        :type states: List[HelloAssoApiV5CommonModelsEnumsFormState]
         :param form_types: Types to filter
-        :type form_types: List[HelloAssoApiV5ModelsEnumsFormType]
+        :type form_types: List[HelloAssoApiV5CommonModelsEnumsFormType]
         :param page_index: The page of results to retrieve
         :type page_index: int
         :param page_size: The number of items per page
@@ -1038,8 +1038,8 @@ class FormulairesApi:
     def organizations_organization_slug_forms_get_with_http_info(
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization Slug")],
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormState]], Field(description="States to filter  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private")] = None,
-        form_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormType]], Field(description="Types to filter")] = None,
+        states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormState]], Field(description="States to filter  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private")] = None,
+        form_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormType]], Field(description="Types to filter")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
@@ -1063,9 +1063,9 @@ class FormulairesApi:
         :param organization_slug: The organization Slug (required)
         :type organization_slug: str
         :param states: States to filter  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private
-        :type states: List[HelloAssoApiV5ModelsEnumsFormState]
+        :type states: List[HelloAssoApiV5CommonModelsEnumsFormState]
         :param form_types: Types to filter
-        :type form_types: List[HelloAssoApiV5ModelsEnumsFormType]
+        :type form_types: List[HelloAssoApiV5CommonModelsEnumsFormType]
         :param page_index: The page of results to retrieve
         :type page_index: int
         :param page_size: The number of items per page
@@ -1127,8 +1127,8 @@ class FormulairesApi:
     def organizations_organization_slug_forms_get_without_preload_content(
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization Slug")],
-        states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormState]], Field(description="States to filter  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private")] = None,
-        form_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormType]], Field(description="Types to filter")] = None,
+        states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormState]], Field(description="States to filter  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private")] = None,
+        form_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormType]], Field(description="Types to filter")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
@@ -1152,9 +1152,9 @@ class FormulairesApi:
         :param organization_slug: The organization Slug (required)
         :type organization_slug: str
         :param states: States to filter  Available values: * `Public` - The form is publicly visible and findable on search engines * `Private` - The form is visible only with the URL, you cannot find it on search engines * `Draft` - The form is not yet published but visible if you have admin rights * `Disabled` - The form is disabled and can be reenabled by changing state to public or private
-        :type states: List[HelloAssoApiV5ModelsEnumsFormState]
+        :type states: List[HelloAssoApiV5CommonModelsEnumsFormState]
         :param form_types: Types to filter
-        :type form_types: List[HelloAssoApiV5ModelsEnumsFormType]
+        :type form_types: List[HelloAssoApiV5CommonModelsEnumsFormType]
         :param page_index: The page of results to retrieve
         :type page_index: int
         :param page_size: The number of items per page

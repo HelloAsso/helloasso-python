@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **values_company_legal_status_get**
-> List[HelloAssoApiV5ModelsAccountCompanyLegalStatusModel] values_company_legal_status_get()
+> List[HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel] values_company_legal_status_get()
 
 Obtenir la liste des statuts juridiques
 
@@ -22,7 +22,7 @@ Obtenir la liste des statuts juridiques
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_account_company_legal_status_model import HelloAssoApiV5ModelsAccountCompanyLegalStatusModel
+from helloasso_python.models.hello_asso_api_v5_common_models_accounts_company_legal_status_model import HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[HelloAssoApiV5ModelsAccountCompanyLegalStatusModel]**](HelloAssoApiV5ModelsAccountCompanyLegalStatusModel.md)
+[**List[HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel]**](HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **values_organization_categories_get**
-> List[HelloAssoApiV5ModelsAccountOrganismCategoryModel] values_organization_categories_get()
+> List[HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel] values_organization_categories_get()
 
 Obtenir la liste des catégories du JO
 
@@ -95,7 +95,7 @@ Utilisez ceci afin de construire votre liste de catégories d'organisation<br/><
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_account_organism_category_model import HelloAssoApiV5ModelsAccountOrganismCategoryModel
+from helloasso_python.models.hello_asso_api_v5_common_models_accounts_organism_category_model import HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -134,7 +134,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[HelloAssoApiV5ModelsAccountOrganismCategoryModel]**](HelloAssoApiV5ModelsAccountOrganismCategoryModel.md)
+[**List[HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel]**](HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **values_tags_get**
-> List[HelloAssoApiV5ModelsTagsPublicTagModel] values_tags_get()
+> List[HelloAssoApiV5CommonModelsTagsPublicTagModel] values_tags_get()
 
 Obtenir la liste des tags publiques
 
@@ -168,7 +168,7 @@ Utilisez ceci afin de récupérer la liste des étiquettes utilisées<br/><br/><
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_tags_public_tag_model import HelloAssoApiV5ModelsTagsPublicTagModel
+from helloasso_python.models.hello_asso_api_v5_common_models_tags_public_tag_model import HelloAssoApiV5CommonModelsTagsPublicTagModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -207,7 +207,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[HelloAssoApiV5ModelsTagsPublicTagModel]**](HelloAssoApiV5ModelsTagsPublicTagModel.md)
+[**List[HelloAssoApiV5CommonModelsTagsPublicTagModel]**](HelloAssoApiV5CommonModelsTagsPublicTagModel.md)
 
 ### Authorization
 

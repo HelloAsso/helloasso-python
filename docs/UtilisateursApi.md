@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **users_me_organizations_get**
-> List[HelloAssoApiV5ModelsOrganizationOrganizationLightModel] users_me_organizations_get()
+> List[HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel] users_me_organizations_get()
 
 Obtenir mes organisations
 
@@ -20,7 +20,7 @@ Renvoie la liste des organisations où l'utilisateur connecté a des droits<br/>
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_organization_organization_light_model import HelloAssoApiV5ModelsOrganizationOrganizationLightModel
+from helloasso_python.models.hello_asso_api_v5_common_models_organization_organization_light_model import HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[HelloAssoApiV5ModelsOrganizationOrganizationLightModel]**](HelloAssoApiV5ModelsOrganizationOrganizationLightModel.md)
+[**List[HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel]**](HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel.md)
 
 ### Authorization
 

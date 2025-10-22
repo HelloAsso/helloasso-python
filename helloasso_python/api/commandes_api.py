@@ -20,13 +20,13 @@ from datetime import datetime
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from helloasso_python.models.hello_asso_api_v5_models_enums_form_type import HelloAssoApiV5ModelsEnumsFormType
-from helloasso_python.models.hello_asso_api_v5_models_enums_item_state import HelloAssoApiV5ModelsEnumsItemState
-from helloasso_python.models.hello_asso_api_v5_models_enums_sort_field import HelloAssoApiV5ModelsEnumsSortField
-from helloasso_python.models.hello_asso_api_v5_models_enums_sort_order import HelloAssoApiV5ModelsEnumsSortOrder
-from helloasso_python.models.hello_asso_api_v5_models_enums_tier_type import HelloAssoApiV5ModelsEnumsTierType
-from helloasso_python.models.hello_asso_api_v5_models_statistics_item_detail import HelloAssoApiV5ModelsStatisticsItemDetail
-from helloasso_python.models.hello_asso_api_v5_models_statistics_order_detail import HelloAssoApiV5ModelsStatisticsOrderDetail
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_item_state import HelloAssoApiV5CommonModelsEnumsItemState
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_tier_type import HelloAssoApiV5CommonModelsEnumsTierType
+from helloasso_python.models.hello_asso_api_v5_common_models_statistics_item_detail import HelloAssoApiV5CommonModelsStatisticsItemDetail
+from helloasso_python.models.hello_asso_api_v5_common_models_statistics_order_detail import HelloAssoApiV5CommonModelsStatisticsOrderDetail
 from helloasso_python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
@@ -64,7 +64,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5ModelsStatisticsItemDetail:
+    ) -> HelloAssoApiV5CommonModelsStatisticsItemDetail:
         """Obtenir le détail d'un article contenu dans une commande
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -105,7 +105,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsStatisticsItemDetail",
+            '200': "HelloAssoApiV5CommonModelsStatisticsItemDetail",
             '401': None,
             '403': None,
         }
@@ -137,7 +137,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5ModelsStatisticsItemDetail]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsStatisticsItemDetail]:
         """Obtenir le détail d'un article contenu dans une commande
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -178,7 +178,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsStatisticsItemDetail",
+            '200': "HelloAssoApiV5CommonModelsStatisticsItemDetail",
             '401': None,
             '403': None,
         }
@@ -251,7 +251,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsStatisticsItemDetail",
+            '200': "HelloAssoApiV5CommonModelsStatisticsItemDetail",
             '401': None,
             '403': None,
         }
@@ -609,7 +609,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5ModelsStatisticsOrderDetail:
+    ) -> HelloAssoApiV5CommonModelsStatisticsOrderDetail:
         """Obtenir des informations détaillées sur une commande
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -647,7 +647,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsStatisticsOrderDetail",
+            '200': "HelloAssoApiV5CommonModelsStatisticsOrderDetail",
             '401': None,
             '403': None,
         }
@@ -678,7 +678,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5ModelsStatisticsOrderDetail]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsStatisticsOrderDetail]:
         """Obtenir des informations détaillées sur une commande
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -716,7 +716,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsStatisticsOrderDetail",
+            '200': "HelloAssoApiV5CommonModelsStatisticsOrderDetail",
             '401': None,
             '403': None,
         }
@@ -785,7 +785,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5ModelsStatisticsOrderDetail",
+            '200': "HelloAssoApiV5CommonModelsStatisticsOrderDetail",
             '401': None,
             '403': None,
         }
@@ -867,19 +867,19 @@ class CommandesApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
-        form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
+        form_type: Annotated[HelloAssoApiV5CommonModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
         to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        tier_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsTierType]], Field(description="The type of tiers")] = None,
-        item_states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsItemState]], Field(description="The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid")] = None,
+        tier_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsTierType]], Field(description="The type of tiers")] = None,
+        item_states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsItemState]], Field(description="The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid")] = None,
         tier_name: Annotated[Optional[StrictStr], Field(description="The name of a tier")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields and Options")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort forms items by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort forms items by a specific field (Date or UpdateDate). Default is date")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort forms items by ascending or descending order. Default is descending")] = None,
+        sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort forms items by a specific field (Date or UpdateDate). Default is date")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -903,7 +903,7 @@ class CommandesApi:
         :param form_slug: The form slug (required)
         :type form_slug: str
         :param form_type: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
         :param to: End Date Filter (exclusive)
@@ -917,17 +917,17 @@ class CommandesApi:
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
         :param tier_types: The type of tiers
-        :type tier_types: List[HelloAssoApiV5ModelsEnumsTierType]
+        :type tier_types: List[HelloAssoApiV5CommonModelsEnumsTierType]
         :param item_states: The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid
-        :type item_states: List[HelloAssoApiV5ModelsEnumsItemState]
+        :type item_states: List[HelloAssoApiV5CommonModelsEnumsItemState]
         :param tier_name: The name of a tier
         :type tier_name: str
         :param with_details: Set to true to return CustomFields and Options
         :type with_details: bool
         :param sort_order: Sort forms items by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort forms items by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
+        :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -996,19 +996,19 @@ class CommandesApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
-        form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
+        form_type: Annotated[HelloAssoApiV5CommonModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
         to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        tier_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsTierType]], Field(description="The type of tiers")] = None,
-        item_states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsItemState]], Field(description="The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid")] = None,
+        tier_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsTierType]], Field(description="The type of tiers")] = None,
+        item_states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsItemState]], Field(description="The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid")] = None,
         tier_name: Annotated[Optional[StrictStr], Field(description="The name of a tier")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields and Options")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort forms items by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort forms items by a specific field (Date or UpdateDate). Default is date")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort forms items by ascending or descending order. Default is descending")] = None,
+        sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort forms items by a specific field (Date or UpdateDate). Default is date")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -1032,7 +1032,7 @@ class CommandesApi:
         :param form_slug: The form slug (required)
         :type form_slug: str
         :param form_type: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
         :param to: End Date Filter (exclusive)
@@ -1046,17 +1046,17 @@ class CommandesApi:
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
         :param tier_types: The type of tiers
-        :type tier_types: List[HelloAssoApiV5ModelsEnumsTierType]
+        :type tier_types: List[HelloAssoApiV5CommonModelsEnumsTierType]
         :param item_states: The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid
-        :type item_states: List[HelloAssoApiV5ModelsEnumsItemState]
+        :type item_states: List[HelloAssoApiV5CommonModelsEnumsItemState]
         :param tier_name: The name of a tier
         :type tier_name: str
         :param with_details: Set to true to return CustomFields and Options
         :type with_details: bool
         :param sort_order: Sort forms items by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort forms items by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
+        :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1125,19 +1125,19 @@ class CommandesApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
-        form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
+        form_type: Annotated[HelloAssoApiV5CommonModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
         to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        tier_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsTierType]], Field(description="The type of tiers")] = None,
-        item_states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsItemState]], Field(description="The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid")] = None,
+        tier_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsTierType]], Field(description="The type of tiers")] = None,
+        item_states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsItemState]], Field(description="The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid")] = None,
         tier_name: Annotated[Optional[StrictStr], Field(description="The name of a tier")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields and Options")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort forms items by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort forms items by a specific field (Date or UpdateDate). Default is date")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort forms items by ascending or descending order. Default is descending")] = None,
+        sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort forms items by a specific field (Date or UpdateDate). Default is date")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -1161,7 +1161,7 @@ class CommandesApi:
         :param form_slug: The form slug (required)
         :type form_slug: str
         :param form_type: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
         :param to: End Date Filter (exclusive)
@@ -1175,17 +1175,17 @@ class CommandesApi:
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
         :param tier_types: The type of tiers
-        :type tier_types: List[HelloAssoApiV5ModelsEnumsTierType]
+        :type tier_types: List[HelloAssoApiV5CommonModelsEnumsTierType]
         :param item_states: The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid
-        :type item_states: List[HelloAssoApiV5ModelsEnumsItemState]
+        :type item_states: List[HelloAssoApiV5CommonModelsEnumsItemState]
         :param tier_name: The name of a tier
         :type tier_name: str
         :param with_details: Set to true to return CustomFields and Options
         :type with_details: bool
         :param sort_order: Sort forms items by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort forms items by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
+        :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1407,7 +1407,7 @@ class CommandesApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
-        form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
+        form_type: Annotated[HelloAssoApiV5CommonModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
         to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
@@ -1415,7 +1415,7 @@ class CommandesApi:
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort forms orders by ascending or descending order. Default is descending")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort forms orders by ascending or descending order. Default is descending")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -1439,7 +1439,7 @@ class CommandesApi:
         :param form_slug: The form slug (required)
         :type form_slug: str
         :param form_type: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
         :param to: End Date Filter (exclusive)
@@ -1455,7 +1455,7 @@ class CommandesApi:
         :param with_details: Set to true to return CustomFields
         :type with_details: bool
         :param sort_order: Sort forms orders by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1520,7 +1520,7 @@ class CommandesApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
-        form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
+        form_type: Annotated[HelloAssoApiV5CommonModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
         to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
@@ -1528,7 +1528,7 @@ class CommandesApi:
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort forms orders by ascending or descending order. Default is descending")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort forms orders by ascending or descending order. Default is descending")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -1552,7 +1552,7 @@ class CommandesApi:
         :param form_slug: The form slug (required)
         :type form_slug: str
         :param form_type: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
         :param to: End Date Filter (exclusive)
@@ -1568,7 +1568,7 @@ class CommandesApi:
         :param with_details: Set to true to return CustomFields
         :type with_details: bool
         :param sort_order: Sort forms orders by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1633,7 +1633,7 @@ class CommandesApi:
         self,
         organization_slug: Annotated[StrictStr, Field(description="The organization slug")],
         form_slug: Annotated[StrictStr, Field(description="The form slug")],
-        form_type: Annotated[HelloAssoApiV5ModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
+        form_type: Annotated[HelloAssoApiV5CommonModelsEnumsFormType, Field(description="The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")],
         var_from: Annotated[Optional[datetime], Field(description="First Date Filter")] = None,
         to: Annotated[Optional[datetime], Field(description="End Date Filter (exclusive)")] = None,
         user_search_key: Annotated[Optional[StrictStr], Field(description="Filter results on user or payer first name, last name or email")] = None,
@@ -1641,7 +1641,7 @@ class CommandesApi:
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort forms orders by ascending or descending order. Default is descending")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort forms orders by ascending or descending order. Default is descending")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -1665,7 +1665,7 @@ class CommandesApi:
         :param form_slug: The form slug (required)
         :type form_slug: str
         :param form_type: The form type CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (required)
-        :type form_type: HelloAssoApiV5ModelsEnumsFormType
+        :type form_type: HelloAssoApiV5CommonModelsEnumsFormType
         :param var_from: First Date Filter
         :type var_from: datetime
         :param to: End Date Filter (exclusive)
@@ -1681,7 +1681,7 @@ class CommandesApi:
         :param with_details: Set to true to return CustomFields
         :type with_details: bool
         :param sort_order: Sort forms orders by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1882,12 +1882,12 @@ class CommandesApi:
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        tier_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsTierType]], Field(description="The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus")] = None,
-        item_states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsItemState]], Field(description="The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid")] = None,
+        tier_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsTierType]], Field(description="The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus")] = None,
+        item_states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsItemState]], Field(description="The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid")] = None,
         tier_name: Annotated[Optional[StrictStr], Field(description="The name of a tier")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields and Options")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort organizations items by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort organizations items by a specific field (Date or UpdateDate). Default is date")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort organizations items by ascending or descending order. Default is descending")] = None,
+        sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort organizations items by a specific field (Date or UpdateDate). Default is date")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -1921,17 +1921,17 @@ class CommandesApi:
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
         :param tier_types: The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus
-        :type tier_types: List[HelloAssoApiV5ModelsEnumsTierType]
+        :type tier_types: List[HelloAssoApiV5CommonModelsEnumsTierType]
         :param item_states: The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid
-        :type item_states: List[HelloAssoApiV5ModelsEnumsItemState]
+        :type item_states: List[HelloAssoApiV5CommonModelsEnumsItemState]
         :param tier_name: The name of a tier
         :type tier_name: str
         :param with_details: Set to true to return CustomFields and Options
         :type with_details: bool
         :param sort_order: Sort organizations items by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort organizations items by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
+        :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -2003,12 +2003,12 @@ class CommandesApi:
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        tier_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsTierType]], Field(description="The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus")] = None,
-        item_states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsItemState]], Field(description="The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid")] = None,
+        tier_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsTierType]], Field(description="The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus")] = None,
+        item_states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsItemState]], Field(description="The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid")] = None,
         tier_name: Annotated[Optional[StrictStr], Field(description="The name of a tier")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields and Options")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort organizations items by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort organizations items by a specific field (Date or UpdateDate). Default is date")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort organizations items by ascending or descending order. Default is descending")] = None,
+        sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort organizations items by a specific field (Date or UpdateDate). Default is date")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -2042,17 +2042,17 @@ class CommandesApi:
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
         :param tier_types: The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus
-        :type tier_types: List[HelloAssoApiV5ModelsEnumsTierType]
+        :type tier_types: List[HelloAssoApiV5CommonModelsEnumsTierType]
         :param item_states: The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid
-        :type item_states: List[HelloAssoApiV5ModelsEnumsItemState]
+        :type item_states: List[HelloAssoApiV5CommonModelsEnumsItemState]
         :param tier_name: The name of a tier
         :type tier_name: str
         :param with_details: Set to true to return CustomFields and Options
         :type with_details: bool
         :param sort_order: Sort organizations items by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort organizations items by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
+        :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -2124,12 +2124,12 @@ class CommandesApi:
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        tier_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsTierType]], Field(description="The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus")] = None,
-        item_states: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsItemState]], Field(description="The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid")] = None,
+        tier_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsTierType]], Field(description="The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus")] = None,
+        item_states: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsItemState]], Field(description="The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid")] = None,
         tier_name: Annotated[Optional[StrictStr], Field(description="The name of a tier")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields and Options")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort organizations items by ascending or descending order. Default is descending")] = None,
-        sort_field: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortField], Field(description="Sort organizations items by a specific field (Date or UpdateDate). Default is date")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort organizations items by ascending or descending order. Default is descending")] = None,
+        sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort organizations items by a specific field (Date or UpdateDate). Default is date")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -2163,17 +2163,17 @@ class CommandesApi:
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
         :param tier_types: The type of tiers Donation, Payment, Registration, Membership, MonthlyDonation, MonthlyPayment, OfflineDonation, Contribution, Bonus
-        :type tier_types: List[HelloAssoApiV5ModelsEnumsTierType]
+        :type tier_types: List[HelloAssoApiV5CommonModelsEnumsTierType]
         :param item_states: The item states  Available values: * `Processed` - The item is paid and is valid * `Registered` - The item has been registered manually by the organization and is valid * `Unknown` * `Canceled` - The item has been canceled, and is no longer valid
-        :type item_states: List[HelloAssoApiV5ModelsEnumsItemState]
+        :type item_states: List[HelloAssoApiV5CommonModelsEnumsItemState]
         :param tier_name: The name of a tier
         :type tier_name: str
         :param with_details: Set to true to return CustomFields and Options
         :type with_details: bool
         :param sort_order: Sort organizations items by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort organizations items by a specific field (Date or UpdateDate). Default is date
-        :type sort_field: HelloAssoApiV5ModelsEnumsSortField
+        :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -2392,9 +2392,9 @@ class CommandesApi:
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        form_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormType]], Field(description="The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
+        form_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormType]], Field(description="The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort organizations orders by ascending or descending order. Default is descending")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort organizations orders by ascending or descending order. Default is descending")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -2428,11 +2428,11 @@ class CommandesApi:
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
         :param form_types: The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
-        :type form_types: List[HelloAssoApiV5ModelsEnumsFormType]
+        :type form_types: List[HelloAssoApiV5CommonModelsEnumsFormType]
         :param with_details: Set to true to return CustomFields
         :type with_details: bool
         :param sort_order: Sort organizations orders by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -2501,9 +2501,9 @@ class CommandesApi:
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        form_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormType]], Field(description="The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
+        form_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormType]], Field(description="The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort organizations orders by ascending or descending order. Default is descending")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort organizations orders by ascending or descending order. Default is descending")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -2537,11 +2537,11 @@ class CommandesApi:
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
         :param form_types: The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
-        :type form_types: List[HelloAssoApiV5ModelsEnumsFormType]
+        :type form_types: List[HelloAssoApiV5CommonModelsEnumsFormType]
         :param with_details: Set to true to return CustomFields
         :type with_details: bool
         :param sort_order: Sort organizations orders by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -2610,9 +2610,9 @@ class CommandesApi:
         page_index: Annotated[Optional[StrictInt], Field(description="The page of results to retrieve")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        form_types: Annotated[Optional[List[HelloAssoApiV5ModelsEnumsFormType]], Field(description="The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
+        form_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormType]], Field(description="The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields")] = None,
-        sort_order: Annotated[Optional[HelloAssoApiV5ModelsEnumsSortOrder], Field(description="Sort organizations orders by ascending or descending order. Default is descending")] = None,
+        sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort organizations orders by ascending or descending order. Default is descending")] = None,
         with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
@@ -2646,11 +2646,11 @@ class CommandesApi:
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
         :param form_types: The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop
-        :type form_types: List[HelloAssoApiV5ModelsEnumsFormType]
+        :type form_types: List[HelloAssoApiV5CommonModelsEnumsFormType]
         :param with_details: Set to true to return CustomFields
         :type with_details: bool
         :param sort_order: Sort organizations orders by ascending or descending order. Default is descending
-        :type sort_order: HelloAssoApiV5ModelsEnumsSortOrder
+        :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param with_count: Whether the pagination should include totalCount and totalPages.
         :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one

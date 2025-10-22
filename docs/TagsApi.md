@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **tags_tag_name_get**
-> HelloAssoApiV5ModelsTagsInternalTagModel tags_tag_name_get(tag_name, with_count=with_count, with_amount=with_amount)
+> HelloAssoApiV5CommonModelsTagsInternalTagModel tags_tag_name_get(tag_name, with_count=with_count, with_amount=with_amount)
 
 Obtenir le détail d'un tag interne
 
@@ -20,7 +20,7 @@ Obtenir le détail d'un tag interne
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_models_tags_internal_tag_model import HelloAssoApiV5ModelsTagsInternalTagModel
+from helloasso_python.models.hello_asso_api_v5_common_models_tags_internal_tag_model import HelloAssoApiV5CommonModelsTagsInternalTagModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HelloAssoApiV5ModelsTagsInternalTagModel**](HelloAssoApiV5ModelsTagsInternalTagModel.md)
+[**HelloAssoApiV5CommonModelsTagsInternalTagModel**](HelloAssoApiV5CommonModelsTagsInternalTagModel.md)
 
 ### Authorization
 

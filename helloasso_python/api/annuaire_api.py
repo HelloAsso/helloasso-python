@@ -19,8 +19,8 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
-from helloasso_python.models.hello_asso_api_v5_models_directory_list_forms_request import HelloAssoApiV5ModelsDirectoryListFormsRequest
-from helloasso_python.models.hello_asso_api_v5_models_directory_list_organizations_request import HelloAssoApiV5ModelsDirectoryListOrganizationsRequest
+from helloasso_python.models.hello_asso_api_v5_common_models_directory_list_forms_request import HelloAssoApiV5CommonModelsDirectoryListFormsRequest
+from helloasso_python.models.hello_asso_api_v5_common_models_directory_list_organizations_request import HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest
 from helloasso_python.models.results_with_pagination_model_synchronizable_form_model import ResultsWithPaginationModelSynchronizableFormModel
 from helloasso_python.models.results_with_pagination_model_synchronizable_organization_model import ResultsWithPaginationModelSynchronizableOrganizationModel
 
@@ -47,7 +47,7 @@ class AnnuaireApi:
         self,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        hello_asso_api_v5_models_directory_list_forms_request: Annotated[Optional[HelloAssoApiV5ModelsDirectoryListFormsRequest], Field(description="Body which contains the filters to apply")] = None,
+        hello_asso_api_v5_common_models_directory_list_forms_request: Annotated[Optional[HelloAssoApiV5CommonModelsDirectoryListFormsRequest], Field(description="Body which contains the filters to apply")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -69,8 +69,8 @@ class AnnuaireApi:
         :type page_size: int
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
-        :param hello_asso_api_v5_models_directory_list_forms_request: Body which contains the filters to apply
-        :type hello_asso_api_v5_models_directory_list_forms_request: HelloAssoApiV5ModelsDirectoryListFormsRequest
+        :param hello_asso_api_v5_common_models_directory_list_forms_request: Body which contains the filters to apply
+        :type hello_asso_api_v5_common_models_directory_list_forms_request: HelloAssoApiV5CommonModelsDirectoryListFormsRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -96,7 +96,7 @@ class AnnuaireApi:
         _param = self._directory_forms_post_serialize(
             page_size=page_size,
             continuation_token=continuation_token,
-            hello_asso_api_v5_models_directory_list_forms_request=hello_asso_api_v5_models_directory_list_forms_request,
+            hello_asso_api_v5_common_models_directory_list_forms_request=hello_asso_api_v5_common_models_directory_list_forms_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -124,7 +124,7 @@ class AnnuaireApi:
         self,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        hello_asso_api_v5_models_directory_list_forms_request: Annotated[Optional[HelloAssoApiV5ModelsDirectoryListFormsRequest], Field(description="Body which contains the filters to apply")] = None,
+        hello_asso_api_v5_common_models_directory_list_forms_request: Annotated[Optional[HelloAssoApiV5CommonModelsDirectoryListFormsRequest], Field(description="Body which contains the filters to apply")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -146,8 +146,8 @@ class AnnuaireApi:
         :type page_size: int
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
-        :param hello_asso_api_v5_models_directory_list_forms_request: Body which contains the filters to apply
-        :type hello_asso_api_v5_models_directory_list_forms_request: HelloAssoApiV5ModelsDirectoryListFormsRequest
+        :param hello_asso_api_v5_common_models_directory_list_forms_request: Body which contains the filters to apply
+        :type hello_asso_api_v5_common_models_directory_list_forms_request: HelloAssoApiV5CommonModelsDirectoryListFormsRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -173,7 +173,7 @@ class AnnuaireApi:
         _param = self._directory_forms_post_serialize(
             page_size=page_size,
             continuation_token=continuation_token,
-            hello_asso_api_v5_models_directory_list_forms_request=hello_asso_api_v5_models_directory_list_forms_request,
+            hello_asso_api_v5_common_models_directory_list_forms_request=hello_asso_api_v5_common_models_directory_list_forms_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -201,7 +201,7 @@ class AnnuaireApi:
         self,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        hello_asso_api_v5_models_directory_list_forms_request: Annotated[Optional[HelloAssoApiV5ModelsDirectoryListFormsRequest], Field(description="Body which contains the filters to apply")] = None,
+        hello_asso_api_v5_common_models_directory_list_forms_request: Annotated[Optional[HelloAssoApiV5CommonModelsDirectoryListFormsRequest], Field(description="Body which contains the filters to apply")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -223,8 +223,8 @@ class AnnuaireApi:
         :type page_size: int
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
-        :param hello_asso_api_v5_models_directory_list_forms_request: Body which contains the filters to apply
-        :type hello_asso_api_v5_models_directory_list_forms_request: HelloAssoApiV5ModelsDirectoryListFormsRequest
+        :param hello_asso_api_v5_common_models_directory_list_forms_request: Body which contains the filters to apply
+        :type hello_asso_api_v5_common_models_directory_list_forms_request: HelloAssoApiV5CommonModelsDirectoryListFormsRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -250,7 +250,7 @@ class AnnuaireApi:
         _param = self._directory_forms_post_serialize(
             page_size=page_size,
             continuation_token=continuation_token,
-            hello_asso_api_v5_models_directory_list_forms_request=hello_asso_api_v5_models_directory_list_forms_request,
+            hello_asso_api_v5_common_models_directory_list_forms_request=hello_asso_api_v5_common_models_directory_list_forms_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -273,7 +273,7 @@ class AnnuaireApi:
         self,
         page_size,
         continuation_token,
-        hello_asso_api_v5_models_directory_list_forms_request,
+        hello_asso_api_v5_common_models_directory_list_forms_request,
         _request_auth,
         _content_type,
         _headers,
@@ -307,8 +307,8 @@ class AnnuaireApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if hello_asso_api_v5_models_directory_list_forms_request is not None:
-            _body_params = hello_asso_api_v5_models_directory_list_forms_request
+        if hello_asso_api_v5_common_models_directory_list_forms_request is not None:
+            _body_params = hello_asso_api_v5_common_models_directory_list_forms_request
 
 
         # set the HTTP header `Accept`
@@ -366,7 +366,7 @@ class AnnuaireApi:
         self,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        hello_asso_api_v5_models_directory_list_organizations_request: Annotated[Optional[HelloAssoApiV5ModelsDirectoryListOrganizationsRequest], Field(description="Body which contains the filters to apply")] = None,
+        hello_asso_api_v5_common_models_directory_list_organizations_request: Annotated[Optional[HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest], Field(description="Body which contains the filters to apply")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -388,8 +388,8 @@ class AnnuaireApi:
         :type page_size: int
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
-        :param hello_asso_api_v5_models_directory_list_organizations_request: Body which contains the filters to apply
-        :type hello_asso_api_v5_models_directory_list_organizations_request: HelloAssoApiV5ModelsDirectoryListOrganizationsRequest
+        :param hello_asso_api_v5_common_models_directory_list_organizations_request: Body which contains the filters to apply
+        :type hello_asso_api_v5_common_models_directory_list_organizations_request: HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -415,7 +415,7 @@ class AnnuaireApi:
         _param = self._directory_organizations_post_serialize(
             page_size=page_size,
             continuation_token=continuation_token,
-            hello_asso_api_v5_models_directory_list_organizations_request=hello_asso_api_v5_models_directory_list_organizations_request,
+            hello_asso_api_v5_common_models_directory_list_organizations_request=hello_asso_api_v5_common_models_directory_list_organizations_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -443,7 +443,7 @@ class AnnuaireApi:
         self,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        hello_asso_api_v5_models_directory_list_organizations_request: Annotated[Optional[HelloAssoApiV5ModelsDirectoryListOrganizationsRequest], Field(description="Body which contains the filters to apply")] = None,
+        hello_asso_api_v5_common_models_directory_list_organizations_request: Annotated[Optional[HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest], Field(description="Body which contains the filters to apply")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -465,8 +465,8 @@ class AnnuaireApi:
         :type page_size: int
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
-        :param hello_asso_api_v5_models_directory_list_organizations_request: Body which contains the filters to apply
-        :type hello_asso_api_v5_models_directory_list_organizations_request: HelloAssoApiV5ModelsDirectoryListOrganizationsRequest
+        :param hello_asso_api_v5_common_models_directory_list_organizations_request: Body which contains the filters to apply
+        :type hello_asso_api_v5_common_models_directory_list_organizations_request: HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -492,7 +492,7 @@ class AnnuaireApi:
         _param = self._directory_organizations_post_serialize(
             page_size=page_size,
             continuation_token=continuation_token,
-            hello_asso_api_v5_models_directory_list_organizations_request=hello_asso_api_v5_models_directory_list_organizations_request,
+            hello_asso_api_v5_common_models_directory_list_organizations_request=hello_asso_api_v5_common_models_directory_list_organizations_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -520,7 +520,7 @@ class AnnuaireApi:
         self,
         page_size: Annotated[Optional[StrictInt], Field(description="The number of items per page")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
-        hello_asso_api_v5_models_directory_list_organizations_request: Annotated[Optional[HelloAssoApiV5ModelsDirectoryListOrganizationsRequest], Field(description="Body which contains the filters to apply")] = None,
+        hello_asso_api_v5_common_models_directory_list_organizations_request: Annotated[Optional[HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest], Field(description="Body which contains the filters to apply")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -542,8 +542,8 @@ class AnnuaireApi:
         :type page_size: int
         :param continuation_token: Continuation Token from which we wish to retrieve results
         :type continuation_token: str
-        :param hello_asso_api_v5_models_directory_list_organizations_request: Body which contains the filters to apply
-        :type hello_asso_api_v5_models_directory_list_organizations_request: HelloAssoApiV5ModelsDirectoryListOrganizationsRequest
+        :param hello_asso_api_v5_common_models_directory_list_organizations_request: Body which contains the filters to apply
+        :type hello_asso_api_v5_common_models_directory_list_organizations_request: HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -569,7 +569,7 @@ class AnnuaireApi:
         _param = self._directory_organizations_post_serialize(
             page_size=page_size,
             continuation_token=continuation_token,
-            hello_asso_api_v5_models_directory_list_organizations_request=hello_asso_api_v5_models_directory_list_organizations_request,
+            hello_asso_api_v5_common_models_directory_list_organizations_request=hello_asso_api_v5_common_models_directory_list_organizations_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -592,7 +592,7 @@ class AnnuaireApi:
         self,
         page_size,
         continuation_token,
-        hello_asso_api_v5_models_directory_list_organizations_request,
+        hello_asso_api_v5_common_models_directory_list_organizations_request,
         _request_auth,
         _content_type,
         _headers,
@@ -626,8 +626,8 @@ class AnnuaireApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if hello_asso_api_v5_models_directory_list_organizations_request is not None:
-            _body_params = hello_asso_api_v5_models_directory_list_organizations_request
+        if hello_asso_api_v5_common_models_directory_list_organizations_request is not None:
+            _body_params = hello_asso_api_v5_common_models_directory_list_organizations_request
 
 
         # set the HTTP header `Accept`
