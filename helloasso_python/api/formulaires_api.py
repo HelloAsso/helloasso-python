@@ -21,10 +21,7 @@ from typing import List, Optional
 from typing_extensions import Annotated
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_state import HelloAssoApiV5CommonModelsEnumsFormState
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
-from helloasso_python.models.hello_asso_api_v5_common_models_forms_form_public_model import HelloAssoApiV5CommonModelsFormsFormPublicModel
-from helloasso_python.models.hello_asso_api_v5_common_models_forms_form_quick_create_model import HelloAssoApiV5CommonModelsFormsFormQuickCreateModel
 from helloasso_python.models.hello_asso_api_v5_common_models_forms_form_quick_create_request import HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest
-from helloasso_python.models.results_with_pagination_model_form_light_model import ResultsWithPaginationModelFormLightModel
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -61,7 +58,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[HelloAssoApiV5CommonModelsEnumsFormType]:
+    ) -> None:
         """Obtenir une liste des types de formulaires pour une organisation
 
         Liste tous les types de formulaires où l'organisation possède au moins un formulaire. Cela peut également être filtré par états.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -102,7 +99,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[HelloAssoApiV5CommonModelsEnumsFormType]",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -134,7 +131,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[HelloAssoApiV5CommonModelsEnumsFormType]]:
+    ) -> ApiResponse[None]:
         """Obtenir une liste des types de formulaires pour une organisation
 
         Liste tous les types de formulaires où l'organisation possède au moins un formulaire. Cela peut également être filtré par états.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -175,7 +172,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[HelloAssoApiV5CommonModelsEnumsFormType]",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -248,7 +245,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[HelloAssoApiV5CommonModelsEnumsFormType]",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -297,15 +294,6 @@ class FormulairesApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
-                ]
-            )
 
 
         # authentication setting
@@ -349,7 +337,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5CommonModelsFormsFormQuickCreateModel:
+    ) -> None:
         """Créer un événement simplifié pour un organisme
 
         Permet la création d'un événement avec seulement des informations limitées et quelques tarifications simples. L'événement créé de cette manière peut être modifié ultérieurement avec d'autres services<br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> FormAdministration<br/><br/>
@@ -393,7 +381,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsFormsFormQuickCreateModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -426,7 +414,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5CommonModelsFormsFormQuickCreateModel]:
+    ) -> ApiResponse[None]:
         """Créer un événement simplifié pour un organisme
 
         Permet la création d'un événement avec seulement des informations limitées et quelques tarifications simples. L'événement créé de cette manière peut être modifié ultérieurement avec d'autres services<br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> FormAdministration<br/><br/>
@@ -470,7 +458,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsFormsFormQuickCreateModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -547,7 +535,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsFormsFormQuickCreateModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -596,15 +584,6 @@ class FormulairesApi:
             _body_params = hello_asso_api_v5_common_models_forms_form_quick_create_request
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
-                ]
-            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -664,7 +643,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5CommonModelsFormsFormPublicModel:
+    ) -> None:
         """Obtenir des données publiques détaillées sur un formulaire
 
         Permet de récupérer toutes les informations publiques d'un formulaire, qu'il s'agisse de Crowdfunding, d'Adhésion, d'Événement, de Don...<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -708,7 +687,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsFormsFormPublicModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -741,7 +720,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5CommonModelsFormsFormPublicModel]:
+    ) -> ApiResponse[None]:
         """Obtenir des données publiques détaillées sur un formulaire
 
         Permet de récupérer toutes les informations publiques d'un formulaire, qu'il s'agisse de Crowdfunding, d'Adhésion, d'Événement, de Don...<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -785,7 +764,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsFormsFormPublicModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -862,7 +841,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsFormsFormPublicModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -911,15 +890,6 @@ class FormulairesApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
-                ]
-            )
 
 
         # authentication setting
@@ -966,7 +936,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResultsWithPaginationModelFormLightModel:
+    ) -> None:
         """Obtenir les formulaires d'une organisation
 
         Liste tous les formulaires correspondant aux états et types. Si aucun filtre n'est spécifié, aucun filtre n'est appliqué. Les résultats sont classés par date de création en ordre décroissant.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -1019,7 +989,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelFormLightModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -1055,7 +1025,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResultsWithPaginationModelFormLightModel]:
+    ) -> ApiResponse[None]:
         """Obtenir les formulaires d'une organisation
 
         Liste tous les formulaires correspondant aux états et types. Si aucun filtre n'est spécifié, aucun filtre n'est appliqué. Les résultats sont classés par date de création en ordre décroissant.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -1108,7 +1078,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelFormLightModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -1197,7 +1167,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelFormLightModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -1267,15 +1237,6 @@ class FormulairesApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
-                ]
-            )
 
 
         # authentication setting

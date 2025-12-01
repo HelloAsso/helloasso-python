@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **organizations_organization_slug_get**
-> HelloAssoApiV5CommonModelsOrganizationOrganizationModel organizations_organization_slug_get(organization_slug)
+> organizations_organization_slug_get(organization_slug)
 
 Obtenir le détail d'une organisation
 
@@ -20,7 +20,6 @@ Obtenir les informations publiques de l'organisation spécifiée.<br/><br/><b>Vo
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_common_models_organization_organization_model import HelloAssoApiV5CommonModelsOrganizationOrganizationModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -45,9 +44,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir le détail d'une organisation
-        api_response = api_instance.organizations_organization_slug_get(organization_slug)
-        print("The response of OrganisationApi->organizations_organization_slug_get:\n")
-        pprint(api_response)
+        api_instance.organizations_organization_slug_get(organization_slug)
     except Exception as e:
         print("Exception when calling OrganisationApi->organizations_organization_slug_get: %s\n" % e)
 ```
@@ -63,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HelloAssoApiV5CommonModelsOrganizationOrganizationModel**](HelloAssoApiV5CommonModelsOrganizationOrganizationModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -72,13 +69,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Get Organization by slug |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 

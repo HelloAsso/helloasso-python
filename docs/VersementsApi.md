@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **organizations_organization_slug_cash_out_cash_out_id_export_get**
-> List[HelloAssoApiV5CommonModelsPaymentCashoutExportCashoutExportRowModel] organizations_organization_slug_cash_out_cash_out_id_export_get(organization_slug, cash_out_id)
+> organizations_organization_slug_cash_out_cash_out_id_export_get(organization_slug, cash_out_id)
 
 Détails d'un versement
 
@@ -20,7 +20,6 @@ Détails d'un versement
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_common_models_payment_cashout_export_cashout_export_row_model import HelloAssoApiV5CommonModelsPaymentCashoutExportCashoutExportRowModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -46,9 +45,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Détails d'un versement
-        api_response = api_instance.organizations_organization_slug_cash_out_cash_out_id_export_get(organization_slug, cash_out_id)
-        print("The response of VersementsApi->organizations_organization_slug_cash_out_cash_out_id_export_get:\n")
-        pprint(api_response)
+        api_instance.organizations_organization_slug_cash_out_cash_out_id_export_get(organization_slug, cash_out_id)
     except Exception as e:
         print("Exception when calling VersementsApi->organizations_organization_slug_cash_out_cash_out_id_export_get: %s\n" % e)
 ```
@@ -65,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[HelloAssoApiV5CommonModelsPaymentCashoutExportCashoutExportRowModel]**](HelloAssoApiV5CommonModelsPaymentCashoutExportCashoutExportRowModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -74,13 +71,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, text/csv
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Get cash-out details |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **organizations_organization_slug_forms_form_type_form_slug_payments_get**
-> ResultsWithPaginationModelPayment organizations_organization_slug_forms_form_type_form_slug_payments_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, states=states, sort_order=sort_order, sort_field=sort_field, with_count=with_count)
+> organizations_organization_slug_forms_form_type_form_slug_payments_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, states=states, sort_order=sort_order, sort_field=sort_field, with_count=with_count)
 
 Obtenir les informations des paiements effectués sur un formulaire
 
@@ -27,7 +27,6 @@ from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type imp
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_payment_state import HelloAssoApiV5CommonModelsEnumsPaymentState
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
-from helloasso_python.models.results_with_pagination_model_payment import ResultsWithPaginationModelPayment
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -64,9 +63,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir les informations des paiements effectués sur un formulaire
-        api_response = api_instance.organizations_organization_slug_forms_form_type_form_slug_payments_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, states=states, sort_order=sort_order, sort_field=sort_field, with_count=with_count)
-        print("The response of PaiementsApi->organizations_organization_slug_forms_form_type_form_slug_payments_get:\n")
-        pprint(api_response)
+        api_instance.organizations_organization_slug_forms_form_type_form_slug_payments_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, states=states, sort_order=sort_order, sort_field=sort_field, with_count=with_count)
     except Exception as e:
         print("Exception when calling PaiementsApi->organizations_organization_slug_forms_form_type_form_slug_payments_get: %s\n" % e)
 ```
@@ -94,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResultsWithPaginationModelPayment**](ResultsWithPaginationModelPayment.md)
+void (empty response body)
 
 ### Authorization
 
@@ -103,20 +100,20 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Get form payments |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_payments_get**
-> organizations_organization_slug_payments_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, states=states, sort_order=sort_order, sort_field=sort_field, with_count=with_count)
+> ResultsWithPaginationModelPayment organizations_organization_slug_payments_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, states=states, sort_order=sort_order, sort_field=sort_field, with_count=with_count)
 
 Obtenir les informations des paiements effectués sur une organisation
 
@@ -131,6 +128,7 @@ import helloasso_python
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_payment_state import HelloAssoApiV5CommonModelsEnumsPaymentState
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
+from helloasso_python.models.results_with_pagination_model_payment import ResultsWithPaginationModelPayment
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -165,7 +163,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir les informations des paiements effectués sur une organisation
-        api_instance.organizations_organization_slug_payments_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, states=states, sort_order=sort_order, sort_field=sort_field, with_count=with_count)
+        api_response = api_instance.organizations_organization_slug_payments_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, states=states, sort_order=sort_order, sort_field=sort_field, with_count=with_count)
+        print("The response of PaiementsApi->organizations_organization_slug_payments_get:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling PaiementsApi->organizations_organization_slug_payments_get: %s\n" % e)
 ```
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**ResultsWithPaginationModelPayment**](ResultsWithPaginationModelPayment.md)
 
 ### Authorization
 
@@ -200,20 +200,20 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, text/csv
+ - **Accept**: text/csv
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Get organization payments |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **payments_payment_id_get**
-> HelloAssoApiV5CommonModelsStatisticsPaymentDetail payments_payment_id_get(payment_id, with_failed_refund_operation=with_failed_refund_operation)
+> payments_payment_id_get(payment_id, with_failed_refund_operation=with_failed_refund_operation)
 
 Obtenir les informations détaillées d'un paiement.
 
@@ -225,7 +225,6 @@ Obtenir les informations détaillées d'un paiement.
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_common_models_statistics_payment_detail import HelloAssoApiV5CommonModelsStatisticsPaymentDetail
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -251,9 +250,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir les informations détaillées d'un paiement.
-        api_response = api_instance.payments_payment_id_get(payment_id, with_failed_refund_operation=with_failed_refund_operation)
-        print("The response of PaiementsApi->payments_payment_id_get:\n")
-        pprint(api_response)
+        api_instance.payments_payment_id_get(payment_id, with_failed_refund_operation=with_failed_refund_operation)
     except Exception as e:
         print("Exception when calling PaiementsApi->payments_payment_id_get: %s\n" % e)
 ```
@@ -270,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HelloAssoApiV5CommonModelsStatisticsPaymentDetail**](HelloAssoApiV5CommonModelsStatisticsPaymentDetail.md)
+void (empty response body)
 
 ### Authorization
 
@@ -279,20 +276,20 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Get payment |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **payments_payment_id_refund_post**
-> HelloAssoApiV5CommonModelsPaymentRefundOperationModel payments_payment_id_refund_post(payment_id, comment=comment, cancel_order=cancel_order, send_refund_mail=send_refund_mail, amount=amount)
+> payments_payment_id_refund_post(payment_id, comment=comment, cancel_order=cancel_order, send_refund_mail=send_refund_mail, amount=amount)
 
 Rembourser un paiement.
 
@@ -304,7 +301,6 @@ Rembourser un paiement.
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_common_models_payment_refund_operation_model import HelloAssoApiV5CommonModelsPaymentRefundOperationModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -333,9 +329,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Rembourser un paiement.
-        api_response = api_instance.payments_payment_id_refund_post(payment_id, comment=comment, cancel_order=cancel_order, send_refund_mail=send_refund_mail, amount=amount)
-        print("The response of PaiementsApi->payments_payment_id_refund_post:\n")
-        pprint(api_response)
+        api_instance.payments_payment_id_refund_post(payment_id, comment=comment, cancel_order=cancel_order, send_refund_mail=send_refund_mail, amount=amount)
     except Exception as e:
         print("Exception when calling PaiementsApi->payments_payment_id_refund_post: %s\n" % e)
 ```
@@ -355,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HelloAssoApiV5CommonModelsPaymentRefundOperationModel**](HelloAssoApiV5CommonModelsPaymentRefundOperationModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -364,13 +358,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | The refund request has been registered |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 

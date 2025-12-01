@@ -21,6 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from helloasso_python.models.hello_asso_api_v5_common_models_carts_checkout_payer import HelloAssoApiV5CommonModelsCartsCheckoutPayer
+from helloasso_python.models.hello_asso_api_v5_common_models_carts_checkout_payment_options import HelloAssoApiV5CommonModelsCartsCheckoutPaymentOptions
 from helloasso_python.models.hello_asso_api_v5_common_models_carts_checkout_term import HelloAssoApiV5CommonModelsCartsCheckoutTerm
 from typing import Optional, Set
 from typing_extensions import Self
@@ -39,7 +40,8 @@ class HelloAssoApiV5CommonModelsCartsInitCheckoutBody(BaseModel):
     terms: Optional[List[HelloAssoApiV5CommonModelsCartsCheckoutTerm]] = Field(default=None, description="The list of future terms (if applicable)")
     payer: Optional[HelloAssoApiV5CommonModelsCartsCheckoutPayer] = None
     metadata: Optional[Any] = Field(default=None, description="Metadata (optional)  Json object (max length : 20000)")
-    __properties: ClassVar[List[str]] = ["totalAmount", "initialAmount", "itemName", "backUrl", "errorUrl", "returnUrl", "containsDonation", "terms", "payer", "metadata"]
+    payment_options: Optional[HelloAssoApiV5CommonModelsCartsCheckoutPaymentOptions] = Field(default=None, alias="paymentOptions")
+    __properties: ClassVar[List[str]] = ["totalAmount", "initialAmount", "itemName", "backUrl", "errorUrl", "returnUrl", "containsDonation", "terms", "payer", "metadata", "paymentOptions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,6 +92,9 @@ class HelloAssoApiV5CommonModelsCartsInitCheckoutBody(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of payer
         if self.payer:
             _dict['payer'] = self.payer.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of payment_options
+        if self.payment_options:
+            _dict['paymentOptions'] = self.payment_options.to_dict()
         # set to None if terms (nullable) is None
         # and model_fields_set contains the field
         if self.terms is None and "terms" in self.model_fields_set:
@@ -121,7 +126,8 @@ class HelloAssoApiV5CommonModelsCartsInitCheckoutBody(BaseModel):
             "containsDonation": obj.get("containsDonation"),
             "terms": [HelloAssoApiV5CommonModelsCartsCheckoutTerm.from_dict(_item) for _item in obj["terms"]] if obj.get("terms") is not None else None,
             "payer": HelloAssoApiV5CommonModelsCartsCheckoutPayer.from_dict(obj["payer"]) if obj.get("payer") is not None else None,
-            "metadata": obj.get("metadata")
+            "metadata": obj.get("metadata"),
+            "paymentOptions": HelloAssoApiV5CommonModelsCartsCheckoutPaymentOptions.from_dict(obj["paymentOptions"]) if obj.get("paymentOptions") is not None else None
         })
         return _obj
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **users_me_organizations_get**
-> List[HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel] users_me_organizations_get()
+> users_me_organizations_get()
 
 Obtenir mes organisations
 
@@ -20,7 +20,6 @@ Renvoie la liste des organisations où l'utilisateur connecté a des droits<br/>
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_common_models_organization_organization_light_model import HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -44,9 +43,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir mes organisations
-        api_response = api_instance.users_me_organizations_get()
-        print("The response of UtilisateursApi->users_me_organizations_get:\n")
-        pprint(api_response)
+        api_instance.users_me_organizations_get()
     except Exception as e:
         print("Exception when calling UtilisateursApi->users_me_organizations_get: %s\n" % e)
 ```
@@ -59,7 +56,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel]**](HelloAssoApiV5CommonModelsOrganizationOrganizationLightModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -68,13 +65,13 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Get organizations for user |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 

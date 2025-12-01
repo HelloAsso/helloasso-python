@@ -18,7 +18,6 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from helloasso_python.models.hello_asso_api_v5_common_models_organization_organization_model import HelloAssoApiV5CommonModelsOrganizationOrganizationModel
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -54,7 +53,7 @@ class OrganisationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5CommonModelsOrganizationOrganizationModel:
+    ) -> None:
         """Obtenir le détail d'une organisation
 
         Obtenir les informations publiques de l'organisation spécifiée.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -92,7 +91,7 @@ class OrganisationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsOrganizationOrganizationModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -123,7 +122,7 @@ class OrganisationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5CommonModelsOrganizationOrganizationModel]:
+    ) -> ApiResponse[None]:
         """Obtenir le détail d'une organisation
 
         Obtenir les informations publiques de l'organisation spécifiée.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -161,7 +160,7 @@ class OrganisationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsOrganizationOrganizationModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -230,7 +229,7 @@ class OrganisationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsOrganizationOrganizationModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -273,15 +272,6 @@ class OrganisationApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
-                ]
-            )
 
 
         # authentication setting

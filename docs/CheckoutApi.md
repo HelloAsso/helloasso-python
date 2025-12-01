@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **organizations_organization_slug_checkout_intents_checkout_intent_id_get**
-> HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse organizations_organization_slug_checkout_intents_checkout_intent_id_get(organization_slug, checkout_intent_id, with_failed_refund_operation=with_failed_refund_operation)
+> organizations_organization_slug_checkout_intents_checkout_intent_id_get(organization_slug, checkout_intent_id, with_failed_refund_operation=with_failed_refund_operation)
 
 Récupérer une intention de paiement
 
@@ -21,7 +21,6 @@ Retourne aussi la commande associée. Uniquement dans le cas ou le paiement est 
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_common_models_carts_checkout_intent_response import HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -48,9 +47,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Récupérer une intention de paiement
-        api_response = api_instance.organizations_organization_slug_checkout_intents_checkout_intent_id_get(organization_slug, checkout_intent_id, with_failed_refund_operation=with_failed_refund_operation)
-        print("The response of CheckoutApi->organizations_organization_slug_checkout_intents_checkout_intent_id_get:\n")
-        pprint(api_response)
+        api_instance.organizations_organization_slug_checkout_intents_checkout_intent_id_get(organization_slug, checkout_intent_id, with_failed_refund_operation=with_failed_refund_operation)
     except Exception as e:
         print("Exception when calling CheckoutApi->organizations_organization_slug_checkout_intents_checkout_intent_id_get: %s\n" % e)
 ```
@@ -68,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse**](HelloAssoApiV5CommonModelsCartsCheckoutIntentResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -77,20 +74,20 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Checkout intent found |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_checkout_intents_post**
-> HelloAssoApiV5CommonModelsCartsInitCheckoutResponse organizations_organization_slug_checkout_intents_post(organization_slug, hello_asso_api_v5_common_models_carts_init_checkout_body=hello_asso_api_v5_common_models_carts_init_checkout_body)
+> organizations_organization_slug_checkout_intents_post(organization_slug, hello_asso_api_v5_common_models_carts_init_checkout_body=hello_asso_api_v5_common_models_carts_init_checkout_body)
 
 Initialisation d'un Checkout
 
@@ -103,7 +100,6 @@ Pour tout savoir sur Checkout consultez d'abord notre <a href="https://dev.hello
 ```python
 import helloasso_python
 from helloasso_python.models.hello_asso_api_v5_common_models_carts_init_checkout_body import HelloAssoApiV5CommonModelsCartsInitCheckoutBody
-from helloasso_python.models.hello_asso_api_v5_common_models_carts_init_checkout_response import HelloAssoApiV5CommonModelsCartsInitCheckoutResponse
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -129,9 +125,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Initialisation d'un Checkout
-        api_response = api_instance.organizations_organization_slug_checkout_intents_post(organization_slug, hello_asso_api_v5_common_models_carts_init_checkout_body=hello_asso_api_v5_common_models_carts_init_checkout_body)
-        print("The response of CheckoutApi->organizations_organization_slug_checkout_intents_post:\n")
-        pprint(api_response)
+        api_instance.organizations_organization_slug_checkout_intents_post(organization_slug, hello_asso_api_v5_common_models_carts_init_checkout_body=hello_asso_api_v5_common_models_carts_init_checkout_body)
     except Exception as e:
         print("Exception when calling CheckoutApi->organizations_organization_slug_checkout_intents_post: %s\n" % e)
 ```
@@ -148,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HelloAssoApiV5CommonModelsCartsInitCheckoutResponse**](HelloAssoApiV5CommonModelsCartsInitCheckoutResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -157,13 +151,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Checkout intent initiated successfully |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 

@@ -24,8 +24,6 @@ from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type imp
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_payment_state import HelloAssoApiV5CommonModelsEnumsPaymentState
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
-from helloasso_python.models.hello_asso_api_v5_common_models_payment_refund_operation_model import HelloAssoApiV5CommonModelsPaymentRefundOperationModel
-from helloasso_python.models.hello_asso_api_v5_common_models_statistics_payment_detail import HelloAssoApiV5CommonModelsStatisticsPaymentDetail
 from helloasso_python.models.results_with_pagination_model_payment import ResultsWithPaginationModelPayment
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
@@ -74,7 +72,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResultsWithPaginationModelPayment:
+    ) -> None:
         """Obtenir les informations des paiements effectués sur un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -148,7 +146,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelPayment",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -191,7 +189,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResultsWithPaginationModelPayment]:
+    ) -> ApiResponse[None]:
         """Obtenir les informations des paiements effectués sur un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -265,7 +263,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelPayment",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -382,7 +380,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelPayment",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -500,15 +498,6 @@ class PaiementsApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
-                ]
-            )
 
 
         # authentication setting
@@ -560,7 +549,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> ResultsWithPaginationModelPayment:
         """Obtenir les informations des paiements effectués sur une organisation
 
         Retourne la liste des paiements selon les paramètres<br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -628,9 +617,9 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '401': None,
-            '403': None,
+            '200': "ResultsWithPaginationModelPayment",
+            '401': "ResultsWithPaginationModelPayment",
+            '403': "ResultsWithPaginationModelPayment",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -669,7 +658,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[ResultsWithPaginationModelPayment]:
         """Obtenir les informations des paiements effectués sur une organisation
 
         Retourne la liste des paiements selon les paramètres<br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -737,9 +726,9 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '401': None,
-            '403': None,
+            '200': "ResultsWithPaginationModelPayment",
+            '401': "ResultsWithPaginationModelPayment",
+            '403': "ResultsWithPaginationModelPayment",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -846,9 +835,9 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '401': None,
-            '403': None,
+            '200': "ResultsWithPaginationModelPayment",
+            '401': "ResultsWithPaginationModelPayment",
+            '403': "ResultsWithPaginationModelPayment",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -962,8 +951,6 @@ class PaiementsApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json', 
-                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 
                     'text/csv'
                 ]
             )
@@ -1009,7 +996,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5CommonModelsStatisticsPaymentDetail:
+    ) -> None:
         """Obtenir les informations détaillées d'un paiement.
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1050,7 +1037,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsStatisticsPaymentDetail",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -1082,7 +1069,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5CommonModelsStatisticsPaymentDetail]:
+    ) -> ApiResponse[None]:
         """Obtenir les informations détaillées d'un paiement.
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1123,7 +1110,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsStatisticsPaymentDetail",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -1196,7 +1183,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsStatisticsPaymentDetail",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -1244,15 +1231,6 @@ class PaiementsApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
-                ]
-            )
 
 
         # authentication setting
@@ -1298,7 +1276,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5CommonModelsPaymentRefundOperationModel:
+    ) -> None:
         """Rembourser un paiement.
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/>FormAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> RefundManagement<br/><br/>
@@ -1348,7 +1326,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsPaymentRefundOperationModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -1383,7 +1361,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5CommonModelsPaymentRefundOperationModel]:
+    ) -> ApiResponse[None]:
         """Rembourser un paiement.
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/>FormAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> RefundManagement<br/><br/>
@@ -1433,7 +1411,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsPaymentRefundOperationModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -1518,7 +1496,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsPaymentRefundOperationModel",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -1581,15 +1559,6 @@ class PaiementsApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
-                ]
-            )
 
 
         # authentication setting

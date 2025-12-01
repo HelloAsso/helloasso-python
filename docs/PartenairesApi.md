@@ -82,7 +82,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Partner api client successfully updated |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
@@ -157,7 +157,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Partner notification url successfully deleted |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
@@ -234,14 +234,14 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Partner organization notification url successfully deleted |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **partners_me_api_notifications_organizations_organization_slug_put**
-> HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel partners_me_api_notifications_organizations_organization_slug_put(organization_slug, hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body)
+> partners_me_api_notifications_organizations_organization_slug_put(organization_slug, hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body)
 
 Mise à jour d'une URL de notification liée à une organisation
 
@@ -253,7 +253,6 @@ Mise à jour d'une URL de notification liée à une organisation
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_api_url_notification_model import HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel
 from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody
 from helloasso_python.rest import ApiException
 from pprint import pprint
@@ -280,9 +279,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Mise à jour d'une URL de notification liée à une organisation
-        api_response = api_instance.partners_me_api_notifications_organizations_organization_slug_put(organization_slug, hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body)
-        print("The response of PartenairesApi->partners_me_api_notifications_organizations_organization_slug_put:\n")
-        pprint(api_response)
+        api_instance.partners_me_api_notifications_organizations_organization_slug_put(organization_slug, hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body)
     except Exception as e:
         print("Exception when calling PartenairesApi->partners_me_api_notifications_organizations_organization_slug_put: %s\n" % e)
 ```
@@ -299,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel**](HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -308,20 +305,20 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Partner Organization notification URL successfully updated. |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **partners_me_api_notifications_put**
-> HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel partners_me_api_notifications_put(hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body)
+> partners_me_api_notifications_put(hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body)
 
 Mise à jour de l'URL de notification principale
 
@@ -333,7 +330,6 @@ Mise à jour de l'URL de notification principale
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_api_url_notification_model import HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel
 from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody
 from helloasso_python.rest import ApiException
 from pprint import pprint
@@ -359,9 +355,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Mise à jour de l'URL de notification principale
-        api_response = api_instance.partners_me_api_notifications_put(hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body)
-        print("The response of PartenairesApi->partners_me_api_notifications_put:\n")
-        pprint(api_response)
+        api_instance.partners_me_api_notifications_put(hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body=hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body)
     except Exception as e:
         print("Exception when calling PartenairesApi->partners_me_api_notifications_put: %s\n" % e)
 ```
@@ -377,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel**](HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -386,20 +380,20 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Partner main notification URL successfully updated. |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **partners_me_get**
-> HelloAssoApiV5CommonModelsPartnersPartnerPublicModel partners_me_get()
+> partners_me_get()
 
 Récupération des informations
 
@@ -411,7 +405,6 @@ Récupération des informations
 
 ```python
 import helloasso_python
-from helloasso_python.models.hello_asso_api_v5_common_models_partners_partner_public_model import HelloAssoApiV5CommonModelsPartnersPartnerPublicModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -435,9 +428,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Récupération des informations
-        api_response = api_instance.partners_me_get()
-        print("The response of PartenairesApi->partners_me_get:\n")
-        pprint(api_response)
+        api_instance.partners_me_get()
     except Exception as e:
         print("Exception when calling PartenairesApi->partners_me_get: %s\n" % e)
 ```
@@ -450,7 +441,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**HelloAssoApiV5CommonModelsPartnersPartnerPublicModel**](HelloAssoApiV5CommonModelsPartnersPartnerPublicModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -459,20 +450,20 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Retrieve requesting partner detail |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **partners_me_organizations_get**
-> ResultsWithPaginationModelPartnerOrganizationModel partners_me_organizations_get(page_size=page_size, continuation_token=continuation_token)
+> partners_me_organizations_get(page_size=page_size, continuation_token=continuation_token)
 
 Obtenir toutes les organisations
 
@@ -484,7 +475,6 @@ Liste toutes les organisations liées au partenaire. Les résultats sont classé
 
 ```python
 import helloasso_python
-from helloasso_python.models.results_with_pagination_model_partner_organization_model import ResultsWithPaginationModelPartnerOrganizationModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -510,9 +500,7 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir toutes les organisations
-        api_response = api_instance.partners_me_organizations_get(page_size=page_size, continuation_token=continuation_token)
-        print("The response of PartenairesApi->partners_me_organizations_get:\n")
-        pprint(api_response)
+        api_instance.partners_me_organizations_get(page_size=page_size, continuation_token=continuation_token)
     except Exception as e:
         print("Exception when calling PartenairesApi->partners_me_organizations_get: %s\n" % e)
 ```
@@ -529,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResultsWithPaginationModelPartnerOrganizationModel**](ResultsWithPaginationModelPartnerOrganizationModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -538,13 +526,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Get Organization List |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 

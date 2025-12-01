@@ -25,9 +25,7 @@ from helloasso_python.models.hello_asso_api_v5_common_models_enums_item_state im
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_tier_type import HelloAssoApiV5CommonModelsEnumsTierType
-from helloasso_python.models.hello_asso_api_v5_common_models_statistics_item_detail import HelloAssoApiV5CommonModelsStatisticsItemDetail
-from helloasso_python.models.hello_asso_api_v5_common_models_statistics_order_detail import HelloAssoApiV5CommonModelsStatisticsOrderDetail
-from helloasso_python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
+from helloasso_python.models.results_with_pagination_model_item import ResultsWithPaginationModelItem
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -64,7 +62,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5CommonModelsStatisticsItemDetail:
+    ) -> None:
         """Obtenir le détail d'un article contenu dans une commande
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -105,7 +103,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsStatisticsItemDetail",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -137,7 +135,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5CommonModelsStatisticsItemDetail]:
+    ) -> ApiResponse[None]:
         """Obtenir le détail d'un article contenu dans une commande
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -178,7 +176,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsStatisticsItemDetail",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -251,7 +249,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsStatisticsItemDetail",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -299,15 +297,6 @@ class CommandesApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
-                ]
-            )
 
 
         # authentication setting
@@ -609,7 +598,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HelloAssoApiV5CommonModelsStatisticsOrderDetail:
+    ) -> None:
         """Obtenir des informations détaillées sur une commande
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -647,7 +636,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsStatisticsOrderDetail",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -678,7 +667,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HelloAssoApiV5CommonModelsStatisticsOrderDetail]:
+    ) -> ApiResponse[None]:
         """Obtenir des informations détaillées sur une commande
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -716,7 +705,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsStatisticsOrderDetail",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -785,7 +774,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HelloAssoApiV5CommonModelsStatisticsOrderDetail",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -828,15 +817,6 @@ class CommandesApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
-                ]
-            )
 
 
         # authentication setting
@@ -893,7 +873,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> ResultsWithPaginationModelItem:
         """Obtenir une liste d'articles vendus dans un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -976,9 +956,9 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '401': None,
-            '403': None,
+            '200': "ResultsWithPaginationModelItem",
+            '401': "ResultsWithPaginationModelItem",
+            '403': "ResultsWithPaginationModelItem",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1022,7 +1002,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[ResultsWithPaginationModelItem]:
         """Obtenir une liste d'articles vendus dans un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1105,9 +1085,9 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '401': None,
-            '403': None,
+            '200': "ResultsWithPaginationModelItem",
+            '401': "ResultsWithPaginationModelItem",
+            '403': "ResultsWithPaginationModelItem",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1234,9 +1214,9 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '401': None,
-            '403': None,
+            '200': "ResultsWithPaginationModelItem",
+            '401': "ResultsWithPaginationModelItem",
+            '403': "ResultsWithPaginationModelItem",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1372,8 +1352,6 @@ class CommandesApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json', 
-                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 
                     'text/csv'
                 ]
             )
@@ -1429,7 +1407,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResultsWithPaginationModelOrder:
+    ) -> None:
         """Obtenir les commandes d'un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1500,7 +1478,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelOrder",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -1542,7 +1520,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResultsWithPaginationModelOrder]:
+    ) -> ApiResponse[None]:
         """Obtenir les commandes d'un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1613,7 +1591,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelOrder",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -1726,7 +1704,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelOrder",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -1838,15 +1816,6 @@ class CommandesApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
-                ]
-            )
 
 
         # authentication setting
@@ -1901,7 +1870,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> ResultsWithPaginationModelItem:
         """Obtenir une liste d'articles vendus par une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1978,9 +1947,9 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '401': None,
-            '403': None,
+            '200': "ResultsWithPaginationModelItem",
+            '401': "ResultsWithPaginationModelItem",
+            '403': "ResultsWithPaginationModelItem",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2022,7 +1991,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[ResultsWithPaginationModelItem]:
         """Obtenir une liste d'articles vendus par une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -2099,9 +2068,9 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '401': None,
-            '403': None,
+            '200': "ResultsWithPaginationModelItem",
+            '401': "ResultsWithPaginationModelItem",
+            '403': "ResultsWithPaginationModelItem",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2220,9 +2189,9 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '401': None,
-            '403': None,
+            '200': "ResultsWithPaginationModelItem",
+            '401': "ResultsWithPaginationModelItem",
+            '403': "ResultsWithPaginationModelItem",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2352,8 +2321,6 @@ class CommandesApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json', 
-                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 
                     'text/csv'
                 ]
             )
@@ -2408,7 +2375,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResultsWithPaginationModelOrder:
+    ) -> None:
         """Obtenir les commandes d'une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -2476,7 +2443,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelOrder",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -2517,7 +2484,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResultsWithPaginationModelOrder]:
+    ) -> ApiResponse[None]:
         """Obtenir les commandes d'une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -2585,7 +2552,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelOrder",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -2694,7 +2661,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelOrder",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -2806,15 +2773,6 @@ class CommandesApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
-                ]
-            )
 
 
         # authentication setting

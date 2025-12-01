@@ -17,9 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictInt, StrictStr
-from typing import List
 from typing_extensions import Annotated
-from helloasso_python.models.hello_asso_api_v5_common_models_payment_cashout_export_cashout_export_row_model import HelloAssoApiV5CommonModelsPaymentCashoutExportCashoutExportRowModel
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -56,7 +54,7 @@ class VersementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[HelloAssoApiV5CommonModelsPaymentCashoutExportCashoutExportRowModel]:
+    ) -> None:
         """Détails d'un versement
 
         <br/><br/><b>Votre token doit avoir l''un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d''autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -97,7 +95,7 @@ class VersementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[HelloAssoApiV5CommonModelsPaymentCashoutExportCashoutExportRowModel]",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -129,7 +127,7 @@ class VersementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[HelloAssoApiV5CommonModelsPaymentCashoutExportCashoutExportRowModel]]:
+    ) -> ApiResponse[None]:
         """Détails d'un versement
 
         <br/><br/><b>Votre token doit avoir l''un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d''autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -170,7 +168,7 @@ class VersementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[HelloAssoApiV5CommonModelsPaymentCashoutExportCashoutExportRowModel]",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -243,7 +241,7 @@ class VersementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[HelloAssoApiV5CommonModelsPaymentCashoutExportCashoutExportRowModel]",
+            '200': None,
             '401': None,
             '403': None,
         }
@@ -289,15 +287,6 @@ class VersementsApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json', 
-                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 
-                    'text/csv'
-                ]
-            )
 
 
         # authentication setting
