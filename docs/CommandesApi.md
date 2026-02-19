@@ -353,7 +353,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_forms_form_type_form_slug_orders_get**
-> ResultsWithPaginationModelOrder organizations_organization_slug_forms_form_type_form_slug_orders_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, with_details=with_details, sort_order=sort_order)
+> HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder organizations_organization_slug_forms_form_type_form_slug_orders_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, with_details=with_details, sort_order=sort_order)
 
 Obtenir les commandes d'un formulaire
 
@@ -365,9 +365,9 @@ Obtenir les commandes d'un formulaire
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_common_results_with_pagination_model_order import HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
-from helloasso_python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResultsWithPaginationModelOrder**](ResultsWithPaginationModelOrder.md)
+[**HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder**](HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder.md)
 
 ### Authorization
 
@@ -554,7 +554,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_orders_get**
-> ResultsWithPaginationModelOrder organizations_organization_slug_orders_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, form_types=form_types, with_details=with_details, sort_order=sort_order)
+> HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder organizations_organization_slug_orders_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, form_types=form_types, with_details=with_details, sort_order=sort_order)
 
 Obtenir les commandes d'une organisation
 
@@ -566,9 +566,9 @@ Obtenir les commandes d'une organisation
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_common_results_with_pagination_model_order import HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
-from helloasso_python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResultsWithPaginationModelOrder**](ResultsWithPaginationModelOrder.md)
+[**HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder**](HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder.md)
 
 ### Authorization
 

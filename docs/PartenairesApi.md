@@ -472,7 +472,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **partners_me_organizations_get**
-> ResultsWithPaginationModelPartnerOrganizationModel partners_me_organizations_get(page_size=page_size, continuation_token=continuation_token)
+> HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPartnerOrganizationModel partners_me_organizations_get(page_size=page_size, continuation_token=continuation_token)
 
 Obtenir toutes les organisations
 
@@ -484,7 +484,7 @@ Liste toutes les organisations liées au partenaire. Les résultats sont classé
 
 ```python
 import helloasso_python
-from helloasso_python.models.results_with_pagination_model_partner_organization_model import ResultsWithPaginationModelPartnerOrganizationModel
+from helloasso_python.models.hello_asso_api_v5_common_models_common_results_with_pagination_model_partner_organization_model import HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPartnerOrganizationModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResultsWithPaginationModelPartnerOrganizationModel**](ResultsWithPaginationModelPartnerOrganizationModel.md)
+[**HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPartnerOrganizationModel**](HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPartnerOrganizationModel.md)
 
 ### Authorization
 

@@ -18,12 +18,12 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from helloasso_python.models.hello_asso_api_v5_common_models_common_results_with_pagination_model_form_light_model import HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelFormLightModel
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_state import HelloAssoApiV5CommonModelsEnumsFormState
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
 from helloasso_python.models.hello_asso_api_v5_common_models_forms_form_public_model import HelloAssoApiV5CommonModelsFormsFormPublicModel
 from helloasso_python.models.hello_asso_api_v5_common_models_forms_form_quick_create_model import HelloAssoApiV5CommonModelsFormsFormQuickCreateModel
 from helloasso_python.models.hello_asso_api_v5_common_models_forms_form_quick_create_request import HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest
-from helloasso_python.models.results_with_pagination_model_form_light_model import ResultsWithPaginationModelFormLightModel
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -965,7 +965,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResultsWithPaginationModelFormLightModel:
+    ) -> HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelFormLightModel:
         """Obtenir les formulaires d'une organisation
 
         Liste tous les formulaires correspondant aux états et types. Si aucun filtre n'est spécifié, aucun filtre n'est appliqué. Les résultats sont classés par date de création en ordre décroissant.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -1018,7 +1018,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelFormLightModel",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelFormLightModel",
             '401': None,
             '403': None,
         }
@@ -1054,7 +1054,7 @@ class FormulairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResultsWithPaginationModelFormLightModel]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelFormLightModel]:
         """Obtenir les formulaires d'une organisation
 
         Liste tous les formulaires correspondant aux états et types. Si aucun filtre n'est spécifié, aucun filtre n'est appliqué. Les résultats sont classés par date de création en ordre décroissant.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -1107,7 +1107,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelFormLightModel",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelFormLightModel",
             '401': None,
             '403': None,
         }
@@ -1196,7 +1196,7 @@ class FormulairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelFormLightModel",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelFormLightModel",
             '401': None,
             '403': None,
         }

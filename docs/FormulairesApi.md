@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_forms_get**
-> ResultsWithPaginationModelFormLightModel organizations_organization_slug_forms_get(organization_slug, states=states, form_types=form_types, page_index=page_index, page_size=page_size, continuation_token=continuation_token)
+> HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelFormLightModel organizations_organization_slug_forms_get(organization_slug, states=states, form_types=form_types, page_index=page_index, page_size=page_size, continuation_token=continuation_token)
 
 Obtenir les formulaires d'une organisation
 
@@ -268,9 +268,9 @@ Liste tous les formulaires correspondant aux états et types. Si aucun filtre n'
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_common_results_with_pagination_model_form_light_model import HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelFormLightModel
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_state import HelloAssoApiV5CommonModelsEnumsFormState
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
-from helloasso_python.models.results_with_pagination_model_form_light_model import ResultsWithPaginationModelFormLightModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResultsWithPaginationModelFormLightModel**](ResultsWithPaginationModelFormLightModel.md)
+[**HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelFormLightModel**](HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelFormLightModel.md)
 
 ### Authorization
 

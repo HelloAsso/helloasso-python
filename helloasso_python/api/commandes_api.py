@@ -19,6 +19,7 @@ from datetime import datetime
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from helloasso_python.models.hello_asso_api_v5_common_models_common_results_with_pagination_model_order import HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_item_state import HelloAssoApiV5CommonModelsEnumsItemState
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
@@ -26,7 +27,6 @@ from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order im
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_tier_type import HelloAssoApiV5CommonModelsEnumsTierType
 from helloasso_python.models.hello_asso_api_v5_common_models_statistics_item_detail import HelloAssoApiV5CommonModelsStatisticsItemDetail
 from helloasso_python.models.hello_asso_api_v5_common_models_statistics_order_detail import HelloAssoApiV5CommonModelsStatisticsOrderDetail
-from helloasso_python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -1427,7 +1427,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResultsWithPaginationModelOrder:
+    ) -> HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder:
         """Obtenir les commandes d'un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1495,7 +1495,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelOrder",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder",
             '401': None,
             '403': None,
         }
@@ -1536,7 +1536,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResultsWithPaginationModelOrder]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder]:
         """Obtenir les commandes d'un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1604,7 +1604,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelOrder",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder",
             '401': None,
             '403': None,
         }
@@ -1713,7 +1713,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelOrder",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder",
             '401': None,
             '403': None,
         }
@@ -2372,7 +2372,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResultsWithPaginationModelOrder:
+    ) -> HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder:
         """Obtenir les commandes d'une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -2437,7 +2437,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelOrder",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder",
             '401': None,
             '403': None,
         }
@@ -2477,7 +2477,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResultsWithPaginationModelOrder]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder]:
         """Obtenir les commandes d'une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -2542,7 +2542,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelOrder",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder",
             '401': None,
             '403': None,
         }
@@ -2647,7 +2647,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelOrder",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelOrder",
             '401': None,
             '403': None,
         }

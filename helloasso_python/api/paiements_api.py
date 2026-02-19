@@ -19,13 +19,13 @@ from datetime import datetime
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from helloasso_python.models.hello_asso_api_v5_common_models_common_results_with_pagination_model_payment import HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_payment_state import HelloAssoApiV5CommonModelsEnumsPaymentState
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
 from helloasso_python.models.hello_asso_api_v5_common_models_payment_refund_operation_model import HelloAssoApiV5CommonModelsPaymentRefundOperationModel
 from helloasso_python.models.hello_asso_api_v5_common_models_statistics_payment_detail import HelloAssoApiV5CommonModelsStatisticsPaymentDetail
-from helloasso_python.models.results_with_pagination_model_payment import ResultsWithPaginationModelPayment
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -72,7 +72,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResultsWithPaginationModelPayment:
+    ) -> HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment:
         """Obtenir les informations des paiements effectués sur un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -143,7 +143,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelPayment",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment",
             '401': None,
             '403': None,
         }
@@ -185,7 +185,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResultsWithPaginationModelPayment]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment]:
         """Obtenir les informations des paiements effectués sur un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -256,7 +256,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelPayment",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment",
             '401': None,
             '403': None,
         }
@@ -369,7 +369,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelPayment",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment",
             '401': None,
             '403': None,
         }
@@ -541,7 +541,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResultsWithPaginationModelPayment:
+    ) -> HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment:
         """Obtenir les informations des paiements effectués sur une organisation
 
         Retourne la liste des paiements selon les paramètres<br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -606,7 +606,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelPayment",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment",
             '401': None,
             '403': None,
         }
@@ -646,7 +646,7 @@ class PaiementsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResultsWithPaginationModelPayment]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment]:
         """Obtenir les informations des paiements effectués sur une organisation
 
         Retourne la liste des paiements selon les paramètres<br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -711,7 +711,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelPayment",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment",
             '401': None,
             '403': None,
         }
@@ -816,7 +816,7 @@ class PaiementsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelPayment",
+            '200': "HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment",
             '401': None,
             '403': None,
         }
@@ -1328,10 +1328,7 @@ class PaiementsApi:
             '200': "HelloAssoApiV5CommonModelsPaymentRefundOperationModel",
             '401': None,
             '403': None,
-            '409 - AuthorizationErrors.MFA.AccessTokenRequired': None,
-            '409 - AuthorizationErrors.MFA.AccessOtpSmsRequired': None,
-            '409 - AuthorizationErrors.MFA.AccessPasswordTokenRequired': None,
-            '409 - AuthorizationErrors.UserNotEnrolled': None,
+            '409': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1429,10 +1426,7 @@ class PaiementsApi:
             '200': "HelloAssoApiV5CommonModelsPaymentRefundOperationModel",
             '401': None,
             '403': None,
-            '409 - AuthorizationErrors.MFA.AccessTokenRequired': None,
-            '409 - AuthorizationErrors.MFA.AccessOtpSmsRequired': None,
-            '409 - AuthorizationErrors.MFA.AccessPasswordTokenRequired': None,
-            '409 - AuthorizationErrors.UserNotEnrolled': None,
+            '409': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1530,10 +1524,7 @@ class PaiementsApi:
             '200': "HelloAssoApiV5CommonModelsPaymentRefundOperationModel",
             '401': None,
             '403': None,
-            '409 - AuthorizationErrors.MFA.AccessTokenRequired': None,
-            '409 - AuthorizationErrors.MFA.AccessOtpSmsRequired': None,
-            '409 - AuthorizationErrors.MFA.AccessPasswordTokenRequired': None,
-            '409 - AuthorizationErrors.UserNotEnrolled': None,
+            '409': None,
         }
         response_data = self.api_client.call_api(
             *_param,

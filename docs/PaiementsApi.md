@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **organizations_organization_slug_forms_form_type_form_slug_payments_get**
-> ResultsWithPaginationModelPayment organizations_organization_slug_forms_form_type_form_slug_payments_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, states=states, sort_order=sort_order, sort_field=sort_field)
+> HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment organizations_organization_slug_forms_form_type_form_slug_payments_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, states=states, sort_order=sort_order, sort_field=sort_field)
 
 Obtenir les informations des paiements effectués sur un formulaire
 
@@ -23,11 +23,11 @@ Obtenir les informations des paiements effectués sur un formulaire
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_common_results_with_pagination_model_payment import HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_payment_state import HelloAssoApiV5CommonModelsEnumsPaymentState
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
-from helloasso_python.models.results_with_pagination_model_payment import ResultsWithPaginationModelPayment
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResultsWithPaginationModelPayment**](ResultsWithPaginationModelPayment.md)
+[**HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment**](HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment.md)
 
 ### Authorization
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_payments_get**
-> ResultsWithPaginationModelPayment organizations_organization_slug_payments_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, states=states, sort_order=sort_order, sort_field=sort_field)
+> HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment organizations_organization_slug_payments_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, states=states, sort_order=sort_order, sort_field=sort_field)
 
 Obtenir les informations des paiements effectués sur une organisation
 
@@ -126,10 +126,10 @@ Retourne la liste des paiements selon les paramètres<br/><br/><b>Votre token do
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_common_results_with_pagination_model_payment import HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_payment_state import HelloAssoApiV5CommonModelsEnumsPaymentState
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
-from helloasso_python.models.results_with_pagination_model_payment import ResultsWithPaginationModelPayment
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResultsWithPaginationModelPayment**](ResultsWithPaginationModelPayment.md)
+[**HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment**](HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelPayment.md)
 
 ### Authorization
 
@@ -378,10 +378,7 @@ Name | Type | Description  | Notes
 **200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
-**409 - AuthorizationErrors.MFA.AccessTokenRequired** | MFA token not found &lt;br/&gt;&lt;br/&gt; A MFA token is expected in x-mfa-access-authorization header or in cookie mfa-{protectedOperation}-{organizationId}. |  -  |
-**409 - AuthorizationErrors.MFA.AccessOtpSmsRequired** | MFA access otp sms not found &lt;br/&gt;&lt;br/&gt; A MFA token is expected in x-mfa-sms-access-authorization header or in cookie mfa-{protectedOperation}-{organizationId}-otp-sms. |  -  |
-**409 - AuthorizationErrors.MFA.AccessPasswordTokenRequired** | MFA access password token not found &lt;br/&gt;&lt;br/&gt; A MFA token is expected in x-mfa-password-authorization header or in cookie mfa-{protectedOperation}-{organizationId}-pwd. |  -  |
-**409 - AuthorizationErrors.UserNotEnrolled** | User 123 not enrolled |  -  |
+**409** | ### Multi-Factor Authentication Required This endpoint requires MFA. Below are the possible error codes and required headers:  --- **Code: &#x60;AuthorizationErrors.MFA.AccessTokenRequired&#x60;**   MFA token not found &lt;br/&gt;&lt;br/&gt; A MFA token is expected in x-mfa-access-authorization header or in cookie mfa-{protectedOperation}-{organizationId}.  --- **Code: &#x60;AuthorizationErrors.MFA.AccessOtpSmsRequired&#x60;**   MFA access otp sms not found &lt;br/&gt;&lt;br/&gt; A MFA token is expected in x-mfa-sms-access-authorization header or in cookie mfa-{protectedOperation}-{organizationId}-otp-sms.  --- **Code: &#x60;AuthorizationErrors.MFA.AccessPasswordTokenRequired&#x60;**   MFA access password token not found &lt;br/&gt;&lt;br/&gt; A MFA token is expected in x-mfa-password-authorization header or in cookie mfa-{protectedOperation}-{organizationId}-pwd.  --- **Code: &#x60;AuthorizationErrors.UserNotEnrolled&#x60;**   User 123 not enrolled |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **directory_forms_post**
-> ResultsWithPaginationModelSynchronizableFormModel directory_forms_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_forms_request=hello_asso_api_v5_common_models_directory_list_forms_request)
+> HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelSynchronizableFormModel directory_forms_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_forms_request=hello_asso_api_v5_common_models_directory_list_forms_request)
 
 Récupérer les formulaires
 
@@ -21,8 +21,8 @@ Permet de récupérer une liste de tous les formulaires visibles correspondant �
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_common_results_with_pagination_model_synchronizable_form_model import HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelSynchronizableFormModel
 from helloasso_python.models.hello_asso_api_v5_common_models_directory_list_forms_request import HelloAssoApiV5CommonModelsDirectoryListFormsRequest
-from helloasso_python.models.results_with_pagination_model_synchronizable_form_model import ResultsWithPaginationModelSynchronizableFormModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResultsWithPaginationModelSynchronizableFormModel**](ResultsWithPaginationModelSynchronizableFormModel.md)
+[**HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelSynchronizableFormModel**](HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelSynchronizableFormModel.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **directory_organizations_post**
-> ResultsWithPaginationModelSynchronizableOrganizationModel directory_organizations_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_organizations_request=hello_asso_api_v5_common_models_directory_list_organizations_request)
+> HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelSynchronizableOrganizationModel directory_organizations_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_organizations_request=hello_asso_api_v5_common_models_directory_list_organizations_request)
 
 Récupérer les organisations
 
@@ -103,8 +103,8 @@ Permet de récupérer une liste de toutes les organisations visibles corresponda
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_common_results_with_pagination_model_synchronizable_organization_model import HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelSynchronizableOrganizationModel
 from helloasso_python.models.hello_asso_api_v5_common_models_directory_list_organizations_request import HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest
-from helloasso_python.models.results_with_pagination_model_synchronizable_organization_model import ResultsWithPaginationModelSynchronizableOrganizationModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResultsWithPaginationModelSynchronizableOrganizationModel**](ResultsWithPaginationModelSynchronizableOrganizationModel.md)
+[**HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelSynchronizableOrganizationModel**](HelloAssoApiV5CommonModelsCommonResultsWithPaginationModelSynchronizableOrganizationModel.md)
 
 ### Authorization
 
