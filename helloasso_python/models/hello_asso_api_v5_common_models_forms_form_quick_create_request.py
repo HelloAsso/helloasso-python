@@ -71,10 +71,9 @@ class HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest(BaseModel):
     project_target_country: Optional[Annotated[str, Field(min_length=3, strict=True, max_length=3)]] = Field(default=None, description="3 letter country code", alias="projectTargetCountry")
     allow_organism_payer: Optional[StrictBool] = Field(default=None, description="Whether users are allowed to contribute to this form through an organism (only for donation and crowdfunding).", alias="allowOrganismPayer")
     allow_individual_payer: Optional[StrictBool] = Field(default=None, description="Whether user are allowed to personally contribute to this form (only for donation and crowdfunding).", alias="allowIndividualPayer")
-    display_version: Optional[StrictInt] = Field(default=None, description="The form display version (only for donation).", alias="displayVersion")
     remind_abandoned_cart: Optional[StrictBool] = Field(default=None, description="Whether a reminder email should be sent for abandoned carts.", alias="remindAbandonedCart")
     max_entries: Optional[StrictInt] = Field(default=None, description="Indicates the maximum available entries for the whole form. Null means unlimited entries.", alias="maxEntries")
-    __properties: ClassVar[List[str]] = ["tierList", "banner", "description", "endDate", "logo", "privateTitle", "startDate", "title", "activityTypeId", "place", "saleEndDate", "saleStartDate", "validityType", "acceptOpenDonation", "acceptOpenMonthlyDonation", "allowComment", "amountVisible", "color", "widgetButtonText", "contact", "displayContributorName", "displayParticipantsCount", "displayRemainingEntries", "financialGoal", "generateMembershipCards", "generateTickets", "invertDescriptions", "labelConditionsAndTermsFile", "longDescription", "openDonationPresetAmounts", "personalizedMessage", "projectBeneficiaries", "projectExpensesDetails", "projectOwners", "suggestMonthlyDonation", "displayMonthlyDonationsFirst", "projectTargetCountry", "allowOrganismPayer", "allowIndividualPayer", "displayVersion", "remindAbandonedCart", "maxEntries"]
+    __properties: ClassVar[List[str]] = ["tierList", "banner", "description", "endDate", "logo", "privateTitle", "startDate", "title", "activityTypeId", "place", "saleEndDate", "saleStartDate", "validityType", "acceptOpenDonation", "acceptOpenMonthlyDonation", "allowComment", "amountVisible", "color", "widgetButtonText", "contact", "displayContributorName", "displayParticipantsCount", "displayRemainingEntries", "financialGoal", "generateMembershipCards", "generateTickets", "invertDescriptions", "labelConditionsAndTermsFile", "longDescription", "openDonationPresetAmounts", "personalizedMessage", "projectBeneficiaries", "projectExpensesDetails", "projectOwners", "suggestMonthlyDonation", "displayMonthlyDonationsFirst", "projectTargetCountry", "allowOrganismPayer", "allowIndividualPayer", "remindAbandonedCart", "maxEntries"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -233,11 +232,6 @@ class HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest(BaseModel):
         if self.project_target_country is None and "project_target_country" in self.model_fields_set:
             _dict['projectTargetCountry'] = None
 
-        # set to None if display_version (nullable) is None
-        # and model_fields_set contains the field
-        if self.display_version is None and "display_version" in self.model_fields_set:
-            _dict['displayVersion'] = None
-
         # set to None if max_entries (nullable) is None
         # and model_fields_set contains the field
         if self.max_entries is None and "max_entries" in self.model_fields_set:
@@ -294,7 +288,6 @@ class HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest(BaseModel):
             "projectTargetCountry": obj.get("projectTargetCountry"),
             "allowOrganismPayer": obj.get("allowOrganismPayer"),
             "allowIndividualPayer": obj.get("allowIndividualPayer"),
-            "displayVersion": obj.get("displayVersion"),
             "remindAbandonedCart": obj.get("remindAbandonedCart"),
             "maxEntries": obj.get("maxEntries")
         })

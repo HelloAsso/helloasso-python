@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **organizations_organization_slug_get**
-> organizations_organization_slug_get(organization_slug)
+> HelloAssoApiV5CommonModelsOrganizationsOrganizationPublicModel organizations_organization_slug_get(organization_slug)
 
 Obtenir le détail d'une organisation
 
@@ -20,6 +20,7 @@ Obtenir les informations publiques de l'organisation spécifiée.<br/><br/><b>Vo
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_organizations_organization_public_model import HelloAssoApiV5CommonModelsOrganizationsOrganizationPublicModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -44,7 +45,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir le détail d'une organisation
-        api_instance.organizations_organization_slug_get(organization_slug)
+        api_response = api_instance.organizations_organization_slug_get(organization_slug)
+        print("The response of OrganisationApi->organizations_organization_slug_get:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling OrganisationApi->organizations_organization_slug_get: %s\n" % e)
 ```
@@ -60,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**HelloAssoApiV5CommonModelsOrganizationsOrganizationPublicModel**](HelloAssoApiV5CommonModelsOrganizationsOrganizationPublicModel.md)
 
 ### Authorization
 
@@ -69,13 +72,13 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Get Organization by slug |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 

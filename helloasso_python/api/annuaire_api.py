@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     HelloAsso API
 
@@ -11,6 +9,7 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -21,6 +20,8 @@ from typing import Optional
 from typing_extensions import Annotated
 from helloasso_python.models.hello_asso_api_v5_common_models_directory_list_forms_request import HelloAssoApiV5CommonModelsDirectoryListFormsRequest
 from helloasso_python.models.hello_asso_api_v5_common_models_directory_list_organizations_request import HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest
+from helloasso_python.models.results_with_pagination_model_synchronizable_form_model import ResultsWithPaginationModelSynchronizableFormModel
+from helloasso_python.models.results_with_pagination_model_synchronizable_organization_model import ResultsWithPaginationModelSynchronizableOrganizationModel
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -58,7 +59,7 @@ class AnnuaireApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> ResultsWithPaginationModelSynchronizableFormModel:
         """Récupérer les formulaires
 
         Permet de récupérer une liste de tous les formulaires visibles correspondant à tous les filtres de l'annuaire jusqu'à ce qu'il soit synchronisé (en utilisant le continuationToken). Si aucun filtre n'est spécifié, aucun filtre n'est appliqué. Les résultats sont classés par date de mise à jour de la visibilité API en ordre croissant. Une fois la liste synchronisée, seuls les formulaires avec une date de mise à jour de la visibilité API supérieure à la dernière forme envoyée sont retournés (toujours en utilisant le continuationToken). Cela concerne les nouveaux formulaires à insérer (souhaitant apparaître de l'annuaire) ainsi que les anciens à supprimer (ne souhaitant plus apparaître dans l'annuaire). Le nombre total de résultats (ou de pages) n'est pas récupérable, donc les informations de pagination retournées indiqueront toujours -1.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> FormOpenDirectory<br/><br/>
@@ -102,7 +103,7 @@ class AnnuaireApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelSynchronizableFormModel",
             '401': None,
             '403': None,
         }
@@ -135,7 +136,7 @@ class AnnuaireApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[ResultsWithPaginationModelSynchronizableFormModel]:
         """Récupérer les formulaires
 
         Permet de récupérer une liste de tous les formulaires visibles correspondant à tous les filtres de l'annuaire jusqu'à ce qu'il soit synchronisé (en utilisant le continuationToken). Si aucun filtre n'est spécifié, aucun filtre n'est appliqué. Les résultats sont classés par date de mise à jour de la visibilité API en ordre croissant. Une fois la liste synchronisée, seuls les formulaires avec une date de mise à jour de la visibilité API supérieure à la dernière forme envoyée sont retournés (toujours en utilisant le continuationToken). Cela concerne les nouveaux formulaires à insérer (souhaitant apparaître de l'annuaire) ainsi que les anciens à supprimer (ne souhaitant plus apparaître dans l'annuaire). Le nombre total de résultats (ou de pages) n'est pas récupérable, donc les informations de pagination retournées indiqueront toujours -1.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> FormOpenDirectory<br/><br/>
@@ -179,7 +180,7 @@ class AnnuaireApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelSynchronizableFormModel",
             '401': None,
             '403': None,
         }
@@ -256,7 +257,7 @@ class AnnuaireApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelSynchronizableFormModel",
             '401': None,
             '403': None,
         }
@@ -309,6 +310,15 @@ class AnnuaireApi:
             _body_params = hello_asso_api_v5_common_models_directory_list_forms_request
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json', 
+                    'text/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -368,7 +378,7 @@ class AnnuaireApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> ResultsWithPaginationModelSynchronizableOrganizationModel:
         """Récupérer les organisations
 
         Permet de récupérer une liste de toutes les organisations visibles correspondant à tous les filtres de l'annuaire jusqu'à ce qu'il soit synchronisé (en utilisant le continuationToken). Si aucun filtre n'est spécifié, aucun filtre n'est appliqué. Les résultats sont classés par date de mise à jour de la visibilité API en ordre croissant. Une fois la liste synchronisée, seules les organisations avec une date de mise à jour de la visibilité API supérieure à la dernière organisation envoyée sont retournées (toujours en utilisant le continuationToken). Cela concerne les nouvelles organisations à insérer (souhaitant apparaître dans l'annuaire) ainsi que les anciennes à supprimer (ne souhaitant plus apparaître dans l'annuaire). Le nombre total de résultats (ou de pages) n'est pas récupérable, donc les informations de pagination retournées indiqueront toujours -1.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> OrganizationOpenDirectory<br/><br/>
@@ -412,7 +422,7 @@ class AnnuaireApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelSynchronizableOrganizationModel",
             '401': None,
             '403': None,
         }
@@ -445,7 +455,7 @@ class AnnuaireApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[ResultsWithPaginationModelSynchronizableOrganizationModel]:
         """Récupérer les organisations
 
         Permet de récupérer une liste de toutes les organisations visibles correspondant à tous les filtres de l'annuaire jusqu'à ce qu'il soit synchronisé (en utilisant le continuationToken). Si aucun filtre n'est spécifié, aucun filtre n'est appliqué. Les résultats sont classés par date de mise à jour de la visibilité API en ordre croissant. Une fois la liste synchronisée, seules les organisations avec une date de mise à jour de la visibilité API supérieure à la dernière organisation envoyée sont retournées (toujours en utilisant le continuationToken). Cela concerne les nouvelles organisations à insérer (souhaitant apparaître dans l'annuaire) ainsi que les anciennes à supprimer (ne souhaitant plus apparaître dans l'annuaire). Le nombre total de résultats (ou de pages) n'est pas récupérable, donc les informations de pagination retournées indiqueront toujours -1.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> OrganizationOpenDirectory<br/><br/>
@@ -489,7 +499,7 @@ class AnnuaireApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelSynchronizableOrganizationModel",
             '401': None,
             '403': None,
         }
@@ -566,7 +576,7 @@ class AnnuaireApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelSynchronizableOrganizationModel",
             '401': None,
             '403': None,
         }
@@ -619,6 +629,15 @@ class AnnuaireApi:
             _body_params = hello_asso_api_v5_common_models_directory_list_organizations_request
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json', 
+                    'text/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:

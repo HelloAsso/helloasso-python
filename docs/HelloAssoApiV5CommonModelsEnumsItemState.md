@@ -11,15 +11,9 @@
 
 * `DELETED` (value: `'Deleted'`)
 
-* `REFUNDED` (value: `'Refunded'`)
-
 * `UNKNOWN` (value: `'Unknown'`)
 
 * `CANCELED` (value: `'Canceled'`)
-
-* `CONTESTED` (value: `'Contested'`)
-
-* `UNKNOW` (value: `'Unknow'`)
 
 * `REFUSED` (value: `'Refused'`)
 

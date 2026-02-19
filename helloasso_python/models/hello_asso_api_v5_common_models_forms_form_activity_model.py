@@ -17,20 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from helloasso_python.models.hello_asso_api_v5_common_models_enums_record_action_type import HelloAssoApiV5CommonModelsEnumsRecordActionType
-from helloasso_python.models.hello_asso_api_v5_common_models_organizations_organization_basic_model import HelloAssoApiV5CommonModelsOrganizationsOrganizationBasicModel
 from typing import Optional, Set
 from typing_extensions import Self
 
-class HelloAssoApiV5CommonModelsDirectorySynchronizableOrganizationModel(BaseModel):
+class HelloAssoApiV5CommonModelsFormsFormActivityModel(BaseModel):
     """
-    SynchronizableOrganizationModel class
+    Form activity model
     """ # noqa: E501
-    action: Optional[HelloAssoApiV5CommonModelsEnumsRecordActionType] = None
-    record: Optional[HelloAssoApiV5CommonModelsOrganizationsOrganizationBasicModel] = None
-    __properties: ClassVar[List[str]] = ["action", "record"]
+    id: Optional[StrictInt] = Field(default=None, description="Gets the activity identifier")
+    label: Optional[StrictStr] = Field(default=None, description="Gets the activity label")
+    short_label: Optional[StrictStr] = Field(default=None, description="Gets the activity short label", alias="shortLabel")
+    __properties: ClassVar[List[str]] = ["id", "label", "shortLabel"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +49,7 @@ class HelloAssoApiV5CommonModelsDirectorySynchronizableOrganizationModel(BaseMod
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of HelloAssoApiV5CommonModelsDirectorySynchronizableOrganizationModel from a JSON string"""
+        """Create an instance of HelloAssoApiV5CommonModelsFormsFormActivityModel from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,14 +70,21 @@ class HelloAssoApiV5CommonModelsDirectorySynchronizableOrganizationModel(BaseMod
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of record
-        if self.record:
-            _dict['record'] = self.record.to_dict()
+        # set to None if label (nullable) is None
+        # and model_fields_set contains the field
+        if self.label is None and "label" in self.model_fields_set:
+            _dict['label'] = None
+
+        # set to None if short_label (nullable) is None
+        # and model_fields_set contains the field
+        if self.short_label is None and "short_label" in self.model_fields_set:
+            _dict['shortLabel'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of HelloAssoApiV5CommonModelsDirectorySynchronizableOrganizationModel from a dict"""
+        """Create an instance of HelloAssoApiV5CommonModelsFormsFormActivityModel from a dict"""
         if obj is None:
             return None
 
@@ -86,8 +92,9 @@ class HelloAssoApiV5CommonModelsDirectorySynchronizableOrganizationModel(BaseMod
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "action": obj.get("action"),
-            "record": HelloAssoApiV5CommonModelsOrganizationsOrganizationBasicModel.from_dict(obj["record"]) if obj.get("record") is not None else None
+            "id": obj.get("id"),
+            "label": obj.get("label"),
+            "shortLabel": obj.get("shortLabel")
         })
         return _obj
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **values_company_legal_status_get**
-> values_company_legal_status_get()
+> List[HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel] values_company_legal_status_get()
 
 Obtenir la liste des statuts juridiques
 
@@ -22,6 +22,7 @@ Obtenir la liste des statuts juridiques
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_accounts_company_legal_status_model import HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -45,7 +46,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir la liste des statuts juridiques
-        api_instance.values_company_legal_status_get()
+        api_response = api_instance.values_company_legal_status_get()
+        print("The response of ListeDeValeursApi->values_company_legal_status_get:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ListeDeValeursApi->values_company_legal_status_get: %s\n" % e)
 ```
@@ -58,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**List[HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel]**](HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel.md)
 
 ### Authorization
 
@@ -67,20 +70,20 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Company legal status list |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **values_organization_categories_get**
-> values_organization_categories_get()
+> List[HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel] values_organization_categories_get()
 
 Obtenir la liste des catégories du JO
 
@@ -92,6 +95,7 @@ Utilisez ceci afin de construire votre liste de catégories d'organisation<br/><
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_accounts_organism_category_model import HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -115,7 +119,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir la liste des catégories du JO
-        api_instance.values_organization_categories_get()
+        api_response = api_instance.values_organization_categories_get()
+        print("The response of ListeDeValeursApi->values_organization_categories_get:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ListeDeValeursApi->values_organization_categories_get: %s\n" % e)
 ```
@@ -128,7 +134,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**List[HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel]**](HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel.md)
 
 ### Authorization
 
@@ -137,20 +143,20 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List of organization categories |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **values_tags_get**
-> values_tags_get()
+> List[HelloAssoApiV5CommonModelsTagsPublicTagModel] values_tags_get()
 
 Obtenir la liste des tags publiques
 
@@ -162,6 +168,7 @@ Utilisez ceci afin de récupérer la liste des étiquettes utilisées<br/><br/><
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_tags_public_tag_model import HelloAssoApiV5CommonModelsTagsPublicTagModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -185,7 +192,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir la liste des tags publiques
-        api_instance.values_tags_get()
+        api_response = api_instance.values_tags_get()
+        print("The response of ListeDeValeursApi->values_tags_get:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ListeDeValeursApi->values_tags_get: %s\n" % e)
 ```
@@ -198,7 +207,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**List[HelloAssoApiV5CommonModelsTagsPublicTagModel]**](HelloAssoApiV5CommonModelsTagsPublicTagModel.md)
 
 ### Authorization
 
@@ -207,13 +216,13 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List of tags |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 

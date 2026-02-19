@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     HelloAsso API
 
@@ -10,6 +8,7 @@
 
     Do not edit the class manually.
 """  # noqa: E501
+
 
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
@@ -25,7 +24,9 @@ from helloasso_python.models.hello_asso_api_v5_common_models_enums_item_state im
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_tier_type import HelloAssoApiV5CommonModelsEnumsTierType
-from helloasso_python.models.results_with_pagination_model_item import ResultsWithPaginationModelItem
+from helloasso_python.models.hello_asso_api_v5_common_models_statistics_item_detail import HelloAssoApiV5CommonModelsStatisticsItemDetail
+from helloasso_python.models.hello_asso_api_v5_common_models_statistics_order_detail import HelloAssoApiV5CommonModelsStatisticsOrderDetail
+from helloasso_python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -62,7 +63,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> HelloAssoApiV5CommonModelsStatisticsItemDetail:
         """Obtenir le détail d'un article contenu dans une commande
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -103,7 +104,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsStatisticsItemDetail",
             '401': None,
             '403': None,
         }
@@ -135,7 +136,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsStatisticsItemDetail]:
         """Obtenir le détail d'un article contenu dans une commande
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -176,7 +177,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsStatisticsItemDetail",
             '401': None,
             '403': None,
         }
@@ -249,7 +250,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsStatisticsItemDetail",
             '401': None,
             '403': None,
         }
@@ -297,6 +298,15 @@ class CommandesApi:
         # process the body parameter
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json', 
+                    'text/json'
+                ]
+            )
 
 
         # authentication setting
@@ -585,7 +595,8 @@ class CommandesApi:
     @validate_call
     def orders_order_id_get(
         self,
-        order_id: StrictInt,
+        order_id: Annotated[StrictInt, Field(description="The order ID")],
+        with_form_data: Annotated[Optional[StrictBool], Field(description="Set to true to include form data in the response")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -598,13 +609,15 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> HelloAssoApiV5CommonModelsStatisticsOrderDetail:
         """Obtenir des informations détaillées sur une commande
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
 
-        :param order_id: (required)
+        :param order_id: The order ID (required)
         :type order_id: int
+        :param with_form_data: Set to true to include form data in the response
+        :type with_form_data: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -629,6 +642,7 @@ class CommandesApi:
 
         _param = self._orders_order_id_get_serialize(
             order_id=order_id,
+            with_form_data=with_form_data,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -636,7 +650,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsStatisticsOrderDetail",
             '401': None,
             '403': None,
         }
@@ -654,7 +668,8 @@ class CommandesApi:
     @validate_call
     def orders_order_id_get_with_http_info(
         self,
-        order_id: StrictInt,
+        order_id: Annotated[StrictInt, Field(description="The order ID")],
+        with_form_data: Annotated[Optional[StrictBool], Field(description="Set to true to include form data in the response")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -667,13 +682,15 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsStatisticsOrderDetail]:
         """Obtenir des informations détaillées sur une commande
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
 
-        :param order_id: (required)
+        :param order_id: The order ID (required)
         :type order_id: int
+        :param with_form_data: Set to true to include form data in the response
+        :type with_form_data: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -698,6 +715,7 @@ class CommandesApi:
 
         _param = self._orders_order_id_get_serialize(
             order_id=order_id,
+            with_form_data=with_form_data,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -705,7 +723,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsStatisticsOrderDetail",
             '401': None,
             '403': None,
         }
@@ -723,7 +741,8 @@ class CommandesApi:
     @validate_call
     def orders_order_id_get_without_preload_content(
         self,
-        order_id: StrictInt,
+        order_id: Annotated[StrictInt, Field(description="The order ID")],
+        with_form_data: Annotated[Optional[StrictBool], Field(description="Set to true to include form data in the response")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -741,8 +760,10 @@ class CommandesApi:
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
 
-        :param order_id: (required)
+        :param order_id: The order ID (required)
         :type order_id: int
+        :param with_form_data: Set to true to include form data in the response
+        :type with_form_data: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -767,6 +788,7 @@ class CommandesApi:
 
         _param = self._orders_order_id_get_serialize(
             order_id=order_id,
+            with_form_data=with_form_data,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -774,7 +796,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsStatisticsOrderDetail",
             '401': None,
             '403': None,
         }
@@ -788,6 +810,7 @@ class CommandesApi:
     def _orders_order_id_get_serialize(
         self,
         order_id,
+        with_form_data,
         _request_auth,
         _content_type,
         _headers,
@@ -812,11 +835,24 @@ class CommandesApi:
         if order_id is not None:
             _path_params['orderId'] = order_id
         # process the query parameters
+        if with_form_data is not None:
+            
+            _query_params.append(('withFormData', with_form_data))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json', 
+                    'text/json'
+                ]
+            )
 
 
         # authentication setting
@@ -860,7 +896,6 @@ class CommandesApi:
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields and Options")] = None,
         sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort forms items by ascending or descending order. Default is descending")] = None,
         sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort forms items by a specific field (Date or UpdateDate). Default is date")] = None,
-        with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -873,7 +908,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResultsWithPaginationModelItem:
+    ) -> None:
         """Obtenir une liste d'articles vendus dans un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -908,8 +943,6 @@ class CommandesApi:
         :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort forms items by a specific field (Date or UpdateDate). Default is date
         :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
-        :param with_count: Whether the pagination should include totalCount and totalPages.
-        :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -948,7 +981,6 @@ class CommandesApi:
             with_details=with_details,
             sort_order=sort_order,
             sort_field=sort_field,
-            with_count=with_count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -956,9 +988,9 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelItem",
-            '401': "ResultsWithPaginationModelItem",
-            '403': "ResultsWithPaginationModelItem",
+            '200': None,
+            '401': None,
+            '403': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -989,7 +1021,6 @@ class CommandesApi:
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields and Options")] = None,
         sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort forms items by ascending or descending order. Default is descending")] = None,
         sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort forms items by a specific field (Date or UpdateDate). Default is date")] = None,
-        with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1002,7 +1033,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResultsWithPaginationModelItem]:
+    ) -> ApiResponse[None]:
         """Obtenir une liste d'articles vendus dans un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1037,8 +1068,6 @@ class CommandesApi:
         :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort forms items by a specific field (Date or UpdateDate). Default is date
         :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
-        :param with_count: Whether the pagination should include totalCount and totalPages.
-        :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1077,7 +1106,6 @@ class CommandesApi:
             with_details=with_details,
             sort_order=sort_order,
             sort_field=sort_field,
-            with_count=with_count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1085,9 +1113,9 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelItem",
-            '401': "ResultsWithPaginationModelItem",
-            '403': "ResultsWithPaginationModelItem",
+            '200': None,
+            '401': None,
+            '403': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1118,7 +1146,6 @@ class CommandesApi:
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields and Options")] = None,
         sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort forms items by ascending or descending order. Default is descending")] = None,
         sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort forms items by a specific field (Date or UpdateDate). Default is date")] = None,
-        with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1166,8 +1193,6 @@ class CommandesApi:
         :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort forms items by a specific field (Date or UpdateDate). Default is date
         :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
-        :param with_count: Whether the pagination should include totalCount and totalPages.
-        :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1206,7 +1231,6 @@ class CommandesApi:
             with_details=with_details,
             sort_order=sort_order,
             sort_field=sort_field,
-            with_count=with_count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1214,9 +1238,9 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelItem",
-            '401': "ResultsWithPaginationModelItem",
-            '403': "ResultsWithPaginationModelItem",
+            '200': None,
+            '401': None,
+            '403': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1242,7 +1266,6 @@ class CommandesApi:
         with_details,
         sort_order,
         sort_field,
-        with_count,
         _request_auth,
         _content_type,
         _headers,
@@ -1339,10 +1362,6 @@ class CommandesApi:
             
             _query_params.append(('sortField', sort_field.value))
             
-        if with_count is not None:
-            
-            _query_params.append(('withCount', with_count))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1352,6 +1371,8 @@ class CommandesApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
+                    'application/json', 
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 
                     'text/csv'
                 ]
             )
@@ -1394,7 +1415,6 @@ class CommandesApi:
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields")] = None,
         sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort forms orders by ascending or descending order. Default is descending")] = None,
-        with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1407,7 +1427,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> ResultsWithPaginationModelOrder:
         """Obtenir les commandes d'un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1434,8 +1454,6 @@ class CommandesApi:
         :type with_details: bool
         :param sort_order: Sort forms orders by ascending or descending order. Default is descending
         :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
-        :param with_count: Whether the pagination should include totalCount and totalPages.
-        :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1470,7 +1488,6 @@ class CommandesApi:
             continuation_token=continuation_token,
             with_details=with_details,
             sort_order=sort_order,
-            with_count=with_count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1478,7 +1495,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelOrder",
             '401': None,
             '403': None,
         }
@@ -1507,7 +1524,6 @@ class CommandesApi:
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields")] = None,
         sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort forms orders by ascending or descending order. Default is descending")] = None,
-        with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1520,7 +1536,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[ResultsWithPaginationModelOrder]:
         """Obtenir les commandes d'un formulaire
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>FormAdmin<br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1547,8 +1563,6 @@ class CommandesApi:
         :type with_details: bool
         :param sort_order: Sort forms orders by ascending or descending order. Default is descending
         :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
-        :param with_count: Whether the pagination should include totalCount and totalPages.
-        :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1583,7 +1597,6 @@ class CommandesApi:
             continuation_token=continuation_token,
             with_details=with_details,
             sort_order=sort_order,
-            with_count=with_count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1591,7 +1604,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelOrder",
             '401': None,
             '403': None,
         }
@@ -1620,7 +1633,6 @@ class CommandesApi:
         continuation_token: Annotated[Optional[StrictStr], Field(description="Continuation Token from which we wish to retrieve results")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields")] = None,
         sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort forms orders by ascending or descending order. Default is descending")] = None,
-        with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1660,8 +1672,6 @@ class CommandesApi:
         :type with_details: bool
         :param sort_order: Sort forms orders by ascending or descending order. Default is descending
         :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
-        :param with_count: Whether the pagination should include totalCount and totalPages.
-        :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1696,7 +1706,6 @@ class CommandesApi:
             continuation_token=continuation_token,
             with_details=with_details,
             sort_order=sort_order,
-            with_count=with_count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1704,7 +1713,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelOrder",
             '401': None,
             '403': None,
         }
@@ -1728,7 +1737,6 @@ class CommandesApi:
         continuation_token,
         with_details,
         sort_order,
-        with_count,
         _request_auth,
         _content_type,
         _headers,
@@ -1807,15 +1815,20 @@ class CommandesApi:
             
             _query_params.append(('sortOrder', sort_order.value))
             
-        if with_count is not None:
-            
-            _query_params.append(('withCount', with_count))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json', 
+                    'text/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1857,7 +1870,6 @@ class CommandesApi:
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields and Options")] = None,
         sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort organizations items by ascending or descending order. Default is descending")] = None,
         sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort organizations items by a specific field (Date or UpdateDate). Default is date")] = None,
-        with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1870,7 +1882,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResultsWithPaginationModelItem:
+    ) -> None:
         """Obtenir une liste d'articles vendus par une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -1901,8 +1913,6 @@ class CommandesApi:
         :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort organizations items by a specific field (Date or UpdateDate). Default is date
         :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
-        :param with_count: Whether the pagination should include totalCount and totalPages.
-        :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1939,7 +1949,6 @@ class CommandesApi:
             with_details=with_details,
             sort_order=sort_order,
             sort_field=sort_field,
-            with_count=with_count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1947,9 +1956,9 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelItem",
-            '401': "ResultsWithPaginationModelItem",
-            '403': "ResultsWithPaginationModelItem",
+            '200': None,
+            '401': None,
+            '403': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1978,7 +1987,6 @@ class CommandesApi:
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields and Options")] = None,
         sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort organizations items by ascending or descending order. Default is descending")] = None,
         sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort organizations items by a specific field (Date or UpdateDate). Default is date")] = None,
-        with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1991,7 +1999,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResultsWithPaginationModelItem]:
+    ) -> ApiResponse[None]:
         """Obtenir une liste d'articles vendus par une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -2022,8 +2030,6 @@ class CommandesApi:
         :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort organizations items by a specific field (Date or UpdateDate). Default is date
         :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
-        :param with_count: Whether the pagination should include totalCount and totalPages.
-        :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2060,7 +2066,6 @@ class CommandesApi:
             with_details=with_details,
             sort_order=sort_order,
             sort_field=sort_field,
-            with_count=with_count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2068,9 +2073,9 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelItem",
-            '401': "ResultsWithPaginationModelItem",
-            '403': "ResultsWithPaginationModelItem",
+            '200': None,
+            '401': None,
+            '403': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2099,7 +2104,6 @@ class CommandesApi:
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields and Options")] = None,
         sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort organizations items by ascending or descending order. Default is descending")] = None,
         sort_field: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortField], Field(description="Sort organizations items by a specific field (Date or UpdateDate). Default is date")] = None,
-        with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2143,8 +2147,6 @@ class CommandesApi:
         :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
         :param sort_field: Sort organizations items by a specific field (Date or UpdateDate). Default is date
         :type sort_field: HelloAssoApiV5CommonModelsEnumsSortField
-        :param with_count: Whether the pagination should include totalCount and totalPages.
-        :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2181,7 +2183,6 @@ class CommandesApi:
             with_details=with_details,
             sort_order=sort_order,
             sort_field=sort_field,
-            with_count=with_count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2189,9 +2190,9 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResultsWithPaginationModelItem",
-            '401': "ResultsWithPaginationModelItem",
-            '403': "ResultsWithPaginationModelItem",
+            '200': None,
+            '401': None,
+            '403': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2215,7 +2216,6 @@ class CommandesApi:
         with_details,
         sort_order,
         sort_field,
-        with_count,
         _request_auth,
         _content_type,
         _headers,
@@ -2308,10 +2308,6 @@ class CommandesApi:
             
             _query_params.append(('sortField', sort_field.value))
             
-        if with_count is not None:
-            
-            _query_params.append(('withCount', with_count))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -2321,6 +2317,8 @@ class CommandesApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
+                    'application/json', 
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 
                     'text/csv'
                 ]
             )
@@ -2362,7 +2360,6 @@ class CommandesApi:
         form_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormType]], Field(description="The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields")] = None,
         sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort organizations orders by ascending or descending order. Default is descending")] = None,
-        with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2375,7 +2372,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> ResultsWithPaginationModelOrder:
         """Obtenir les commandes d'une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -2400,8 +2397,6 @@ class CommandesApi:
         :type with_details: bool
         :param sort_order: Sort organizations orders by ascending or descending order. Default is descending
         :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
-        :param with_count: Whether the pagination should include totalCount and totalPages.
-        :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2435,7 +2430,6 @@ class CommandesApi:
             form_types=form_types,
             with_details=with_details,
             sort_order=sort_order,
-            with_count=with_count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2443,7 +2437,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelOrder",
             '401': None,
             '403': None,
         }
@@ -2471,7 +2465,6 @@ class CommandesApi:
         form_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormType]], Field(description="The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields")] = None,
         sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort organizations orders by ascending or descending order. Default is descending")] = None,
-        with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2484,7 +2477,7 @@ class CommandesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[ResultsWithPaginationModelOrder]:
         """Obtenir les commandes d'une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessTransactions<br/><br/>
@@ -2509,8 +2502,6 @@ class CommandesApi:
         :type with_details: bool
         :param sort_order: Sort organizations orders by ascending or descending order. Default is descending
         :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
-        :param with_count: Whether the pagination should include totalCount and totalPages.
-        :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2544,7 +2535,6 @@ class CommandesApi:
             form_types=form_types,
             with_details=with_details,
             sort_order=sort_order,
-            with_count=with_count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2552,7 +2542,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelOrder",
             '401': None,
             '403': None,
         }
@@ -2580,7 +2570,6 @@ class CommandesApi:
         form_types: Annotated[Optional[List[HelloAssoApiV5CommonModelsEnumsFormType]], Field(description="The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop")] = None,
         with_details: Annotated[Optional[StrictBool], Field(description="Set to true to return CustomFields")] = None,
         sort_order: Annotated[Optional[HelloAssoApiV5CommonModelsEnumsSortOrder], Field(description="Sort organizations orders by ascending or descending order. Default is descending")] = None,
-        with_count: Annotated[Optional[StrictBool], Field(description="Whether the pagination should include totalCount and totalPages.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2618,8 +2607,6 @@ class CommandesApi:
         :type with_details: bool
         :param sort_order: Sort organizations orders by ascending or descending order. Default is descending
         :type sort_order: HelloAssoApiV5CommonModelsEnumsSortOrder
-        :param with_count: Whether the pagination should include totalCount and totalPages.
-        :type with_count: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2653,7 +2640,6 @@ class CommandesApi:
             form_types=form_types,
             with_details=with_details,
             sort_order=sort_order,
-            with_count=with_count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2661,7 +2647,7 @@ class CommandesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelOrder",
             '401': None,
             '403': None,
         }
@@ -2684,7 +2670,6 @@ class CommandesApi:
         form_types,
         with_details,
         sort_order,
-        with_count,
         _request_auth,
         _content_type,
         _headers,
@@ -2764,15 +2749,20 @@ class CommandesApi:
             
             _query_params.append(('sortOrder', sort_order.value))
             
-        if with_count is not None:
-            
-            _query_params.append(('withCount', with_count))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json', 
+                    'text/json'
+                ]
+            )
 
 
         # authentication setting

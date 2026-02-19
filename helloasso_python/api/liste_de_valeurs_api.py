@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     HelloAsso API
 
@@ -11,11 +9,16 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
+from typing import List
+from helloasso_python.models.hello_asso_api_v5_common_models_accounts_company_legal_status_model import HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel
+from helloasso_python.models.hello_asso_api_v5_common_models_accounts_organism_category_model import HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel
+from helloasso_python.models.hello_asso_api_v5_common_models_tags_public_tag_model import HelloAssoApiV5CommonModelsTagsPublicTagModel
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -50,7 +53,7 @@ class ListeDeValeursApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> List[HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel]:
         """Obtenir la liste des statuts juridiques
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -85,7 +88,7 @@ class ListeDeValeursApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "List[HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel]",
             '401': None,
             '403': None,
         }
@@ -115,7 +118,7 @@ class ListeDeValeursApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[List[HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel]]:
         """Obtenir la liste des statuts juridiques
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -150,7 +153,7 @@ class ListeDeValeursApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "List[HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel]",
             '401': None,
             '403': None,
         }
@@ -215,7 +218,7 @@ class ListeDeValeursApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "List[HelloAssoApiV5CommonModelsAccountsCompanyLegalStatusModel]",
             '401': None,
             '403': None,
         }
@@ -255,6 +258,15 @@ class ListeDeValeursApi:
         # process the body parameter
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json', 
+                    'text/json'
+                ]
+            )
 
 
         # authentication setting
@@ -295,7 +307,7 @@ class ListeDeValeursApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> List[HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel]:
         """Obtenir la liste des catégories du JO
 
         Utilisez ceci afin de construire votre liste de catégories d'organisation<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -330,7 +342,7 @@ class ListeDeValeursApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "List[HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel]",
             '401': None,
             '403': None,
         }
@@ -360,7 +372,7 @@ class ListeDeValeursApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[List[HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel]]:
         """Obtenir la liste des catégories du JO
 
         Utilisez ceci afin de construire votre liste de catégories d'organisation<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -395,7 +407,7 @@ class ListeDeValeursApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "List[HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel]",
             '401': None,
             '403': None,
         }
@@ -460,7 +472,7 @@ class ListeDeValeursApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "List[HelloAssoApiV5CommonModelsAccountsOrganismCategoryModel]",
             '401': None,
             '403': None,
         }
@@ -500,6 +512,15 @@ class ListeDeValeursApi:
         # process the body parameter
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json', 
+                    'text/json'
+                ]
+            )
 
 
         # authentication setting
@@ -540,7 +561,7 @@ class ListeDeValeursApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> List[HelloAssoApiV5CommonModelsTagsPublicTagModel]:
         """Obtenir la liste des tags publiques
 
         Utilisez ceci afin de récupérer la liste des étiquettes utilisées<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -575,7 +596,7 @@ class ListeDeValeursApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "List[HelloAssoApiV5CommonModelsTagsPublicTagModel]",
             '401': None,
             '403': None,
         }
@@ -605,7 +626,7 @@ class ListeDeValeursApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[List[HelloAssoApiV5CommonModelsTagsPublicTagModel]]:
         """Obtenir la liste des tags publiques
 
         Utilisez ceci afin de récupérer la liste des étiquettes utilisées<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -640,7 +661,7 @@ class ListeDeValeursApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "List[HelloAssoApiV5CommonModelsTagsPublicTagModel]",
             '401': None,
             '403': None,
         }
@@ -705,7 +726,7 @@ class ListeDeValeursApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "List[HelloAssoApiV5CommonModelsTagsPublicTagModel]",
             '401': None,
             '403': None,
         }
@@ -745,6 +766,15 @@ class ListeDeValeursApi:
         # process the body parameter
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json', 
+                    'text/json'
+                ]
+            )
 
 
         # authentication setting

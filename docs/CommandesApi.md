@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **items_item_id_get**
-> items_item_id_get(item_id, with_details=with_details)
+> HelloAssoApiV5CommonModelsStatisticsItemDetail items_item_id_get(item_id, with_details=with_details)
 
 Obtenir le détail d'un article contenu dans une commande
 
@@ -26,6 +26,7 @@ Obtenir le détail d'un article contenu dans une commande
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_statistics_item_detail import HelloAssoApiV5CommonModelsStatisticsItemDetail
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -51,7 +52,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir le détail d'un article contenu dans une commande
-        api_instance.items_item_id_get(item_id, with_details=with_details)
+        api_response = api_instance.items_item_id_get(item_id, with_details=with_details)
+        print("The response of CommandesApi->items_item_id_get:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling CommandesApi->items_item_id_get: %s\n" % e)
 ```
@@ -68,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**HelloAssoApiV5CommonModelsStatisticsItemDetail**](HelloAssoApiV5CommonModelsStatisticsItemDetail.md)
 
 ### Authorization
 
@@ -77,13 +80,13 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Get order item |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
@@ -164,7 +167,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **orders_order_id_get**
-> orders_order_id_get(order_id)
+> HelloAssoApiV5CommonModelsStatisticsOrderDetail orders_order_id_get(order_id, with_form_data=with_form_data)
 
 Obtenir des informations détaillées sur une commande
 
@@ -176,6 +179,7 @@ Obtenir des informations détaillées sur une commande
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_statistics_order_detail import HelloAssoApiV5CommonModelsStatisticsOrderDetail
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -196,11 +200,14 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with helloasso_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = helloasso_python.CommandesApi(api_client)
-    order_id = 56 # int | 
+    order_id = 56 # int | The order ID
+    with_form_data = False # bool | Set to true to include form data in the response (optional) (default to False)
 
     try:
         # Obtenir des informations détaillées sur une commande
-        api_instance.orders_order_id_get(order_id)
+        api_response = api_instance.orders_order_id_get(order_id, with_form_data=with_form_data)
+        print("The response of CommandesApi->orders_order_id_get:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling CommandesApi->orders_order_id_get: %s\n" % e)
 ```
@@ -212,11 +219,12 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **int**|  | 
+ **order_id** | **int**| The order ID | 
+ **with_form_data** | **bool**| Set to true to include form data in the response | [optional] [default to False]
 
 ### Return type
 
-void (empty response body)
+[**HelloAssoApiV5CommonModelsStatisticsOrderDetail**](HelloAssoApiV5CommonModelsStatisticsOrderDetail.md)
 
 ### Authorization
 
@@ -225,20 +233,20 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Get order |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_forms_form_type_form_slug_items_get**
-> ResultsWithPaginationModelItem organizations_organization_slug_forms_form_type_form_slug_items_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, tier_types=tier_types, item_states=item_states, tier_name=tier_name, with_details=with_details, sort_order=sort_order, sort_field=sort_field, with_count=with_count)
+> organizations_organization_slug_forms_form_type_form_slug_items_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, tier_types=tier_types, item_states=item_states, tier_name=tier_name, with_details=with_details, sort_order=sort_order, sort_field=sort_field)
 
 Obtenir une liste d'articles vendus dans un formulaire
 
@@ -255,7 +263,6 @@ from helloasso_python.models.hello_asso_api_v5_common_models_enums_item_state im
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_tier_type import HelloAssoApiV5CommonModelsEnumsTierType
-from helloasso_python.models.results_with_pagination_model_item import ResultsWithPaginationModelItem
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -291,13 +298,10 @@ with helloasso_python.ApiClient(configuration) as api_client:
     with_details = False # bool | Set to true to return CustomFields and Options (optional) (default to False)
     sort_order = helloasso_python.HelloAssoApiV5CommonModelsEnumsSortOrder() # HelloAssoApiV5CommonModelsEnumsSortOrder | Sort forms items by ascending or descending order. Default is descending (optional)
     sort_field = helloasso_python.HelloAssoApiV5CommonModelsEnumsSortField() # HelloAssoApiV5CommonModelsEnumsSortField | Sort forms items by a specific field (Date or UpdateDate). Default is date (optional)
-    with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
         # Obtenir une liste d'articles vendus dans un formulaire
-        api_response = api_instance.organizations_organization_slug_forms_form_type_form_slug_items_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, tier_types=tier_types, item_states=item_states, tier_name=tier_name, with_details=with_details, sort_order=sort_order, sort_field=sort_field, with_count=with_count)
-        print("The response of CommandesApi->organizations_organization_slug_forms_form_type_form_slug_items_get:\n")
-        pprint(api_response)
+        api_instance.organizations_organization_slug_forms_form_type_form_slug_items_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, tier_types=tier_types, item_states=item_states, tier_name=tier_name, with_details=with_details, sort_order=sort_order, sort_field=sort_field)
     except Exception as e:
         print("Exception when calling CommandesApi->organizations_organization_slug_forms_form_type_form_slug_items_get: %s\n" % e)
 ```
@@ -324,11 +328,10 @@ Name | Type | Description  | Notes
  **with_details** | **bool**| Set to true to return CustomFields and Options | [optional] [default to False]
  **sort_order** | [**HelloAssoApiV5CommonModelsEnumsSortOrder**](.md)| Sort forms items by ascending or descending order. Default is descending | [optional] 
  **sort_field** | [**HelloAssoApiV5CommonModelsEnumsSortField**](.md)| Sort forms items by a specific field (Date or UpdateDate). Default is date | [optional] 
- **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type
 
-[**ResultsWithPaginationModelItem**](ResultsWithPaginationModelItem.md)
+void (empty response body)
 
 ### Authorization
 
@@ -337,20 +340,20 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/csv
+ - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, text/csv
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Get form order items |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_forms_form_type_form_slug_orders_get**
-> organizations_organization_slug_forms_form_type_form_slug_orders_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, with_details=with_details, sort_order=sort_order, with_count=with_count)
+> ResultsWithPaginationModelOrder organizations_organization_slug_forms_form_type_form_slug_orders_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, with_details=with_details, sort_order=sort_order)
 
 Obtenir les commandes d'un formulaire
 
@@ -364,6 +367,7 @@ Obtenir les commandes d'un formulaire
 import helloasso_python
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
+from helloasso_python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -395,11 +399,12 @@ with helloasso_python.ApiClient(configuration) as api_client:
     continuation_token = 'continuation_token_example' # str | Continuation Token from which we wish to retrieve results (optional)
     with_details = False # bool | Set to true to return CustomFields (optional) (default to False)
     sort_order = helloasso_python.HelloAssoApiV5CommonModelsEnumsSortOrder() # HelloAssoApiV5CommonModelsEnumsSortOrder | Sort forms orders by ascending or descending order. Default is descending (optional)
-    with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
         # Obtenir les commandes d'un formulaire
-        api_instance.organizations_organization_slug_forms_form_type_form_slug_orders_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, with_details=with_details, sort_order=sort_order, with_count=with_count)
+        api_response = api_instance.organizations_organization_slug_forms_form_type_form_slug_orders_get(organization_slug, form_slug, form_type, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, with_details=with_details, sort_order=sort_order)
+        print("The response of CommandesApi->organizations_organization_slug_forms_form_type_form_slug_orders_get:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling CommandesApi->organizations_organization_slug_forms_form_type_form_slug_orders_get: %s\n" % e)
 ```
@@ -422,11 +427,10 @@ Name | Type | Description  | Notes
  **continuation_token** | **str**| Continuation Token from which we wish to retrieve results | [optional] 
  **with_details** | **bool**| Set to true to return CustomFields | [optional] [default to False]
  **sort_order** | [**HelloAssoApiV5CommonModelsEnumsSortOrder**](.md)| Sort forms orders by ascending or descending order. Default is descending | [optional] 
- **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type
 
-void (empty response body)
+[**ResultsWithPaginationModelOrder**](ResultsWithPaginationModelOrder.md)
 
 ### Authorization
 
@@ -435,20 +439,20 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Get form orders |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_items_get**
-> ResultsWithPaginationModelItem organizations_organization_slug_items_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, tier_types=tier_types, item_states=item_states, tier_name=tier_name, with_details=with_details, sort_order=sort_order, sort_field=sort_field, with_count=with_count)
+> organizations_organization_slug_items_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, tier_types=tier_types, item_states=item_states, tier_name=tier_name, with_details=with_details, sort_order=sort_order, sort_field=sort_field)
 
 Obtenir une liste d'articles vendus par une organisation
 
@@ -464,7 +468,6 @@ from helloasso_python.models.hello_asso_api_v5_common_models_enums_item_state im
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_field import HelloAssoApiV5CommonModelsEnumsSortField
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_tier_type import HelloAssoApiV5CommonModelsEnumsTierType
-from helloasso_python.models.results_with_pagination_model_item import ResultsWithPaginationModelItem
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -498,13 +501,10 @@ with helloasso_python.ApiClient(configuration) as api_client:
     with_details = False # bool | Set to true to return CustomFields and Options (optional) (default to False)
     sort_order = helloasso_python.HelloAssoApiV5CommonModelsEnumsSortOrder() # HelloAssoApiV5CommonModelsEnumsSortOrder | Sort organizations items by ascending or descending order. Default is descending (optional)
     sort_field = helloasso_python.HelloAssoApiV5CommonModelsEnumsSortField() # HelloAssoApiV5CommonModelsEnumsSortField | Sort organizations items by a specific field (Date or UpdateDate). Default is date (optional)
-    with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
         # Obtenir une liste d'articles vendus par une organisation
-        api_response = api_instance.organizations_organization_slug_items_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, tier_types=tier_types, item_states=item_states, tier_name=tier_name, with_details=with_details, sort_order=sort_order, sort_field=sort_field, with_count=with_count)
-        print("The response of CommandesApi->organizations_organization_slug_items_get:\n")
-        pprint(api_response)
+        api_instance.organizations_organization_slug_items_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, tier_types=tier_types, item_states=item_states, tier_name=tier_name, with_details=with_details, sort_order=sort_order, sort_field=sort_field)
     except Exception as e:
         print("Exception when calling CommandesApi->organizations_organization_slug_items_get: %s\n" % e)
 ```
@@ -529,11 +529,10 @@ Name | Type | Description  | Notes
  **with_details** | **bool**| Set to true to return CustomFields and Options | [optional] [default to False]
  **sort_order** | [**HelloAssoApiV5CommonModelsEnumsSortOrder**](.md)| Sort organizations items by ascending or descending order. Default is descending | [optional] 
  **sort_field** | [**HelloAssoApiV5CommonModelsEnumsSortField**](.md)| Sort organizations items by a specific field (Date or UpdateDate). Default is date | [optional] 
- **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type
 
-[**ResultsWithPaginationModelItem**](ResultsWithPaginationModelItem.md)
+void (empty response body)
 
 ### Authorization
 
@@ -542,20 +541,20 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/csv
+ - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, text/csv
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Get organization order items |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_orders_get**
-> organizations_organization_slug_orders_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, form_types=form_types, with_details=with_details, sort_order=sort_order, with_count=with_count)
+> ResultsWithPaginationModelOrder organizations_organization_slug_orders_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, form_types=form_types, with_details=with_details, sort_order=sort_order)
 
 Obtenir les commandes d'une organisation
 
@@ -569,6 +568,7 @@ Obtenir les commandes d'une organisation
 import helloasso_python
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_sort_order import HelloAssoApiV5CommonModelsEnumsSortOrder
+from helloasso_python.models.results_with_pagination_model_order import ResultsWithPaginationModelOrder
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -599,11 +599,12 @@ with helloasso_python.ApiClient(configuration) as api_client:
     form_types = [helloasso_python.HelloAssoApiV5CommonModelsEnumsFormType()] # List[HelloAssoApiV5CommonModelsEnumsFormType] | The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop (optional)
     with_details = False # bool | Set to true to return CustomFields (optional) (default to False)
     sort_order = helloasso_python.HelloAssoApiV5CommonModelsEnumsSortOrder() # HelloAssoApiV5CommonModelsEnumsSortOrder | Sort organizations orders by ascending or descending order. Default is descending (optional)
-    with_count = False # bool | Whether the pagination should include totalCount and totalPages. (optional) (default to False)
 
     try:
         # Obtenir les commandes d'une organisation
-        api_instance.organizations_organization_slug_orders_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, form_types=form_types, with_details=with_details, sort_order=sort_order, with_count=with_count)
+        api_response = api_instance.organizations_organization_slug_orders_get(organization_slug, var_from=var_from, to=to, user_search_key=user_search_key, page_index=page_index, page_size=page_size, continuation_token=continuation_token, form_types=form_types, with_details=with_details, sort_order=sort_order)
+        print("The response of CommandesApi->organizations_organization_slug_orders_get:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling CommandesApi->organizations_organization_slug_orders_get: %s\n" % e)
 ```
@@ -625,11 +626,10 @@ Name | Type | Description  | Notes
  **form_types** | [**List[HelloAssoApiV5CommonModelsEnumsFormType]**](HelloAssoApiV5CommonModelsEnumsFormType.md)| The type of the form CrowdFunding, Membership, Event, Donation, PaymentForm, Checkout, Shop | [optional] 
  **with_details** | **bool**| Set to true to return CustomFields | [optional] [default to False]
  **sort_order** | [**HelloAssoApiV5CommonModelsEnumsSortOrder**](.md)| Sort organizations orders by ascending or descending order. Default is descending | [optional] 
- **with_count** | **bool**| Whether the pagination should include totalCount and totalPages. | [optional] [default to False]
 
 ### Return type
 
-void (empty response body)
+[**ResultsWithPaginationModelOrder**](ResultsWithPaginationModelOrder.md)
 
 ### Authorization
 
@@ -638,13 +638,13 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Get organization orders |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 

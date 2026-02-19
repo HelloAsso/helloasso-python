@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **directory_forms_post**
-> directory_forms_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_forms_request=hello_asso_api_v5_common_models_directory_list_forms_request)
+> ResultsWithPaginationModelSynchronizableFormModel directory_forms_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_forms_request=hello_asso_api_v5_common_models_directory_list_forms_request)
 
 Récupérer les formulaires
 
@@ -22,6 +22,7 @@ Permet de récupérer une liste de tous les formulaires visibles correspondant �
 ```python
 import helloasso_python
 from helloasso_python.models.hello_asso_api_v5_common_models_directory_list_forms_request import HelloAssoApiV5CommonModelsDirectoryListFormsRequest
+from helloasso_python.models.results_with_pagination_model_synchronizable_form_model import ResultsWithPaginationModelSynchronizableFormModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -48,7 +49,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Récupérer les formulaires
-        api_instance.directory_forms_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_forms_request=hello_asso_api_v5_common_models_directory_list_forms_request)
+        api_response = api_instance.directory_forms_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_forms_request=hello_asso_api_v5_common_models_directory_list_forms_request)
+        print("The response of AnnuaireApi->directory_forms_post:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling AnnuaireApi->directory_forms_post: %s\n" % e)
 ```
@@ -66,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**ResultsWithPaginationModelSynchronizableFormModel**](ResultsWithPaginationModelSynchronizableFormModel.md)
 
 ### Authorization
 
@@ -75,20 +78,20 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Get Form List |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **directory_organizations_post**
-> directory_organizations_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_organizations_request=hello_asso_api_v5_common_models_directory_list_organizations_request)
+> ResultsWithPaginationModelSynchronizableOrganizationModel directory_organizations_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_organizations_request=hello_asso_api_v5_common_models_directory_list_organizations_request)
 
 Récupérer les organisations
 
@@ -101,6 +104,7 @@ Permet de récupérer une liste de toutes les organisations visibles corresponda
 ```python
 import helloasso_python
 from helloasso_python.models.hello_asso_api_v5_common_models_directory_list_organizations_request import HelloAssoApiV5CommonModelsDirectoryListOrganizationsRequest
+from helloasso_python.models.results_with_pagination_model_synchronizable_organization_model import ResultsWithPaginationModelSynchronizableOrganizationModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -127,7 +131,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Récupérer les organisations
-        api_instance.directory_organizations_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_organizations_request=hello_asso_api_v5_common_models_directory_list_organizations_request)
+        api_response = api_instance.directory_organizations_post(page_size=page_size, continuation_token=continuation_token, hello_asso_api_v5_common_models_directory_list_organizations_request=hello_asso_api_v5_common_models_directory_list_organizations_request)
+        print("The response of AnnuaireApi->directory_organizations_post:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling AnnuaireApi->directory_organizations_post: %s\n" % e)
 ```
@@ -145,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**ResultsWithPaginationModelSynchronizableOrganizationModel**](ResultsWithPaginationModelSynchronizableOrganizationModel.md)
 
 ### Authorization
 
@@ -154,13 +160,13 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Get Organization List |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 

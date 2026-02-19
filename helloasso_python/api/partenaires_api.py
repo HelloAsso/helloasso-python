@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     HelloAsso API
 
@@ -11,6 +9,7 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -21,7 +20,10 @@ from typing import Optional
 from typing_extensions import Annotated
 from helloasso_python.models.hello_asso_api_v5_common_models_accounts_clients_public_put_api_client_request import HelloAssoApiV5CommonModelsAccountsClientsPublicPutApiClientRequest
 from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_api_notification_type import HelloAssoApiV5CommonModelsApiNotificationsApiNotificationType
+from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_api_url_notification_model import HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel
 from helloasso_python.models.hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body import HelloAssoApiV5CommonModelsApiNotificationsPostApiUrlNotificationBody
+from helloasso_python.models.hello_asso_api_v5_common_models_partners_partner_public_model import HelloAssoApiV5CommonModelsPartnersPartnerPublicModel
+from helloasso_python.models.results_with_pagination_model_partner_organization_model import ResultsWithPaginationModelPartnerOrganizationModel
 
 from helloasso_python.api_client import ApiClient, RequestSerialized
 from helloasso_python.api_response import ApiResponse
@@ -873,7 +875,7 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel:
         """Mise à jour d'une URL de notification liée à une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -914,7 +916,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel",
             '401': None,
             '403': None,
         }
@@ -946,7 +948,7 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel]:
         """Mise à jour d'une URL de notification liée à une organisation
 
         <br/><br/><b>Votre token doit avoir l'un de ces rôles : </b><br/>OrganizationAdmin<br/><br/>Si vous êtes une <b>association</b>, vous pouvez obtenir ces rôles avec votre client.<br/>Si vous êtes un <b>partenaire</b>, vous pouvez obtenir ces rôles par le flux d'autorisation.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -987,7 +989,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel",
             '401': None,
             '403': None,
         }
@@ -1060,7 +1062,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel",
             '401': None,
             '403': None,
         }
@@ -1106,6 +1108,15 @@ class PartenairesApi:
             _body_params = hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json', 
+                    'text/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -1163,7 +1174,7 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel:
         """Mise à jour de l'URL de notification principale
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -1201,7 +1212,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel",
             '401': None,
             '403': None,
         }
@@ -1232,7 +1243,7 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel]:
         """Mise à jour de l'URL de notification principale
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -1270,7 +1281,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel",
             '401': None,
             '403': None,
         }
@@ -1339,7 +1350,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsApiNotificationsApiUrlNotificationModel",
             '401': None,
             '403': None,
         }
@@ -1382,6 +1393,15 @@ class PartenairesApi:
             _body_params = hello_asso_api_v5_common_models_api_notifications_post_api_url_notification_body
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json', 
+                    'text/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -1438,7 +1458,7 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> HelloAssoApiV5CommonModelsPartnersPartnerPublicModel:
         """Récupération des informations
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -1473,7 +1493,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsPartnersPartnerPublicModel",
             '401': None,
             '403': None,
         }
@@ -1503,7 +1523,7 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[HelloAssoApiV5CommonModelsPartnersPartnerPublicModel]:
         """Récupération des informations
 
         <br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -1538,7 +1558,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsPartnersPartnerPublicModel",
             '401': None,
             '403': None,
         }
@@ -1603,7 +1623,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "HelloAssoApiV5CommonModelsPartnersPartnerPublicModel",
             '401': None,
             '403': None,
         }
@@ -1643,6 +1663,15 @@ class PartenairesApi:
         # process the body parameter
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json', 
+                    'text/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1685,7 +1714,7 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> ResultsWithPaginationModelPartnerOrganizationModel:
         """Obtenir toutes les organisations
 
         Liste toutes les organisations liées au partenaire. Les résultats sont classés par date de mise à jour de la visibilité API en ordre croissant. Le nombre total de résultats (ou de pages) n'est pas récupérable, donc les informations de pagination retournées indiqueront toujours -1.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -1726,7 +1755,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelPartnerOrganizationModel",
             '401': None,
             '403': None,
         }
@@ -1758,7 +1787,7 @@ class PartenairesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[ResultsWithPaginationModelPartnerOrganizationModel]:
         """Obtenir toutes les organisations
 
         Liste toutes les organisations liées au partenaire. Les résultats sont classés par date de mise à jour de la visibilité API en ordre croissant. Le nombre total de résultats (ou de pages) n'est pas récupérable, donc les informations de pagination retournées indiqueront toujours -1.<br/><br/><b>Votre clientId doit être autorisé à tous ces privilèges : </b> <br/> AccessPublicData<br/><br/>
@@ -1799,7 +1828,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelPartnerOrganizationModel",
             '401': None,
             '403': None,
         }
@@ -1872,7 +1901,7 @@ class PartenairesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "ResultsWithPaginationModelPartnerOrganizationModel",
             '401': None,
             '403': None,
         }
@@ -1922,6 +1951,15 @@ class PartenairesApi:
         # process the body parameter
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json', 
+                    'text/json'
+                ]
+            )
 
 
         # authentication setting

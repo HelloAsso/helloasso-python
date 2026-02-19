@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **tags_tag_name_get**
-> tags_tag_name_get(tag_name, with_count=with_count, with_amount=with_amount)
+> HelloAssoApiV5CommonModelsTagsInternalTagModel tags_tag_name_get(tag_name, with_count=with_count, with_amount=with_amount)
 
 Obtenir le détail d'un tag interne
 
@@ -20,6 +20,7 @@ Obtenir le détail d'un tag interne
 
 ```python
 import helloasso_python
+from helloasso_python.models.hello_asso_api_v5_common_models_tags_internal_tag_model import HelloAssoApiV5CommonModelsTagsInternalTagModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -46,7 +47,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir le détail d'un tag interne
-        api_instance.tags_tag_name_get(tag_name, with_count=with_count, with_amount=with_amount)
+        api_response = api_instance.tags_tag_name_get(tag_name, with_count=with_count, with_amount=with_amount)
+        print("The response of TagsApi->tags_tag_name_get:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling TagsApi->tags_tag_name_get: %s\n" % e)
 ```
@@ -64,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**HelloAssoApiV5CommonModelsTagsInternalTagModel**](HelloAssoApiV5CommonModelsTagsInternalTagModel.md)
 
 ### Authorization
 
@@ -73,13 +76,13 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Get tags Detail |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 

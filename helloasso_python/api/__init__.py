@@ -12,5 +12,6 @@ from helloasso_python.api.paiements_api import PaiementsApi
 from helloasso_python.api.partenaires_api import PartenairesApi
 from helloasso_python.api.tags_api import TagsApi
 from helloasso_python.api.utilisateurs_api import UtilisateursApi
+from helloasso_python.api.values_definitions_api import ValuesDefinitionsApi
 from helloasso_python.api.versements_api import VersementsApi
 

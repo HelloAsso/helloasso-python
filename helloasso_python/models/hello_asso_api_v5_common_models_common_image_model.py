@@ -17,20 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from helloasso_python.models.hello_asso_api_v5_common_models_enums_record_action_type import HelloAssoApiV5CommonModelsEnumsRecordActionType
-from helloasso_python.models.hello_asso_api_v5_common_models_organizations_organization_basic_model import HelloAssoApiV5CommonModelsOrganizationsOrganizationBasicModel
 from typing import Optional, Set
 from typing_extensions import Self
 
-class HelloAssoApiV5CommonModelsDirectorySynchronizableOrganizationModel(BaseModel):
+class HelloAssoApiV5CommonModelsCommonImageModel(BaseModel):
     """
-    SynchronizableOrganizationModel class
+    HelloAssoApiV5CommonModelsCommonImageModel
     """ # noqa: E501
-    action: Optional[HelloAssoApiV5CommonModelsEnumsRecordActionType] = None
-    record: Optional[HelloAssoApiV5CommonModelsOrganizationsOrganizationBasicModel] = None
-    __properties: ClassVar[List[str]] = ["action", "record"]
+    caption: Optional[StrictStr] = None
+    id: Optional[StrictInt] = None
+    url: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["caption", "id", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +49,7 @@ class HelloAssoApiV5CommonModelsDirectorySynchronizableOrganizationModel(BaseMod
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of HelloAssoApiV5CommonModelsDirectorySynchronizableOrganizationModel from a JSON string"""
+        """Create an instance of HelloAssoApiV5CommonModelsCommonImageModel from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,14 +70,21 @@ class HelloAssoApiV5CommonModelsDirectorySynchronizableOrganizationModel(BaseMod
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of record
-        if self.record:
-            _dict['record'] = self.record.to_dict()
+        # set to None if caption (nullable) is None
+        # and model_fields_set contains the field
+        if self.caption is None and "caption" in self.model_fields_set:
+            _dict['caption'] = None
+
+        # set to None if url (nullable) is None
+        # and model_fields_set contains the field
+        if self.url is None and "url" in self.model_fields_set:
+            _dict['url'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of HelloAssoApiV5CommonModelsDirectorySynchronizableOrganizationModel from a dict"""
+        """Create an instance of HelloAssoApiV5CommonModelsCommonImageModel from a dict"""
         if obj is None:
             return None
 
@@ -86,8 +92,9 @@ class HelloAssoApiV5CommonModelsDirectorySynchronizableOrganizationModel(BaseMod
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "action": obj.get("action"),
-            "record": HelloAssoApiV5CommonModelsOrganizationsOrganizationBasicModel.from_dict(obj["record"]) if obj.get("record") is not None else None
+            "caption": obj.get("caption"),
+            "id": obj.get("id"),
+            "url": obj.get("url")
         })
         return _obj
 

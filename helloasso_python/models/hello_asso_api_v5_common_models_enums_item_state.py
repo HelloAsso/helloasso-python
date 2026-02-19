@@ -30,11 +30,8 @@ class HelloAssoApiV5CommonModelsEnumsItemState(str, Enum):
     PROCESSED = 'Processed'
     REGISTERED = 'Registered'
     DELETED = 'Deleted'
-    REFUNDED = 'Refunded'
     UNKNOWN = 'Unknown'
     CANCELED = 'Canceled'
-    CONTESTED = 'Contested'
-    UNKNOW = 'Unknow'
     REFUSED = 'Refused'
     ABANDONED = 'Abandoned'
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **organizations_organization_slug_form_types_get**
-> organizations_organization_slug_form_types_get(organization_slug, states=states)
+> List[HelloAssoApiV5CommonModelsEnumsFormType] organizations_organization_slug_form_types_get(organization_slug, states=states)
 
 Obtenir une liste des types de formulaires pour une organisation
 
@@ -24,6 +24,7 @@ Liste tous les types de formulaires où l'organisation possède au moins un form
 ```python
 import helloasso_python
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_state import HelloAssoApiV5CommonModelsEnumsFormState
+from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -49,7 +50,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir une liste des types de formulaires pour une organisation
-        api_instance.organizations_organization_slug_form_types_get(organization_slug, states=states)
+        api_response = api_instance.organizations_organization_slug_form_types_get(organization_slug, states=states)
+        print("The response of FormulairesApi->organizations_organization_slug_form_types_get:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling FormulairesApi->organizations_organization_slug_form_types_get: %s\n" % e)
 ```
@@ -66,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**List[HelloAssoApiV5CommonModelsEnumsFormType]**](HelloAssoApiV5CommonModelsEnumsFormType.md)
 
 ### Authorization
 
@@ -75,20 +78,20 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Get form types created by the organization |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_forms_form_type_action_quick_create_post**
-> organizations_organization_slug_forms_form_type_action_quick_create_post(organization_slug, form_type, hello_asso_api_v5_common_models_forms_form_quick_create_request=hello_asso_api_v5_common_models_forms_form_quick_create_request)
+> HelloAssoApiV5CommonModelsFormsFormQuickCreateModel organizations_organization_slug_forms_form_type_action_quick_create_post(organization_slug, form_type, hello_asso_api_v5_common_models_forms_form_quick_create_request=hello_asso_api_v5_common_models_forms_form_quick_create_request)
 
 Créer un événement simplifié pour un organisme
 
@@ -101,6 +104,7 @@ Permet la création d'un événement avec seulement des informations limitées e
 ```python
 import helloasso_python
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
+from helloasso_python.models.hello_asso_api_v5_common_models_forms_form_quick_create_model import HelloAssoApiV5CommonModelsFormsFormQuickCreateModel
 from helloasso_python.models.hello_asso_api_v5_common_models_forms_form_quick_create_request import HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest
 from helloasso_python.rest import ApiException
 from pprint import pprint
@@ -128,7 +132,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Créer un événement simplifié pour un organisme
-        api_instance.organizations_organization_slug_forms_form_type_action_quick_create_post(organization_slug, form_type, hello_asso_api_v5_common_models_forms_form_quick_create_request=hello_asso_api_v5_common_models_forms_form_quick_create_request)
+        api_response = api_instance.organizations_organization_slug_forms_form_type_action_quick_create_post(organization_slug, form_type, hello_asso_api_v5_common_models_forms_form_quick_create_request=hello_asso_api_v5_common_models_forms_form_quick_create_request)
+        print("The response of FormulairesApi->organizations_organization_slug_forms_form_type_action_quick_create_post:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling FormulairesApi->organizations_organization_slug_forms_form_type_action_quick_create_post: %s\n" % e)
 ```
@@ -146,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**HelloAssoApiV5CommonModelsFormsFormQuickCreateModel**](HelloAssoApiV5CommonModelsFormsFormQuickCreateModel.md)
 
 ### Authorization
 
@@ -155,20 +161,20 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Event Successfully created |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_forms_form_type_form_slug_public_get**
-> organizations_organization_slug_forms_form_type_form_slug_public_get(organization_slug, form_type, form_slug)
+> HelloAssoApiV5CommonModelsFormsFormPublicModel organizations_organization_slug_forms_form_type_form_slug_public_get(organization_slug, form_type, form_slug)
 
 Obtenir des données publiques détaillées sur un formulaire
 
@@ -181,6 +187,7 @@ Permet de récupérer toutes les informations publiques d'un formulaire, qu'il s
 ```python
 import helloasso_python
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
+from helloasso_python.models.hello_asso_api_v5_common_models_forms_form_public_model import HelloAssoApiV5CommonModelsFormsFormPublicModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -207,7 +214,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir des données publiques détaillées sur un formulaire
-        api_instance.organizations_organization_slug_forms_form_type_form_slug_public_get(organization_slug, form_type, form_slug)
+        api_response = api_instance.organizations_organization_slug_forms_form_type_form_slug_public_get(organization_slug, form_type, form_slug)
+        print("The response of FormulairesApi->organizations_organization_slug_forms_form_type_form_slug_public_get:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling FormulairesApi->organizations_organization_slug_forms_form_type_form_slug_public_get: %s\n" % e)
 ```
@@ -225,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**HelloAssoApiV5CommonModelsFormsFormPublicModel**](HelloAssoApiV5CommonModelsFormsFormPublicModel.md)
 
 ### Authorization
 
@@ -234,20 +243,20 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Get a Form |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_organization_slug_forms_get**
-> organizations_organization_slug_forms_get(organization_slug, states=states, form_types=form_types, page_index=page_index, page_size=page_size, continuation_token=continuation_token)
+> ResultsWithPaginationModelFormLightModel organizations_organization_slug_forms_get(organization_slug, states=states, form_types=form_types, page_index=page_index, page_size=page_size, continuation_token=continuation_token)
 
 Obtenir les formulaires d'une organisation
 
@@ -261,6 +270,7 @@ Liste tous les formulaires correspondant aux états et types. Si aucun filtre n'
 import helloasso_python
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_state import HelloAssoApiV5CommonModelsEnumsFormState
 from helloasso_python.models.hello_asso_api_v5_common_models_enums_form_type import HelloAssoApiV5CommonModelsEnumsFormType
+from helloasso_python.models.results_with_pagination_model_form_light_model import ResultsWithPaginationModelFormLightModel
 from helloasso_python.rest import ApiException
 from pprint import pprint
 
@@ -290,7 +300,9 @@ with helloasso_python.ApiClient(configuration) as api_client:
 
     try:
         # Obtenir les formulaires d'une organisation
-        api_instance.organizations_organization_slug_forms_get(organization_slug, states=states, form_types=form_types, page_index=page_index, page_size=page_size, continuation_token=continuation_token)
+        api_response = api_instance.organizations_organization_slug_forms_get(organization_slug, states=states, form_types=form_types, page_index=page_index, page_size=page_size, continuation_token=continuation_token)
+        print("The response of FormulairesApi->organizations_organization_slug_forms_get:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling FormulairesApi->organizations_organization_slug_forms_get: %s\n" % e)
 ```
@@ -311,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**ResultsWithPaginationModelFormLightModel**](ResultsWithPaginationModelFormLightModel.md)
 
 ### Authorization
 
@@ -320,13 +332,13 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Get Form List |  -  |
+**200** | Success |  -  |
 **401** | Unauthorized, you must add a valid JWT into Authorization Header with the format : &#x60;Bearer TOKEN&#x60; |  -  |
 **403** | The JWT token hasn&#39;t the privileges or Roles for this action |  -  |
 
