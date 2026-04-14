@@ -29,6 +29,7 @@ from helloasso_python.models.hello_asso_api_v5_common_models_enums_membership_va
 from helloasso_python.models.hello_asso_api_v5_common_models_forms_tier_public_model import HelloAssoApiV5CommonModelsFormsTierPublicModel
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class HelloAssoApiV5CommonModelsFormsFormPublicModel(BaseModel):
     """
@@ -66,7 +67,8 @@ class HelloAssoApiV5CommonModelsFormsFormPublicModel(BaseModel):
     __properties: ClassVar[List[str]] = ["organizationLogo", "organizationName", "tiers", "activityType", "activityTypeId", "place", "saleEndDate", "saleStartDate", "validityType", "personalizedMessage", "banner", "currency", "description", "startDate", "endDate", "logo", "meta", "state", "title", "privateTitle", "widgetButtonUrl", "widgetFullUrl", "widgetVignetteHorizontalUrl", "widgetVignetteVerticalUrl", "widgetCounterUrl", "formSlug", "formType", "url", "organizationSlug"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -78,8 +80,7 @@ class HelloAssoApiV5CommonModelsFormsFormPublicModel(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

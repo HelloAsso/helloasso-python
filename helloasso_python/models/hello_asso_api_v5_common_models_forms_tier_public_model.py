@@ -29,6 +29,7 @@ from helloasso_python.models.hello_asso_api_v5_common_models_forms_extra_option_
 from helloasso_python.models.hello_asso_api_v5_common_models_forms_term_model import HelloAssoApiV5CommonModelsFormsTermModel
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class HelloAssoApiV5CommonModelsFormsTierPublicModel(BaseModel):
     """
@@ -56,7 +57,8 @@ class HelloAssoApiV5CommonModelsFormsTierPublicModel(BaseModel):
     __properties: ClassVar[List[str]] = ["customFields", "extraOptions", "id", "label", "description", "tierType", "price", "vatRate", "minAmount", "paymentFrequency", "maxPerUser", "meta", "saleStartDate", "saleEndDate", "isEligibleTaxReceipt", "terms", "picture", "isExcludedFromFormPaymentTerms", "isFavorite"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -68,8 +70,7 @@ class HelloAssoApiV5CommonModelsFormsTierPublicModel(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

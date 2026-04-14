@@ -27,6 +27,7 @@ from helloasso_python.models.hello_asso_models_enums_global_role import HelloAss
 from helloasso_python.models.hello_asso_models_shared_geo_location import HelloAssoModelsSharedGeoLocation
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class HelloAssoApiV5CommonModelsOrganizationsOrganizationPublicModel(BaseModel):
     """
@@ -39,6 +40,7 @@ class HelloAssoApiV5CommonModelsOrganizationsOrganizationPublicModel(BaseModel):
     videos: Optional[List[HelloAssoApiV5CommonModelsCommonVideoModel]] = None
     web_site: Optional[StrictStr] = Field(default=None, alias="webSite")
     is_authenticated: Optional[StrictBool] = Field(default=None, description="The organization is authenticated. Property returned only when asked by an organization admin.", alias="isAuthenticated")
+    display_coordinates: Optional[StrictBool] = Field(default=None, description="If the organization chose to display its coordinates. Property returned only when asked by an organization admin.", alias="displayCoordinates")
     is_cash_in_compliant: Optional[StrictBool] = Field(default=None, description="If transaction can be init on the organization or not. Property returned only when asked by an organization admin.", alias="isCashInCompliant")
     banner: Optional[StrictStr] = Field(default=None, description="The organization banner")
     fiscal_receipt_eligibility: Optional[StrictBool] = Field(default=None, description="The organism can issue fiscal receipts (type ok and has not deactivated it)  Must configure it and be authenticated to become enabled", alias="fiscalReceiptEligibility")
@@ -58,10 +60,11 @@ class HelloAssoApiV5CommonModelsOrganizationsOrganizationPublicModel(BaseModel):
     category_jo_id: Optional[StrictInt] = Field(default=None, alias="categoryJoId")
     url: Optional[StrictStr] = Field(default=None, description="The organization url")
     organization_slug: Optional[StrictStr] = Field(default=None, description="The organization slug", alias="organizationSlug")
-    __properties: ClassVar[List[str]] = ["facebookPage", "galleryImages", "longDescription", "twitterPage", "videos", "webSite", "isAuthenticated", "isCashInCompliant", "banner", "fiscalReceiptEligibility", "fiscalReceiptIssuanceEnabled", "type", "category", "address", "geolocation", "rnaNumber", "logo", "name", "role", "city", "zipCode", "description", "updateDate", "categoryJoId", "url", "organizationSlug"]
+    __properties: ClassVar[List[str]] = ["facebookPage", "galleryImages", "longDescription", "twitterPage", "videos", "webSite", "isAuthenticated", "displayCoordinates", "isCashInCompliant", "banner", "fiscalReceiptEligibility", "fiscalReceiptIssuanceEnabled", "type", "category", "address", "geolocation", "rnaNumber", "logo", "name", "role", "city", "zipCode", "description", "updateDate", "categoryJoId", "url", "organizationSlug"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -73,8 +76,7 @@ class HelloAssoApiV5CommonModelsOrganizationsOrganizationPublicModel(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -150,6 +152,11 @@ class HelloAssoApiV5CommonModelsOrganizationsOrganizationPublicModel(BaseModel):
         # and model_fields_set contains the field
         if self.is_authenticated is None and "is_authenticated" in self.model_fields_set:
             _dict['isAuthenticated'] = None
+
+        # set to None if display_coordinates (nullable) is None
+        # and model_fields_set contains the field
+        if self.display_coordinates is None and "display_coordinates" in self.model_fields_set:
+            _dict['displayCoordinates'] = None
 
         # set to None if is_cash_in_compliant (nullable) is None
         # and model_fields_set contains the field
@@ -235,6 +242,7 @@ class HelloAssoApiV5CommonModelsOrganizationsOrganizationPublicModel(BaseModel):
             "videos": [HelloAssoApiV5CommonModelsCommonVideoModel.from_dict(_item) for _item in obj["videos"]] if obj.get("videos") is not None else None,
             "webSite": obj.get("webSite"),
             "isAuthenticated": obj.get("isAuthenticated"),
+            "displayCoordinates": obj.get("displayCoordinates"),
             "isCashInCompliant": obj.get("isCashInCompliant"),
             "banner": obj.get("banner"),
             "fiscalReceiptEligibility": obj.get("fiscalReceiptEligibility"),

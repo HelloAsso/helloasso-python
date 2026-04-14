@@ -57,6 +57,7 @@ class HelloAssoApiV5CommonModelsEnumsOrganizationType(str, Enum):
     SCIC = 'SCIC'
     SCOP = 'SCOP'
     AUTRES = 'Autres'
+    EPA = 'EPA'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

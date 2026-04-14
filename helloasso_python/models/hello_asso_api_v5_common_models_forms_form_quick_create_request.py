@@ -27,6 +27,7 @@ from helloasso_python.models.hello_asso_api_v5_common_models_enums_membership_va
 from helloasso_python.models.hello_asso_api_v5_common_models_forms_tier_light_model import HelloAssoApiV5CommonModelsFormsTierLightModel
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest(BaseModel):
     """
@@ -72,11 +73,13 @@ class HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest(BaseModel):
     allow_organism_payer: Optional[StrictBool] = Field(default=None, description="Whether users are allowed to contribute to this form through an organism (only for donation and crowdfunding).", alias="allowOrganismPayer")
     allow_individual_payer: Optional[StrictBool] = Field(default=None, description="Whether user are allowed to personally contribute to this form (only for donation and crowdfunding).", alias="allowIndividualPayer")
     remind_abandoned_cart: Optional[StrictBool] = Field(default=None, description="Whether a reminder email should be sent for abandoned carts.", alias="remindAbandonedCart")
+    display_version: Optional[StrictInt] = Field(default=None, description="The form display version (only for membership).", alias="displayVersion")
     max_entries: Optional[StrictInt] = Field(default=None, description="Indicates the maximum available entries for the whole form. Null means unlimited entries.", alias="maxEntries")
-    __properties: ClassVar[List[str]] = ["tierList", "banner", "description", "endDate", "logo", "privateTitle", "startDate", "title", "activityTypeId", "place", "saleEndDate", "saleStartDate", "validityType", "acceptOpenDonation", "acceptOpenMonthlyDonation", "allowComment", "amountVisible", "color", "widgetButtonText", "contact", "displayContributorName", "displayParticipantsCount", "displayRemainingEntries", "financialGoal", "generateMembershipCards", "generateTickets", "invertDescriptions", "labelConditionsAndTermsFile", "longDescription", "openDonationPresetAmounts", "personalizedMessage", "projectBeneficiaries", "projectExpensesDetails", "projectOwners", "suggestMonthlyDonation", "displayMonthlyDonationsFirst", "projectTargetCountry", "allowOrganismPayer", "allowIndividualPayer", "remindAbandonedCart", "maxEntries"]
+    __properties: ClassVar[List[str]] = ["tierList", "banner", "description", "endDate", "logo", "privateTitle", "startDate", "title", "activityTypeId", "place", "saleEndDate", "saleStartDate", "validityType", "acceptOpenDonation", "acceptOpenMonthlyDonation", "allowComment", "amountVisible", "color", "widgetButtonText", "contact", "displayContributorName", "displayParticipantsCount", "displayRemainingEntries", "financialGoal", "generateMembershipCards", "generateTickets", "invertDescriptions", "labelConditionsAndTermsFile", "longDescription", "openDonationPresetAmounts", "personalizedMessage", "projectBeneficiaries", "projectExpensesDetails", "projectOwners", "suggestMonthlyDonation", "displayMonthlyDonationsFirst", "projectTargetCountry", "allowOrganismPayer", "allowIndividualPayer", "remindAbandonedCart", "displayVersion", "maxEntries"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -88,8 +91,7 @@ class HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -232,6 +234,11 @@ class HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest(BaseModel):
         if self.project_target_country is None and "project_target_country" in self.model_fields_set:
             _dict['projectTargetCountry'] = None
 
+        # set to None if display_version (nullable) is None
+        # and model_fields_set contains the field
+        if self.display_version is None and "display_version" in self.model_fields_set:
+            _dict['displayVersion'] = None
+
         # set to None if max_entries (nullable) is None
         # and model_fields_set contains the field
         if self.max_entries is None and "max_entries" in self.model_fields_set:
@@ -289,6 +296,7 @@ class HelloAssoApiV5CommonModelsFormsFormQuickCreateRequest(BaseModel):
             "allowOrganismPayer": obj.get("allowOrganismPayer"),
             "allowIndividualPayer": obj.get("allowIndividualPayer"),
             "remindAbandonedCart": obj.get("remindAbandonedCart"),
+            "displayVersion": obj.get("displayVersion"),
             "maxEntries": obj.get("maxEntries")
         })
         return _obj
